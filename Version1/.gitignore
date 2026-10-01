@@ -1,0 +1,6 @@
+.venv/
+external/
+models/
+private/
+__pycache__/
+*.pyc
