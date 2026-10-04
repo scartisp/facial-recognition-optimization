@@ -1,0 +1,12 @@
+{
+  "liveness_repo": {
+    "url": "https://github.com/facenox/face-antispoof-onnx",
+    "commit": "fa6489fb221dcf6b803095ab4b15a0fa0f56cfe5"
+  },
+  "files": {
+    "liveness/best_model.onnx": "AF2381B88F38769222ED93379E12444E2A50814575DE1C46170DE570C55A42B6",
+    "liveness/detector.onnx": "8F2383E4DD3CFBB4553EA8718107FC0423210DC964F9F4280604804ED2552FA4",
+    "buffalo_sc/det_500m.onnx": "5E4447F50245BBD7966BD6C0FA52938C61474A04EC7DEF48753668A9D8B4EA3A",
+    "buffalo_sc/w600k_mbf.onnx": "9CC6E4A75F0E2BF0B1AED94578F144D15175F357BDC05E815E5C4A02B319EB4F"
+  }
+}

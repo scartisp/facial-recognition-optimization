@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+
+# Third-party code and downloaded weights (fetched by script, not committed)
+external/
+models/
+*.onnx
+*.tflite
+*.pth
+*.pt
+*.params
+
+# Face images: never commit (see AGENTS.md)
+private/
+data/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.mp4
+*.avi
+# ...except generated plots (ROC/DET, Pareto) — these contain no faces
+!results/**/*.png
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

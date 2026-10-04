@@ -3,7 +3,7 @@ from insightface.app import FaceAnalysis
 from insightface.data import get_image
 
 app = FaceAnalysis(
-    name="buffalo_l",
+    name="buffalo_sc",
     providers=["CPUExecutionProvider"]
 )
 app.prepare(ctx_id=0, det_size=(640, 640))

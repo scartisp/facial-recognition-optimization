@@ -18,7 +18,7 @@ if image is None:
     )
 
 app = FaceAnalysis(
-    name="buffalo_l",
+    name="buffalo_sc",
     providers=["CPUExecutionProvider"]
 )
 app.prepare(ctx_id=0, det_size=(640, 640))

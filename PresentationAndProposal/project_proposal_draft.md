@@ -22,7 +22,7 @@ Because this project involves capturing and processing live facial images of tea
 
 ## Research Questions and Hypotheses
 
-**RQ1:** To what extent does post-training INT8 quantization change end-to-end inference latency (p50/p95, in milliseconds) and active power draw (watts) for the identity-verification model (InsightFace) and the liveness-detection model (Silent-Face-Anti-Spoofing) when run on a Raspberry Pi CPU?
+**RQ1:** To what extent does post-training INT8 quantization change end-to-end inference latency (p50/p95, in milliseconds) and active power draw (watts) for the identity-verification model (InsightFace) and the liveness-detection model (face-antispoof-onnx, MiniFASNetV2-SE) when run on a Raspberry Pi CPU?
 
 **RQ2:** How does INT8 quantization affect biometric accuracy (False Accept Rate (FAR), False Reject Rate (FRR), and Equal Error Rate (EER)) for each model individually and for the combined two-model authentication pipeline, relative to FP32 baselines?
 
@@ -38,9 +38,9 @@ Because this project involves capturing and processing live facial images of tea
 
 ## Related Work
 
-**Deng et al., "ArcFace: Additive Angular Margin Loss for Deep Face Recognition" (CVPR 2019).** This paper introduces the angular margin loss underlying the ArcFace/MobileFaceNet family of models distributed through the `deepinsight/insightface` repository. We rely on its pretrained FP32 checkpoints as the identity-verification backbone in our pipeline. Our project does not modify or extend the loss function or architecture; it differs by studying the effect of post-training quantization on models trained with this method, which the original paper does not address.
+**Deng et al., "ArcFace: Additive Angular Margin Loss for Deep Face Recognition" (CVPR 2019).** This paper introduces the angular margin loss underlying the ArcFace/MobileFaceNet family of models distributed through the `deepinsight/insightface` repository. We rely on its pretrained FP32 MobileFaceNet model (the `buffalo_sc` pack: the `w600k_mbf` recognizer trained on WebFace600K, plus the SCRFD-500MF face detector, distributed as ONNX) as the identity-verification backbone in our pipeline. Our project does not modify or extend the loss function or architecture; it differs by studying the effect of post-training quantization on models trained with this method, which the original paper does not address.
 
-**`minivision-ai/Silent-Face-Anti-Spoofing`.** This open-source liveness-detection system (MiniFASNet family) classifies a presented face as real, a 2D spoof (printed photo/screen replay), or a 3D spoof (mask), and is explicitly designed to prevent presentation attacks against facial-identification systems such as phone unlock. We rely on its pretrained FP32 weights as our liveness-detection component and treat its reported real/fake classification behavior as our accuracy baseline before quantization. Our project differs by evaluating how that classification behavior changes after INT8 quantization, which is outside the scope of the original repository.
+**`facenox/face-antispoof-onnx`.** This open-source liveness-detection model (MiniFASNetV2-SE, from the MiniFASNet family originally released in `minivision-ai/Silent-Face-Anti-Spoofing`) classifies a 128x128 face crop as real or spoofed (e.g., printed photo or screen replay). It was trained on CelebA-Spoof and is distributed as an FP32 ONNX model under Apache-2.0. We rely on its pretrained FP32 weights as our liveness-detection component. The repository also distributes its own INT8 export and reports the same aggregate accuracy (98.20% on CelebA-Spoof) for both precisions; we do not use that file as our result. Our project differs by performing our own calibrated post-training quantization from the FP32 model and evaluating the FP32-to-INT8 change with security metrics (FAR/FRR/EER), per lighting condition, inside a two-model pipeline, on Raspberry Pi hardware, none of which a single aggregate accuracy figure addresses.
 
 **Jacob et al., "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference" (CVPR 2018).** This paper defines the post-training and quantization-aware integer quantization scheme implemented in TensorFlow Lite, which we use as our quantization methodology. We rely on its integer-arithmetic inference scheme directly; our contribution is not a new quantization method but an empirical accuracy/efficiency/fairness evaluation of applying this existing method to a two-stage biometric authentication pipeline.
 
@@ -53,8 +53,8 @@ The system is a two-stage facial authentication pipeline running on a Raspberry 
 ```mermaid
 flowchart LR
     A[USB Webcam Frame] --> B[Face Detection and Alignment]
-    B --> C[Liveness Detection\nSilent-Face-Anti-Spoofing]
-    B --> D[Identity Verification\nInsightFace]
+    B --> C[Liveness Detection\nface-antispoof-onnx]
+    B --> D[Identity Verification\nInsightFace buffalo_sc]
     C --> E{Both Checks Pass?}
     D --> E
     E -->|Yes| F[Accept]
@@ -63,8 +63,8 @@ flowchart LR
 
 **Components:**
 - **Face detection/alignment**: crops and aligns the incoming webcam frame to the fixed input size each downstream model expects (a standard, reused preprocessing step, not a team contribution).
-- **Liveness detection** (reused system: `minivision-ai/Silent-Face-Anti-Spoofing`, MiniFASNet architecture): classifies the aligned face as real or spoofed (2D/3D).
-- **Identity verification** (reused system: `deepinsight/insightface`, ArcFace/MobileFaceNet architecture): computes a face embedding and compares it via cosine similarity against a stored enrolled-user embedding, thresholded to accept/reject.
+- **Liveness detection** (reused system: `facenox/face-antispoof-onnx`, MiniFASNetV2-SE architecture): classifies the aligned face as real or spoofed.
+- **Identity verification** (reused system: `deepinsight/insightface` `buffalo_sc` pack, MobileFaceNet trained with ArcFace loss): computes a face embedding and compares it via cosine similarity against a stored enrolled-user embedding, thresholded to accept/reject.
 - **Decision logic** (team contribution): combines both checks — an attempt is only accepted if the face is both classified as live *and* matched to the enrolled identity above threshold.
 - **Quantization pipeline** (team contribution): converts each model's pretrained FP32 weights to INT8 via post-training quantization (with a calibration dataset), producing a matched INT8 version of each model for direct comparison against its FP32 original.
 - **Benchmarking harness** (team contribution): runs both FP32 and INT8 versions of each model, and the combined pipeline, over a fixed test set on the Raspberry Pi, logging latency, power, memory, and accuracy outcomes.
@@ -104,7 +104,7 @@ flowchart LR
 - Model size: on-disk binary footprint in megabytes, per precision.
 - Accuracy: FAR/FMR, FRR/FNMR, and EER (percentages), plus True Accept Rate at a fixed operating point (e.g., TAR @ FAR = 0.1%).
 
-**Hardware and software environment:** Raspberry Pi (model, RAM, and OS version to be determined), USB webcam, USB or GPIO-based power measurement device, Python with PyTorch/ONNX Runtime and TFLite runtime, exact library versions will be pinned in a requirements file.
+**Hardware and software environment:** Raspberry Pi 4 Model B, 8 GB RAM (OS version to be determined), USB webcam, USB or GPIO-based power measurement device, Python with PyTorch/ONNX Runtime and TFLite runtime, exact library versions will be pinned in a requirements file.
 
 **Trials/seeds and variability reporting:** each latency/power measurement will be repeated over a minimum of 500 inference runs per configuration (after a fixed warm-up period excluded from reported numbers), with median, p95, and standard deviation reported. Accuracy metrics will be computed once per fixed test set per configuration, since these are deterministic given fixed weights and a fixed test set; any stochastic component (e.g., calibration-set sampling for quantization) will be run with a minimum of 3 different calibration seeds to check sensitivity.
 
@@ -163,7 +163,7 @@ flowchart LR
 ## References
 
 1. Deng, J., Guo, J., Xue, N., & Zafeiriou, S. (2019). ArcFace: Additive Angular Margin Loss for Deep Face Recognition. *CVPR 2019*.
-2. Minivision AI. Silent-Face-Anti-Spoofing [Software repository]. https://github.com/minivision-ai/Silent-Face-Anti-Spoofing
+2. Facenox. face-antispoof-onnx [Software repository]. https://github.com/facenox/face-antispoof-onnx (MiniFASNet architecture originally from Minivision AI, Silent-Face-Anti-Spoofing, https://github.com/minivision-ai/Silent-Face-Anti-Spoofing)
 3. Jacob, B., Kligys, S., Chen, B., et al. (2018). Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference. *CVPR 2018*.
 4. Buolamwini, J., & Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. *Proceedings of Machine Learning Research (FAT* 2018)*.
 5. DeepInsight. InsightFace [Software repository]. https://github.com/deepinsight/insightface
