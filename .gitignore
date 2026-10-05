@@ -29,8 +29,12 @@ data/
 *.bmp
 *.mp4
 *.avi
+*.webm
+*.mov
+*.mkv
+*.zip
 # ...except generated plots (ROC/DET, Pareto) — these contain no faces
-!results/**/*.png
+!**/results/**/*.png
 
 # Editors / OS
 .vscode/

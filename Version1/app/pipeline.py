@@ -85,7 +85,10 @@ def check_pins(config):
 
 
 def new_session(path):
-    return ort.InferenceSession(str(path), providers=["CPUExecutionProvider"])
+    options = ort.SessionOptions()
+    # Errors only: the recognizer declares batch size 1 and ORT warns on every batched run
+    options.log_severity_level = 3
+    return ort.InferenceSession(str(path), sess_options=options, providers=["CPUExecutionProvider"])
 
 
 class Pipeline:
@@ -110,35 +113,69 @@ class Pipeline:
         real_prob = config["liveness"]["real_prob_threshold"]
         self.liveness_logit_threshold = math.log(real_prob / (1 - real_prob))
 
-    def detect(self, frame_bgr):
-        """Return (bbox, keypoints) of the largest face, or None."""
-        boxes, keypoints = self.detector.detect(frame_bgr, max_num=1, metric="max")
+    def detect(self, frame_bgr, metric="max"):
+        """Return (bbox, keypoints) of one face, or None.
+
+        metric="max" picks the largest face; "default" favours the face nearest the centre.
+        """
+        boxes, keypoints = self.detector.detect(frame_bgr, max_num=1, metric=metric)
         if boxes.shape[0] == 0:
             return None
         return boxes[0, :4], keypoints[0]
 
-    def embed(self, frame_bgr, keypoints):
-        """Align to 112x112 and return a unit-length 512-d embedding."""
+    # The face-crop steps below do not depend on precision. Evaluation and calibration
+    # cache their uint8 outputs, so FP32 and INT8 models always see identical inputs.
+
+    def recognizer_crop(self, frame_bgr, keypoints):
+        """5-point alignment to a 112x112 BGR uint8 face."""
+        size = self.config["recognizer"]["input_size"]
+        return face_align.norm_crop(frame_bgr, landmark=keypoints, image_size=size)
+
+    def recognizer_blob(self, aligned_faces):
+        """uint8 BGR faces (one or a list) -> normalized NCHW float32 batch."""
         settings = self.config["recognizer"]
         size = settings["input_size"]
-        aligned = face_align.norm_crop(frame_bgr, landmark=keypoints, image_size=size)
         mean = settings["input_mean"]
-        blob = cv2.dnn.blobFromImage(
-            aligned, 1.0 / settings["input_std"], (size, size),
+        if not isinstance(aligned_faces, list):
+            aligned_faces = [aligned_faces]
+        return cv2.dnn.blobFromImages(
+            aligned_faces, 1.0 / settings["input_std"], (size, size),
             (mean, mean, mean), swapRB=settings["swap_rb"],
         )
-        embedding = self.recognizer.run(None, {self.recognizer_input: blob})[0][0]
-        return embedding / np.linalg.norm(embedding)
 
-    def liveness_score(self, frame_bgr, bbox):
-        """Return real_logit - spoof_logit (higher means more likely a live face)."""
+    def embed_blob(self, blob):
+        """Return unit-length embeddings, one row per face."""
+        embeddings = self.recognizer.run(None, {self.recognizer_input: blob})[0]
+        return embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
+
+    def embed(self, frame_bgr, keypoints):
+        """Align to 112x112 and return a unit-length 512-d embedding."""
+        return self.embed_blob(self.recognizer_blob(self.recognizer_crop(frame_bgr, keypoints)))[0]
+
+    def liveness_crop(self, frame_bgr, bbox):
+        """facenox crop + letterbox, returned as CHW uint8 (exactly 255 x the model input)."""
         settings = self.config["liveness"]
         frame_rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
         x1, y1, x2, y2 = (int(v) for v in bbox)
         face = facenox_preprocess.crop(frame_rgb, (x1, y1, x2, y2), settings["bbox_expansion_factor"])
-        blob = facenox_preprocess.preprocess(face, settings["input_size"])[np.newaxis]
-        logits = self.liveness.run(None, {self.liveness_input: blob})[0][0]
-        return float(logits[0] - logits[1])
+        chw = facenox_preprocess.preprocess(face, settings["input_size"])
+        return np.rint(chw * 255.0).astype(np.uint8)
+
+    @staticmethod
+    def liveness_blob(crops_u8):
+        """CHW uint8 crops (one or a stacked batch) -> NCHW float32 in [0, 1], as facenox does."""
+        crops_u8 = np.asarray(crops_u8)
+        if crops_u8.ndim == 3:
+            crops_u8 = crops_u8[np.newaxis]
+        return crops_u8.astype(np.float32) / 255.0
+
+    def liveness_scores_blob(self, blob):
+        """Return real_logit - spoof_logit per face (higher means more likely a live face)."""
+        logits = self.liveness.run(None, {self.liveness_input: blob})[0]
+        return logits[:, 0] - logits[:, 1]
+
+    def liveness_score(self, frame_bgr, bbox):
+        return float(self.liveness_scores_blob(self.liveness_blob(self.liveness_crop(frame_bgr, bbox)))[0])
 
     def authenticate(self, frame_bgr, enrolled_embedding):
         timings = {}

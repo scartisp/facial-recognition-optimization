@@ -1,0 +1,43 @@
+{
+  "precision": "rec-fp32_live-fp32",
+  "models": {
+    "detector": {
+      "path": "~/.insightface/models/buffalo_sc/det_500m.onnx",
+      "lock_key": "buffalo_sc/det_500m.onnx"
+    },
+    "recognizer": {
+      "path": "~/.insightface/models/buffalo_sc/w600k_mbf.onnx",
+      "lock_key": "buffalo_sc/w600k_mbf.onnx"
+    },
+    "liveness": {
+      "path": "Version1/external/face-antispoof-onnx/models/best/98.20/best_model.onnx",
+      "lock_key": "liveness/best_model.onnx"
+    }
+  },
+  "detector": {
+    "input_size": [
+      640,
+      640
+    ],
+    "det_thresh": 0.5
+  },
+  "recognizer": {
+    "input_size": 112,
+    "input_mean": 127.5,
+    "input_std": 127.5,
+    "swap_rb": true
+  },
+  "liveness": {
+    "input_size": 128,
+    "bbox_expansion_factor": 1.5,
+    "real_prob_threshold": 0.5
+  },
+  "verification": {
+    "cosine_threshold": 0.4,
+    "_note": "cosine_threshold is a provisional placeholder, not a measured operating point. Replace it with the threshold chosen on LFW (e.g. at FAR=0.1%) before reporting any results. real_prob_threshold 0.5 is the facenox demo default."
+  },
+  "camera": {
+    "index": 0
+  },
+  "calibration_seed": 0
+}

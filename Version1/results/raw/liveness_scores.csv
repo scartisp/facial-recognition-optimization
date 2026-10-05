@@ -1,0 +1,822 @@
+dataset,index,person,kind,detail,lighting,source,time_s,face_width_px,score_fp32,score_int8pt,score_int8pc
+own (test split),17,p01,live,,bright,p01_live_bright,4.02,304,8.006835,9.724717,9.817333
+own (test split),18,p01,live,,bright,p01_live_bright,4.55,335,3.613028,5.742214,5.742214
+own (test split),19,p01,live,,bright,p01_live_bright,5.02,317,8.320078,10.650880,8.520704
+own (test split),20,p01,live,,bright,p01_live_bright,5.55,304,11.447161,11.808584,11.484427
+own (test split),21,p01,live,,bright,p01_live_bright,6.02,320,11.179267,11.299194,10.002565
+own (test split),22,p01,live,,bright,p01_live_bright,6.55,326,4.380626,4.538201,5.649597
+own (test split),23,p01,live,,bright,p01_live_bright,7.01,334,7.810622,8.520704,9.076403
+own (test split),24,p01,live,,bright,p01_live_bright,7.55,331,6.145576,6.946226,7.872390
+own (test split),25,p01,live,,bright,p01_live_bright,8.01,318,7.133254,8.705936,8.057622
+own (test split),26,p01,live,,bright,p01_live_bright,8.55,317,9.608784,7.779773,8.613320
+own (test split),27,p01,live,,bright,p01_live_bright,9.01,320,9.408838,10.187799,9.261635
+own (test split),28,p01,live,,bright,p01_live_bright,9.54,330,1.778090,4.723434,4.630817
+own (test split),29,p01,live,,bright,p01_live_bright,10.01,328,4.288164,8.613320,6.390528
+own (test split),30,p01,live,,bright,p01_live_bright,10.54,325,5.118121,9.724717,9.076403
+own (test split),31,p01,live,,bright,p01_live_bright,11.01,325,5.829724,7.965006,7.965006
+own (test split),32,p01,live,,bright,p01_live_bright,11.54,326,4.007072,7.779773,7.131459
+own (test split),33,p01,live,,bright,p01_live_bright,12.01,327,4.446160,7.872390,8.613320
+own (test split),34,p01,live,,bright,p01_live_bright,12.54,327,6.419511,8.613320,9.539484
+own (test split),35,p01,live,,bright,p01_live_bright,13.0,329,5.310639,8.242855,7.965006
+own (test split),36,p01,live,,bright,p01_live_bright,13.53,330,7.383052,9.724717,9.539484
+own (test split),37,p01,live,,bright,p01_live_bright,14.0,339,8.566292,11.391811,10.002565
+own (test split),38,p01,live,,bright,p01_live_bright,14.53,326,-1.289772,0.092616,1.667094
+own (test split),39,p01,live,,bright,p01_live_bright,15.0,334,4.719773,4.538201,6.390528
+own (test split),40,p01,live,,bright,p01_live_bright,15.53,334,4.071670,6.436836,7.038843
+own (test split),41,p01,live,,bright,p01_live_bright,16.07,331,4.973032,6.575761,6.853610
+own (test split),42,p01,live,,bright,p01_live_bright,16.53,329,6.829669,7.687157,8.891170
+own (test split),43,p01,live,,bright,p01_live_bright,17.06,328,5.994861,8.150239,8.057622
+own (test split),44,p01,live,,bright,p01_live_bright,17.53,328,9.512592,11.530735,11.113962
+own (test split),45,p01,live,,bright,p01_live_bright,18.06,334,1.452859,2.130176,2.685874
+own (test split),46,p01,live,,bright,p01_live_bright,18.53,303,3.696531,5.742214,4.630817
+own (test split),47,p01,live,,bright,p01_live_bright,19.06,339,3.802594,5.093899,5.834830
+own (test split),48,p01,live,,bright,p01_live_bright,19.53,329,4.402286,6.483144,6.205296
+own (test split),49,p01,live,,bright,p01_live_bright,20.06,326,5.119274,6.297912,8.057622
+own (test split),50,p01,live,,bright,p01_live_bright,20.52,315,8.042761,8.150239,8.705936
+own (test split),51,p01,live,,bright,p01_live_bright,21.05,307,1.879939,4.630817,2.408025
+own (test split),52,p01,live,,bright,p01_live_bright,21.52,318,6.481624,7.038843,6.020063
+own (test split),53,p01,live,,bright,p01_live_bright,22.05,329,5.730727,7.965006,6.297912
+own (test split),54,p01,live,,bright,p01_live_bright,22.52,326,6.624267,7.965006,8.613320
+own (test split),71,p01,live,,dim,p01_live_dim,4.0,294,1.009098,1.481862,2.037560
+own (test split),72,p01,live,,dim,p01_live_dim,4.53,285,0.558760,2.130176,1.111396
+own (test split),73,p01,live,,dim,p01_live_dim,5.0,284,0.661091,1.018780,1.296629
+own (test split),74,p01,live,,dim,p01_live_dim,5.53,299,1.508720,2.778491,3.519421
+own (test split),75,p01,live,,dim,p01_live_dim,6.07,320,2.092341,3.797270,3.889887
+own (test split),76,p01,live,,dim,p01_live_dim,6.53,301,2.749763,4.352968,4.352968
+own (test split),77,p01,live,,dim,p01_live_dim,7.06,273,3.116078,3.056340,3.148956
+own (test split),78,p01,live,,dim,p01_live_dim,7.53,272,0.557206,1.944943,2.593258
+own (test split),79,p01,live,,dim,p01_live_dim,8.06,270,-0.028188,1.481862,1.667094
+own (test split),80,p01,live,,dim,p01_live_dim,8.53,300,3.642648,4.260352,6.112679
+own (test split),81,p01,live,,dim,p01_live_dim,9.06,316,1.790099,1.481862,1.667094
+own (test split),82,p01,live,,dim,p01_live_dim,9.53,317,0.806126,1.667094,0.463082
+own (test split),83,p01,live,,dim,p01_live_dim,10.06,317,2.363841,0.555698,1.111396
+own (test split),84,p01,live,,dim,p01_live_dim,10.52,317,1.275114,-0.926163,0.463082
+own (test split),85,p01,live,,dim,p01_live_dim,11.06,311,3.655231,3.797270,3.612038
+own (test split),86,p01,live,,dim,p01_live_dim,11.52,298,3.807096,5.649597,5.186516
+own (test split),87,p01,live,,dim,p01_live_dim,12.05,297,4.910088,6.297912,5.001283
+own (test split),88,p01,live,,dim,p01_live_dim,12.52,308,1.528473,3.704654,2.130176
+own (test split),89,p01,live,,dim,p01_live_dim,13.05,318,1.385123,2.037560,2.871107
+own (test split),90,p01,live,,dim,p01_live_dim,13.52,308,-1.394960,-0.926163,-1.157704
+own (test split),91,p01,live,,dim,p01_live_dim,14.05,285,0.298453,1.018780,-0.277849
+own (test split),92,p01,live,,dim,p01_live_dim,14.52,316,1.079060,3.519421,2.454333
+own (test split),93,p01,live,,dim,p01_live_dim,15.05,316,-0.076653,1.852327,1.759711
+own (test split),94,p01,live,,dim,p01_live_dim,15.51,311,-0.172435,1.296629,1.389245
+own (test split),95,p01,live,,dim,p01_live_dim,16.05,312,0.801612,3.704654,0.926163
+own (test split),96,p01,live,,dim,p01_live_dim,16.51,306,1.653103,3.704654,2.037560
+own (test split),97,p01,live,,dim,p01_live_dim,17.05,292,-0.935292,0.370465,-0.092616
+own (test split),98,p01,live,,dim,p01_live_dim,17.51,295,-0.906537,0.185233,-0.648314
+own (test split),99,p01,live,,dim,p01_live_dim,18.04,297,1.438614,1.852327,1.018780
+own (test split),100,p01,live,,dim,p01_live_dim,18.51,294,0.890139,2.500641,1.204013
+own (test split),101,p01,live,,dim,p01_live_dim,19.04,307,0.786091,2.593258,1.296629
+own (test split),102,p01,live,,dim,p01_live_dim,19.51,309,0.590458,2.130176,1.111396
+own (test split),118,p01,screen,,bright,p01_screen_bright,4.04,449,-5.391600,-4.908667,-4.816050
+own (test split),119,p01,screen,,bright,p01_screen_bright,4.5,442,-3.641602,-3.704654,-3.056340
+own (test split),120,p01,screen,,bright,p01_screen_bright,5.04,444,-3.591954,-3.148956,-1.759711
+own (test split),121,p01,screen,,bright,p01_screen_bright,5.5,410,-6.270881,-5.927446,-5.927446
+own (test split),122,p01,screen,,bright,p01_screen_bright,6.04,397,-3.036498,-2.871107,-2.408025
+own (test split),123,p01,screen,,bright,p01_screen_bright,6.57,403,-3.327274,-3.334188,-2.315409
+own (test split),124,p01,screen,,bright,p01_screen_bright,7.03,396,-7.341404,-8.613320,-7.687157
+own (test split),125,p01,screen,,bright,p01_screen_bright,7.56,379,-5.008393,-5.464365,-5.834830
+own (test split),126,p01,screen,,bright,p01_screen_bright,8.03,362,-5.931673,-5.510673,-6.205296
+own (test split),127,p01,screen,,bright,p01_screen_bright,8.56,363,-7.116469,-7.316691,-7.316691
+own (test split),128,p01,screen,,bright,p01_screen_bright,9.03,362,-5.078599,-4.260352,-4.816050
+own (test split),129,p01,screen,,bright,p01_screen_bright,9.56,356,-7.068213,-6.112679,-6.899918
+own (test split),130,p01,screen,,bright,p01_screen_bright,10.03,356,-7.751044,-7.594541,-8.057622
+own (test split),131,p01,screen,,bright,p01_screen_bright,10.56,356,-5.962141,-5.464365,-6.112679
+own (test split),132,p01,screen,,bright,p01_screen_bright,11.02,355,-3.618260,-2.871107,-3.241572
+own (test split),133,p01,screen,,bright,p01_screen_bright,11.55,365,-5.907080,-5.649597,-4.723434
+own (test split),134,p01,screen,,bright,p01_screen_bright,12.02,377,-2.200544,-2.315409,-1.574478
+own (test split),135,p01,screen,,bright,p01_screen_bright,12.55,393,-3.058792,-2.130176,-1.759711
+own (test split),136,p01,screen,,bright,p01_screen_bright,13.02,392,-2.509901,-2.778491,-2.222792
+own (test split),137,p01,screen,,bright,p01_screen_bright,13.55,400,0.722932,0.833547,1.018780
+own (test split),138,p01,screen,,bright,p01_screen_bright,14.02,397,-1.626777,-1.574478,-1.389245
+own (test split),139,p01,screen,,bright,p01_screen_bright,14.55,379,0.082450,-0.463082,0.648314
+own (test split),140,p01,screen,,bright,p01_screen_bright,15.02,381,-2.278378,-2.130176,-2.685874
+own (test split),141,p01,screen,,bright,p01_screen_bright,15.55,435,-3.736650,-4.260352,-5.742214
+own (test split),142,p01,screen,,bright,p01_screen_bright,16.02,438,-5.068904,-5.186516,-4.723434
+own (test split),143,p01,screen,,bright,p01_screen_bright,16.55,387,-2.191581,-3.704654,-1.481862
+own (test split),144,p01,screen,,bright,p01_screen_bright,17.01,386,-3.893011,-3.982503,-2.963723
+own (test split),145,p01,screen,,bright,p01_screen_bright,17.54,378,-9.404301,-8.983786,-8.520704
+own (test split),146,p01,screen,,bright,p01_screen_bright,18.01,299,5.633578,5.742214,5.834830
+own (test split),147,p01,screen,,bright,p01_screen_bright,18.54,304,5.432726,5.464365,4.630817
+own (test split),148,p01,screen,,bright,p01_screen_bright,19.0,315,4.636128,7.965006,6.668377
+own (test split),149,p01,screen,,bright,p01_screen_bright,19.54,319,4.952728,6.390528,6.112679
+own (test split),150,p01,screen,,bright,p01_screen_bright,20.0,311,4.051857,4.167736,5.834830
+own (test split),151,p01,screen,,bright,p01_screen_bright,20.54,319,7.748819,7.224075,7.640849
+own (test split),167,p01,screen,,dim,p01_screen_dim,4.05,436,-1.764819,-1.759711,-1.296629
+own (test split),168,p01,screen,,dim,p01_screen_dim,4.52,435,-6.133477,-4.445585,-5.927446
+own (test split),169,p01,screen,,dim,p01_screen_dim,5.05,440,-1.424284,-0.277849,-0.740931
+own (test split),170,p01,screen,,dim,p01_screen_dim,5.52,406,-1.081293,-0.555698,0.648314
+own (test split),171,p01,screen,,dim,p01_screen_dim,6.05,434,-2.418273,-1.944943,-1.481862
+own (test split),172,p01,screen,,dim,p01_screen_dim,6.51,421,-1.964833,-0.463082,-1.111396
+own (test split),173,p01,screen,,dim,p01_screen_dim,7.04,414,-3.633783,-2.778491,-1.481862
+own (test split),174,p01,screen,,dim,p01_screen_dim,7.51,414,-5.922949,-4.260352,-3.519421
+own (test split),175,p01,screen,,dim,p01_screen_dim,8.04,394,-1.392156,-0.648314,-0.277849
+own (test split),176,p01,screen,,dim,p01_screen_dim,8.51,406,-0.844211,0.185233,-1.481862
+own (test split),177,p01,screen,,dim,p01_screen_dim,9.04,395,0.604244,1.389245,1.204013
+own (test split),178,p01,screen,,dim,p01_screen_dim,9.51,378,-1.686407,0.185233,-0.648314
+own (test split),179,p01,screen,,dim,p01_screen_dim,10.04,373,-1.879017,-0.277849,-0.926163
+own (test split),180,p01,screen,,dim,p01_screen_dim,10.51,401,-8.397349,-7.779773,-7.409308
+own (test split),181,p01,screen,,dim,p01_screen_dim,11.04,405,-6.507822,-5.279132,-4.538201
+own (test split),182,p01,screen,,dim,p01_screen_dim,11.51,401,-5.097922,-5.279132,-4.167736
+own (test split),183,p01,screen,,dim,p01_screen_dim,12.04,378,-3.309618,-2.685874,-2.871107
+own (test split),184,p01,screen,,dim,p01_screen_dim,12.51,374,-5.954592,-4.723434,-4.538201
+own (test split),185,p01,screen,,dim,p01_screen_dim,13.04,371,-3.581539,-1.759711,-1.852327
+own (test split),186,p01,screen,,dim,p01_screen_dim,13.5,384,-2.020249,-1.389245,-1.481862
+own (test split),187,p01,screen,,dim,p01_screen_dim,14.03,373,-9.183783,-8.613320,-8.242855
+own (test split),188,p01,screen,,dim,p01_screen_dim,14.5,349,-3.706089,-3.704654,-2.963723
+own (test split),189,p01,screen,,dim,p01_screen_dim,15.03,352,-3.813586,-3.612038,-3.148956
+own (test split),190,p01,screen,,dim,p01_screen_dim,15.56,373,-5.410896,-4.538201,-4.075119
+own (test split),191,p01,screen,,dim,p01_screen_dim,16.03,374,-3.983661,-3.797270,-2.130176
+own (test split),192,p01,screen,,dim,p01_screen_dim,16.57,371,-4.694362,-4.908667,-3.889887
+own (test split),193,p01,screen,,dim,p01_screen_dim,17.03,356,0.761424,1.481862,2.685874
+own (test split),194,p01,screen,,dim,p01_screen_dim,17.56,341,0.103172,0.648314,1.667094
+own (test split),195,p01,screen,,dim,p01_screen_dim,18.03,337,-3.128321,-1.481862,-2.222792
+own (test split),196,p01,screen,,dim,p01_screen_dim,19.03,296,4.546595,4.816050,4.352968
+own (test split),197,p01,screen,,dim,p01_screen_dim,19.56,298,2.843270,2.685874,2.037560
+own (test split),218,p02,live,,bright,p02_live_bright,4.0,245,3.755605,3.889887,6.575761
+own (test split),219,p02,live,,bright,p02_live_bright,4.53,263,4.260633,4.260352,5.834830
+own (test split),220,p02,live,,bright,p02_live_bright,5.06,275,2.382360,4.908667,5.371748
+own (test split),221,p02,live,,bright,p02_live_bright,5.52,283,1.796386,1.667094,2.593258
+own (test split),222,p02,live,,bright,p02_live_bright,6.0,294,2.740026,3.148956,4.445585
+own (test split),223,p02,live,,bright,p02_live_bright,6.53,280,0.815786,1.481862,1.667094
+own (test split),224,p02,live,,bright,p02_live_bright,7.06,259,1.567177,0.185233,2.685874
+own (test split),225,p02,live,,bright,p02_live_bright,7.52,243,2.500372,3.056340,4.445585
+own (test split),226,p02,live,,bright,p02_live_bright,8.0,239,3.478359,2.963723,4.352968
+own (test split),227,p02,live,,bright,p02_live_bright,8.53,225,11.236039,10.002565,11.577044
+own (test split),228,p02,live,,bright,p02_live_bright,9.06,231,12.621314,11.808584,11.808584
+own (test split),229,p02,live,,bright,p02_live_bright,9.52,229,8.495095,10.928729,11.808584
+own (test split),230,p02,live,,bright,p02_live_bright,10.0,227,6.815101,7.594541,9.076403
+own (test split),231,p02,live,,bright,p02_live_bright,10.53,226,6.713602,7.131459,8.983786
+own (test split),232,p02,live,,bright,p02_live_bright,11.06,227,5.135967,6.297912,7.409308
+own (test split),233,p02,live,,bright,p02_live_bright,11.52,227,2.829976,3.797270,4.816050
+own (test split),234,p02,live,,bright,p02_live_bright,12.0,228,4.950465,4.630817,7.038843
+own (test split),235,p02,live,,bright,p02_live_bright,12.53,229,3.800914,3.704654,7.594541
+own (test split),236,p02,live,,bright,p02_live_bright,13.06,227,0.763010,1.389245,3.889887
+own (test split),237,p02,live,,bright,p02_live_bright,13.52,227,4.234604,3.982503,6.946226
+own (test split),238,p02,live,,bright,p02_live_bright,14.0,228,4.489016,5.834830,8.011314
+own (test split),239,p02,live,,bright,p02_live_bright,14.53,223,3.591536,2.500641,6.390528
+own (test split),240,p02,live,,bright,p02_live_bright,15.06,225,6.315413,6.205296,7.501925
+own (test split),241,p02,live,,bright,p02_live_bright,15.52,221,4.551798,4.816050,7.687157
+own (test split),242,p02,live,,bright,p02_live_bright,16.0,224,7.870837,8.242855,9.307943
+own (test split),243,p02,live,,bright,p02_live_bright,16.53,226,3.015388,3.797270,6.205296
+own (test split),244,p02,live,,bright,p02_live_bright,17.06,232,5.652786,5.279132,7.131459
+own (test split),245,p02,live,,bright,p02_live_bright,17.52,229,6.300108,6.946226,7.224075
+own (test split),246,p02,live,,bright,p02_live_bright,18.0,230,4.616124,5.186516,7.131459
+own (test split),247,p02,live,,bright,p02_live_bright,18.53,217,3.766402,3.519421,4.908667
+own (test split),248,p02,live,,bright,p02_live_bright,19.06,217,5.975117,4.816050,6.112679
+own (test split),249,p02,live,,bright,p02_live_bright,19.52,210,4.232134,6.575761,7.965006
+own (test split),250,p02,live,,bright,p02_live_bright,20.06,211,2.299362,2.315409,6.297912
+own (test split),251,p02,live,,bright,p02_live_bright,20.53,207,5.503404,6.760993,10.187799
+own (test split),252,p02,live,,bright,p02_live_bright,21.06,206,3.472461,7.316691,7.965006
+own (test split),253,p02,live,,bright,p02_live_bright,21.52,205,5.111013,6.483144,7.687157
+own (test split),274,p02,live,,dim,p02_live_dim,4.0,276,1.614399,1.759711,2.130176
+own (test split),275,p02,live,,dim,p02_live_dim,4.53,282,0.140653,1.204013,1.204013
+own (test split),276,p02,live,,dim,p02_live_dim,5.01,285,1.087842,2.778491,2.130176
+own (test split),277,p02,live,,dim,p02_live_dim,5.54,269,-0.160925,1.296629,1.759711
+own (test split),278,p02,live,,dim,p02_live_dim,6.0,261,3.958955,4.352968,4.167736
+own (test split),279,p02,live,,dim,p02_live_dim,6.53,242,1.334991,3.056340,3.334188
+own (test split),280,p02,live,,dim,p02_live_dim,7.01,230,2.935071,4.260352,4.260352
+own (test split),281,p02,live,,dim,p02_live_dim,7.54,214,4.447600,4.260352,4.908667
+own (test split),282,p02,live,,dim,p02_live_dim,8.0,210,4.077868,5.742214,3.612038
+own (test split),283,p02,live,,dim,p02_live_dim,8.53,205,4.356566,3.889887,3.519421
+own (test split),284,p02,live,,dim,p02_live_dim,9.01,204,-0.491157,0.555698,1.204013
+own (test split),285,p02,live,,dim,p02_live_dim,9.54,202,1.574260,2.222792,2.500641
+own (test split),286,p02,live,,dim,p02_live_dim,10.06,199,0.030661,0.277849,2.222792
+own (test split),287,p02,live,,dim,p02_live_dim,10.53,196,-0.259123,-2.130176,1.018780
+own (test split),288,p02,live,,dim,p02_live_dim,11.01,199,1.475505,-0.185233,1.667094
+own (test split),289,p02,live,,dim,p02_live_dim,11.54,205,2.872842,2.778491,3.612038
+own (test split),290,p02,live,,dim,p02_live_dim,12.0,210,6.950506,6.297912,6.575761
+own (test split),291,p02,live,,dim,p02_live_dim,12.53,200,4.341982,4.260352,3.056340
+own (test split),292,p02,live,,dim,p02_live_dim,13.01,206,4.849401,5.464365,4.352968
+own (test split),293,p02,live,,dim,p02_live_dim,13.54,198,4.404272,3.889887,4.908667
+own (test split),294,p02,live,,dim,p02_live_dim,14.0,202,5.902535,5.464365,5.186516
+own (test split),295,p02,live,,dim,p02_live_dim,14.53,204,5.486969,6.112679,5.371748
+own (test split),296,p02,live,,dim,p02_live_dim,15.01,202,5.982809,4.075119,5.927446
+own (test split),297,p02,live,,dim,p02_live_dim,15.54,199,7.301263,6.205296,6.483144
+own (test split),298,p02,live,,dim,p02_live_dim,16.0,204,6.725647,6.575761,7.131459
+own (test split),299,p02,live,,dim,p02_live_dim,16.53,211,5.603923,5.649597,6.390528
+own (test split),300,p02,live,,dim,p02_live_dim,17.01,207,5.326339,6.390528,6.205296
+own (test split),301,p02,live,,dim,p02_live_dim,17.54,214,4.945826,6.205296,6.483144
+own (test split),302,p02,live,,dim,p02_live_dim,18.06,212,5.615492,5.556981,5.834830
+own (test split),303,p02,live,,dim,p02_live_dim,18.53,206,5.081801,6.483144,4.908667
+own (test split),304,p02,live,,dim,p02_live_dim,19.01,205,5.127798,4.538201,4.538201
+own (test split),305,p02,live,,dim,p02_live_dim,19.54,209,3.400516,4.538201,4.075119
+own (test split),306,p02,live,,dim,p02_live_dim,20.0,209,5.305587,5.464365,5.093899
+own (test split),307,p02,live,,dim,p02_live_dim,20.53,206,6.397861,6.297912,7.872390
+own (test split),308,p02,live,,dim,p02_live_dim,21.01,202,5.446049,5.649597,3.889887
+own (test split),329,p02,screen,,bright,p02_screen_bright,4.0,116,-8.012051,-6.575761,-6.020063
+own (test split),330,p02,screen,,bright,p02_screen_bright,4.53,115,-7.890147,-6.020063,-6.668377
+own (test split),331,p02,screen,,bright,p02_screen_bright,5.02,109,-7.559087,-7.594541,-7.131459
+own (test split),332,p02,screen,,bright,p02_screen_bright,5.52,106,-7.947175,-7.594541,-7.872390
+own (test split),333,p02,screen,,bright,p02_screen_bright,6.0,103,-6.093694,-5.371748,-3.982503
+own (test split),334,p02,screen,,bright,p02_screen_bright,6.53,101,-7.497272,-6.483144,-6.297912
+own (test split),335,p02,screen,,bright,p02_screen_bright,7.02,94,-5.218842,-4.816050,-4.167736
+own (test split),336,p02,screen,,bright,p02_screen_bright,7.52,97,-8.259888,-8.335471,-6.297912
+own (test split),337,p02,screen,,bright,p02_screen_bright,8.0,100,-8.906738,-11.206578,-11.299194
+own (test split),338,p02,screen,,bright,p02_screen_bright,8.53,104,-10.240373,-9.493176,-9.817333
+own (test split),339,p02,screen,,bright,p02_screen_bright,9.02,104,-7.355531,-6.760993,-5.371748
+own (test split),340,p02,screen,,bright,p02_screen_bright,9.52,105,-7.676707,-7.131459,-6.760993
+own (test split),341,p02,screen,,bright,p02_screen_bright,10.0,105,-5.902094,-3.426805,-2.778491
+own (test split),342,p02,screen,,bright,p02_screen_bright,10.53,110,-5.285516,-3.704654,-4.352968
+own (test split),343,p02,screen,,bright,p02_screen_bright,11.02,115,-6.788939,-6.390528,-6.483144
+own (test split),344,p02,screen,,bright,p02_screen_bright,11.52,122,-7.863733,-7.918698,-6.205296
+own (test split),345,p02,screen,,bright,p02_screen_bright,12.0,125,-8.643560,-8.428088,-8.242855
+own (test split),346,p02,screen,,bright,p02_screen_bright,12.53,122,-9.551773,-9.817333,-8.520704
+own (test split),347,p02,screen,,bright,p02_screen_bright,13.02,115,-7.781819,-6.946226,-8.428088
+own (test split),348,p02,screen,,bright,p02_screen_bright,13.52,107,-8.282984,-8.891170,-8.242855
+own (test split),349,p02,screen,,bright,p02_screen_bright,14.0,100,-5.164768,-5.093899,-6.205296
+own (test split),350,p02,screen,,bright,p02_screen_bright,14.53,99,-7.009435,-7.872390,-7.779773
+own (test split),351,p02,screen,,bright,p02_screen_bright,15.02,96,-6.055827,-6.853610,-6.760993
+own (test split),352,p02,screen,,bright,p02_screen_bright,15.52,100,-8.799157,-8.335471,-6.668377
+own (test split),353,p02,screen,,bright,p02_screen_bright,16.0,101,-7.550553,-9.261635,-7.872390
+own (test split),354,p02,screen,,bright,p02_screen_bright,16.53,100,-5.506346,-5.742214,-4.723434
+own (test split),355,p02,screen,,bright,p02_screen_bright,17.02,99,-7.925133,-7.131459,-5.093899
+own (test split),356,p02,screen,,bright,p02_screen_bright,17.52,99,-7.066957,-6.020063,-6.297912
+own (test split),357,p02,screen,,bright,p02_screen_bright,18.0,98,-6.906688,-5.649597,-5.834830
+own (test split),358,p02,screen,,bright,p02_screen_bright,18.53,100,-9.583071,-8.705936,-8.705936
+own (test split),359,p02,screen,,bright,p02_screen_bright,19.02,101,-6.908490,-6.205296,-5.464365
+own (test split),360,p02,screen,,bright,p02_screen_bright,19.52,103,-5.588175,-5.649597,-4.538201
+own (test split),361,p02,screen,,bright,p02_screen_bright,20.0,101,-7.232132,-7.687157,-8.057622
+own (test split),362,p02,screen,,bright,p02_screen_bright,20.53,102,-8.115525,-8.520704,-8.983786
+own (test split),363,p02,screen,,bright,p02_screen_bright,21.02,101,-5.827524,-6.483144,-3.889887
+own (test split),384,p02,screen,,dim,p02_screen_dim,4.0,113,-10.324965,-8.891170,-7.316691
+own (test split),385,p02,screen,,dim,p02_screen_dim,4.53,115,-10.812389,-9.724717,-9.076403
+own (test split),386,p02,screen,,dim,p02_screen_dim,5.06,110,-9.190458,-6.853610,-8.242855
+own (test split),387,p02,screen,,dim,p02_screen_dim,5.54,104,-12.604733,-10.558264,-9.724717
+own (test split),388,p02,screen,,dim,p02_screen_dim,6.0,102,-11.361256,-8.335471,-8.150239
+own (test split),389,p02,screen,,dim,p02_screen_dim,6.53,99,-11.959723,-10.558264,-8.520704
+own (test split),390,p02,screen,,dim,p02_screen_dim,7.06,96,-12.879663,-11.299194,-9.354251
+own (test split),391,p02,screen,,dim,p02_screen_dim,7.54,94,-8.392786,-5.556981,-4.630817
+own (test split),392,p02,screen,,dim,p02_screen_dim,8.0,91,-10.111760,-6.483144,-4.723434
+own (test split),393,p02,screen,,dim,p02_screen_dim,8.53,99,-10.193105,-6.205296,-5.556981
+own (test split),394,p02,screen,,dim,p02_screen_dim,9.06,101,-9.152420,-7.224075,-7.038843
+own (test split),395,p02,screen,,dim,p02_screen_dim,9.54,99,-8.933218,-6.575761,-6.575761
+own (test split),396,p02,screen,,dim,p02_screen_dim,10.0,97,-9.374157,-9.076403,-7.131459
+own (test split),397,p02,screen,,dim,p02_screen_dim,10.53,97,-12.205334,-11.808584,-9.724717
+own (test split),398,p02,screen,,dim,p02_screen_dim,11.06,99,-11.288610,-10.650880,-9.724717
+own (test split),399,p02,screen,,dim,p02_screen_dim,11.54,98,-11.572948,-8.335471,-7.501925
+own (test split),400,p02,screen,,dim,p02_screen_dim,12.0,101,-12.371530,-9.909949,-9.446868
+own (test split),401,p02,screen,,dim,p02_screen_dim,12.53,101,-12.695072,-9.446868,-9.632100
+own (test split),402,p02,screen,,dim,p02_screen_dim,13.06,101,-12.501394,-10.002565,-8.428088
+own (test split),403,p02,screen,,dim,p02_screen_dim,13.54,99,-12.562666,-10.280415,-10.465648
+own (test split),404,p02,screen,,dim,p02_screen_dim,14.0,99,-14.176079,-11.299194,-10.187799
+own (test split),405,p02,screen,,dim,p02_screen_dim,14.53,99,-11.107161,-8.520704,-7.687157
+own (test split),406,p02,screen,,dim,p02_screen_dim,15.06,106,-10.598856,-10.095182,-6.668377
+own (test split),407,p02,screen,,dim,p02_screen_dim,15.54,109,-12.178463,-8.705936,-6.946226
+own (test split),408,p02,screen,,dim,p02_screen_dim,16.0,111,-11.650273,-9.909949,-8.335471
+own (test split),409,p02,screen,,dim,p02_screen_dim,16.53,111,-10.673341,-10.511955,-6.668377
+own (test split),410,p02,screen,,dim,p02_screen_dim,17.06,107,-11.085630,-9.909949,-8.891170
+own (test split),411,p02,screen,,dim,p02_screen_dim,17.54,100,-10.247847,-8.891170,-8.891170
+own (test split),412,p02,screen,,dim,p02_screen_dim,18.0,98,-11.141234,-7.501925,-5.834830
+own (test split),413,p02,screen,,dim,p02_screen_dim,18.53,95,-10.780069,-8.659628,-7.224075
+own (test split),414,p02,screen,,dim,p02_screen_dim,19.06,89,-10.820267,-8.242855,-8.242855
+own (test split),415,p02,screen,,dim,p02_screen_dim,19.54,90,-12.220528,-10.650880,-8.613320
+own (test split),416,p02,screen,,dim,p02_screen_dim,20.0,86,-9.139034,-5.556981,-4.908667
+own (test split),417,p02,screen,,dim,p02_screen_dim,20.53,88,-9.624574,-6.853610,-5.649597
+msu,0,msu001,screen,ipad,na,attack_client001_android_SD_ipad_video_scene01.jpg,,250,-3.239419,-3.148956,-3.797270
+msu,1,msu001,screen,iphone,na,attack_client001_android_SD_iphone_video_scene01.jpg,,215,-1.235806,-0.277849,-0.555698
+msu,2,msu001,print,printed_photo,na,attack_client001_android_SD_printed_photo_scene01.jpg,,228,-0.243517,-2.037560,0.416774
+msu,3,msu002,screen,ipad,na,attack_client002_android_SD_ipad_video_scene01.jpg,,149,-3.355609,-2.222792,-2.315409
+msu,4,msu002,screen,iphone,na,attack_client002_android_SD_iphone_video_scene01.jpg,,173,-1.773732,-1.852327,-0.833547
+msu,5,msu002,print,printed_photo,na,attack_client002_android_SD_printed_photo_scene01.jpg,,200,-1.715410,-0.370465,-0.833547
+msu,6,msu003,screen,ipad,na,attack_client003_android_SD_ipad_video_scene01.jpg,,159,-2.809977,-3.889887,-4.075119
+msu,7,msu003,screen,iphone,na,attack_client003_android_SD_iphone_video_scene01.jpg,,175,-3.220495,-3.612038,-2.871107
+msu,8,msu003,print,printed_photo,na,attack_client003_android_SD_printed_photo_scene01.jpg,,150,-10.892307,-9.169019,-9.539484
+msu,9,msu005,screen,ipad,na,attack_client005_android_SD_ipad_video_scene01.jpg,,158,1.986736,2.130176,2.593258
+msu,10,msu005,screen,iphone,na,attack_client005_android_SD_iphone_video_scene01.jpg,,170,0.811927,-0.833547,1.204013
+msu,11,msu005,print,printed_photo,na,attack_client005_android_SD_printed_photo_scene01.jpg,,158,1.892013,4.028811,3.519421
+msu,12,msu006,screen,ipad,na,attack_client006_android_SD_ipad_video_scene01.jpg,,174,1.589336,1.204013,1.667094
+msu,13,msu006,screen,iphone,na,attack_client006_android_SD_iphone_video_scene01.jpg,,185,-1.134839,-0.926163,-1.944943
+msu,14,msu006,print,printed_photo,na,attack_client006_android_SD_printed_photo_scene01.jpg,,153,-3.468989,-3.241572,-3.704654
+msu,15,msu007,screen,ipad,na,attack_client007_android_SD_ipad_video_scene01.jpg,,193,-6.563277,-6.297912,-5.556981
+msu,16,msu007,screen,iphone,na,attack_client007_android_SD_iphone_video_scene01.jpg,,187,3.328341,4.538201,4.260352
+msu,17,msu007,print,printed_photo,na,attack_client007_android_SD_printed_photo_scene01.jpg,,155,-5.073967,-4.075119,-1.296629
+msu,18,msu008,screen,ipad,na,attack_client008_android_SD_ipad_video_scene01.jpg,,140,1.617206,0.555698,2.130176
+msu,19,msu008,screen,iphone,na,attack_client008_android_SD_iphone_video_scene01.jpg,,204,3.772178,2.593258,4.075119
+msu,20,msu008,print,printed_photo,na,attack_client008_android_SD_printed_photo_scene01.jpg,,142,-5.362875,-4.352968,-0.926163
+msu,21,msu009,screen,ipad,na,attack_client009_android_SD_ipad_video_scene01.jpg,,232,-10.139629,-8.057622,-8.335471
+msu,22,msu009,screen,iphone,na,attack_client009_android_SD_iphone_video_scene01.jpg,,191,-1.010896,-2.315409,0.926163
+msu,23,msu009,print,printed_photo,na,attack_client009_android_SD_printed_photo_scene01.jpg,,210,-9.401432,-7.224075,-9.354251
+msu,24,msu011,screen,ipad,na,attack_client011_android_SD_ipad_video_scene01.jpg,,212,-1.631753,1.574478,0.833547
+msu,25,msu011,screen,iphone,na,attack_client011_android_SD_iphone_video_scene01.jpg,,182,-2.911538,-3.056340,-2.408025
+msu,26,msu011,print,printed_photo,na,attack_client011_android_SD_printed_photo_scene01.jpg,,148,-0.019576,0.648314,3.056340
+msu,27,msu012,screen,ipad,na,attack_client012_android_SD_ipad_video_scene01.jpg,,199,0.771091,1.759711,2.130176
+msu,28,msu012,screen,iphone,na,attack_client012_android_SD_iphone_video_scene01.jpg,,190,3.501863,2.130176,3.797270
+msu,29,msu012,print,printed_photo,na,attack_client012_android_SD_printed_photo_scene01.jpg,,135,1.663137,3.797270,5.927446
+msu,30,msu013,screen,ipad,na,attack_client013_android_SD_ipad_video_scene01.jpg,,194,4.708451,5.649597,5.834830
+msu,31,msu013,screen,iphone,na,attack_client013_android_SD_iphone_video_scene01.jpg,,172,0.853494,2.593258,3.056340
+msu,32,msu013,print,printed_photo,na,attack_client013_android_SD_printed_photo_scene01.jpg,,118,3.447177,4.723434,6.483144
+msu,33,msu014,screen,ipad,na,attack_client014_android_SD_ipad_video_scene01.jpg,,154,-2.516529,-1.111396,-2.593258
+msu,34,msu014,screen,iphone,na,attack_client014_android_SD_iphone_video_scene01.jpg,,188,2.106690,1.481862,3.704654
+msu,35,msu014,print,printed_photo,na,attack_client014_android_SD_printed_photo_scene01.jpg,,134,-2.238262,0.185233,-0.926163
+msu,36,msu021,screen,ipad,na,attack_client021_android_SD_ipad_video_scene01.jpg,,191,-0.427023,1.574478,1.018780
+msu,37,msu021,screen,iphone,na,attack_client021_android_SD_iphone_video_scene01.jpg,,184,2.838645,2.222792,3.056340
+msu,38,msu021,print,printed_photo,na,attack_client021_android_SD_printed_photo_scene01.jpg,,205,1.854701,1.852327,1.574478
+msu,39,msu022,screen,ipad,na,attack_client022_android_SD_ipad_video_scene01.jpg,,192,-8.212646,-8.428088,-9.261635
+msu,40,msu022,screen,iphone,na,attack_client022_android_SD_iphone_video_scene01.jpg,,160,-0.227221,2.222792,1.389245
+msu,41,msu022,print,printed_photo,na,attack_client022_android_SD_printed_photo_scene01.jpg,,174,-1.763238,-0.740931,0.138925
+msu,42,msu023,screen,ipad,na,attack_client023_android_SD_ipad_video_scene01.jpg,,201,-3.781073,-1.667094,-2.315409
+msu,43,msu023,screen,iphone,na,attack_client023_android_SD_iphone_video_scene01.jpg,,178,3.815726,6.205296,7.965006
+msu,44,msu023,print,printed_photo,na,attack_client023_android_SD_printed_photo_scene01.jpg,,190,-1.527493,-1.574478,0.092616
+msu,45,msu024,screen,ipad,na,attack_client024_android_SD_ipad_video_scene01.jpg,,207,1.081797,1.852327,2.315409
+msu,46,msu024,screen,iphone,na,attack_client024_android_SD_iphone_video_scene01.jpg,,204,-0.209037,1.018780,0.185233
+msu,47,msu024,print,printed_photo,na,attack_client024_android_SD_printed_photo_scene01.jpg,,206,0.629307,2.315409,2.130176
+msu,48,msu026,screen,ipad,na,attack_client026_android_SD_ipad_video_scene01.jpg,,171,1.579387,1.574478,1.018780
+msu,49,msu026,screen,iphone,na,attack_client026_android_SD_iphone_video_scene01.jpg,,205,-4.345192,-6.483144,-5.649597
+msu,50,msu026,print,printed_photo,na,attack_client026_android_SD_printed_photo_scene01.jpg,,158,10.292622,11.808584,11.808584
+msu,51,msu028,screen,ipad,na,attack_client028_android_SD_ipad_video_scene01.jpg,,155,-0.029524,-0.926163,-1.296629
+msu,52,msu028,screen,iphone,na,attack_client028_android_SD_iphone_video_scene01.jpg,,200,0.609144,2.037560,1.944943
+msu,53,msu028,print,printed_photo,na,attack_client028_android_SD_printed_photo_scene01.jpg,,141,0.390624,1.389245,2.685874
+msu,54,msu029,screen,ipad,na,attack_client029_android_SD_ipad_video_scene01.jpg,,152,1.069064,0.555698,1.018780
+msu,55,msu029,screen,iphone,na,attack_client029_android_SD_iphone_video_scene01.jpg,,212,1.573945,2.222792,2.408025
+msu,56,msu029,print,printed_photo,na,attack_client029_android_SD_printed_photo_scene01.jpg,,158,-7.023637,-3.889887,-5.927446
+msu,57,msu030,screen,ipad,na,attack_client030_android_SD_ipad_video_scene01.jpg,,152,-1.145716,-1.296629,-2.037560
+msu,58,msu030,screen,iphone,na,attack_client030_android_SD_iphone_video_scene01.jpg,,205,-0.591660,1.018780,2.685874
+msu,59,msu030,print,printed_photo,na,attack_client030_android_SD_printed_photo_scene01.jpg,,136,-2.243773,0.000000,-0.463082
+msu,60,msu032,screen,ipad,na,attack_client032_android_SD_ipad_video_scene01.jpg,,186,-0.456530,0.555698,0.092616
+msu,61,msu032,screen,iphone,na,attack_client032_android_SD_iphone_video_scene01.jpg,,190,-0.100591,0.833547,1.018780
+msu,62,msu032,print,printed_photo,na,attack_client032_android_SD_printed_photo_scene01.jpg,,188,1.707548,1.667094,3.704654
+msu,63,msu033,screen,ipad,na,attack_client033_android_SD_ipad_video_scene01.jpg,,188,-2.872252,-2.778491,-2.500641
+msu,64,msu033,screen,iphone,na,attack_client033_android_SD_iphone_video_scene01.jpg,,156,7.967565,8.428088,8.613320
+msu,65,msu033,print,printed_photo,na,attack_client033_android_SD_printed_photo_scene01.jpg,,175,2.884080,2.315409,3.426805
+msu,66,msu034,screen,ipad,na,attack_client034_android_SD_ipad_video_scene01.jpg,,187,-4.689966,-3.056340,-3.704654
+msu,67,msu034,screen,iphone,na,attack_client034_android_SD_iphone_video_scene01.jpg,,210,-3.171067,-3.426805,-1.389245
+msu,68,msu034,print,printed_photo,na,attack_client034_android_SD_printed_photo_scene01.jpg,,196,-4.451796,-3.148956,-3.148956
+msu,69,msu035,screen,ipad,na,attack_client035_android_SD_ipad_video_scene01.jpg,,182,2.675801,2.963723,3.334188
+msu,70,msu035,screen,iphone,na,attack_client035_android_SD_iphone_video_scene01.jpg,,198,1.096230,1.481862,2.593258
+msu,71,msu035,print,printed_photo,na,attack_client035_android_SD_printed_photo_scene01.jpg,,180,0.439572,2.408025,2.408025
+msu,72,msu036,screen,ipad,na,attack_client036_android_SD_ipad_video_scene01.jpg,,188,1.345139,0.926163,1.481862
+msu,73,msu036,screen,iphone,na,attack_client036_android_SD_iphone_video_scene01.jpg,,173,2.437917,3.056340,4.167736
+msu,74,msu036,print,printed_photo,na,attack_client036_android_SD_printed_photo_scene01.jpg,,180,4.296387,7.224075,6.483144
+msu,75,msu037,screen,ipad,na,attack_client037_android_SD_ipad_video_scene01.jpg,,180,1.443885,2.778491,2.130176
+msu,76,msu037,screen,iphone,na,attack_client037_android_SD_iphone_video_scene01.jpg,,174,3.952135,4.075119,6.020063
+msu,77,msu037,print,printed_photo,na,attack_client037_android_SD_printed_photo_scene01.jpg,,186,3.708778,4.908667,5.001283
+msu,78,msu039,screen,ipad,na,attack_client039_android_SD_ipad_video_scene01.jpg,,170,-4.787158,-2.778491,-4.167736
+msu,79,msu039,screen,iphone,na,attack_client039_android_SD_iphone_video_scene01.jpg,,189,0.811921,2.037560,2.130176
+msu,80,msu039,print,printed_photo,na,attack_client039_android_SD_printed_photo_scene01.jpg,,163,3.690458,3.797270,6.668377
+msu,81,msu042,screen,ipad,na,attack_client042_android_SD_ipad_video_scene01.jpg,,209,0.008335,0.092616,1.759711
+msu,82,msu042,screen,iphone,na,attack_client042_android_SD_iphone_video_scene01.jpg,,194,7.268686,5.279132,8.613320
+msu,83,msu042,print,printed_photo,na,attack_client042_android_SD_printed_photo_scene01.jpg,,198,0.840126,2.037560,3.704654
+msu,84,msu048,screen,ipad,na,attack_client048_android_SD_ipad_video_scene01.jpg,,188,1.044564,2.871107,2.408025
+msu,85,msu048,screen,iphone,na,attack_client048_android_SD_iphone_video_scene01.jpg,,212,0.216718,1.111396,1.389245
+msu,86,msu048,print,printed_photo,na,attack_client048_android_SD_printed_photo_scene01.jpg,,204,-1.437645,0.000000,2.871107
+msu,87,msu049,screen,ipad,na,attack_client049_android_SD_ipad_video_scene01.jpg,,173,-0.895060,-1.018780,0.000000
+msu,88,msu049,screen,iphone,na,attack_client049_android_SD_iphone_video_scene01.jpg,,219,-1.518105,-2.315409,-1.944943
+msu,89,msu049,print,printed_photo,na,attack_client049_android_SD_printed_photo_scene01.jpg,,195,-1.911501,-1.852327,-1.389245
+msu,90,msu050,screen,ipad,na,attack_client050_android_SD_ipad_video_scene01.jpg,,201,2.600110,4.630817,3.889887
+msu,91,msu050,screen,iphone,na,attack_client050_android_SD_iphone_video_scene01.jpg,,192,-2.310761,-3.056340,-1.204013
+msu,92,msu050,print,printed_photo,na,attack_client050_android_SD_printed_photo_scene01.jpg,,214,-1.646468,0.926163,1.574478
+msu,93,msu051,screen,ipad,na,attack_client051_android_SD_ipad_video_scene01.jpg,,210,-0.278642,0.370465,0.185233
+msu,94,msu051,screen,iphone,na,attack_client051_android_SD_iphone_video_scene01.jpg,,199,0.244322,-0.463082,-0.092616
+msu,95,msu051,print,printed_photo,na,attack_client051_android_SD_printed_photo_scene01.jpg,,215,3.384593,4.445585,5.834830
+msu,96,msu053,screen,ipad,na,attack_client053_android_SD_ipad_video_scene01.jpg,,202,-8.665116,-6.853610,-8.150239
+msu,97,msu053,screen,iphone,na,attack_client053_android_SD_iphone_video_scene01.jpg,,181,-1.387231,0.833547,1.667094
+msu,98,msu053,print,printed_photo,na,attack_client053_android_SD_printed_photo_scene01.jpg,,155,-2.747483,1.944943,0.648314
+msu,99,msu054,screen,ipad,na,attack_client054_android_SD_ipad_video_scene01.jpg,,223,-2.921510,0.926163,-0.648314
+msu,100,msu054,screen,iphone,na,attack_client054_android_SD_iphone_video_scene01.jpg,,190,6.481761,7.687157,7.501925
+msu,101,msu054,print,printed_photo,na,attack_client054_android_SD_printed_photo_scene01.jpg,,196,-3.652956,-3.797270,-1.389245
+msu,102,msu055,screen,ipad,na,attack_client055_android_SD_ipad_video_scene01.jpg,,223,-2.691760,-1.667094,-1.574478
+msu,103,msu055,screen,iphone,na,attack_client055_android_SD_iphone_video_scene01.jpg,,201,1.357976,0.648314,1.759711
+msu,104,msu055,print,printed_photo,na,attack_client055_android_SD_printed_photo_scene01.jpg,,198,-5.168290,-4.445585,-1.852327
+msu,105,msu001,live,real,na,real_client001_android_SD_scene01.jpg,,228,10.301678,10.650880,11.808584
+msu,106,msu002,live,real,na,real_client002_android_SD_scene01.jpg,,145,4.766858,4.630817,5.093899
+msu,107,msu003,live,real,na,real_client003_android_SD_scene01.jpg,,166,15.401669,11.808584,11.808584
+msu,108,msu005,live,real,na,real_client005_android_SD_scene01.jpg,,184,7.795012,7.779773,8.798553
+msu,109,msu006,live,real,na,real_client006_android_SD_scene01.jpg,,159,9.335217,10.650880,11.113962
+msu,110,msu007,live,real,na,real_client007_android_SD_scene01.jpg,,191,9.073399,11.808584,11.762277
+msu,111,msu008,live,real,na,real_client008_android_SD_scene01.jpg,,194,12.775303,11.808584,11.808584
+msu,112,msu009,live,real,na,real_client009_android_SD_scene01.jpg,,166,16.066845,11.808584,11.808584
+msu,113,msu011,live,real,na,real_client011_android_SD_scene01.jpg,,197,11.244527,9.539484,11.391811
+msu,114,msu012,live,real,na,real_client012_android_SD_scene01.jpg,,193,7.927559,11.669660,11.484427
+msu,115,msu013,live,real,na,real_client013_android_SD_scene01.jpg,,214,3.693974,1.204013,4.816050
+msu,116,msu014,live,real,na,real_client014_android_SD_scene01.jpg,,204,10.495848,11.762277,11.808584
+msu,117,msu021,live,real,na,real_client021_android_SD_scene01.jpg,,209,9.765467,9.539484,8.613320
+msu,118,msu022,live,real,na,real_client022_android_SD_scene01.jpg,,165,8.428579,6.483144,8.150239
+msu,119,msu023,live,real,na,real_client023_android_SD_scene01.jpg,,212,14.589251,11.206578,11.808584
+msu,120,msu024,live,real,na,real_client024_android_SD_scene01.jpg,,218,7.554806,8.335471,8.705936
+msu,121,msu026,live,real,na,real_client026_android_SD_scene01.jpg,,178,14.078888,11.808584,11.808584
+msu,122,msu028,live,real,na,real_client028_android_SD_scene01.jpg,,159,13.319828,11.808584,11.808584
+msu,123,msu029,live,real,na,real_client029_android_SD_scene01.jpg,,166,6.240712,4.352968,5.556981
+msu,124,msu030,live,real,na,real_client030_android_SD_scene01.jpg,,138,11.773337,11.808584,11.808584
+msu,125,msu032,live,real,na,real_client032_android_SD_scene01.jpg,,152,12.196025,11.762277,11.808584
+msu,126,msu033,live,real,na,real_client033_android_SD_scene01.jpg,,148,13.682632,11.808584,11.808584
+msu,127,msu034,live,real,na,real_client034_android_SD_scene01.jpg,,179,16.753338,11.808584,11.808584
+msu,128,msu035,live,real,na,real_client035_android_SD_scene01.jpg,,143,12.313023,11.021345,11.808584
+msu,129,msu036,live,real,na,real_client036_android_SD_scene01.jpg,,180,12.026354,10.928729,11.808584
+msu,130,msu037,live,real,na,real_client037_android_SD_scene01.jpg,,147,13.471465,11.808584,11.808584
+msu,131,msu039,live,real,na,real_client039_android_SD_scene01.jpg,,152,10.650419,11.808584,11.808584
+msu,132,msu042,live,real,na,real_client042_android_SD_scene01.jpg,,168,12.143654,11.808584,11.762277
+msu,133,msu048,live,real,na,real_client048_android_SD_scene01.jpg,,160,10.552025,11.299194,11.808584
+msu,134,msu049,live,real,na,real_client049_android_SD_scene01.jpg,,159,20.271004,11.808584,11.808584
+msu,135,msu050,live,real,na,real_client050_android_SD_scene01.jpg,,152,11.772501,11.206578,11.808584
+msu,136,msu051,live,real,na,real_client051_android_SD_scene01.jpg,,151,10.363874,10.650880,10.650880
+msu,137,msu053,live,real,na,real_client053_android_SD_scene01.jpg,,158,6.164418,8.428088,7.594541
+msu,138,msu054,live,real,na,real_client054_android_SD_scene01.jpg,,182,12.855381,11.808584,11.808584
+msu,139,msu055,live,real,na,real_client055_android_SD_scene01.jpg,,154,13.653176,11.808584,11.808584
+kaggle,0,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,0.0,395,-5.074446,-2.685874,-2.315409
+kaggle,1,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,1.02,459,-5.485975,-3.334188,-1.389245
+kaggle,2,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,2.0,542,-7.653689,-5.093899,-6.205296
+kaggle,3,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,3.02,729,-5.953104,-4.167736,-4.816050
+kaggle,4,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,4.01,965,-0.074043,2.593258,2.315409
+kaggle,5,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,5.03,1292,2.577740,4.816050,3.704654
+kaggle,6,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,6.01,1513,-4.235498,-2.963723,-3.056340
+kaggle,7,kg9f53589e,print,cutout_printout,na,cut-out printouts/kg9f53589e,7.03,1611,-2.879976,-1.296629,-3.056340
+kaggle,8,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,0.0,750,-4.644067,-1.204013,-1.667094
+kaggle,9,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,1.02,833,-4.076490,-3.797270,-4.445585
+kaggle,10,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,2.0,951,-4.325600,-2.963723,-3.056340
+kaggle,11,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,3.02,1073,-3.625214,-2.871107,-2.222792
+kaggle,12,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,4.01,1232,-5.135814,-3.426805,-5.001283
+kaggle,13,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,5.03,1442,-3.974813,-3.982503,-4.816050
+kaggle,14,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,6.01,1724,-5.441466,-5.093899,-5.927446
+kaggle,15,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,7.03,1892,-5.688838,-6.297912,-6.390528
+kaggle,16,kg5bb369f3,print,cutout_printout,na,cut-out printouts/kg5bb369f3,8.01,1907,-7.002633,-6.205296,-6.020063
+kaggle,17,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,0.0,389,-6.437735,0.833547,-1.667094
+kaggle,18,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,1.05,451,-8.242083,-2.130176,-3.612038
+kaggle,19,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,2.0,611,-6.458523,-3.704654,-5.001283
+kaggle,20,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,3.02,701,-6.505080,-4.816050,-5.834830
+kaggle,21,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,4.01,868,-4.843318,-2.130176,-3.519421
+kaggle,22,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,5.03,1089,-3.564018,-0.555698,-3.148956
+kaggle,23,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,6.01,1314,-4.409277,-1.759711,-2.778491
+kaggle,24,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,7.03,1474,-3.892329,-2.130176,-1.759711
+kaggle,25,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,8.01,1480,-4.205980,-1.296629,-3.148956
+kaggle,26,kg5569a12b,print,cutout_printout,na,cut-out printouts/kg5569a12b,9.03,1505,-0.597176,0.555698,0.740931
+kaggle,27,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,0.0,519,-8.395567,-6.483144,-6.112679
+kaggle,28,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,1.02,627,-8.853624,-7.131459,-6.205296
+kaggle,29,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,2.0,810,-10.451728,-7.687157,-7.594541
+kaggle,30,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,3.02,1119,-4.988672,-2.315409,-3.704654
+kaggle,31,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,4.01,1380,-8.824903,-7.501925,-8.150239
+kaggle,32,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,5.03,1485,-9.340091,-7.501925,-9.261635
+kaggle,33,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,6.01,1319,-8.777069,-6.205296,-7.131459
+kaggle,34,kg6aade0ea,print,cutout_printout,na,cut-out printouts/kg6aade0ea,7.03,1449,-10.298717,-8.705936,-10.465648
+kaggle,35,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,0.0,732,1.721850,3.056340,3.982503
+kaggle,36,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,1.02,794,-0.054181,0.185233,0.277849
+kaggle,37,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,2.0,966,1.246176,0.277849,3.148956
+kaggle,38,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,3.02,1150,1.587101,-1.204013,1.204013
+kaggle,39,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,4.01,1368,-5.470336,-3.334188,-4.260352
+kaggle,40,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,5.03,1630,-7.816012,-8.983786,-6.760993
+kaggle,41,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,6.01,1846,-9.051003,-9.446868,-6.853610
+kaggle,42,kg6aafbe45,print,cutout_printout,na,cut-out printouts/kg6aafbe45,8.01,1840,-8.382371,-9.169019,-8.705936
+kaggle,43,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,0.0,446,-7.473944,-6.483144,-6.853610
+kaggle,44,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,1.02,508,-6.374168,-5.556981,-5.186516
+kaggle,45,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,2.0,548,-7.047084,-6.575761,-4.816050
+kaggle,46,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,3.02,644,-11.490135,-9.261635,-10.373032
+kaggle,47,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,4.01,818,-8.789984,-6.205296,-6.946226
+kaggle,48,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,5.03,923,-7.269914,-5.371748,-5.279132
+kaggle,49,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,6.01,1116,-6.226818,-5.001283,-5.742214
+kaggle,50,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,7.03,1315,-7.027516,-9.076403,-6.390528
+kaggle,51,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,8.01,1337,-7.443778,-8.428088,-7.501925
+kaggle,52,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,9.03,1482,-7.826524,-6.946226,-6.390528
+kaggle,53,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,10.02,1472,-7.030522,-7.131459,-6.760993
+kaggle,54,kg884d9fd3,print,cutout_printout,na,cut-out printouts/kg884d9fd3,11.0,1535,-8.323824,-6.483144,-6.760993
+kaggle,55,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,0.0,535,-5.795403,-2.037560,-2.963723
+kaggle,56,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,1.02,631,0.914887,1.481862,1.574478
+kaggle,57,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,2.0,804,-3.060836,-0.833547,-0.370465
+kaggle,58,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,3.02,1062,1.638233,5.279132,3.148956
+kaggle,59,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,4.01,1427,-2.026465,-0.463082,1.111396
+kaggle,60,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,5.03,1732,-2.738364,-0.555698,1.204013
+kaggle,61,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,6.01,1762,-4.878016,-2.408025,-3.056340
+kaggle,62,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,7.03,1578,-1.970526,-0.555698,-1.481862
+kaggle,63,kg4e8af551,print,cutout_printout,na,cut-out printouts/kg4e8af551,8.01,1611,-1.678090,-0.555698,-0.648314
+kaggle,64,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,0.0,399,-5.837029,-3.982503,-3.982503
+kaggle,65,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,1.02,492,-5.301285,-3.889887,-3.241572
+kaggle,66,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,2.0,607,-6.797932,-5.186516,-5.927446
+kaggle,67,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,3.02,737,-3.920934,-3.704654,-2.408025
+kaggle,68,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,4.01,988,-1.741719,-0.555698,-0.463082
+kaggle,69,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,5.03,1268,-5.038297,-3.982503,-3.519421
+kaggle,70,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,6.01,1380,-4.592031,-3.334188,-3.889887
+kaggle,71,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,7.03,1398,-5.506287,-5.371748,-4.075119
+kaggle,72,kg58c89e41,print,cutout_printout,na,cut-out printouts/kg58c89e41,8.01,1437,-5.414131,-4.723434,-3.241572
+kaggle,73,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,0.0,745,-1.476160,0.463082,1.111396
+kaggle,74,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,1.02,794,-0.567247,1.389245,0.555698
+kaggle,75,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,2.0,892,-3.303966,-1.944943,-1.296629
+kaggle,76,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,3.02,1096,-2.364880,0.648314,-2.222792
+kaggle,77,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,4.01,1371,-4.274668,-3.426805,-3.519421
+kaggle,78,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,5.03,1602,-2.589410,-1.759711,-3.519421
+kaggle,79,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,6.01,1720,-6.788111,-6.853610,-7.038843
+kaggle,80,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,7.03,1878,-7.042371,-6.390528,-6.760993
+kaggle,81,kg9973bcb4,print,cutout_printout,na,cut-out printouts/kg9973bcb4,8.01,1748,-5.386348,-6.297912,-4.723434
+kaggle,82,kg9f53589e,live,selfie,na,live_selfie/kg9f53589e,0.0,1233,0.142109,-1.574478,0.740931
+kaggle,83,kg5bb369f3,live,selfie,na,live_selfie/kg5bb369f3,0.0,1451,0.196739,2.871107,4.723434
+kaggle,84,kg5569a12b,live,selfie,na,live_selfie/kg5569a12b,0.0,1841,-1.038978,0.185233,-1.574478
+kaggle,85,kg6aade0ea,live,selfie,na,live_selfie/kg6aade0ea,0.0,1260,0.887830,2.963723,2.222792
+kaggle,86,kg6aafbe45,live,selfie,na,live_selfie/kg6aafbe45,0.0,1523,14.080038,11.808584,11.808584
+kaggle,87,kg884d9fd3,live,selfie,na,live_selfie/kg884d9fd3,0.0,1284,6.212529,10.650880,10.095182
+kaggle,88,kg4e8af551,live,selfie,na,live_selfie/kg4e8af551,0.0,1180,11.366701,10.002565,10.187799
+kaggle,89,kg58c89e41,live,selfie,na,live_selfie/kg58c89e41,0.0,1053,3.852603,3.612038,3.334188
+kaggle,90,kg9973bcb4,live,selfie,na,live_selfie/kg9973bcb4,0.0,1906,2.207575,2.963723,2.037560
+kaggle,91,kg9f53589e,live,video,na,live_video/kg9f53589e,0.0,514,-1.301002,-2.222792,-1.574478
+kaggle,92,kg9f53589e,live,video,na,live_video/kg9f53589e,1.03,474,-1.792598,-1.852327,-0.926163
+kaggle,93,kg9f53589e,live,video,na,live_video/kg9f53589e,2.03,473,-2.285550,-0.185233,-2.500641
+kaggle,94,kg9f53589e,live,video,na,live_video/kg9f53589e,3.03,497,0.170938,0.231541,0.092616
+kaggle,95,kg9f53589e,live,video,na,live_video/kg9f53589e,4.03,508,3.122660,2.408025,4.723434
+kaggle,96,kg9f53589e,live,video,na,live_video/kg9f53589e,5.03,501,-1.104957,0.000000,-0.926163
+kaggle,97,kg9f53589e,live,video,na,live_video/kg9f53589e,6.03,480,-0.604419,-0.833547,-1.667094
+kaggle,98,kg9f53589e,live,video,na,live_video/kg9f53589e,7.03,465,-0.116947,0.740931,-0.370465
+kaggle,99,kg9f53589e,live,video,na,live_video/kg9f53589e,8.03,506,1.099818,1.759711,0.277849
+kaggle,100,kg9f53589e,live,video,na,live_video/kg9f53589e,9.03,527,-3.292315,-2.593258,-1.204013
+kaggle,101,kg9f53589e,live,video,na,live_video/kg9f53589e,10.03,513,-0.792592,-0.555698,-1.111396
+kaggle,102,kg5bb369f3,live,video,na,live_video/kg5bb369f3,0.0,755,1.318942,0.185233,1.111396
+kaggle,103,kg5bb369f3,live,video,na,live_video/kg5bb369f3,1.03,747,1.838691,1.204013,1.481862
+kaggle,104,kg5bb369f3,live,video,na,live_video/kg5bb369f3,2.03,733,-0.290792,-0.370465,-1.111396
+kaggle,105,kg5bb369f3,live,video,na,live_video/kg5bb369f3,3.03,752,2.597052,0.926163,2.130176
+kaggle,106,kg5bb369f3,live,video,na,live_video/kg5bb369f3,4.03,758,2.633533,0.185233,1.944943
+kaggle,107,kg5bb369f3,live,video,na,live_video/kg5bb369f3,5.03,743,-0.665988,-0.277849,0.000000
+kaggle,108,kg5bb369f3,live,video,na,live_video/kg5bb369f3,6.03,774,-1.060273,-2.685874,-1.759711
+kaggle,109,kg5bb369f3,live,video,na,live_video/kg5bb369f3,7.03,685,-4.139736,-4.445585,-3.612038
+kaggle,110,kg5bb369f3,live,video,na,live_video/kg5bb369f3,8.03,713,0.003368,0.833547,3.148956
+kaggle,111,kg5bb369f3,live,video,na,live_video/kg5bb369f3,9.03,807,2.369599,4.816050,4.908667
+kaggle,112,kg5bb369f3,live,video,na,live_video/kg5bb369f3,10.03,809,4.264640,5.834830,5.556981
+kaggle,113,kg5569a12b,live,video,na,live_video/kg5569a12b,0.0,431,-0.683118,-0.463082,-0.926163
+kaggle,114,kg5569a12b,live,video,na,live_video/kg5569a12b,1.03,434,-1.595281,-0.740931,-0.648314
+kaggle,115,kg5569a12b,live,video,na,live_video/kg5569a12b,2.01,400,-2.671414,-2.037560,-2.685874
+kaggle,116,kg5569a12b,live,video,na,live_video/kg5569a12b,3.02,425,-2.102689,-3.519421,-1.667094
+kaggle,117,kg5569a12b,live,video,na,live_video/kg5569a12b,4.03,403,1.349789,1.667094,3.982503
+kaggle,118,kg5569a12b,live,video,na,live_video/kg5569a12b,5.01,392,0.569938,2.778491,0.833547
+kaggle,119,kg5569a12b,live,video,na,live_video/kg5569a12b,6.02,422,1.101156,2.222792,2.408025
+kaggle,120,kg5569a12b,live,video,na,live_video/kg5569a12b,7.03,397,-2.752771,-2.315409,-1.574478
+kaggle,121,kg5569a12b,live,video,na,live_video/kg5569a12b,8.01,360,-3.005922,-1.574478,-0.833547
+kaggle,122,kg5569a12b,live,video,na,live_video/kg5569a12b,9.02,378,-3.325737,-3.982503,-1.296629
+kaggle,123,kg5569a12b,live,video,na,live_video/kg5569a12b,10.03,415,-0.310309,0.926163,0.277849
+kaggle,124,kg5569a12b,live,video,na,live_video/kg5569a12b,11.01,459,2.463571,1.759711,1.759711
+kaggle,125,kg5569a12b,live,video,na,live_video/kg5569a12b,12.02,477,0.598978,0.740931,-0.648314
+kaggle,126,kg5569a12b,live,video,na,live_video/kg5569a12b,13.03,408,-1.863187,-1.667094,-0.926163
+kaggle,127,kg6aade0ea,live,video,na,live_video/kg6aade0ea,0.0,498,1.743285,3.426805,6.297912
+kaggle,128,kg6aade0ea,live,video,na,live_video/kg6aade0ea,1.0,496,1.104542,4.352968,7.316691
+kaggle,129,kg6aade0ea,live,video,na,live_video/kg6aade0ea,2.0,482,-0.225541,1.667094,1.944943
+kaggle,130,kg6aade0ea,live,video,na,live_video/kg6aade0ea,3.01,499,3.672182,4.723434,6.575761
+kaggle,131,kg6aade0ea,live,video,na,live_video/kg6aade0ea,4.01,513,-1.194930,0.926163,4.167736
+kaggle,132,kg6aade0ea,live,video,na,live_video/kg6aade0ea,5.01,499,-0.279483,1.944943,4.167736
+kaggle,133,kg6aade0ea,live,video,na,live_video/kg6aade0ea,6.01,493,0.058535,2.222792,2.963723
+kaggle,134,kg6aade0ea,live,video,na,live_video/kg6aade0ea,7.02,496,4.594021,5.093899,8.613320
+kaggle,135,kg6aade0ea,live,video,na,live_video/kg6aade0ea,8.02,509,6.129421,4.908667,8.150239
+kaggle,136,kg6aade0ea,live,video,na,live_video/kg6aade0ea,9.02,502,3.337305,7.224075,8.798553
+kaggle,137,kg6aade0ea,live,video,na,live_video/kg6aade0ea,10.02,495,2.645264,5.742214,5.279132
+kaggle,138,kg6aade0ea,live,video,na,live_video/kg6aade0ea,11.03,499,2.087782,5.186516,6.020063
+kaggle,139,kg6aafbe45,live,video,na,live_video/kg6aafbe45,0.0,630,9.763213,8.242855,8.937477
+kaggle,140,kg6aafbe45,live,video,na,live_video/kg6aafbe45,1.0,648,8.482174,8.150239,8.150239
+kaggle,141,kg6aafbe45,live,video,na,live_video/kg6aafbe45,2.0,643,7.194657,5.556981,6.853610
+kaggle,142,kg6aafbe45,live,video,na,live_video/kg6aafbe45,3.01,666,9.671059,9.539484,9.076403
+kaggle,143,kg6aafbe45,live,video,na,live_video/kg6aafbe45,4.01,651,6.924477,7.270383,7.594541
+kaggle,144,kg6aafbe45,live,video,na,live_video/kg6aafbe45,5.01,685,11.227121,11.484427,11.762277
+kaggle,145,kg6aafbe45,live,video,na,live_video/kg6aafbe45,6.01,644,7.275872,6.483144,6.575761
+kaggle,146,kg6aafbe45,live,video,na,live_video/kg6aafbe45,7.01,580,5.837346,5.371748,6.390528
+kaggle,147,kg6aafbe45,live,video,na,live_video/kg6aafbe45,8.02,664,9.554702,8.335471,9.817333
+kaggle,148,kg6aafbe45,live,video,na,live_video/kg6aafbe45,9.02,774,8.568604,8.150239,10.280415
+kaggle,149,kg6aafbe45,live,video,na,live_video/kg6aafbe45,10.02,710,9.646119,9.169019,9.446868
+kaggle,150,kg884d9fd3,live,video,na,live_video/kg884d9fd3,0.0,579,2.190206,4.816050,4.630817
+kaggle,151,kg884d9fd3,live,video,na,live_video/kg884d9fd3,1.03,593,-2.402518,-0.277849,-0.463082
+kaggle,152,kg884d9fd3,live,video,na,live_video/kg884d9fd3,2.03,585,-3.106633,-0.370465,-1.018780
+kaggle,153,kg884d9fd3,live,video,na,live_video/kg884d9fd3,3.03,541,-0.905843,7.224075,3.797270
+kaggle,154,kg884d9fd3,live,video,na,live_video/kg884d9fd3,4.03,574,2.825644,7.131459,7.131459
+kaggle,155,kg884d9fd3,live,video,na,live_video/kg884d9fd3,5.03,506,0.489727,0.555698,3.148956
+kaggle,156,kg884d9fd3,live,video,na,live_video/kg884d9fd3,6.03,561,1.747875,2.500641,2.685874
+kaggle,157,kg884d9fd3,live,video,na,live_video/kg884d9fd3,7.03,672,-0.822286,4.445585,4.260352
+kaggle,158,kg4e8af551,live,video,na,live_video/kg4e8af551,0.0,368,9.207687,7.779773,8.983786
+kaggle,159,kg4e8af551,live,video,na,live_video/kg4e8af551,1.01,343,5.749074,4.538201,5.371748
+kaggle,160,kg4e8af551,live,video,na,live_video/kg4e8af551,2.03,336,8.879221,11.484427,10.465648
+kaggle,161,kg4e8af551,live,video,na,live_video/kg4e8af551,3.01,368,9.462034,9.076403,9.446868
+kaggle,162,kg4e8af551,live,video,na,live_video/kg4e8af551,4.01,357,7.205742,5.279132,7.224075
+kaggle,163,kg4e8af551,live,video,na,live_video/kg4e8af551,5.03,344,6.617941,8.057622,8.983786
+kaggle,164,kg4e8af551,live,video,na,live_video/kg4e8af551,6.01,358,6.432563,7.316691,6.575761
+kaggle,165,kg4e8af551,live,video,na,live_video/kg4e8af551,7.03,349,9.412888,10.187799,10.928729
+kaggle,166,kg4e8af551,live,video,na,live_video/kg4e8af551,8.0,357,10.323269,9.724717,10.465648
+kaggle,167,kg4e8af551,live,video,na,live_video/kg4e8af551,9.02,357,10.016837,11.299194,11.808584
+kaggle,168,kg4e8af551,live,video,na,live_video/kg4e8af551,10.03,361,9.748549,9.446868,11.808584
+kaggle,169,kg58c89e41,live,video,na,live_video/kg58c89e41,0.0,218,2.200033,1.296629,3.797270
+kaggle,170,kg58c89e41,live,video,na,live_video/kg58c89e41,1.0,242,-4.899960,-3.889887,-4.167736
+kaggle,171,kg58c89e41,live,video,na,live_video/kg58c89e41,2.01,210,2.464987,1.852327,2.871107
+kaggle,172,kg58c89e41,live,video,na,live_video/kg58c89e41,3.01,222,0.564325,0.277849,2.315409
+kaggle,173,kg58c89e41,live,video,na,live_video/kg58c89e41,4.02,216,3.845720,6.020063,6.483144
+kaggle,174,kg58c89e41,live,video,na,live_video/kg58c89e41,5.02,215,3.313475,2.315409,4.538201
+kaggle,175,kg58c89e41,live,video,na,live_video/kg58c89e41,6.02,214,-3.218992,-2.871107,-2.871107
+kaggle,176,kg58c89e41,live,video,na,live_video/kg58c89e41,7.03,213,-0.388911,0.648314,1.759711
+kaggle,177,kg58c89e41,live,video,na,live_video/kg58c89e41,8.03,208,2.151285,2.685874,3.797270
+kaggle,178,kg58c89e41,live,video,na,live_video/kg58c89e41,9.04,208,3.854320,2.685874,3.334188
+kaggle,179,kg58c89e41,live,video,na,live_video/kg58c89e41,10.04,207,3.362518,4.630817,4.445585
+kaggle,180,kg58c89e41,live,video,na,live_video/kg58c89e41,11.0,209,4.684408,4.630817,5.279132
+kaggle,181,kg58c89e41,live,video,na,live_video/kg58c89e41,12.01,204,5.681979,4.908667,8.242855
+kaggle,182,kg9973bcb4,live,video,na,live_video/kg9973bcb4,0.0,622,-0.102936,1.944943,3.426805
+kaggle,183,kg9973bcb4,live,video,na,live_video/kg9973bcb4,1.03,620,6.218396,7.224075,10.095182
+kaggle,184,kg9973bcb4,live,video,na,live_video/kg9973bcb4,2.02,606,5.082594,3.334188,6.853610
+kaggle,185,kg9973bcb4,live,video,na,live_video/kg9973bcb4,3.02,612,2.990791,2.037560,5.371748
+kaggle,186,kg9973bcb4,live,video,na,live_video/kg9973bcb4,4.02,620,0.868927,4.723434,5.834830
+kaggle,187,kg9973bcb4,live,video,na,live_video/kg9973bcb4,5.01,599,-3.276551,-1.018780,-0.277849
+kaggle,188,kg9973bcb4,live,video,na,live_video/kg9973bcb4,6.01,541,-3.664322,-1.111396,-3.889887
+kaggle,189,kg9973bcb4,live,video,na,live_video/kg9973bcb4,7.0,574,-0.757611,1.296629,1.759711
+kaggle,190,kg9973bcb4,live,video,na,live_video/kg9973bcb4,8.03,575,-1.160547,2.408025,3.056340
+kaggle,191,kg9973bcb4,live,video,na,live_video/kg9973bcb4,9.03,537,1.007701,7.224075,7.594541
+kaggle,192,kg9973bcb4,live,video,na,live_video/kg9973bcb4,10.02,608,0.212596,5.556981,7.131459
+kaggle,193,kg9973bcb4,live,video,na,live_video/kg9973bcb4,11.02,666,-1.679044,-0.185233,1.574478
+kaggle,194,kg9973bcb4,live,video,na,live_video/kg9973bcb4,12.01,704,-0.910335,0.092616,0.185233
+kaggle,195,kg9973bcb4,live,video,na,live_video/kg9973bcb4,13.01,670,-2.253716,0.648314,2.130176
+kaggle,196,kg9973bcb4,live,video,na,live_video/kg9973bcb4,14.01,638,-3.776013,-2.500641,-1.389245
+kaggle,197,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,0.0,369,-9.193367,-9.632100,-9.169019
+kaggle,198,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,1.02,417,-9.904718,-9.817333,-9.169019
+kaggle,199,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,2.0,484,-12.506513,-11.808584,-11.808584
+kaggle,200,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,3.02,601,-11.306248,-9.539484,-10.465648
+kaggle,201,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,4.01,763,-9.224171,-7.687157,-8.335471
+kaggle,202,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,5.03,1009,-14.927179,-11.808584,-11.808584
+kaggle,203,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,6.01,1368,-10.568480,-7.872390,-8.613320
+kaggle,204,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,7.03,1543,-7.809425,-6.205296,-5.279132
+kaggle,205,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,8.01,1685,-7.086873,-5.371748,-3.334188
+kaggle,206,kg9f53589e,print,a4_printout,na,printouts/kg9f53589e,9.03,1690,-8.600189,-5.973755,-6.668377
+kaggle,207,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,1.03,354,-8.093363,-3.426805,-3.889887
+kaggle,208,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,2.02,298,-10.968495,-10.002565,-9.539484
+kaggle,209,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,3.02,353,-10.998117,-6.575761,-8.335471
+kaggle,210,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,4.02,420,-12.047905,-8.705936,-8.891170
+kaggle,211,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,5.02,489,-11.474710,-9.261635,-10.280415
+kaggle,212,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,6.02,578,-8.600098,-4.816050,-6.020063
+kaggle,213,kg5bb369f3,print,a4_printout,na,printouts/kg5bb369f3,7.02,734,-8.619067,-6.020063,-6.112679
+kaggle,214,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,0.0,417,-4.807604,-5.186516,-4.908667
+kaggle,215,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,1.02,431,-5.112547,-3.148956,-3.056340
+kaggle,216,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,2.0,522,-5.862913,-4.167736,-3.797270
+kaggle,217,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,3.02,635,-5.767492,-4.723434,-4.723434
+kaggle,218,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,4.01,748,-4.511835,-3.519421,-3.982503
+kaggle,219,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,5.03,1009,-8.854986,-7.594541,-7.594541
+kaggle,220,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,6.01,1193,-10.912256,-11.391811,-9.724717
+kaggle,221,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,7.03,1490,-9.075432,-8.335471,-9.354251
+kaggle,222,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,8.01,1653,-8.987099,-8.705936,-8.150239
+kaggle,223,kg5569a12b,print,a4_printout,na,printouts/kg5569a12b,9.03,1581,-11.476525,-9.909949,-10.095182
+kaggle,224,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,0.0,479,-11.072798,-9.539484,-8.891170
+kaggle,225,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,1.02,530,-6.877954,-5.001283,-5.464365
+kaggle,226,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,2.0,596,-9.959846,-8.150239,-7.131459
+kaggle,227,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,3.02,690,-10.463020,-8.891170,-8.520704
+kaggle,228,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,4.01,811,-8.628866,-7.501925,-5.927446
+kaggle,229,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,5.03,1015,-8.481332,-6.112679,-5.186516
+kaggle,230,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,6.01,1158,-7.664446,-6.390528,-7.038843
+kaggle,231,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,7.03,1366,-10.375203,-6.946226,-7.965006
+kaggle,232,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,8.01,1403,-10.622160,-8.705936,-8.891170
+kaggle,233,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,9.03,1420,-8.350533,-6.575761,-5.464365
+kaggle,234,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,10.02,1404,-8.603384,-8.335471,-8.242855
+kaggle,235,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,11.0,1428,-9.113495,-6.760993,-8.150239
+kaggle,236,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,12.02,1416,-9.227817,-7.872390,-6.297912
+kaggle,237,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,13.01,1383,-8.727350,-6.946226,-6.760993
+kaggle,238,kg6aade0ea,print,a4_printout,na,printouts/kg6aade0ea,14.02,1368,-9.671772,-7.779773,-8.150239
+kaggle,239,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,0.0,736,2.827011,2.130176,2.315409
+kaggle,240,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,1.02,878,1.006011,0.463082,1.759711
+kaggle,241,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,2.0,1048,0.471220,0.648314,-0.463082
+kaggle,242,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,3.02,1496,5.057834,6.668377,7.594541
+kaggle,243,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,4.01,1895,2.919381,6.112679,3.982503
+kaggle,244,kg6aafbe45,print,a4_printout,na,printouts/kg6aafbe45,7.03,1882,-2.746271,-2.500641,0.000000
+kaggle,245,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,0.0,419,-5.927692,-3.473113,-3.334188
+kaggle,246,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,1.02,458,-5.782400,-3.056340,-5.186516
+kaggle,247,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,2.0,520,-6.934789,-5.834830,-4.538201
+kaggle,248,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,3.02,647,-7.684859,-4.352968,-6.020063
+kaggle,249,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,4.01,795,-8.822294,-8.150239,-8.428088
+kaggle,250,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,5.03,956,-13.687351,-9.632100,-10.465648
+kaggle,251,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,6.01,1205,-6.241275,-1.852327,-2.222792
+kaggle,252,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,7.03,1474,-8.630838,-7.316691,-7.224075
+kaggle,253,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,8.01,1599,-4.852265,-2.315409,-1.481862
+kaggle,254,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,9.03,1637,-4.357924,-2.037560,-3.241572
+kaggle,255,kg884d9fd3,print,a4_printout,na,printouts/kg884d9fd3,10.02,1523,-5.933994,-2.685874,-2.871107
+kaggle,256,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,0.0,374,-12.443229,-10.465648,-11.391811
+kaggle,257,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,1.02,401,-11.642720,-11.808584,-10.465648
+kaggle,258,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,2.0,457,-9.784158,-8.798553,-8.057622
+kaggle,259,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,3.02,500,-11.800749,-10.002565,-9.354251
+kaggle,260,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,4.01,544,-9.388493,-6.020063,-3.426805
+kaggle,261,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,5.03,632,-10.497648,-9.354251,-7.501925
+kaggle,262,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,6.01,695,-9.207710,-8.844862,-4.816050
+kaggle,263,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,7.03,831,-9.990552,-8.798553,-8.798553
+kaggle,264,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,8.01,1034,-12.693846,-8.705936,-7.872390
+kaggle,265,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,9.03,1190,-9.845787,-7.872390,-7.872390
+kaggle,266,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,10.02,1344,-9.236020,-9.169019,-6.946226
+kaggle,267,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,11.0,1494,-7.963393,-4.075119,-5.186516
+kaggle,268,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,12.02,1602,-4.816915,-4.445585,-4.352968
+kaggle,269,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,13.01,1664,-2.949351,-1.852327,-2.685874
+kaggle,270,kg4e8af551,print,a4_printout,na,printouts/kg4e8af551,14.02,1608,-5.892659,-3.982503,-3.519421
+kaggle,271,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,0.0,448,-6.495497,-6.483144,-5.927446
+kaggle,272,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,1.02,513,-3.357987,-3.797270,-3.519421
+kaggle,273,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,2.0,611,-1.233133,-2.500641,-0.463082
+kaggle,274,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,3.02,746,-3.111965,-3.797270,-3.426805
+kaggle,275,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,4.01,868,-4.123010,-5.001283,-3.612038
+kaggle,276,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,5.03,1023,-2.627517,-0.926163,-2.963723
+kaggle,277,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,6.01,1269,-1.969578,-2.685874,-3.797270
+kaggle,278,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,7.03,1492,-3.102065,-3.704654,-3.612038
+kaggle,279,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,8.01,1562,-4.175504,-4.630817,-3.889887
+kaggle,280,kg58c89e41,print,a4_printout,na,printouts/kg58c89e41,9.03,1538,-3.482656,-5.279132,-4.167736
+kaggle,281,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,0.0,460,-7.823017,-4.075119,-5.371748
+kaggle,282,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,1.02,508,-7.742928,-5.742214,-6.668377
+kaggle,283,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,2.0,582,-6.629192,-2.871107,-1.852327
+kaggle,284,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,3.02,661,-3.903062,-3.982503,-3.612038
+kaggle,285,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,4.01,745,-7.292106,-6.112679,-6.575761
+kaggle,286,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,5.03,913,-8.573269,-6.668377,-5.001283
+kaggle,287,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,6.01,1066,-4.864603,-3.334188,-1.111396
+kaggle,288,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,7.03,1317,-8.682994,-8.891170,-5.649597
+kaggle,289,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,8.01,1592,-9.727168,-8.705936,-6.483144
+kaggle,290,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,9.03,1623,-7.660216,-6.946226,-6.112679
+kaggle,291,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,10.02,1658,-10.052611,-7.131459,-8.242855
+kaggle,292,kg9973bcb4,print,a4_printout,na,printouts/kg9973bcb4,11.0,1637,-7.649232,-6.575761,-6.020063
+kaggle,293,kg5df8f427,screen,replay,na,replay/kg5df8f427,0.0,449,-4.646537,-5.186516,-3.426805
+kaggle,294,kg5df8f427,screen,replay,na,replay/kg5df8f427,1.01,458,-5.606847,-6.483144,-3.982503
+kaggle,295,kg5df8f427,screen,replay,na,replay/kg5df8f427,2.01,447,-9.317950,-10.650880,-7.131459
+kaggle,296,kg5df8f427,screen,replay,na,replay/kg5df8f427,3.01,468,-9.300978,-9.169019,-8.335471
+kaggle,297,kg5df8f427,screen,replay,na,replay/kg5df8f427,4.01,499,-10.673632,-10.650880,-8.798553
+kaggle,298,kg5df8f427,screen,replay,na,replay/kg5df8f427,5.01,504,-9.005056,-8.705936,-8.335471
+kaggle,299,kg5df8f427,screen,replay,na,replay/kg5df8f427,6.01,607,-9.944225,-9.169019,-7.316691
+kaggle,300,kg5df8f427,screen,replay,na,replay/kg5df8f427,7.0,908,-11.143227,-9.632100,-8.428088
+kaggle,301,kg5df8f427,screen,replay,na,replay/kg5df8f427,8.0,821,-5.439017,-6.483144,-3.982503
+kaggle,302,kg5df8f427,screen,replay,na,replay/kg5df8f427,9.0,904,-2.081270,-5.186516,-2.130176
+kaggle,303,kg5df8f427,screen,replay,na,replay/kg5df8f427,10.0,1028,-8.479843,-5.927446,-6.112679
+kaggle,304,kg5df8f427,screen,replay,na,replay/kg5df8f427,11.0,1014,-0.862553,0.740931,-0.555698
+kaggle,305,kg5df8f427,screen,replay,na,replay/kg5df8f427,12.03,973,-9.096214,-10.373032,-10.187799
+kaggle,306,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,0.0,330,-1.057519,2.963723,3.056340
+kaggle,307,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,1.03,328,-2.698531,0.833547,-0.277849
+kaggle,308,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,2.02,319,-5.860178,-2.685874,-1.296629
+kaggle,309,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,3.02,348,-2.105143,0.277849,2.685874
+kaggle,310,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,4.02,448,-4.596935,-3.334188,-1.111396
+kaggle,311,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,5.02,543,-0.173718,-2.871107,-0.555698
+kaggle,312,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,6.02,563,-4.496984,-6.297912,-2.037560
+kaggle,313,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,7.02,530,-4.263310,-3.704654,-0.463082
+kaggle,314,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,8.02,529,-5.047129,-4.538201,-1.759711
+kaggle,315,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,9.02,558,-3.254867,-4.260352,-0.833547
+kaggle,316,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,10.02,569,-5.979413,-6.205296,-5.001283
+kaggle,317,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,11.02,559,-3.789620,-2.315409,-0.833547
+kaggle,318,kgcd0cb302,screen,replay,na,replay/kgcd0cb302,12.02,557,-4.673239,-8.428088,-2.593258
+kaggle,319,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,0.0,250,-0.074285,2.037560,1.204013
+kaggle,320,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,1.01,239,4.697529,5.279132,5.649597
+kaggle,321,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,2.01,259,-8.551718,-7.779773,-6.575761
+kaggle,322,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,3.02,190,-11.087555,-11.021345,-10.187799
+kaggle,323,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,4.02,283,-5.326609,-3.612038,-3.889887
+kaggle,324,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,5.03,377,-1.085561,1.944943,1.667094
+kaggle,325,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,6.04,371,-6.590855,-4.538201,-4.445585
+kaggle,326,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,7.0,366,-4.975395,-3.612038,-5.186516
+kaggle,327,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,8.01,361,-4.706265,-3.334188,-1.667094
+kaggle,328,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,9.01,368,-4.886862,-2.037560,-0.370465
+kaggle,329,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,10.02,364,-2.074265,1.111396,2.130176
+kaggle,330,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,11.02,363,-4.283726,-2.871107,-1.296629
+kaggle,331,kgcf8704d2,screen,replay,na,replay/kgcf8704d2,12.03,364,-2.668498,0.185233,1.296629
+kaggle,332,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,0.0,278,-1.693252,1.944943,1.852327
+kaggle,333,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,1.03,300,0.390713,-0.370465,1.574478
+kaggle,334,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,2.03,507,-5.343223,-2.685874,-2.130176
+kaggle,335,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,3.03,599,-5.633881,-5.001283,-3.612038
+kaggle,336,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,4.03,581,-6.713469,-4.167736,-2.871107
+kaggle,337,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,5.03,576,-6.780509,-5.279132,-4.352968
+kaggle,338,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,6.03,572,-8.708852,-7.965006,-7.872390
+kaggle,339,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,7.03,575,-8.587597,-6.946226,-7.316691
+kaggle,340,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,8.03,558,-8.970153,-9.169019,-9.076403
+kaggle,341,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,9.03,555,-3.214337,-3.334188,-3.148956
+kaggle,342,kg1ac7ee6f,screen,replay,na,replay/kg1ac7ee6f,10.03,556,-2.362072,-3.148956,-1.111396
+kaggle,343,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,0.0,526,7.225319,5.186516,5.742214
+kaggle,344,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,1.0,524,7.120097,5.371748,7.687157
+kaggle,345,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,2.0,520,0.143766,0.648314,0.463082
+kaggle,346,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,3.0,530,6.236376,6.390528,8.150239
+kaggle,347,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,4.0,480,5.344748,5.464365,5.556981
+kaggle,348,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,5.0,509,2.883539,5.927446,5.834830
+kaggle,349,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,6.0,483,-1.447072,0.092616,2.222792
+kaggle,350,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,7.0,461,0.702216,0.555698,0.370465
+kaggle,351,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,8.0,496,1.059130,1.389245,4.352968
+kaggle,352,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,9.0,536,-0.014449,0.463082,2.963723
+kaggle,353,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,10.0,581,1.348096,2.222792,4.167736
+kaggle,354,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,11.0,563,-0.344574,0.926163,2.130176
+kaggle,355,kg1e3cb184,screen,replay,na,replay/kg1e3cb184,12.0,548,-0.613087,1.296629,0.833547
+kaggle,356,kgba7116fd,screen,replay,na,replay/kgba7116fd,0.0,64,1.033846,-1.296629,-0.092616
+kaggle,357,kgba7116fd,screen,replay,na,replay/kgba7116fd,1.0,63,0.008588,-0.370465,0.833547
+kaggle,358,kgba7116fd,screen,replay,na,replay/kgba7116fd,2.0,63,0.524396,-0.648314,-0.277849
+kaggle,359,kgba7116fd,screen,replay,na,replay/kgba7116fd,3.0,66,-1.364534,-2.454333,-1.944943
+kaggle,360,kgba7116fd,screen,replay,na,replay/kgba7116fd,4.0,75,-1.052000,-2.037560,-2.222792
+kaggle,361,kgba7116fd,screen,replay,na,replay/kgba7116fd,5.0,104,2.268386,-0.092616,0.926163
+kaggle,362,kgba7116fd,screen,replay,na,replay/kgba7116fd,6.0,137,3.328496,2.222792,2.685874
+kaggle,363,kgba7116fd,screen,replay,na,replay/kgba7116fd,7.0,137,5.914032,5.001283,5.279132
+kaggle,364,kgba7116fd,screen,replay,na,replay/kgba7116fd,8.0,144,4.383888,4.445585,5.279132
+kaggle,365,kgba7116fd,screen,replay,na,replay/kgba7116fd,9.0,136,-0.421371,1.018780,1.111396
+kaggle,366,kgba7116fd,screen,replay,na,replay/kgba7116fd,10.0,126,1.716384,1.111396,2.315409
+kaggle,367,kgba7116fd,screen,replay,na,replay/kgba7116fd,11.0,125,0.837326,1.389245,1.389245
+kaggle,368,kgba7116fd,screen,replay,na,replay/kgba7116fd,12.0,133,3.513726,3.056340,2.222792
+kaggle,369,kgba7116fd,screen,replay,na,replay/kgba7116fd,13.03,149,1.479913,3.704654,2.593258
+kaggle,370,kgba7116fd,screen,replay,na,replay/kgba7116fd,14.03,159,1.268882,2.222792,2.871107
+kaggle,371,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,0.0,114,0.180140,0.092616,-0.648314
+kaggle,372,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,1.01,115,5.704781,4.630817,5.371748
+kaggle,373,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,2.01,140,3.296303,2.685874,3.704654
+kaggle,374,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,3.02,182,2.439100,0.926163,1.296629
+kaggle,375,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,4.02,181,2.101250,1.204013,2.222792
+kaggle,376,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,5.02,175,5.003435,5.927446,6.020063
+kaggle,377,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,6.03,172,3.999802,3.889887,3.982503
+kaggle,378,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,7.0,154,1.364252,0.463082,2.222792
+kaggle,379,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,8.01,183,4.207614,3.982503,3.797270
+kaggle,380,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,9.01,204,9.080524,8.057622,8.705936
+kaggle,381,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,10.01,203,7.283217,4.723434,6.112679
+kaggle,382,kg1dad66b7,screen,replay,na,replay/kg1dad66b7,11.02,196,9.876581,8.613320,10.002565
+kaggle,383,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,0.0,435,-7.458394,-6.946226,-4.630817
+kaggle,384,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,1.03,462,-9.485783,-7.965006,-6.853610
+kaggle,385,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,2.03,532,0.524119,-0.185233,-1.481862
+kaggle,386,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,3.03,553,-5.552083,-5.742214,-4.260352
+kaggle,387,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,4.03,541,-6.963092,-6.483144,-4.630817
+kaggle,388,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,5.03,642,-4.254123,-3.889887,-1.574478
+kaggle,389,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,6.03,558,-3.651441,-1.667094,0.648314
+kaggle,390,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,7.03,665,-7.440191,-6.112679,-5.464365
+kaggle,391,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,8.03,714,-4.477781,0.740931,-0.463082
+kaggle,392,kg91dcf5df,screen,replay,na,replay/kg91dcf5df,9.02,703,-3.835506,-1.389245,-0.092616
+kaggle,393,kg55f74916,screen,replay,na,replay/kg55f74916,0.0,331,-4.994561,-4.352968,-3.889887
+kaggle,394,kg55f74916,screen,replay,na,replay/kg55f74916,1.03,311,-0.718878,1.111396,1.296629
+kaggle,395,kg55f74916,screen,replay,na,replay/kg55f74916,2.03,482,-5.811488,-4.908667,-3.704654
+kaggle,396,kg55f74916,screen,replay,na,replay/kg55f74916,3.03,516,-6.799272,-6.853610,-3.612038
+kaggle,397,kg55f74916,screen,replay,na,replay/kg55f74916,4.03,483,-6.814750,-6.297912,-5.834830
+kaggle,398,kg55f74916,screen,replay,na,replay/kg55f74916,5.03,519,-5.016832,-4.445585,-3.519421
+kaggle,399,kg55f74916,screen,replay,na,replay/kg55f74916,6.03,503,-5.624583,-3.982503,-4.352968
+kaggle,400,kg55f74916,screen,replay,na,replay/kg55f74916,7.03,498,-3.582294,-4.445585,-3.519421
+kaggle,401,kg55f74916,screen,replay,na,replay/kg55f74916,8.03,516,-4.916617,-4.075119,-2.500641
+kaggle,402,kg55f74916,screen,replay,na,replay/kg55f74916,9.03,497,-3.925275,-2.408025,-4.538201
+kaggle,403,kg55f74916,screen,replay,na,replay/kg55f74916,10.03,512,-3.648018,-3.241572,-3.519421
+kaggle,404,kg55f74916,screen,replay,na,replay/kg55f74916,11.03,512,-1.409513,-2.222792,-0.833547
+kaggle,405,kg55f74916,screen,replay,na,replay/kg55f74916,12.03,496,-2.031816,-1.481862,-0.740931

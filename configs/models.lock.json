@@ -7,6 +7,20 @@
     "liveness/best_model.onnx": "AF2381B88F38769222ED93379E12444E2A50814575DE1C46170DE570C55A42B6",
     "liveness/detector.onnx": "8F2383E4DD3CFBB4553EA8718107FC0423210DC964F9F4280604804ED2552FA4",
     "buffalo_sc/det_500m.onnx": "5E4447F50245BBD7966BD6C0FA52938C61474A04EC7DEF48753668A9D8B4EA3A",
-    "buffalo_sc/w600k_mbf.onnx": "9CC6E4A75F0E2BF0B1AED94578F144D15175F357BDC05E815E5C4A02B319EB4F"
+    "buffalo_sc/w600k_mbf.onnx": "9CC6E4A75F0E2BF0B1AED94578F144D15175F357BDC05E815E5C4A02B319EB4F",
+    "int8/w600k_mbf_int8_per_tensor_s0.onnx": "49248500AFC31C14506471E3893EAC53899E15E8715323FCF44110075603557D",
+    "int8/w600k_mbf_int8_per_channel_s0.onnx": "890278446B3A5715BC8E13B7261A1C65848ABDD5F21273998D317442A443ABAE",
+    "int8/best_model_int8_per_tensor_s0.onnx": "6955ECEF9822E14B27D559FB0F5E8377583DE3358FBA57DECA85341659DEE974",
+    "int8/best_model_int8_per_channel_s0.onnx": "C301183EE668D7A0F4D937B9B7D251BC48B630E917B33537726A98D74683D0C9"
+  },
+  "msu-mfsd": {
+    "url": "https://github.com/sunny3/MSU-MFSD",
+    "commit": "85df0b661a9360687fa0a53c58f19e74cfcbc6ee"
+  },
+  "LFW": {
+    "url": "https://www.kaggle.com/datasets/jessicali9530/lfw-dataset?resource=download"
+  },
+  "anti-spoofing-kaggle": {
+    "url": "https://www.kaggle.com/datasets/tapakah68/anti-spoofing"
   }
 }

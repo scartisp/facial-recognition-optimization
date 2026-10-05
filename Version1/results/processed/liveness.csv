@@ -1,0 +1,37 @@
+dataset,liveness,group,bpcer,bpcer_errors,live_faces,apcer,apcer_errors,attack_faces,eer,auc,decision_flips_vs_fp32
+own (test split),fp32,all,0.07092,10,141,0.09701,13,134,0.0836,0.95829,0
+own (test split),fp32,lighting=bright,0.01351,1,74,0.11594,8,69,,,
+own (test split),fp32,lighting=dim,0.13433,9,67,0.07692,5,65,,,
+own (test split),fp32,attack=screen,,,,0.09701,13,134,,,
+own (test split),int8pt,all,0.02837,4,141,0.10448,14,134,0.07632,0.95964,13
+own (test split),int8pt,lighting=bright,0.0,0,74,0.10145,7,69,,,
+own (test split),int8pt,lighting=dim,0.0597,4,67,0.10769,7,65,,,
+own (test split),int8pt,attack=screen,,,,0.10448,14,134,,,
+own (test split),int8pc,all,0.02837,4,141,0.10448,14,134,0.0836,0.96457,9
+own (test split),int8pc,lighting=bright,0.0,0,74,0.11594,8,69,,,
+own (test split),int8pc,lighting=dim,0.0597,4,67,0.09231,6,65,,,
+own (test split),int8pc,attack=screen,,,,0.10448,14,134,,,
+msu,fp32,all,0.0,0,35,0.46667,49,105,0.03333,0.99129,0
+msu,fp32,attack=print/printed_photo,,,,0.42857,15,35,,,
+msu,fp32,attack=screen/ipad,,,,0.4,14,35,,,
+msu,fp32,attack=screen/iphone,,,,0.57143,20,35,,,
+msu,int8pt,all,0.0,0,35,0.6,63,105,0.08571,0.97388,18
+msu,int8pt,attack=print/printed_photo,,,,0.6,21,35,,,
+msu,int8pt,attack=screen/ipad,,,,0.54286,19,35,,,
+msu,int8pt,attack=screen/iphone,,,,0.65714,23,35,,,
+msu,int8pc,all,0.0,0,35,0.62857,66,105,0.08571,0.98245,19
+msu,int8pc,attack=print/printed_photo,,,,0.62857,22,35,,,
+msu,int8pc,attack=screen/ipad,,,,0.54286,19,35,,,
+msu,int8pc,attack=screen/iphone,,,,0.71429,25,35,,,
+kaggle,fp32,all,0.35652,41,115,0.16151,47,291,0.20916,0.87264,0
+kaggle,fp32,attack=print/a4_printout,,,,0.05208,5,96,,,
+kaggle,fp32,attack=print/cutout_printout,,,,0.07317,6,82,,,
+kaggle,fp32,attack=screen/replay,,,,0.31858,36,113,,,
+kaggle,int8pt,all,0.23478,27,115,0.21649,63,291,0.22038,0.87224,46
+kaggle,int8pt,attack=print/a4_printout,,,,0.05208,5,96,,,
+kaggle,int8pt,attack=print/cutout_printout,,,,0.14634,12,82,,,
+kaggle,int8pt,attack=screen/replay,,,,0.40708,46,113,,,
+kaggle,int8pc,all,0.24348,28,115,0.21993,64,291,0.23423,0.87372,42
+kaggle,int8pc,attack=print/a4_printout,,,,0.05208,5,96,,,
+kaggle,int8pc,attack=print/cutout_printout,,,,0.15854,13,82,,,
+kaggle,int8pc,attack=screen/replay,,,,0.40708,46,113,,,
