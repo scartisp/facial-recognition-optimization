@@ -67,7 +67,8 @@ def main():
         results.append({"variant": v, **compare("lfw cosine similarity", lfw_a, lfw_b, lambda r: r["pair"],
                                                 f"sim_{v}", cosine_threshold)})
         results.append({"variant": v, **compare("liveness score", live_a, live_b,
-                                                lambda r: (r["dataset"], r["index"]), f"score_{v}",
+                                                lambda r: (r["dataset"], r["source"], r["time_s"], r["index"]),
+                                                f"score_{v}",
                                                 LIVENESS_THRESHOLD)})
 
     processed_root.mkdir(parents=True, exist_ok=True)

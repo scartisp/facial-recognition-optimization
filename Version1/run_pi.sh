@@ -5,17 +5,16 @@
 #     bash run_pi.sh
 set -e
 
-echo "== 1/4 model-only speed =="
+echo "== 1/3 model-only speed =="
 python bench/bench.py --label pi --isolated
 
-echo "== 2/4 full-pipeline speed, 9 configs =="
+echo "== 2/3 full-pipeline speed, 9 configs =="
 python bench/bench.py --label pi
 
-echo "== 3/4 accuracy =="
+echo "== 3/3 accuracy =="
 python eval/run_eval.py --label pi
 
-echo "== 4/4 do Pi outputs match the PC? =="
-python eval/compare_runs.py --a pc --b pi
-
+# The PC-vs-Pi comparison (eval/compare_runs.py) runs on the PC afterwards, once both machines
+# have evaluated the same cache.
 echo "Done. Results: results/processed/pi/summary.md, results/processed/bench_pi.csv,"
-echo "results/processed/bench_isolated_pi.csv, results/processed/compare_pc_vs_pi.csv"
+echo "results/processed/bench_isolated_pi.csv, results/raw/pi/, results/raw/bench/pi/"
