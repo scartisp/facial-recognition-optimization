@@ -24,7 +24,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import onnxruntime as ort
-from insightface.model_zoo.scrfd import SCRFD
+from insightface.model_zoo.scrfd import SCRFD, _static_scrfd_model
 from insightface.utils import face_align
 
 # Finds the repo root and the Version1 folder automatically
@@ -84,11 +84,25 @@ def check_pins(config):
         print("WARNING: could not read the liveness repo commit (is git installed?)")
 
 
-def new_session(path):
+def session_options():
     options = ort.SessionOptions()
     # Errors only: the recognizer declares batch size 1 and ORT warns on every batched run
     options.log_severity_level = 3
-    return ort.InferenceSession(str(path), sess_options=options, providers=["CPUExecutionProvider"])
+    # The three models run one after another. With spinning on (ORT's default), each idle
+    # session's thread pool keeps busy-waiting and steals CPU from whichever model is running.
+    # Threading only: outputs are unchanged.
+    options.add_session_config_entry("session.intra_op.allow_spinning", "0")
+    return options
+
+
+def new_session(path_or_bytes):
+    source = path_or_bytes if isinstance(path_or_bytes, bytes) else str(path_or_bytes)
+    return ort.InferenceSession(source, sess_options=session_options(), providers=["CPUExecutionProvider"])
+
+
+def scrfd_session_factory(model_file, input_size, reference_session):
+    """SCRFD builds one static-shape session per input size; give those our session options too."""
+    return new_session(_static_scrfd_model(model_file, input_size, reference_session.get_inputs()[0].name))
 
 
 class Pipeline:
@@ -97,7 +111,12 @@ class Pipeline:
         models = config["models"]
 
         # Detector: fixed FP32 in every configuration, so it never explains a difference
-        self.detector = SCRFD(model_file=str(resolve_path(models["detector"]["path"])))
+        detector_path = resolve_path(models["detector"]["path"])
+        self.detector = SCRFD(
+            model_file=str(detector_path),
+            session=new_session(detector_path),
+            resolution_session_factory=scrfd_session_factory,
+        )
         self.detector.prepare(
             ctx_id=-1,
             input_size=tuple(config["detector"]["input_size"]),

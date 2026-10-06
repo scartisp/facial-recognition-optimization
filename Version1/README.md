@@ -14,8 +14,14 @@ Run in this order from the Version1 folder with the venv active:
   1. python eval\prepare_data.py      detect faces once, cache crops in private\cache (needs the data below)
   2. python quantize\quantize.py      INT8 models + configs\ablation\*.json (calibration seed 0)
   3. python eval\run_eval.py          accuracy -> results\processed\summary.md
-  4. python bench\bench.py --label pc latency/memory -> results\processed\bench_pc.csv (use --label pi on the Pi)
+  4. python bench\bench.py --label pc latency/memory/CPU time -> results\processed\bench_pc.csv (use --label pi on the Pi)
+     python bench\bench.py --label pc --isolated   model-only timing
   5. python eval\plots.py --bench pc  figures -> results\figures\
+
+On the Pi (same order, skipping 1-2: copy private\cache and models\int8 from the PC instead):
+  python eval/run_eval.py --label pi            accuracy on ARM -> results/processed/pi/
+  python bench/bench.py --label pi              and --label pi --isolated
+  python eval/compare_runs.py --a pc --b pi     do Pi outputs match the committed PC results?
 
 Data (all local, git-ignored, never shared):
 - private\<name>_<live|print|screen>_<bright|dim>.<mp4|webm>   team videos (first 4 s = calibration only)

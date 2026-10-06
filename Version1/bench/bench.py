@@ -57,11 +57,29 @@ def load_frames():
     return frames[::step][:FRAME_COUNT]
 
 
-def cpu_temperature():
-    """Pi CPU temperature in C, or None elsewhere."""
+def read_sysfs_number(path, scale):
     try:
-        return int(Path("/sys/class/thermal/thermal_zone0/temp").read_text()) / 1000.0
+        return int(Path(path).read_text()) / scale
     except (OSError, ValueError):
+        return None
+
+
+def cpu_temperature():
+    """CPU temperature in C (Linux/Pi), or None elsewhere."""
+    return read_sysfs_number("/sys/class/thermal/thermal_zone0/temp", 1000.0)
+
+
+def cpu_frequency_mhz():
+    """Current CPU0 clock in MHz (Linux/Pi), or None elsewhere. A drop mid-run means throttling."""
+    return read_sysfs_number("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", 1000.0)
+
+
+def pi_throttled():
+    """Raw `vcgencmd get_throttled` flags (Pi only): 0x0 means no under-voltage or thermal throttling."""
+    try:
+        out = subprocess.run(["vcgencmd", "get_throttled"], capture_output=True, text=True, timeout=5)
+        return out.stdout.strip().split("=")[-1] or None
+    except (OSError, subprocess.SubprocessError):
         return None
 
 
@@ -102,10 +120,11 @@ def run_cell(config_path, label, runs, warmup):
     if not frames:
         raise RuntimeError("No face found in the benchmark frames")
 
-    temp_start = cpu_temperature()
+    temp_start, throttled_start = cpu_temperature(), pi_throttled()
     rows = []
     for run in range(warmup + runs):
         frame = frames[run % len(frames)]
+        c0 = time.process_time()
         t0 = time.perf_counter()
         bbox, keypoints = pipeline.detect(frame)
         t1 = time.perf_counter()
@@ -117,6 +136,7 @@ def run_cell(config_path, label, runs, warmup):
         t4 = time.perf_counter()
         pipeline.embed_blob(rec_blob)
         t5 = time.perf_counter()
+        c5 = time.process_time()
         if run < warmup:
             continue
         rows.append({
@@ -124,9 +144,13 @@ def run_cell(config_path, label, runs, warmup):
             "detect_ms": (t1 - t0) * 1000, "liveness_prep_ms": (t2 - t1) * 1000,
             "liveness_infer_ms": (t3 - t2) * 1000, "recog_prep_ms": (t4 - t3) * 1000,
             "recog_infer_ms": (t5 - t4) * 1000, "total_ms": (t5 - t0) * 1000,
+            # CPU time of all this process's threads: an energy proxy, NOT a power measurement
+            "cpu_ms": (c5 - c0) * 1000,
             "rss_mb": process.memory_info().rss / 2**20,
+            "cpu_temp_c": cpu_temperature(),
+            "cpu_freq_mhz": cpu_frequency_mhz(),
         })
-    temp_end = cpu_temperature()
+    temp_end, throttled_end = cpu_temperature(), pi_throttled()
 
     cell = config["precision"]
     out_folder = bench_raw / label
@@ -139,11 +163,16 @@ def run_cell(config_path, label, runs, warmup):
     sizes = {role: os.path.getsize(pl.resolve_path(m["path"])) / 2**20 for role, m in config["models"].items()}
     summary = {
         "cell": cell, "label": label, "runs": runs, "warmup_excluded": warmup, "frames": len(frames),
-        "intra_op_threads": "onnxruntime default",
+        "intra_op_threads": "onnxruntime default, spinning off",
         "stages": {s: summarize([r[s] for r in rows]) for s in STAGES},
         "rss_mb": {"median": statistics.median(r["rss_mb"] for r in rows), "max": max(r["rss_mb"] for r in rows)},
         "model_size_mb": sizes,
+        "cpu_ms_per_frame": {"mean": statistics.fmean(r["cpu_ms"] for r in rows),
+                             "note": "process CPU time, energy proxy only; not power"},
         "cpu_temp_c": {"start": temp_start, "end": temp_end},
+        "cpu_freq_mhz": ({"min": min(r["cpu_freq_mhz"] for r in rows), "max": max(r["cpu_freq_mhz"] for r in rows)}
+                         if rows[0]["cpu_freq_mhz"] is not None else None),
+        "throttled": {"start": throttled_start, "end": throttled_end},
         "host": host_info(),
     }
     (out_folder / f"{cell}.json").write_text(json.dumps(summary, indent=2) + "\n")
@@ -169,8 +198,7 @@ def run_isolated(label, runs, warmup):
         for role in ("recognizer", "liveness"):
             path = pl.resolve_path(config["models"][role]["path"])
             for threads in (1, 0):
-                options = ort.SessionOptions()
-                options.log_severity_level = 3
+                options = pl.session_options()
                 options.intra_op_num_threads = threads
                 session = ort.InferenceSession(str(path), sess_options=options, providers=["CPUExecutionProvider"])
                 feed = {session.get_inputs()[0].name: inputs[role]}
@@ -223,6 +251,9 @@ def main():
             for stat in ("p50", "p95", "std"):
                 row[f"{stage}_{stat}"] = round(s["stages"][stage][stat], 3)
         row["rss_mb_max"] = round(s["rss_mb"]["max"], 1)
+        row["cpu_ms_per_frame"] = round(s["cpu_ms_per_frame"]["mean"], 2) if "cpu_ms_per_frame" in s else ""
+        row["cpu_temp_end_c"] = s["cpu_temp_c"]["end"]
+        row["throttled_end"] = (s.get("throttled") or {}).get("end")
         row["recognizer_mb"] = round(s["model_size_mb"]["recognizer"], 3)
         row["liveness_mb"] = round(s["model_size_mb"]["liveness"], 3)
         rows.append(row)
