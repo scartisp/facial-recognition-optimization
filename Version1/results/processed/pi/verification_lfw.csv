@@ -1,0 +1,4 @@
+recognizer,pairs_used,pairs_total,eer,eer_threshold,auc,tar_at_far_0.1pct_own_threshold,own_threshold_far_0.1pct,far_at_fp32_threshold,frr_at_fp32_threshold,fp32_threshold
+fp32,5965,6000,0.00436,0.19663,0.99894,0.99262,0.24211,0.00067,0.00738,0.24211
+int8pt,5965,6000,0.00436,0.20811,0.998996,0.98893,0.27789,0.00168,0.00637,0.24211
+int8pc,5965,6000,0.00402,0.20059,0.998973,0.99128,0.25337,0.00101,0.00772,0.24211

@@ -3,13 +3,13 @@ own (test split),fp32,all,0.2757,59,214,0.0625,13,208,0.1398,0.93624,0
 own (test split),fp32,lighting=bright,0.13393,15,112,0.07477,8,107,,,
 own (test split),fp32,lighting=dim,0.43137,44,102,0.0495,5,101,,,
 own (test split),fp32,attack=screen,,,,0.0625,13,208,,,
-own (test split),int8pt,all,0.14953,32,214,0.06731,14,208,0.09007,0.96366,34
+own (test split),int8pt,all,0.14953,32,214,0.06731,14,208,0.0924,0.96354,34
 own (test split),int8pt,lighting=bright,0.00893,1,112,0.06542,7,107,,,
 own (test split),int8pt,lighting=dim,0.30392,31,102,0.06931,7,101,,,
 own (test split),int8pt,attack=screen,,,,0.06731,14,208,,,
-own (test split),int8pc,all,0.13084,28,214,0.07212,15,208,0.09474,0.96382,35
+own (test split),int8pc,all,0.12617,27,214,0.07212,15,208,0.09474,0.96409,36
 own (test split),int8pc,lighting=bright,0.0,0,112,0.08411,9,107,,,
-own (test split),int8pc,lighting=dim,0.27451,28,102,0.05941,6,101,,,
+own (test split),int8pc,lighting=dim,0.26471,27,102,0.05941,6,101,,,
 own (test split),int8pc,attack=screen,,,,0.07212,15,208,,,
 msu,fp32,all,0.0,0,35,0.46667,49,105,0.03333,0.99129,0
 msu,fp32,attack=print/printed_photo,,,,0.42857,15,35,,,
@@ -19,19 +19,19 @@ msu,int8pt,all,0.0,0,35,0.6,63,105,0.08571,0.97388,18
 msu,int8pt,attack=print/printed_photo,,,,0.6,21,35,,,
 msu,int8pt,attack=screen/ipad,,,,0.54286,19,35,,,
 msu,int8pt,attack=screen/iphone,,,,0.65714,23,35,,,
-msu,int8pc,all,0.0,0,35,0.62857,66,105,0.08571,0.98245,19
+msu,int8pc,all,0.0,0,35,0.6381,67,105,0.08571,0.98245,18
 msu,int8pc,attack=print/printed_photo,,,,0.62857,22,35,,,
 msu,int8pc,attack=screen/ipad,,,,0.54286,19,35,,,
-msu,int8pc,attack=screen/iphone,,,,0.71429,25,35,,,
+msu,int8pc,attack=screen/iphone,,,,0.74286,26,35,,,
 kaggle,fp32,all,0.35652,41,115,0.16151,47,291,0.20916,0.87264,0
 kaggle,fp32,attack=print/a4_printout,,,,0.05208,5,96,,,
 kaggle,fp32,attack=print/cutout_printout,,,,0.07317,6,82,,,
 kaggle,fp32,attack=screen/replay,,,,0.31858,36,113,,,
-kaggle,int8pt,all,0.23478,27,115,0.21649,63,291,0.22038,0.87224,46
+kaggle,int8pt,all,0.23478,27,115,0.21649,63,291,0.22038,0.87221,46
 kaggle,int8pt,attack=print/a4_printout,,,,0.05208,5,96,,,
 kaggle,int8pt,attack=print/cutout_printout,,,,0.14634,12,82,,,
 kaggle,int8pt,attack=screen/replay,,,,0.40708,46,113,,,
-kaggle,int8pc,all,0.24348,28,115,0.21993,64,291,0.23423,0.87372,42
+kaggle,int8pc,all,0.24348,28,115,0.21993,64,291,0.23423,0.87366,42
 kaggle,int8pc,attack=print/a4_printout,,,,0.05208,5,96,,,
 kaggle,int8pc,attack=print/cutout_printout,,,,0.15854,13,82,,,
 kaggle,int8pc,attack=screen/replay,,,,0.40708,46,113,,,

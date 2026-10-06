@@ -33,7 +33,9 @@ Sub-questions:
 
 ## Hardware
 
-Raspberry Pi 4 Model B, 8 GB RAM (Cortex-A72, no int8 dot-product instructions). OS, webcam, and power meter still to be recorded. The Pi is not set up yet and there is no power meter yet, so all speed numbers so far come from an x86 Windows PC: label them as PC results, never as Pi results.
+Raspberry Pi 4 Model B Rev 1.5, 8 GB RAM (Cortex-A72 at 1.8 GHz, no int8 dot-product instructions), Raspberry Pi OS 64-bit (Debian 13 / Trixie, kernel 6.18), Python 3.11.17 via uv (system Python is 3.13), ONNX Runtime 1.30.0. Headless over SSH, hostname `simiPi`. No webcam and no power meter yet. It reaches ~79 °C under load (soft throttle at 80 °C); check `throttled` in the bench JSON. PC results (x86 Windows) are labelled `pc`, Pi results `pi`.
+
+Running on the Pi: `bash run_pi.sh` (or `nohup ... &` so an SSH drop does not kill it). It needs, copied from the PC: `private/cache/`, `private/lfw_pairs.json`, `models/int8/`, `~/.insightface/models/buffalo_sc/`, and the alphabetically first `private/*_live_bright.*` video. Compare afterwards on the PC with `eval/compare_runs.py --a pc --b pi`.
 
 ## Pipeline
 
@@ -120,7 +122,11 @@ Plots: ROC/DET (FP32 vs INT8), Pareto (accuracy vs latency), subgroup degradatio
 
 ## Status
 
-Done: FP32 pipeline, INT8 PTQ of both models, 3 x 3 accuracy evaluation, PC latency/memory benchmark, figures. Initial findings write-up shared with the team (Claude Docs). Pending: Pi benchmark, power, calibration seeds 1 and 2, decision on the INT8-except-depthwise variant.
+Done: FP32 pipeline, INT8 PTQ of both models, 3 x 3 accuracy evaluation and latency/memory/CPU-time benchmark on both PC and Pi, PC-vs-Pi output comparison, figures. Team videos now include p03 (test only; calibration used p01/p02). Findings: `Version1/private/initial test.md` (local) and the Claude Docs write-up (older, PC-only).
+
+Pi findings: INT8 is slower on the Pi too (model-only, 4 threads: recognizer 54.1 -> 71.3 ms, liveness 20.7 -> 24.4 ms; full pipeline 225 -> 249-258 ms, detector ~138 ms of that). Pi accuracy matches the PC (FP32 outputs within 1e-5; INT8 changes 0 LFW and 2/968 liveness decisions). Unexplained: Pi RSS ~2,000 MB with the FP32 recognizer vs ~350 MB with INT8.
+
+Pending: explain the Pi memory gap, INT8-except-depthwise variant, liveness threshold/calibration fix for the score shift, p03 glare test, calibration seeds 1 and 2, power.
 
 Layout:
 

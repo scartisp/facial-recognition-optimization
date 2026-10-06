@@ -1,0 +1,12 @@
+{
+  "platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41",
+  "machine": "aarch64",
+  "processor": "",
+  "cpu_count_logical": 4,
+  "cpu_count_physical": 4,
+  "python": "3.11.17",
+  "onnxruntime": "1.30.0",
+  "opencv": "4.12.0",
+  "numpy": "2.2.6",
+  "device_model": "Raspberry Pi 4 Model B Rev 1.5"
+}
