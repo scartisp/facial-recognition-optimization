@@ -222,29 +222,10 @@ def run_isolated(label, runs, warmup):
     (out_folder / "isolated_host.json").write_text(json.dumps(host_info(), indent=2) + "\n")
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Benchmark the 9 ablation configs")
-    parser.add_argument("--isolated", action="store_true", help="model-only timing instead of the 9 cells")
-    parser.add_argument("--label", required=True, help="machine label, e.g. pc or pi")
-    parser.add_argument("--runs", type=int, default=500)
-    parser.add_argument("--warmup", type=int, default=50)
-    parser.add_argument("--config", help="benchmark a single config (used internally)")
-    args = parser.parse_args()
-
-    if args.config:
-        run_cell(args.config, args.label, args.runs, args.warmup)
-        return
-    if args.isolated:
-        results_processed.mkdir(parents=True, exist_ok=True)
-        run_isolated(args.label, args.runs, args.warmup)
-        return
-
-    for config_path in sorted(ablation_folder.glob("*.json")):
-        subprocess.run([sys.executable, __file__, "--label", args.label, "--runs", str(args.runs),
-                        "--warmup", str(args.warmup), "--config", str(config_path)], check=True)
-
+def summarize_cells(label):
+    """Collect the per-cell JSON summaries into results/processed/bench_<label>.csv."""
     rows = []
-    for path in sorted((bench_raw / args.label).glob("*.json")):
+    for path in sorted((bench_raw / label).glob("rec-*.json")):
         s = json.loads(path.read_text())
         row = {"cell": s["cell"], "runs": s["runs"]}
         for stage in STAGES:
@@ -258,11 +239,41 @@ def main():
         row["liveness_mb"] = round(s["model_size_mb"]["liveness"], 3)
         rows.append(row)
     results_processed.mkdir(parents=True, exist_ok=True)
-    with open(results_processed / f"bench_{args.label}.csv", "w", newline="") as file:
+    with open(results_processed / f"bench_{label}.csv", "w", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
-    print(f"Wrote {results_processed / f'bench_{args.label}.csv'}")
+    print(f"Wrote {results_processed / f'bench_{label}.csv'}")
+
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Benchmark the 9 ablation configs")
+    parser.add_argument("--isolated", action="store_true", help="model-only timing instead of the 9 cells")
+    parser.add_argument("--label", required=True, help="machine label, e.g. pc or pi")
+    parser.add_argument("--runs", type=int, default=500)
+    parser.add_argument("--warmup", type=int, default=50)
+    parser.add_argument("--config", help="benchmark a single config (used internally)")
+    parser.add_argument("--summarize-only", action="store_true",
+                        help="rebuild bench_<label>.csv from existing per-cell results without rerunning")
+    args = parser.parse_args()
+
+    if args.config:
+        run_cell(args.config, args.label, args.runs, args.warmup)
+        return
+    if args.summarize_only:
+        summarize_cells(args.label)
+        return
+    if args.isolated:
+        results_processed.mkdir(parents=True, exist_ok=True)
+        run_isolated(args.label, args.runs, args.warmup)
+        return
+
+    for config_path in sorted(ablation_folder.glob("*.json")):
+        subprocess.run([sys.executable, __file__, "--label", args.label, "--runs", str(args.runs),
+                        "--warmup", str(args.warmup), "--config", str(config_path)], check=True)
+
+    summarize_cells(args.label)
 
 
 if __name__ == "__main__":

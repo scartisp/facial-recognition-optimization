@@ -129,9 +129,13 @@ def prepare_own(pipeline):
     if not videos:
         raise FileNotFoundError(f"No team videos found in {private_folder}")
 
-    names = sorted({pattern.match(p.stem).group(1).lower() for p in videos})
-    pseudonyms = {name: f"p{i + 1:02d}" for i, name in enumerate(names)}
-    (private_folder / "pseudonyms.json").write_text(json.dumps(pseudonyms, indent=2))
+    # Keep existing codes stable; a new person gets the next free code
+    pseudonym_path = private_folder / "pseudonyms.json"
+    pseudonyms = json.loads(pseudonym_path.read_text()) if pseudonym_path.exists() else {}
+    for name in sorted({pattern.match(p.stem).group(1).lower() for p in videos}):
+        if name not in pseudonyms:
+            pseudonyms[name] = f"p{len(pseudonyms) + 1:02d}"
+    pseudonym_path.write_text(json.dumps(pseudonyms, indent=2))
 
     collector = Collector(pipeline)
     for path in tqdm(videos, desc="own videos"):
