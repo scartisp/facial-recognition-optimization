@@ -1,7 +1,7 @@
 dataset,recognizer,faces,mean_cos_to_fp32,p05_cos_to_fp32,min_cos_to_fp32
 lfw,int8pt,7682,0.95338,0.93182,0.8825
 lfw,int8pc,7682,0.97569,0.9629,0.92595
-own,int8pt,418,0.94534,0.91784,0.867
-own,int8pc,418,0.96885,0.94787,0.92485
+own,int8pt,631,0.92953,0.83241,0.65218
+own,int8pc,631,0.96052,0.89915,0.75834
 kaggle,int8pt,406,0.94514,0.90471,0.71178
 kaggle,int8pc,406,0.96675,0.94048,0.8031

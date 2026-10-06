@@ -1,16 +1,16 @@
 dataset,liveness,group,bpcer,bpcer_errors,live_faces,apcer,apcer_errors,attack_faces,eer,auc,decision_flips_vs_fp32
-own (test split),fp32,all,0.07092,10,141,0.09701,13,134,0.0836,0.95829,0
-own (test split),fp32,lighting=bright,0.01351,1,74,0.11594,8,69,,,
-own (test split),fp32,lighting=dim,0.13433,9,67,0.07692,5,65,,,
-own (test split),fp32,attack=screen,,,,0.09701,13,134,,,
-own (test split),int8pt,all,0.02837,4,141,0.10448,14,134,0.07632,0.95964,13
-own (test split),int8pt,lighting=bright,0.0,0,74,0.10145,7,69,,,
-own (test split),int8pt,lighting=dim,0.0597,4,67,0.10769,7,65,,,
-own (test split),int8pt,attack=screen,,,,0.10448,14,134,,,
-own (test split),int8pc,all,0.02837,4,141,0.10448,14,134,0.0836,0.96457,9
-own (test split),int8pc,lighting=bright,0.0,0,74,0.11594,8,69,,,
-own (test split),int8pc,lighting=dim,0.0597,4,67,0.09231,6,65,,,
-own (test split),int8pc,attack=screen,,,,0.10448,14,134,,,
+own (test split),fp32,all,0.28241,61,216,0.0625,13,208,0.12972,0.94306,0
+own (test split),fp32,lighting=bright,0.13393,15,112,0.07477,8,107,,,
+own (test split),fp32,lighting=dim,0.44231,46,104,0.0495,5,101,,,
+own (test split),fp32,attack=screen,,,,0.0625,13,208,,,
+own (test split),int8pt,all,0.13426,29,216,0.06731,14,208,0.10141,0.96299,39
+own (test split),int8pt,lighting=bright,0.00893,1,112,0.06542,7,107,,,
+own (test split),int8pt,lighting=dim,0.26923,28,104,0.06931,7,101,,,
+own (test split),int8pt,attack=screen,,,,0.06731,14,208,,,
+own (test split),int8pc,all,0.10648,23,216,0.07212,15,208,0.08022,0.96672,42
+own (test split),int8pc,lighting=bright,0.0,0,112,0.08411,9,107,,,
+own (test split),int8pc,lighting=dim,0.22115,23,104,0.05941,6,101,,,
+own (test split),int8pc,attack=screen,,,,0.07212,15,208,,,
 msu,fp32,all,0.0,0,35,0.46667,49,105,0.03333,0.99129,0
 msu,fp32,attack=print/printed_photo,,,,0.42857,15,35,,,
 msu,fp32,attack=screen/ipad,,,,0.4,14,35,,,
