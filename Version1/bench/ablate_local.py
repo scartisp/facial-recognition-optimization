@@ -1,20 +1,20 @@
-"""Local runtime optimization ablation on sequential video frames.
+"""Runtime optimization ablation across precision, detector size, detection interval, and concurrency.
 
 Sweeps combinations of:
+    - precision:     [fp32, int8pt, int8pc, int8nodw] (via --precision)
     - detector_size: [640, 480, 320]
     - detect_every:  [1, 3, 5]       (reuse bbox/keypoints between detections)
     - exec_mode:     [serial, parallel_auto, parallel_half]
 
 Each cell runs in a fresh subprocess so memory (RSS) and ONNX Runtime thread pools
 are isolated. Measures both stage latencies (p50/p95) and score drift / decision flips
-against the baseline (640, detect_every=1, serial) on a contiguous clip from
-private/*_live_bright.*. Also evaluates temporal liveness smoothing (window sizes
-1, 3, 5, 10) for jitter reduction.
+against the cell's own (640, detect_every=1, serial) baseline on sequential frames from
+private/*_live_bright.*.
 
 Writes:
-    results/raw/bench/local_ablation/<cell>.json
-    results/processed/ablation_local.csv
-    results/processed/ablation_local.md
+    results/raw/bench/<raw_subdir>/<cell>.json
+    results/processed/<out_prefix>.csv
+    results/processed/<out_prefix>.md
 """
 import argparse
 from collections import deque
@@ -36,20 +36,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 import pipeline as pl  # noqa: E402
 
 version1_folder = pl.version1_folder
-raw_folder = version1_folder / "results" / "raw" / "bench" / "local_ablation"
+ablation_configs = pl.repo_folder / "configs" / "ablation"
+bench_raw_root = version1_folder / "results" / "raw" / "bench"
 processed_folder = version1_folder / "results" / "processed"
 
 COSINE_THRESHOLD = 0.2421  # LFW FAR=0.1% operating point from AGENTS.md
+PRECISIONS = ["fp32", "int8pt", "int8pc", "int8nodw"]
 DETECTOR_SIZES = [640, 480, 320]
 DETECT_INTERVALS = [1, 3, 5]
+EXEC_MODES = ["serial", "parallel_auto", "parallel_half"]
 SMOOTH_WINDOWS = [1, 3, 5, 10]
+
+
+def output_paths(label, precision):
+    """Return (raw_folder, csv_path, md_path) for the requested label and precision."""
+    if label == "local" and precision == "fp32":
+        raw_dir = bench_raw_root / "local_ablation"
+        stem = "ablation_local"
+    elif precision == "fp32":
+        raw_dir = bench_raw_root / f"{label}_ablation"
+        stem = f"ablation_{label}"
+    else:
+        raw_dir = bench_raw_root / f"{label}_ablation_{precision}"
+        stem = f"ablation_{label}_{precision}"
+    return raw_dir, processed_folder / f"{stem}.csv", processed_folder / f"{stem}.md"
 
 
 def load_sequential_clip(max_frames):
     """Load up to max_frames consecutive frames from the first private/*_live_bright.* video."""
     videos = sorted(p for p in (version1_folder / "private").glob("*_live_bright.*"))
     if not videos:
-        raise FileNotFoundError("Need a private/*_live_bright.* video to run local ablation")
+        raise FileNotFoundError("Need a private/*_live_bright.* video to run ablation")
     capture = cv2.VideoCapture(str(videos[0]))
     frames = []
     while len(frames) < max_frames:
@@ -64,7 +81,7 @@ def load_sequential_clip(max_frames):
 
 
 def load_enrolled(pipeline, first_frame):
-    """Load private/enrollment_fp32.npy if present, otherwise enroll from first_frame."""
+    """Load enrollment_<precision>.npy if present, otherwise enroll from first_frame."""
     path = pl.enrollment_path(pipeline.config)
     if path.exists():
         return np.load(path)
@@ -74,9 +91,21 @@ def load_enrolled(pipeline, first_frame):
     return pipeline.embed(first_frame, face[1])
 
 
-def build_config(detector_size, exec_mode, half_threads):
-    """Return a pipeline config dict for the requested detector_size and execution mode."""
-    config = copy.deepcopy(json.loads(pl.default_config.read_text()))
+def base_config_for(precision):
+    """Load the base pipeline config matching a precision variant."""
+    if precision == "fp32":
+        return json.loads(pl.default_config.read_text())
+    cfg_path = ablation_configs / f"rec-{precision}_live-{precision}.json"
+    if not cfg_path.exists():
+        raise FileNotFoundError(
+            f"Missing config {cfg_path}; run quantize/quantize.py first"
+        )
+    return json.loads(cfg_path.read_text())
+
+
+def build_config(precision, detector_size, exec_mode, half_threads):
+    """Return a pipeline config dict for the requested precision, detector_size, and execution mode."""
+    config = copy.deepcopy(base_config_for(precision))
     config["detector"]["input_size"] = [detector_size, detector_size]
     config["verification"]["cosine_threshold"] = COSINE_THRESHOLD
     if exec_mode == "serial":
@@ -109,11 +138,11 @@ def cell_name(detector_size, detect_every, exec_mode):
     return f"det{detector_size}_every{detect_every}_{exec_mode}"
 
 
-def run_cell(detector_size, detect_every, exec_mode, max_frames, warmup):
+def run_cell(label, precision, detector_size, detect_every, exec_mode, max_frames, warmup):
     """Run one ablation cell in isolation and save its JSON summary and per-frame scores."""
     physical_cores = psutil.cpu_count(logical=False) or 2
     half_threads = max(1, physical_cores // 2)
-    config = build_config(detector_size, exec_mode, half_threads)
+    config = build_config(precision, detector_size, exec_mode, half_threads)
     pl.check_pins(config)
 
     frames, video_name = load_sequential_clip(max_frames)
@@ -123,7 +152,6 @@ def run_cell(detector_size, detect_every, exec_mode, max_frames, warmup):
     try:
         enrolled = load_enrolled(pipeline, frames[0])
 
-        # Warm-up runs excluded from measurements
         for i in range(warmup):
             pipeline.authenticate(frames[i % len(frames)], enrolled)
 
@@ -162,6 +190,8 @@ def run_cell(detector_size, detect_every, exec_mode, max_frames, warmup):
     name = cell_name(detector_size, detect_every, exec_mode)
     summary = {
         "cell": name,
+        "label": label,
+        "precision": precision,
         "video": video_name,
         "frames": len(frames),
         "warmup": warmup,
@@ -177,11 +207,12 @@ def run_cell(detector_size, detect_every, exec_mode, max_frames, warmup):
         "per_frame": per_frame,
     }
 
+    raw_folder, _, _ = output_paths(label, precision)
     raw_folder.mkdir(parents=True, exist_ok=True)
     (raw_folder / f"{name}.json").write_text(json.dumps(summary, indent=2) + "\n")
     tot = summary["total_ms"]
-    print(f"{name:32s}  total p50={tot['p50']:5.2f} ms  p95={tot['p95']:5.2f} ms  "
-          f"fps={1000.0 / tot['p50']:5.1f}  RSS={summary['rss_mb_max']:.0f} MB")
+    print(f"[{label}/{precision}] {name:32s}  total p50={tot['p50']:6.2f} ms  "
+          f"mean={tot['mean']:6.2f} ms  fps={1000.0 / tot['mean']:5.1f}  RSS={summary['rss_mb_max']:.0f} MB")
 
 
 def compute_smoothing_stats(scores, threshold):
@@ -207,11 +238,15 @@ def compute_smoothing_stats(scores, threshold):
     return rows
 
 
-def summarize_all():
-    """Aggregate all cell JSONs against baseline and write CSV + Markdown report."""
+def summarize_all(label, precision):
+    """Aggregate all cell JSONs for (label, precision) and write CSV + Markdown report."""
+    raw_folder, csv_path, md_path = output_paths(label, precision)
     base_path = raw_folder / f"{cell_name(640, 1, 'serial')}.json"
     if not base_path.exists():
-        raise FileNotFoundError(f"Baseline result missing: {base_path}")
+        first_json = sorted(raw_folder.glob("det*.json"))
+        if not first_json:
+            raise FileNotFoundError(f"No cell results found in {raw_folder}")
+        base_path = first_json[0]
     base = json.loads(base_path.read_text())
     base_frames = base["per_frame"]
 
@@ -219,7 +254,7 @@ def summarize_all():
     smoothing_targets = {}
     for size in DETECTOR_SIZES:
         for every in DETECT_INTERVALS:
-            for mode in ("serial", "parallel_auto", "parallel_half"):
+            for mode in EXEC_MODES:
                 path = raw_folder / f"{cell_name(size, every, mode)}.json"
                 if not path.exists():
                     continue
@@ -236,12 +271,13 @@ def summarize_all():
 
                 rows.append({
                     "cell": data["cell"],
+                    "precision": precision,
                     "detector_size": size,
                     "detect_every": every,
                     "exec_mode": mode,
                     "detect_mean_ms": round(data["detect_ms"]["mean"], 2),
                     "detect_p50_ms": round(data["detect_ms"]["p50"], 2),
-                    "post_detect_p50_ms": round(data["post_detect_p50_ms"] if "post_detect_p50_ms" in data else data["post_detect_ms"]["p50"], 2),
+                    "post_detect_p50_ms": round(data["post_detect_ms"]["p50"], 2),
                     "total_mean_ms": round(data["total_ms"]["mean"], 2),
                     "total_p50_ms": round(total_p50, 2),
                     "total_p95_ms": round(data["total_ms"]["p95"], 2),
@@ -265,75 +301,83 @@ def summarize_all():
                     )
 
     processed_folder.mkdir(parents=True, exist_ok=True)
-    csv_path = processed_folder / "ablation_local.csv"
     with open(csv_path, "w", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
 
     md_lines = [
-        f"# Local Runtime Optimization Ablation ({base['video']}, {base['frames']} sequential frames)",
+        f"# Runtime Optimization Ablation ({label}, {precision}, {base['video']}, {base['frames']} frames)",
         "",
-        f"Baseline: `det640_every1_serial` (total mean = {base['total_ms']['mean']:.2f} ms, "
-        f"p50 = {base['total_ms']['p50']:.2f} ms, cosine threshold = {COSINE_THRESHOLD}, liveness threshold = 0.0).",
+        f"Baseline: `{base['cell']}` (total mean = {base['total_ms']['mean']:.2f} ms, "
+        f"p50 = {base['total_ms']['p50']:.2f} ms, RSS = {base['rss_mb_max']:.0f} MB, "
+        f"cosine threshold = {COSINE_THRESHOLD}, liveness threshold = 0.0).",
         "",
-        "| Cell | Det (px) | Every | Mode | Det mean | Post p50 | Total mean | Total p50 | Total p95 | FPS (mean) | Speedup | Sim mean diff | Live mean diff | Flips |",
-        "|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| Cell | Det (px) | Every | Mode | Det mean | Post p50 | Total mean | Total p50 | Total p95 | FPS (mean) | Speedup | RSS (MB) | Sim mean diff | Live mean diff | Flips |",
+        "|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for r in rows:
         md_lines.append(
             f"| {r['cell']} | {r['detector_size']} | {r['detect_every']} | {r['exec_mode']} | "
             f"{r['detect_mean_ms']:.2f} | {r['post_detect_p50_ms']:.2f} | {r['total_mean_ms']:.2f} | "
             f"{r['total_p50_ms']:.2f} | {r['total_p95_ms']:.2f} | {r['fps_mean']:.1f} | {r['speedup_mean']:.2f}x | "
-            f"{r['sim_mean_diff']:.5f} | {r['live_mean_diff']:.4f} | {r['decision_flips']}/{r['total_frames']} |"
+            f"{r['rss_mb_max']:.0f} | {r['sim_mean_diff']:.5f} | {r['live_mean_diff']:.4f} | {r['decision_flips']}/{r['total_frames']} |"
         )
 
-    md_lines.extend(["", "## Liveness Temporal Smoothing (jitter across sequential frames)", ""])
-    for name, srows in smoothing_targets.items():
-        md_lines.extend([
-            f"### {name}",
-            "",
-            "| Window | Mean logit | Std (jitter) | Min | Max | Spoof flips (<0.0) |",
-            "|---:|---:|---:|---:|---:|---:|",
-        ])
-        for sr in srows:
-            md_lines.append(
-                f"| {sr['window']} | {sr['mean']:.4f} | {sr['std']:.4f} | "
-                f"{sr['min']:.4f} | {sr['max']:.4f} | {sr['spoof_flips']}/{sr['total_frames']} |"
-            )
-        md_lines.append("")
+    if smoothing_targets:
+        md_lines.extend(["", "## Liveness Temporal Smoothing (jitter across sequential frames)", ""])
+        for name, srows in smoothing_targets.items():
+            md_lines.extend([
+                f"### {name}",
+                "",
+                "| Window | Mean logit | Std (jitter) | Min | Max | Spoof flips (<0.0) |",
+                "|---:|---:|---:|---:|---:|---:|",
+            ])
+            for sr in srows:
+                md_lines.append(
+                    f"| {sr['window']} | {sr['mean']:.4f} | {sr['std']:.4f} | "
+                    f"{sr['min']:.4f} | {sr['max']:.4f} | {sr['spoof_flips']}/{sr['total_frames']} |"
+                )
+            md_lines.append("")
 
-    md_path = processed_folder / "ablation_local.md"
     md_path.write_text("\n".join(md_lines))
     print(f"\nWrote {csv_path}\nWrote {md_path}")
 
 
 def main():
-    """Orchestrate the local ablation grid across isolated subprocesses."""
+    """Orchestrate the runtime ablation grid across isolated subprocesses."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--label", default="local", help="machine label (e.g. local, pi)")
+    parser.add_argument("--precision", choices=PRECISIONS, default="fp32",
+                        help="model precision variant for recognizer & liveness")
     parser.add_argument("--frames", type=int, default=300, help="consecutive frames per cell")
     parser.add_argument("--warmup", type=int, default=30, help="warm-up iterations before timing")
+    parser.add_argument("--det-sizes", nargs="+", type=int, default=DETECTOR_SIZES)
+    parser.add_argument("--every", nargs="+", type=int, default=DETECT_INTERVALS)
+    parser.add_argument("--modes", nargs="+", choices=EXEC_MODES, default=EXEC_MODES)
     parser.add_argument("--cell", nargs=3, metavar=("SIZE", "EVERY", "MODE"),
                         help="run a single cell (used internally)")
     parser.add_argument("--summarize-only", action="store_true")
     args = parser.parse_args()
 
     if args.cell:
-        run_cell(int(args.cell[0]), int(args.cell[1]), args.cell[2], args.frames, args.warmup)
+        run_cell(args.label, args.precision, int(args.cell[0]), int(args.cell[1]),
+                 args.cell[2], args.frames, args.warmup)
         return
     if args.summarize_only:
-        summarize_all()
+        summarize_all(args.label, args.precision)
         return
 
-    for size in DETECTOR_SIZES:
-        for every in DETECT_INTERVALS:
-            for mode in ("serial", "parallel_auto", "parallel_half"):
+    for size in args.det_sizes:
+        for every in args.every:
+            for mode in args.modes:
                 subprocess.run(
-                    [sys.executable, __file__, "--frames", str(args.frames),
-                     "--warmup", str(args.warmup), "--cell", str(size), str(every), mode],
+                    [sys.executable, __file__, "--label", args.label, "--precision", args.precision,
+                     "--frames", str(args.frames), "--warmup", str(args.warmup),
+                     "--cell", str(size), str(every), mode],
                     check=True,
                 )
-    summarize_all()
+    summarize_all(args.label, args.precision)
 
 
 if __name__ == "__main__":

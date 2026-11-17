@@ -375,11 +375,14 @@ def main():
     parser.add_argument("--detect-every", type=int, default=1, help="run detector every K frames in --camera")
     parser.add_argument("--smooth-liveness", type=int, default=1, help="rolling window size for liveness score")
     parser.add_argument("--parallel", action="store_true", help="run liveness and recognizer in parallel")
+    parser.add_argument("--det-size", type=int, help="override square detector input size (e.g. 320)")
     args = parser.parse_args()
 
     config = json.loads(Path(args.config).read_text())
     if args.parallel:
         config["parallel"] = True
+    if args.det_size:
+        config["detector"]["input_size"] = [args.det_size, args.det_size]
     check_pins(config)
     pipeline = Pipeline(config)
 
