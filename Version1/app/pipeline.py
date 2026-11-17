@@ -13,6 +13,8 @@ All model paths and thresholds come from a config file (default: configs/pipelin
 so an INT8 run only needs a different config, not different code.
 """
 import argparse
+from collections import deque
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import importlib.util
 import json
@@ -84,7 +86,8 @@ def check_pins(config):
         print("WARNING: could not read the liveness repo commit (is git installed?)")
 
 
-def session_options():
+def session_options(intra_op_threads=0):
+    """Build ONNX Runtime session options with thread spinning disabled."""
     options = ort.SessionOptions()
     # Errors only: the recognizer declares batch size 1 and ORT warns on every batched run
     options.log_severity_level = 3
@@ -92,12 +95,18 @@ def session_options():
     # session's thread pool keeps busy-waiting and steals CPU from whichever model is running.
     # Threading only: outputs are unchanged.
     options.add_session_config_entry("session.intra_op.allow_spinning", "0")
+    if intra_op_threads and intra_op_threads > 0:
+        options.intra_op_num_threads = int(intra_op_threads)
     return options
 
 
-def new_session(path_or_bytes):
+def new_session(path_or_bytes, intra_op_threads=0):
+    """Create a CPU ONNX Runtime session for an ONNX file path or serialized model bytes."""
     source = path_or_bytes if isinstance(path_or_bytes, bytes) else str(path_or_bytes)
-    return ort.InferenceSession(source, sess_options=session_options(), providers=["CPUExecutionProvider"])
+    return ort.InferenceSession(
+        source, sess_options=session_options(intra_op_threads=intra_op_threads),
+        providers=["CPUExecutionProvider"],
+    )
 
 
 def scrfd_session_factory(model_file, input_size, reference_session):
@@ -107,8 +116,12 @@ def scrfd_session_factory(model_file, input_size, reference_session):
 
 class Pipeline:
     def __init__(self, config):
+        """Initialize detector, recognizer, and liveness ONNX Runtime sessions from config."""
         self.config = config
         models = config["models"]
+        branch_threads = int(config.get("intra_op_num_threads", 0))
+        self.parallel = bool(config.get("parallel", False))
+        self._executor = ThreadPoolExecutor(max_workers=2) if self.parallel else None
 
         # Detector: fixed FP32 in every configuration, so it never explains a difference
         detector_path = resolve_path(models["detector"]["path"])
@@ -123,14 +136,20 @@ class Pipeline:
             det_thresh=config["detector"]["det_thresh"],
         )
 
-        self.recognizer = new_session(resolve_path(models["recognizer"]["path"]))
+        self.recognizer = new_session(resolve_path(models["recognizer"]["path"]), intra_op_threads=branch_threads)
         self.recognizer_input = self.recognizer.get_inputs()[0].name
 
-        self.liveness = new_session(resolve_path(models["liveness"]["path"]))
+        self.liveness = new_session(resolve_path(models["liveness"]["path"]), intra_op_threads=branch_threads)
         self.liveness_input = self.liveness.get_inputs()[0].name
 
         real_prob = config["liveness"]["real_prob_threshold"]
         self.liveness_logit_threshold = math.log(real_prob / (1 - real_prob))
+
+    def close(self):
+        """Shut down the parallel worker pool if one was created."""
+        if self._executor is not None:
+            self._executor.shutdown(wait=True)
+            self._executor = None
 
     def detect(self, frame_bgr, metric="max"):
         """Return (bbox, keypoints) of one face, or None.
@@ -196,23 +215,51 @@ class Pipeline:
     def liveness_score(self, frame_bgr, bbox):
         return float(self.liveness_scores_blob(self.liveness_blob(self.liveness_crop(frame_bgr, bbox)))[0])
 
-    def authenticate(self, frame_bgr, enrolled_embedding):
-        timings = {}
-
+    def _timed_liveness(self, frame_bgr, bbox):
+        """Run liveness scoring on a detected bbox and return (score, elapsed_ms)."""
         start = time.perf_counter()
-        face = self.detect(frame_bgr)
-        timings["detect_ms"] = (time.perf_counter() - start) * 1000
-        if face is None:
-            return {"accept": False, "reason": "no face", "timings": timings}
-        bbox, keypoints = face
+        score = self.liveness_score(frame_bgr, bbox)
+        return score, (time.perf_counter() - start) * 1000
 
-        start = time.perf_counter()
-        live_score = self.liveness_score(frame_bgr, bbox)
-        timings["liveness_ms"] = (time.perf_counter() - start) * 1000
-
+    def _timed_similarity(self, frame_bgr, keypoints, enrolled_embedding):
+        """Run recognition embedding and cosine similarity, returning (similarity, elapsed_ms)."""
         start = time.perf_counter()
         similarity = float(np.dot(self.embed(frame_bgr, keypoints), enrolled_embedding))
-        timings["recognize_ms"] = (time.perf_counter() - start) * 1000
+        return similarity, (time.perf_counter() - start) * 1000
+
+    def authenticate(self, frame_bgr, enrolled_embedding, cached_face=None, liveness_window=None):
+        """Authenticate a frame via detection (or cached_face), liveness, and identity verification."""
+        timings = {}
+
+        if cached_face is not None:
+            bbox, keypoints = cached_face
+            timings["detect_ms"] = 0.0
+            detected = False
+        else:
+            start = time.perf_counter()
+            face = self.detect(frame_bgr)
+            timings["detect_ms"] = (time.perf_counter() - start) * 1000
+            if face is None:
+                return {"accept": False, "reason": "no face", "detected": True, "timings": timings}
+            bbox, keypoints = face
+            detected = True
+
+        post_start = time.perf_counter()
+        if self._executor is not None:
+            live_future = self._executor.submit(self._timed_liveness, frame_bgr, bbox)
+            rec_future = self._executor.submit(self._timed_similarity, frame_bgr, keypoints, enrolled_embedding)
+            raw_live_score, timings["liveness_ms"] = live_future.result()
+            similarity, timings["recognize_ms"] = rec_future.result()
+        else:
+            raw_live_score, timings["liveness_ms"] = self._timed_liveness(frame_bgr, bbox)
+            similarity, timings["recognize_ms"] = self._timed_similarity(frame_bgr, keypoints, enrolled_embedding)
+        timings["post_detect_ms"] = (time.perf_counter() - post_start) * 1000
+
+        if liveness_window is not None:
+            liveness_window.append(raw_live_score)
+            live_score = float(sum(liveness_window) / len(liveness_window))
+        else:
+            live_score = raw_live_score
 
         is_live = live_score >= self.liveness_logit_threshold
         is_match = similarity >= self.config["verification"]["cosine_threshold"]
@@ -230,8 +277,11 @@ class Pipeline:
             "accept": bool(is_live and is_match),
             "reason": reason,
             "liveness_score": live_score,
+            "raw_liveness_score": raw_live_score,
             "similarity": similarity,
             "bbox": bbox,
+            "keypoints": keypoints,
+            "detected": detected,
             "timings": timings,
         }
 
@@ -271,17 +321,33 @@ def print_result(result):
     print("  " + ", ".join(f"{name}={ms:.1f}" for name, ms in result["timings"].items()))
 
 
-def verify_camera(pipeline, enrolled, camera_index):
+def verify_camera(pipeline, enrolled, camera_index, detect_every=1, smooth_liveness=1):
+    """Run real-time webcam verification with optional detection skipping and liveness smoothing."""
     camera = cv2.VideoCapture(camera_index)
     if not camera.isOpened():
         raise RuntimeError(f"Could not open camera {camera_index}")
+
+    detect_every = max(1, int(detect_every))
+    liveness_window = deque(maxlen=smooth_liveness) if smooth_liveness > 1 else None
+    cached_face = None
+    frame_idx = 0
 
     try:
         while True:
             ok, frame = camera.read()
             if not ok:
                 break
-            result = pipeline.authenticate(frame, enrolled)
+            use_cache = cached_face if (cached_face is not None and frame_idx % detect_every != 0) else None
+            result = pipeline.authenticate(
+                frame, enrolled, cached_face=use_cache, liveness_window=liveness_window,
+            )
+            if "bbox" in result:
+                cached_face = (result["bbox"], result["keypoints"])
+            else:
+                cached_face = None
+                if liveness_window is not None:
+                    liveness_window.clear()
+            frame_idx += 1
 
             color = (0, 200, 0) if result["accept"] else (0, 0, 220)
             label = ("ACCEPT" if result["accept"] else "REJECT") + f": {result['reason']}"
@@ -300,32 +366,44 @@ def verify_camera(pipeline, enrolled, camera_index):
 
 
 def main():
+    """CLI entry point for enrolling a reference image or verifying an image/webcam."""
     parser = argparse.ArgumentParser(description="Liveness + face verification pipeline")
     parser.add_argument("mode", choices=["enroll", "verify"])
     parser.add_argument("--config", default=str(default_config))
     parser.add_argument("--image", help="image file (enroll defaults to private/reference.jpg)")
     parser.add_argument("--camera", action="store_true", help="verify from the webcam")
+    parser.add_argument("--detect-every", type=int, default=1, help="run detector every K frames in --camera")
+    parser.add_argument("--smooth-liveness", type=int, default=1, help="rolling window size for liveness score")
+    parser.add_argument("--parallel", action="store_true", help="run liveness and recognizer in parallel")
     args = parser.parse_args()
 
     config = json.loads(Path(args.config).read_text())
+    if args.parallel:
+        config["parallel"] = True
     check_pins(config)
     pipeline = Pipeline(config)
 
-    if args.mode == "enroll":
-        enroll(pipeline, args.image or version1_folder / "private" / "reference.jpg")
-        return
+    try:
+        if args.mode == "enroll":
+            enroll(pipeline, args.image or version1_folder / "private" / "reference.jpg")
+            return
 
-    path = enrollment_path(config)
-    if not path.exists():
-        raise FileNotFoundError(f"No enrollment at {path}. Run: python app/pipeline.py enroll")
-    enrolled = np.load(path)
+        path = enrollment_path(config)
+        if not path.exists():
+            raise FileNotFoundError(f"No enrollment at {path}. Run: python app/pipeline.py enroll")
+        enrolled = np.load(path)
 
-    if args.camera:
-        verify_camera(pipeline, enrolled, config["camera"]["index"])
-    elif args.image:
-        print_result(pipeline.authenticate(load_image(args.image), enrolled))
-    else:
-        parser.error("verify needs --image PATH or --camera")
+        if args.camera:
+            verify_camera(
+                pipeline, enrolled, config["camera"]["index"],
+                detect_every=args.detect_every, smooth_liveness=args.smooth_liveness,
+            )
+        elif args.image:
+            print_result(pipeline.authenticate(load_image(args.image), enrolled))
+        else:
+            parser.error("verify needs --image PATH or --camera")
+    finally:
+        pipeline.close()
 
 
 if __name__ == "__main__":
