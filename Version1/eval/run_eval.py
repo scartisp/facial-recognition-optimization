@@ -222,10 +222,16 @@ def main():
     kg_rec, kg_live, kg_meta = load_cache("kaggle")
     datasets_rec["own"] = own_rec
     datasets_rec["kaggle"] = kg_rec
+    # Session 2 (second team recording, with/without glasses): test only, optional
+    has_s2 = (cache_folder / "session2.npz").exists()
+    if has_s2:
+        s2_rec, s2_live, s2_meta = load_cache("session2")
+        datasets_rec["session2"] = s2_rec
     emb = {"lfw": lfw_emb}
-    for name in ("own", "kaggle"):
-        emb[name] = {v: runners[v].embed(datasets_rec[name]) for v in VARIANTS}
-    for name in ("lfw", "own", "kaggle"):
+    for name in datasets_rec:
+        if name != "lfw":
+            emb[name] = {v: runners[v].embed(datasets_rec[name]) for v in VARIANTS}
+    for name in datasets_rec:
         for v in ("int8pt", "int8pc"):
             cos = np.einsum("ij,ij->i", emb[name]["fp32"], emb[name][v])
             fidelity_summary.append({"dataset": name, "recognizer": v, "faces": len(cos),
@@ -247,6 +253,8 @@ def main():
     live_sets = {"own (test split)": (own_live, own_meta, lambda m: m["split"] == "test"),
                  "msu": (msu_live, msu_meta, lambda m: True),
                  "kaggle": (kg_live, kg_meta, lambda m: True)}
+    if has_s2:
+        live_sets["session2"] = (s2_live, s2_meta, lambda m: True)
     live_scores, liveness_raw = {}, []
     for name, (crops, meta, keep) in live_sets.items():
         idx = np.array([i for i, m in enumerate(meta) if keep(m)])
@@ -256,6 +264,7 @@ def main():
             m = meta[i]
             liveness_raw.append({"dataset": name, "index": int(i), "person": m["person"], "kind": m["kind"],
                                  "detail": m.get("detail", ""), "lighting": m.get("lighting", "na"),
+                                 "glasses": m.get("glasses", "na"),
                                  "source": m.get("source", ""), "time_s": m.get("time_s", ""),
                                  "face_width_px": m["face_width_px"],
                                  **{f"score_{v}": f"{scores[v][j]:.6f}" for v in VARIANTS}})
@@ -267,9 +276,13 @@ def main():
         kinds = np.array([meta[i]["kind"] for i in idx])
         details = np.array([meta[i].get("detail", "") for i in idx])
         lights = np.array([meta[i].get("lighting", "na") for i in idx])
+        glasses = np.array([meta[i].get("glasses", "na") for i in idx])
         is_live = kinds == "live"
         groups = [("all", np.ones(len(idx), bool))]
         groups += [(f"lighting={l}", lights == l) for l in sorted(set(lights)) if l != "na"]
+        groups += [(f"glasses={g}", glasses == g) for g in sorted(set(glasses)) if g != "na"]
+        groups += [(f"lighting={l},glasses={g}", (lights == l) & (glasses == g))
+                   for l in sorted(set(lights)) if l != "na" for g in sorted(set(glasses)) if g != "na"]
         attack_groups = sorted({(k, d) for k, d in zip(kinds, details) if k != "live"})
         for v in VARIANTS:
             s = scores[v]
@@ -315,14 +328,21 @@ def main():
     # ---- combined pipeline ----
     combined_attempts = []
 
-    def add_attempts(dataset, meta, emb_by_v, live_by_v, live_index, enrollments, probes):
-        """enrollments: person -> list of cache indices; probes: list of cache indices (test faces)."""
-        pos = {int(i): j for j, i in enumerate(live_index)}
+    def make_templates(emb_by_v, enrollments):
+        """person -> list of cache indices  =>  person -> {variant: unit-length mean embedding}.
+        Each variant enrolls with its own recognizer, as a deployed INT8 system would."""
+        out = {}
         for person, enroll_idx in enrollments.items():
-            templates = {}
+            out[person] = {}
             for v in VARIANTS:
                 t = emb_by_v[v][enroll_idx].mean(axis=0)
-                templates[v] = t / np.linalg.norm(t)
+                out[person][v] = t / np.linalg.norm(t)
+        return out
+
+    def add_attempts(dataset, meta, emb_by_v, live_by_v, live_index, person_templates, probes):
+        """person_templates: from make_templates; probes: list of cache indices (test faces)."""
+        pos = {int(i): j for j, i in enumerate(live_index)}
+        for person, templates in person_templates.items():
             for i in probes:
                 m = meta[i]
                 if m["kind"] == "live":
@@ -334,6 +354,7 @@ def main():
                 combined_attempts.append({
                     "dataset": dataset, "enrolled": person, "probe": m["person"], "attempt": kind,
                     "presentation": m["kind"], "detail": m.get("detail", ""), "lighting": m.get("lighting", "na"),
+                    "glasses": m.get("glasses", "na"),
                     **{f"sim_{v}": float(emb_by_v[v][i] @ templates[v]) for v in VARIANTS},
                     **{f"live_{v}": float(live_by_v[v][pos[i]]) for v in VARIANTS},
                 })
@@ -343,24 +364,36 @@ def main():
     for i, m in enumerate(own_meta):
         if m["split"] == "calib" and m["kind"] == "live" and m["lighting"] == "bright":
             own_enroll.setdefault(m["person"], []).append(i)
-    add_attempts("own", own_meta, emb["own"], own_scores, own_idx, own_enroll, list(own_idx))
+    own_templates = make_templates(emb["own"], own_enroll)
+    add_attempts("own", own_meta, emb["own"], own_scores, own_idx, own_templates, list(own_idx))
+
+    if has_s2:
+        # Enrolled once in session 1 (same templates as above), verified in session 2
+        s2_idx, s2_scores = live_scores["session2"]
+        add_attempts("session2", s2_meta, emb["session2"], s2_scores, s2_idx, own_templates, list(s2_idx))
 
     kg_idx, kg_scores = live_scores["kaggle"]
     kg_enroll = {m["person"]: [i] for i, m in enumerate(kg_meta) if m.get("detail") == "selfie"}
     kg_probes = [int(i) for i in kg_idx if kg_meta[i].get("detail") != "selfie" and kg_meta[i]["person"] in kg_enroll]
-    add_attempts("kaggle", kg_meta, emb["kaggle"], kg_scores, kg_idx, kg_enroll, kg_probes)
+    add_attempts("kaggle", kg_meta, emb["kaggle"], kg_scores, kg_idx, make_templates(emb["kaggle"], kg_enroll),
+                 kg_probes)
 
     write_csv(results_raw / "combined_attempts.csv", (
         {k: (f"{v:.6f}" if isinstance(v, float) else v) for k, v in a.items()} for a in combined_attempts))
 
     combined_rows = []
-    for dataset in ("own", "kaggle"):
+    combined_sets = ["own", "session2", "kaggle"] if has_s2 else ["own", "kaggle"]
+    for dataset in combined_sets:
         attempts = [a for a in combined_attempts if a["dataset"] == dataset]
         lightings = sorted({a["lighting"] for a in attempts} - {"na"})
+        glasses_values = sorted({a["glasses"] for a in attempts} - {"na"})
+        groups = {"all": lambda a: True}
+        groups.update({f"lighting={l}": (lambda a, l=l: a["lighting"] == l) for l in lightings})
+        groups.update({f"glasses={g}": (lambda a, g=g: a["glasses"] == g) for g in glasses_values})
         for rv in VARIANTS:
             for lv in VARIANTS:
-                for group in ["all"] + [f"lighting={l}" for l in lightings]:
-                    chosen = [a for a in attempts if group == "all" or a["lighting"] == group.split("=")[1]]
+                for group, in_group in groups.items():
+                    chosen = [a for a in attempts if in_group(a)]
                     accept = lambda a: a[f"sim_{rv}"] >= fp32_threshold and a[f"live_{lv}"] >= live_threshold
                     row = {"dataset": dataset, "recognizer": rv, "liveness": lv, "group": group}
                     for kind, rate_name, want_accept in (("genuine", "frr", True), ("impostor", "impostor_far", False),
@@ -378,8 +411,10 @@ def main():
                 "says real. FRR = genuine user rejected; impostor FAR = a different live person accepted; "
                 "spoof FAR = a photo/screen of the enrolled user accepted.", "",
                 "Team videos: each person is enrolled from the held-out first 4 s of their bright live video and "
-                "acts as the impostor for the other. Kaggle: each person is enrolled from their single selfie.", ""]
-    for dataset in ("own", "kaggle"):
+                "acts as the impostor for the others. Session 2 (recorded later, with and without glasses, paper "
+                "photo attacks): verified against those same session-1 enrollments, so it also tests a later day. "
+                "Kaggle: each person is enrolled from their single selfie.", ""]
+    for dataset in combined_sets:
         summary += [f"### {dataset}", "", "| Recognizer | Liveness | Group | FRR | Impostor FAR | Spoof FAR |",
                     "|---|---|---|---|---|---|"]
         for r in (r for r in combined_rows if r["dataset"] == dataset):

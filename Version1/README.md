@@ -21,10 +21,21 @@ Run in this order from the Version1 folder with the venv active:
 On the Pi (same order, skipping 1-2: copy private\cache and models\int8 from the PC instead):
   python eval/run_eval.py --label pi            accuracy on ARM -> results/processed/pi/
   python bench/bench.py --label pi              and --label pi --isolated
+
+Power (run on the PC; meter wired PSU -> FNB58 in, FNB58 out -> Pi, micro-USB -> PC last;
+the Pi needs key-based SSH and the same bench/bench.py and app/pipeline.py as the PC):
+  python bench\power_run.py                     9 configs, 60 s sustained each, idle phases between
+  python bench\power_run.py --seconds 20 --cells rec-fp32_live-fp32   quick check
+  -> results\raw\power\pi\<run_id>\, results\processed\power_pi.csv, results\figures\power_trace_pi.png
+  python eval\power_analysis.py results\raw\power\pi\<run_id>   re-analyse an existing run
+  python bench\power_run.py --reverse            second pass in reverse order (order/heat check)
+  python eval\power_analysis.py --combine <run1> <run2>   mean and min-max -> results\processed\power_pi.csv
   python eval/compare_runs.py --a pc --b pi     do Pi outputs match the committed PC results?
 
 Data (all local, git-ignored, never shared):
 - private\<name>_<live|print|screen>_<bright|dim>.<mp4|webm>   team videos (first 4 s = calibration only)
+- private\session2\<name>_<live|print>_<bright|dim>_<glasses|noglasses>.mp4   second session, test only
+  (python eval\prepare_data.py --only session2; every name must already be in private\pseudonyms.json)
 - data\lfw\archive.zip                     Kaggle jessicali9530/lfw-dataset (LFW deep-funneled)
 - data\msu-mfsd\                            git clone of github.com/sunny3/MSU-MFSD (commit pinned)
 - data\anti-spoofing-kaggle\archive.zip    Kaggle tapakah68/anti-spoofing (free 45-file sample)

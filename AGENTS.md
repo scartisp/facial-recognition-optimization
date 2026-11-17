@@ -33,9 +33,9 @@ Sub-questions:
 
 ## Hardware
 
-Raspberry Pi 4 Model B Rev 1.5, 8 GB RAM (Cortex-A72 at 1.8 GHz, no int8 dot-product instructions), Raspberry Pi OS 64-bit (Debian 13 / Trixie, kernel 6.18), Python 3.11.17 via uv (system Python is 3.13), ONNX Runtime 1.30.0. Headless over SSH, hostname `simiPi`. No webcam and no power meter yet. It reaches ~79 °C under load (soft throttle at 80 °C); check `throttled` in the bench JSON. PC results (x86 Windows) are labelled `pc`, Pi results `pi`.
+Raspberry Pi 4 Model B Rev 1.5, 8 GB RAM (Cortex-A72 at 1.8 GHz, no int8 dot-product instructions), Raspberry Pi OS 64-bit (Debian 13 / Trixie, kernel 6.18), Python 3.11.17 via uv (system Python is 3.13), ONNX Runtime 1.30.0. Headless over SSH (user `simion`, key login from the PC), hostname `simiPi`; it still boots the desktop and uses Wi-Fi, which adds idle noise. No webcam. Power meter: FNIRSI FNB58 inline on the Pi's USB-C supply, read from the PC over micro-USB at 100 samples/s (`bench/power_log.py`). Pi and PC clocks are both NTP-synced (measured agreement ~0.04 s). It reaches ~79 °C under load (soft throttle at 80 °C); check `throttled` in the bench JSON. PC results (x86 Windows) are labelled `pc`, Pi results `pi`.
 
-Running on the Pi: `bash run_pi.sh` (or `nohup ... &` so an SSH drop does not kill it). It needs, copied from the PC: `private/cache/`, `private/lfw_pairs.json`, `models/int8/`, `~/.insightface/models/buffalo_sc/`, and the alphabetically first `private/*_live_bright.*` video. Compare afterwards on the PC with `eval/compare_runs.py --a pc --b pi`.
+Running on the Pi: `bash run_pi.sh` (or `nohup ... &` so an SSH drop does not kill it). It needs, copied from the PC: `private/cache/`, `private/lfw_pairs.json`, `models/int8/`, `~/.insightface/models/buffalo_sc/`, and `private/mabel_live_bright.webm` (the benchmark video, pinned in `bench.py`). Compare afterwards on the PC with `eval/compare_runs.py --a pc --b pi`.
 
 ## Pipeline
 
@@ -62,11 +62,12 @@ Accept only if the face is live **and** matches the enrolled embedding (cosine s
 
 ## Data
 
-All local and git-ignored. Results files hold scores only; team members appear as `p01`, `p02` (mapping in `private/pseudonyms.json`).
+All local and git-ignored. Results files hold scores only; team members appear as `p01` (Mabel), `p02` (Simion), `p03` (Alphanso; confirmed by cross-session embeddings), mapping in `private/pseudonyms.json`. The team's own folder names number people differently (Simion = p1): map by name, never by those numbers.
 
 | Dataset | Location | Used for |
 |---|---|---|
 | Team videos `<name>_<live\|print\|screen>_<bright\|dim>.<mp4\|webm>` | `Version1/private/` | Calibration (first 4 s of every video only), liveness test and combined pipeline (rest), enrollment (first 4 s of `live_bright`) |
+| Session 2 team videos (2026-11-14, same room, 1080p webcam) `<name>_<live\|print>_<bright\|dim>_<glasses\|noglasses>.mp4`, print = paper photo held up | `Version1/private/session2/` | Test only (never calibration): liveness by lighting and glasses, combined pipeline against the session-1 enrollments (a later day) |
 | LFW deep-funneled, Kaggle `jessicali9530/lfw-dataset` | `Version1/data/lfw/archive.zip` | Verification (6,000 pairs) |
 | MSU-MFSD first-frame subset, `github.com/sunny3/MSU-MFSD` (unofficial copy, instructor-approved for initial findings; commit pinned) | `Version1/data/msu-mfsd/` | Liveness test only |
 | Kaggle `tapakah68/anti-spoofing` free 45-file sample | `Version1/data/anti-spoofing-kaggle/archive.zip` | Liveness test, combined pipeline (enroll from selfie) |
@@ -87,7 +88,7 @@ Never calibrate on test frames. Do not evaluate liveness on CelebA-Spoof (its tr
 | Metric | Unit | How |
 |---|---|---|
 | Latency | ms, p50 and p95 | end-to-end (detect, align, embed/classify), 500+ runs, warm-up excluded; plus model-only timing (`bench.py --isolated`, 1 thread and default threads) |
-| Power | W | inline power meter, sustained run |
+| Power | W, mJ/frame | FNB58 inline meter; `bench/power_run.py` (PC) runs a 60 s sustained run per config on the Pi between idle phases; mean W, idle-subtracted active W, energy per frame (whole-board and active) |
 | Memory | MB | RSS during sustained run, not just at load |
 | Model size | MB | on-disk, per precision |
 | Accuracy | % | FAR/FMR, FRR/FNMR, EER, TAR @ FAR=0.1% |
@@ -126,7 +127,11 @@ Done: FP32 pipeline, INT8 PTQ of both models, 3 x 3 accuracy evaluation and late
 
 Pi findings: INT8 is slower on the Pi too (model-only, 4 threads: recognizer 54.1 -> 71.3 ms, liveness 20.7 -> 24.4 ms; full pipeline 225 -> 249-258 ms, detector ~138 ms of that). Pi accuracy matches the PC (FP32 outputs within 1e-5; INT8 changes 0 LFW and 2/968 liveness decisions). Unexplained: Pi RSS ~2,000 MB with the FP32 recognizer vs ~350 MB with INT8.
 
-Pending: explain the Pi memory gap, INT8-except-depthwise variant, liveness threshold/calibration fix for the score shift, p03 glare test, calibration seeds 1 and 2, power.
+Session 2 (PC only so far): FP32 liveness rejects 49% of live frames (63% dim) but passes only 8% of paper photos; INT8 shifts live scores up by roughly +2 to +7 logits there, much more than the +0.75 to +1.5 on the older sets, so BPCER falls (49% -> 15-22%) and photo APCER rises (8% -> 16-20%). Recognizer: 0 impostor accepts in 938 cross-person attempts in every config; glasses barely move genuine cosine. p03's paper photo in bright light already passes FP32 liveness 50% of the time.
+
+Pending: explain the Pi memory gap, INT8-except-depthwise variant, liveness threshold/calibration fix for the score shift, p03 glare test, calibration seeds 1 and 2.
+
+Power (Pi, two passes, forward 20261115_202340 and reverse 20261115_212636, 60 s per config, no throttling, 1.8 GHz throughout; `results/processed/power_pi.csv` = mean with min-max): FP32 4.78 W at 4.42 fps = 1081 mJ/frame whole-board. INT8 recognizer configs draw less (4.47-4.53 W) but run slower (4.0 fps), so energy per frame is 2-4% higher (1107-1123 mJ; per-pass range 1104-1131 vs 1077-1088 for FP32 recognizer, no overlap). INT8 liveness alone: 4.69-4.71 W, 1082-1083 mJ (no change). Lower watts come from fewer busy cores (CPU-s per s 3.0 -> 2.8), not efficiency. Idle baseline 1.94-1.98 W (10 s means 1.74-2.21), so idle-subtracted energy cannot separate the configs. The FNB58's PC data link drops every so often (vanishes from USB; the Pi keeps power): replug the micro-USB and rerun; power_log.py retries 5 times first.
 
 Layout:
 
@@ -141,7 +146,10 @@ Version1/
   eval/prepare_data.py         detect once, cache crops -> private/cache/
   quantize/quantize.py         INT8 models + ablation configs + lock hashes
   eval/run_eval.py             accuracy -> results/processed/summary.md
-  bench/bench.py               latency/RSS/size (--label pc|pi, --isolated)
+  bench/bench.py               latency/RSS/size (--label pc|pi, --isolated); --power = sustained runs with PHASE markers
+  bench/power_log.py           FNB58 meter -> CSV (PC)
+  bench/power_run.py           PC: meter + Pi bench --power over SSH -> results/raw/power/<label>/<run>/
+  eval/power_analysis.py       power per config -> results/processed/power_<label>.csv, trace figure
   eval/plots.py                figures -> results/figures/
   results/{raw,processed,figures}/   committed (scores and plots only)
   models/int8/, data/, private/, external/   git-ignored

@@ -150,6 +150,33 @@ def prepare_own(pipeline):
     return collector.save("own")
 
 
+def prepare_session2(pipeline):
+    """Second team recording session (2026-11-14, same room and lighting for everyone, with and
+    without glasses): private/session2/<person>_<live|print>_<bright|dim>_<glasses|noglasses>.mp4.
+    Test only: no frames are held out for calibration, so the calibration pool (and the INT8
+    models built from it) are unchanged. People are enrolled from session 1 in run_eval.py."""
+    folder = private_folder / "session2"
+    pattern = re.compile(r"^([a-z0-9]+)_(live|print)_(bright|dim)_(glasses|noglasses)$", re.I)
+    videos = sorted(p for p in folder.glob("*.mp4") if pattern.match(p.stem))
+    if not videos:
+        raise FileNotFoundError(f"No session-2 videos found in {folder}")
+    pseudonyms = json.loads((private_folder / "pseudonyms.json").read_text())
+    unknown = sorted({pattern.match(p.stem).group(1).lower() for p in videos} - set(pseudonyms))
+    if unknown:
+        raise SystemExit(f"Add {unknown} to private/pseudonyms.json (same code as in session 1) first")
+
+    collector = Collector(pipeline)
+    for path in tqdm(videos, desc="session2 videos"):
+        name, kind, lighting, glasses = (g.lower() for g in pattern.match(path.stem).groups())
+        person = pseudonyms[name]
+        base = {"dataset": "session2", "person": person, "kind": kind, "lighting": lighting,
+                "glasses": "yes" if glasses == "glasses" else "no", "split": "test",
+                "source": f"{person}_{kind}_{lighting}_{glasses}"}
+        for time_s, frame in sample_video(path, EverySeconds(TEST_INTERVAL)):
+            collector.add(frame, **base, time_s=round(time_s, 2))
+    return collector.save("session2")
+
+
 def prepare_lfw(pipeline):
     """LFW (deep-funneled, Kaggle jessicali9530/lfw-dataset): every image used by pairs.csv."""
     archive = zipfile.ZipFile(data_folder / "lfw" / "archive.zip")
@@ -230,7 +257,8 @@ def prepare_kaggle(pipeline):
 
 
 def main():
-    preparers = {"own": prepare_own, "msu": prepare_msu, "kaggle": prepare_kaggle, "lfw": prepare_lfw}
+    preparers = {"own": prepare_own, "session2": prepare_session2, "msu": prepare_msu,
+                 "kaggle": prepare_kaggle, "lfw": prepare_lfw}
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--only", nargs="+", choices=preparers, default=list(preparers))
     args = parser.parse_args()

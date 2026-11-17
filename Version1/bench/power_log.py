@@ -14,11 +14,12 @@ from github.com/baryluk/fnirsi-usb-power-data-logger, reimplemented on pywinusb
 
 Usage:
     python bench/power_log.py --out results/raw/power_<label>.csv [--duration 600]
-Stop with Ctrl+C (or --duration). Timestamps are Unix epoch seconds (PC clock),
+Stop with Ctrl+C, --duration, or by creating the --stop-file (bench/power_run.py does this). Timestamps are Unix epoch seconds (PC clock),
 so they can be matched to bench phase timestamps from an NTP-synced Pi.
 """
 import argparse
 import csv
+import os
 import queue
 import sys
 import time
@@ -28,6 +29,7 @@ import pywinusb.hid as hid
 VID, PID = 0x2E3C, 0x5558
 SPS = 100
 DT = 1.0 / SPS
+CONNECT_ATTEMPTS = 5
 
 
 def crc8(data):
@@ -65,24 +67,43 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, help="CSV path")
     ap.add_argument("--duration", type=float, default=0, help="seconds; 0 = until Ctrl+C")
+    ap.add_argument("--stop-file", help="stop cleanly once this file exists")
     args = ap.parse_args()
 
-    devs = hid.HidDeviceFilter(vendor_id=VID, product_id=PID).get_devices()
-    if not devs:
-        sys.exit("FNB58 not found. Check the micro-USB data cable and close the FNIRSI app.")
-    dev = devs[0]
-    dev.open()
     q = queue.Queue()
-    dev.set_raw_data_handler(lambda raw: q.put((time.time(), raw[1:])))  # drop report ID
-    report = dev.find_output_reports()[0]
+    dev = report = None
 
     def send(c):
         report.set_raw_data(c)
         report.send()
 
-    send(cmd(0x81, 0x8E))
-    send(cmd(0x82, 0x96))
-    send(cmd(0x82, 0x96))
+    # The meter sometimes stops accepting writes (seen after ~20 min unused and right after a
+    # previous session); closing and reopening the handle has brought it back once. Retry a few
+    # times before asking for a replug.
+    for attempt in range(1, CONNECT_ATTEMPTS + 1):
+        devs = hid.HidDeviceFilter(vendor_id=VID, product_id=PID).get_devices()
+        if devs:
+            dev = devs[0]
+            try:
+                dev.open()
+                dev.set_raw_data_handler(lambda raw: q.put((time.time(), raw[1:])))  # drop report ID
+                report = dev.find_output_reports()[0]
+                send(cmd(0x81, 0x8E))
+                send(cmd(0x82, 0x96))
+                send(cmd(0x82, 0x96))
+                break
+            except hid.HIDError as e:
+                print(f"Meter did not accept the start command ({e}); retry {attempt}/{CONNECT_ATTEMPTS}",
+                      file=sys.stderr)
+                try:
+                    dev.close()
+                except Exception:
+                    pass
+        else:
+            print(f"FNB58 not found; retry {attempt}/{CONNECT_ATTEMPTS}", file=sys.stderr)
+        time.sleep(3)
+    else:
+        sys.exit("FNB58 not responding. Replug its micro-USB data cable (not the USB-C power path).")
 
     n = bad = gaps = 0
     lost = False
@@ -97,6 +118,8 @@ def main():
             while True:
                 now = time.time()
                 if args.duration and now - start >= args.duration:
+                    break
+                if args.stop_file and os.path.exists(args.stop_file):
                     break
                 if now >= next_keepalive:
                     try:
