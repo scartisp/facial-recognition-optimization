@@ -16,13 +16,15 @@ just before each config are reported too, as a drift check.
 Phase times come from the Pi's clock (t_pi) when it agrees with the PC's receive time (t_pc)
 to within 0.5 s, else from t_pc. The meter is stamped by the PC clock.
 
-Writes <run>/power_summary.csv, results/processed/power_<label>.csv (copy of the latest run)
-and results/figures/power_trace_<label>.png (whole run with phases shaded, to check alignment).
+A single run writes only into its own folder: <run>/power_summary.csv and <run>/power_trace.png
+(whole run with phases shaded, to check alignment). Reported numbers come from --combine, which
+averages runs (e.g. forward + reverse order) into results/processed/power_<label>[_<name>].csv:
+    python eval/power_analysis.py --combine <run1> <run2>                  # 9-config grid
+    python eval/power_analysis.py --combine <run1> <run2> --name nodw      # a separate experiment
 """
 import argparse
 import csv
 import json
-import shutil
 from pathlib import Path
 
 import matplotlib
@@ -33,7 +35,6 @@ import numpy as np  # noqa: E402
 
 version1_folder = Path(__file__).resolve().parents[1]
 processed = version1_folder / "results" / "processed"
-figures = version1_folder / "results" / "figures"
 SPS = 100
 PHASE_COLOR = {"load": "#c9c7c1", "warmup": "#eb6834", "sustained": "#2a78d6", "idle": None}
 
@@ -75,7 +76,7 @@ COMBINE_COLUMNS = ["fps", "latency_p50_ms", "latency_p95_ms", "power_mean_W", "i
                    "cpu_ms_per_frame"]
 
 
-def combine(runs):
+def combine(runs, name=None):
     """Average several analysed runs (e.g. forward and reverse order) per config, with the
     min-max across runs, into results/processed/power_<label>.csv."""
     per_run = [{r["cell"]: r for r in csv.DictReader(open(Path(run) / "power_summary.csv"))} for run in runs]
@@ -89,7 +90,8 @@ def combine(runs):
             row[col] = round(float(np.mean(values)), 4)
             row[f"{col}_min"], row[f"{col}_max"] = round(min(values), 4), round(max(values), 4)
         rows.append(row)
-    out = processed / f"power_{label}.csv"
+    processed.mkdir(parents=True, exist_ok=True)
+    out = processed / (f"power_{label}_{name}.csv" if name else f"power_{label}.csv")
     with open(out, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
@@ -107,11 +109,12 @@ def main():
     ap.add_argument("run", nargs="+", help="results/raw/power/<label>/<run_id> (several with --combine)")
     ap.add_argument("--combine", action="store_true",
                     help="average already-analysed runs into results/processed/power_<label>.csv")
+    ap.add_argument("--name", help="with --combine: write power_<label>_<name>.csv instead")
     ap.add_argument("--trim", type=float, default=2.0, help="seconds dropped at each end of a sustained run")
     ap.add_argument("--settle", type=float, default=15.0, help="seconds dropped at the start of the baseline idle")
     args = ap.parse_args()
     if args.combine:
-        combine(args.run)
+        combine(args.run, args.name)
         return
     run = Path(args.run[0])
     run_info = json.loads((run / "run.json").read_text()) if (run / "run.json").exists() else {}
@@ -170,8 +173,6 @@ def main():
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
-    processed.mkdir(parents=True, exist_ok=True)
-    shutil.copy(summary, processed / f"power_{label}.csv")
     (run / "clock.json").write_text(json.dumps(clock, indent=2) + "\n")
 
     print(f"Run {run.name}: idle baseline {idle_w:.3f} W (10 s means {idle_lo:.3f}-{idle_hi:.3f}); phase clock {clock}")
@@ -188,7 +189,6 @@ def main():
         print("WARNING: the Pi reported throttling or under-voltage (throttled != 0x0).")
 
     # Whole-run trace with the phases shaded: a visual check that markers line up with the load
-    figures.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(12, 3.6))
     t_zero = t[0]
     kernel = np.ones(SPS // 2) / (SPS // 2)  # 0.5 s moving average, for readability only
@@ -209,8 +209,8 @@ def main():
     ax.set_title(f"Pi power during power run {run.name}", fontsize=10, loc="left")
     ax.set_xlim(0, t[-1] - t_zero)
     fig.tight_layout()
-    fig.savefig(figures / f"power_trace_{label}.png", dpi=150)
-    print(f"Wrote {summary}, {processed / f'power_{label}.csv'}, {figures / f'power_trace_{label}.png'}")
+    fig.savefig(run / "power_trace.png", dpi=150)
+    print(f"Wrote {summary} and {run / 'power_trace.png'}")
 
 
 if __name__ == "__main__":

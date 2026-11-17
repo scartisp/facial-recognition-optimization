@@ -55,15 +55,27 @@ def load_frames():
     videos = sorted(p for p in (version1_folder / "private").glob(f"{BENCH_VIDEO}.*"))
     if not videos:
         raise FileNotFoundError(f"Need private/{BENCH_VIDEO}.<ext> to benchmark on")
+    # Decode only the frames we keep. Decoding all of them (331 x 6 MB at 1080p) and then
+    # dropping most left ~2 GB of freed memory that glibc could not return to the OS in some
+    # configs, which is what made FP32 look like it needed 2,000 MB on the Pi.
+    capture = cv2.VideoCapture(str(videos[0]))
+    total = 0
+    while capture.grab():
+        total += 1
+    capture.release()
+    step = max(1, total // FRAME_COUNT)
+    wanted = set(range(0, total, step)[:FRAME_COUNT])  # same frames as frames[::step][:FRAME_COUNT]
     capture = cv2.VideoCapture(str(videos[0]))
     frames = []
-    while True:
-        ok, frame = capture.read()
-        if not ok:
+    for index in range(total):
+        if not capture.grab():
             break
-        frames.append(frame)
-    step = max(1, len(frames) // FRAME_COUNT)
-    return frames[::step][:FRAME_COUNT]
+        if index in wanted:
+            ok, frame = capture.retrieve()
+            if ok:
+                frames.append(frame)
+    capture.release()
+    return frames
 
 
 def read_sysfs_number(path, scale):
@@ -287,7 +299,7 @@ def run_isolated(label, runs, warmup):
     with 1 thread and with ONNX Runtime's default thread count. Separates the quantization effect
     from preprocessing, detection and thread scheduling noise."""
     configs = {v: json.loads((ablation_folder / f"rec-{v}_live-{v}.json").read_text())
-               for v in ("fp32", "int8pt", "int8pc")}
+               for v in ("fp32", "int8pt", "int8pc", "int8nodw")}
     frame = load_frames()[0]
     prep = pl.Pipeline(configs["fp32"])
     bbox, keypoints = prep.detect(frame)

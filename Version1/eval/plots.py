@@ -21,10 +21,11 @@ processed = version1_folder / "results" / "processed"
 raw = version1_folder / "results" / "raw"
 figures = version1_folder / "results" / "figures"
 
-VARIANTS = ["fp32", "int8pt", "int8pc"]
-LABEL = {"fp32": "FP32", "int8pt": "INT8 per-tensor", "int8pc": "INT8 per-channel"}
-# Reference palette, categorical slots 1-3 (validated all-pairs for three series)
-COLOR = {"fp32": "#2a78d6", "int8pt": "#eb6834", "int8pc": "#1baf7a"}
+VARIANTS = ["fp32", "int8pt", "int8pc", "int8nodw"]
+LABEL = {"fp32": "FP32", "int8pt": "INT8 per-tensor", "int8pc": "INT8 per-channel",
+         "int8nodw": "INT8 pc, depthwise FP32"}
+# Reference palette, categorical slots 1-4
+COLOR = {"fp32": "#2a78d6", "int8pt": "#eb6834", "int8pc": "#1baf7a", "int8nodw": "#8a5cd1"}
 SURFACE, INK, INK_2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df"
 
 plt.rcParams.update({
@@ -73,12 +74,12 @@ def plot_liveness():
     rows = [r for r in read_csv(processed / "liveness.csv") if r["group"] == "all"]
     datasets = [("own (test split)", "Team videos"), ("msu", "MSU-MFSD subset"), ("kaggle", "Kaggle sample")]
     fig, axes = plt.subplots(1, 3, figsize=(11, 3.8), sharey=True)
-    width = 0.26
+    width = 0.8 / len(VARIANTS)
     for ax, (key, title) in zip(axes, datasets):
         for j, v in enumerate(VARIANTS):
             r = next(r for r in rows if r["dataset"] == key and r["liveness"] == v)
             values = [100 * float(r["apcer"]), 100 * float(r["bpcer"])]
-            x = np.arange(2) + (j - 1) * (width + 0.02)
+            x = np.arange(2) + (j - (len(VARIANTS) - 1) / 2) * (width + 0.02)
             bars = ax.bar(x, values, width, color=COLOR[v], label=LABEL[v], edgecolor=SURFACE, linewidth=2)
             for bar, value in zip(bars, values):
                 ax.text(bar.get_x() + bar.get_width() / 2, value + 1, f"{value:.0f}", ha="center",
@@ -133,7 +134,7 @@ def plot_latency(label):
             ax.plot([j, j], [p50, p95], color=INK_2, linewidth=1.5)
             ax.plot([j - 0.08, j + 0.08], [p95, p95], color=INK_2, linewidth=1.5)
             ax.text(j + 0.33, p50, f"p50 {p50:.1f}\np95 {p95:.1f}", va="center", fontsize=8, color=INK_2)
-        ax.set_xticks(range(3), [LABEL[v] for v in VARIANTS])
+        ax.set_xticks(range(len(VARIANTS)), [LABEL[v] for v in VARIANTS])
         ax.set_xlim(-0.5, 2.5)
         ax.set_ylim(0, ax.get_ylim()[1] * 1.2)
         ax.set_ylabel("ms per inference")

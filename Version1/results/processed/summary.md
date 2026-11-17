@@ -13,6 +13,7 @@ Operating threshold: FP32 threshold at FAR = 0.1% on LFW = **0.2421** (kept fixe
 | FP32 | 0.44% | 0.9989 | 99.26% | 0.067% | 0.74% |
 | INT8 per-tensor | 0.40% | 0.9990 | 98.93% | 0.168% | 0.64% |
 | INT8 per-channel | 0.40% | 0.9990 | 99.13% | 0.101% | 0.77% |
+| INT8 per-channel, depthwise FP32 | 0.50% | 0.9988 | 99.30% | 0.067% | 0.70% |
 
 FAR = 0.1% rests on about 2 false accepts out of 2984 impostor pairs, so TAR @ FAR=0.1% is noisy.
 
@@ -22,12 +23,16 @@ FAR = 0.1% rests on about 2 false accepts out of 2984 impostor pairs, so TAR @ F
 |---|---|---|---|---|---|
 | lfw | INT8 per-tensor | 7682 | 0.9534 | 0.9318 | 0.8825 |
 | lfw | INT8 per-channel | 7682 | 0.9757 | 0.9629 | 0.9260 |
+| lfw | INT8 per-channel, depthwise FP32 | 7682 | 0.9910 | 0.9866 | 0.9557 |
 | own | INT8 per-tensor | 636 | 0.9311 | 0.8470 | 0.7935 |
 | own | INT8 per-channel | 636 | 0.9597 | 0.8882 | 0.8076 |
+| own | INT8 per-channel, depthwise FP32 | 636 | 0.9833 | 0.9532 | 0.8999 |
 | kaggle | INT8 per-tensor | 406 | 0.9451 | 0.9047 | 0.7118 |
 | kaggle | INT8 per-channel | 406 | 0.9667 | 0.9405 | 0.8031 |
+| kaggle | INT8 per-channel, depthwise FP32 | 406 | 0.9867 | 0.9779 | 0.9168 |
 | session2 | INT8 per-tensor | 833 | 0.9409 | 0.9054 | 0.8400 |
 | session2 | INT8 per-channel | 833 | 0.9615 | 0.9381 | 0.8948 |
+| session2 | INT8 per-channel, depthwise FP32 | 833 | 0.9835 | 0.9735 | 0.9569 |
 
 ## Liveness
 
@@ -49,6 +54,10 @@ Threshold: real probability >= 0.5 (facenox default). APCER = attacks accepted a
 | INT8 per-channel | lighting=bright | 8.4% [4.5-15.2] (9/107) | 0.0% [0.0-3.3] (0/112) |  |  |  |
 | INT8 per-channel | lighting=dim | 5.9% [2.8-12.4] (6/101) | 27.5% [19.7-36.8] (28/102) |  |  |  |
 | INT8 per-channel | attack=screen | 7.2% [4.4-11.6] (15/208) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | all | 7.2% [4.4-11.6] (15/208) | 22.0% [16.9-28.0] (47/214) | 11.9% | 0.947 | 16 |
+| INT8 per-channel, depthwise FP32 | lighting=bright | 7.5% [3.8-14.1] (8/107) | 10.7% [6.2-17.8] (12/112) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=dim | 6.9% [3.4-13.6] (7/101) | 34.3% [25.8-43.9] (35/102) |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=screen | 7.2% [4.4-11.6] (15/208) |  |  |  |  |
 
 ### msu
 
@@ -66,6 +75,10 @@ Threshold: real probability >= 0.5 (facenox default). APCER = attacks accepted a
 | INT8 per-channel | attack=print/printed_photo | 62.9% [46.3-76.8] (22/35) |  |  |  |  |
 | INT8 per-channel | attack=screen/ipad | 54.3% [38.2-69.5] (19/35) |  |  |  |  |
 | INT8 per-channel | attack=screen/iphone | 71.4% [54.9-83.7] (25/35) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | all | 42.9% [33.8-52.4] (45/105) | 0.0% [0.0-9.9] (0/35) | 5.7% | 0.989 | 10 |
+| INT8 per-channel, depthwise FP32 | attack=print/printed_photo | 40.0% [25.6-56.4] (14/35) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=screen/ipad | 48.6% [33.0-64.4] (17/35) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=screen/iphone | 40.0% [25.6-56.4] (14/35) |  |  |  |  |
 
 ### kaggle
 
@@ -83,6 +96,10 @@ Threshold: real probability >= 0.5 (facenox default). APCER = attacks accepted a
 | INT8 per-channel | attack=print/a4_printout | 5.2% [2.2-11.6] (5/96) |  |  |  |  |
 | INT8 per-channel | attack=print/cutout_printout | 15.9% [9.5-25.3] (13/82) |  |  |  |  |
 | INT8 per-channel | attack=screen/replay | 40.7% [32.1-49.9] (46/113) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | all | 14.4% [10.9-18.9] (42/291) | 34.8% [26.7-43.9] (40/115) | 21.3% | 0.883 | 22 |
+| INT8 per-channel, depthwise FP32 | attack=print/a4_printout | 5.2% [2.2-11.6] (5/96) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=print/cutout_printout | 7.3% [3.4-15.1] (6/82) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=screen/replay | 27.4% [20.1-36.3] (31/113) |  |  |  |  |
 
 ### session2
 
@@ -118,6 +135,16 @@ Threshold: real probability >= 0.5 (facenox default). APCER = attacks accepted a
 | INT8 per-channel | lighting=dim,glasses=no | 2.6% [0.7-8.9] (2/78) | 31.6% [23.9-40.5] (37/117) |  |  |  |
 | INT8 per-channel | lighting=dim,glasses=yes | 7.9% [3.7-16.2] (6/76) | 27.8% [20.5-36.6] (32/115) |  |  |  |
 | INT8 per-channel | attack=print | 20.1% [16.3-24.5] (73/364) |  |  |  |  |
+| INT8 per-channel, depthwise FP32 | all | 10.4% [7.7-14.0] (38/364) | 30.9% [26.9-35.2] (145/469) | 16.2% | 0.903 | 118 |
+| INT8 per-channel, depthwise FP32 | lighting=bright | 17.6% [13.1-23.3] (37/210) | 14.3% [10.5-19.4] (34/237) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=dim | 0.6% [0.1-3.6] (1/154) | 47.8% [41.5-54.3] (111/232) |  |  |  |
+| INT8 per-channel, depthwise FP32 | glasses=no | 12.2% [8.2-17.7] (22/181) | 33.3% [27.6-39.6] (78/234) |  |  |  |
+| INT8 per-channel, depthwise FP32 | glasses=yes | 8.7% [5.5-13.7] (16/183) | 28.5% [23.1-34.6] (67/235) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=bright,glasses=no | 21.4% [14.5-30.2] (22/103) | 18.8% [12.8-26.8] (22/117) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=bright,glasses=yes | 14.0% [8.7-21.8] (15/107) | 10.0% [5.8-16.7] (12/120) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=dim,glasses=no | 0.0% [0.0-4.7] (0/78) | 47.9% [39.0-56.8] (56/117) |  |  |  |
+| INT8 per-channel, depthwise FP32 | lighting=dim,glasses=yes | 1.3% [0.2-7.1] (1/76) | 47.8% [38.9-56.9] (55/115) |  |  |  |
+| INT8 per-channel, depthwise FP32 | attack=print | 10.4% [7.7-14.0] (38/364) |  |  |  |  |
 
 ## Combined pipeline (liveness AND verification)
 
@@ -138,6 +165,9 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | FP32 | INT8 per-channel | all | 15.0% [10.8-20.3] (32/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
 | FP32 | INT8 per-channel | lighting=bright | 0.9% [0.2-4.9] (1/112) | 0.0% [0.0-1.7] (0/224) | 8.4% [4.5-15.2] (9/107) |
 | FP32 | INT8 per-channel | lighting=dim | 30.4% [22.3-39.9] (31/102) | 0.0% [0.0-1.8] (0/204) | 5.9% [2.8-12.4] (6/101) |
+| FP32 | INT8 per-channel, depthwise FP32 | all | 22.0% [16.9-28.0] (47/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
+| FP32 | INT8 per-channel, depthwise FP32 | lighting=bright | 10.7% [6.2-17.8] (12/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
+| FP32 | INT8 per-channel, depthwise FP32 | lighting=dim | 34.3% [25.8-43.9] (35/102) | 0.0% [0.0-1.8] (0/204) | 6.9% [3.4-13.6] (7/101) |
 | INT8 per-tensor | FP32 | all | 27.6% [22.0-33.9] (59/214) | 0.0% [0.0-0.9] (0/428) | 6.2% [3.7-10.4] (13/208) |
 | INT8 per-tensor | FP32 | lighting=bright | 13.4% [8.3-20.9] (15/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
 | INT8 per-tensor | FP32 | lighting=dim | 43.1% [33.9-52.8] (44/102) | 0.0% [0.0-1.8] (0/204) | 5.0% [2.1-11.1] (5/101) |
@@ -147,6 +177,9 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | INT8 per-tensor | INT8 per-channel | all | 15.0% [10.8-20.3] (32/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
 | INT8 per-tensor | INT8 per-channel | lighting=bright | 0.9% [0.2-4.9] (1/112) | 0.0% [0.0-1.7] (0/224) | 8.4% [4.5-15.2] (9/107) |
 | INT8 per-tensor | INT8 per-channel | lighting=dim | 30.4% [22.3-39.9] (31/102) | 0.0% [0.0-1.8] (0/204) | 5.9% [2.8-12.4] (6/101) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | all | 22.0% [16.9-28.0] (47/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | lighting=bright | 10.7% [6.2-17.8] (12/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | lighting=dim | 34.3% [25.8-43.9] (35/102) | 0.0% [0.0-1.8] (0/204) | 6.9% [3.4-13.6] (7/101) |
 | INT8 per-channel | FP32 | all | 27.6% [22.0-33.9] (59/214) | 0.0% [0.0-0.9] (0/428) | 6.2% [3.7-10.4] (13/208) |
 | INT8 per-channel | FP32 | lighting=bright | 13.4% [8.3-20.9] (15/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
 | INT8 per-channel | FP32 | lighting=dim | 43.1% [33.9-52.8] (44/102) | 0.0% [0.0-1.8] (0/204) | 5.0% [2.1-11.1] (5/101) |
@@ -156,6 +189,21 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | INT8 per-channel | INT8 per-channel | all | 15.4% [11.2-20.9] (33/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
 | INT8 per-channel | INT8 per-channel | lighting=bright | 0.9% [0.2-4.9] (1/112) | 0.0% [0.0-1.7] (0/224) | 8.4% [4.5-15.2] (9/107) |
 | INT8 per-channel | INT8 per-channel | lighting=dim | 31.4% [23.2-40.9] (32/102) | 0.0% [0.0-1.8] (0/204) | 5.9% [2.8-12.4] (6/101) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | all | 22.0% [16.9-28.0] (47/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | lighting=bright | 10.7% [6.2-17.8] (12/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | lighting=dim | 34.3% [25.8-43.9] (35/102) | 0.0% [0.0-1.8] (0/204) | 6.9% [3.4-13.6] (7/101) |
+| INT8 per-channel, depthwise FP32 | FP32 | all | 27.6% [22.0-33.9] (59/214) | 0.0% [0.0-0.9] (0/428) | 6.2% [3.7-10.4] (13/208) |
+| INT8 per-channel, depthwise FP32 | FP32 | lighting=bright | 13.4% [8.3-20.9] (15/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
+| INT8 per-channel, depthwise FP32 | FP32 | lighting=dim | 43.1% [33.9-52.8] (44/102) | 0.0% [0.0-1.8] (0/204) | 5.0% [2.1-11.1] (5/101) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | all | 16.4% [12.0-21.9] (35/214) | 0.0% [0.0-0.9] (0/428) | 6.7% [4.1-11.0] (14/208) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | lighting=bright | 1.8% [0.5-6.3] (2/112) | 0.0% [0.0-1.7] (0/224) | 6.5% [3.2-12.9] (7/107) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | lighting=dim | 32.4% [24.1-41.9] (33/102) | 0.0% [0.0-1.8] (0/204) | 6.9% [3.4-13.6] (7/101) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | all | 15.0% [10.8-20.3] (32/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | lighting=bright | 0.9% [0.2-4.9] (1/112) | 0.0% [0.0-1.7] (0/224) | 8.4% [4.5-15.2] (9/107) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | lighting=dim | 30.4% [22.3-39.9] (31/102) | 0.0% [0.0-1.8] (0/204) | 5.9% [2.8-12.4] (6/101) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | all | 22.0% [16.9-28.0] (47/214) | 0.0% [0.0-0.9] (0/428) | 7.2% [4.4-11.6] (15/208) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | lighting=bright | 10.7% [6.2-17.8] (12/112) | 0.0% [0.0-1.7] (0/224) | 7.5% [3.8-14.1] (8/107) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | lighting=dim | 34.3% [25.8-43.9] (35/102) | 0.0% [0.0-1.8] (0/204) | 6.9% [3.4-13.6] (7/101) |
 
 ### session2
 
@@ -176,6 +224,11 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | FP32 | INT8 per-channel | lighting=dim | 31.0% [25.4-37.3] (72/232) | 0.0% [0.0-0.8] (0/464) | 5.2% [2.7-9.9] (8/154) |
 | FP32 | INT8 per-channel | glasses=no | 16.2% [12.1-21.5] (38/234) | 0.0% [0.0-0.8] (0/468) | 21.0% [15.7-27.5] (38/181) |
 | FP32 | INT8 per-channel | glasses=yes | 14.9% [10.9-20.0] (35/235) | 0.0% [0.0-0.8] (0/470) | 19.1% [14.1-25.4] (35/183) |
+| FP32 | INT8 per-channel, depthwise FP32 | all | 31.1% [27.1-35.5] (146/469) | 0.0% [0.0-0.4] (0/938) | 10.4% [7.7-14.0] (38/364) |
+| FP32 | INT8 per-channel, depthwise FP32 | lighting=bright | 14.3% [10.5-19.4] (34/237) | 0.0% [0.0-0.8] (0/474) | 17.6% [13.1-23.3] (37/210) |
+| FP32 | INT8 per-channel, depthwise FP32 | lighting=dim | 48.3% [41.9-54.7] (112/232) | 0.0% [0.0-0.8] (0/464) | 0.6% [0.1-3.6] (1/154) |
+| FP32 | INT8 per-channel, depthwise FP32 | glasses=no | 33.8% [28.0-40.0] (79/234) | 0.0% [0.0-0.8] (0/468) | 12.2% [8.2-17.7] (22/181) |
+| FP32 | INT8 per-channel, depthwise FP32 | glasses=yes | 28.5% [23.1-34.6] (67/235) | 0.0% [0.0-0.8] (0/470) | 8.7% [5.5-13.7] (16/183) |
 | INT8 per-tensor | FP32 | all | 49.5% [45.0-54.0] (232/469) | 0.0% [0.0-0.4] (0/938) | 8.0% [5.6-11.2] (29/364) |
 | INT8 per-tensor | FP32 | lighting=bright | 35.4% [29.6-41.7] (84/237) | 0.0% [0.0-0.8] (0/474) | 13.8% [9.8-19.1] (29/210) |
 | INT8 per-tensor | FP32 | lighting=dim | 63.8% [57.4-69.7] (148/232) | 0.0% [0.0-0.8] (0/464) | 0.0% [0.0-2.4] (0/154) |
@@ -191,6 +244,11 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | INT8 per-tensor | INT8 per-channel | lighting=dim | 31.9% [26.2-38.1] (74/232) | 0.0% [0.0-0.8] (0/464) | 5.2% [2.7-9.9] (8/154) |
 | INT8 per-tensor | INT8 per-channel | glasses=no | 16.7% [12.4-22.0] (39/234) | 0.0% [0.0-0.8] (0/468) | 21.0% [15.7-27.5] (38/181) |
 | INT8 per-tensor | INT8 per-channel | glasses=yes | 15.7% [11.6-20.9] (37/235) | 0.0% [0.0-0.8] (0/470) | 19.1% [14.1-25.4] (35/183) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | all | 31.3% [27.3-35.7] (147/469) | 0.0% [0.0-0.4] (0/938) | 10.4% [7.7-14.0] (38/364) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | lighting=bright | 14.8% [10.8-19.8] (35/237) | 0.0% [0.0-0.8] (0/474) | 17.6% [13.1-23.3] (37/210) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | lighting=dim | 48.3% [41.9-54.7] (112/232) | 0.0% [0.0-0.8] (0/464) | 0.6% [0.1-3.6] (1/154) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | glasses=no | 34.2% [28.4-40.5] (80/234) | 0.0% [0.0-0.8] (0/468) | 12.2% [8.2-17.7] (22/181) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | glasses=yes | 28.5% [23.1-34.6] (67/235) | 0.0% [0.0-0.8] (0/470) | 8.7% [5.5-13.7] (16/183) |
 | INT8 per-channel | FP32 | all | 49.5% [45.0-54.0] (232/469) | 0.0% [0.0-0.4] (0/938) | 8.0% [5.6-11.2] (29/364) |
 | INT8 per-channel | FP32 | lighting=bright | 35.4% [29.6-41.7] (84/237) | 0.0% [0.0-0.8] (0/474) | 13.8% [9.8-19.1] (29/210) |
 | INT8 per-channel | FP32 | lighting=dim | 63.8% [57.4-69.7] (148/232) | 0.0% [0.0-0.8] (0/464) | 0.0% [0.0-2.4] (0/154) |
@@ -206,6 +264,31 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | INT8 per-channel | INT8 per-channel | lighting=dim | 31.9% [26.2-38.1] (74/232) | 0.0% [0.0-0.8] (0/464) | 5.2% [2.7-9.9] (8/154) |
 | INT8 per-channel | INT8 per-channel | glasses=no | 16.2% [12.1-21.5] (38/234) | 0.0% [0.0-0.8] (0/468) | 21.0% [15.7-27.5] (38/181) |
 | INT8 per-channel | INT8 per-channel | glasses=yes | 15.7% [11.6-20.9] (37/235) | 0.0% [0.0-0.8] (0/470) | 19.1% [14.1-25.4] (35/183) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | all | 31.3% [27.3-35.7] (147/469) | 0.0% [0.0-0.4] (0/938) | 10.4% [7.7-14.0] (38/364) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | lighting=bright | 14.3% [10.5-19.4] (34/237) | 0.0% [0.0-0.8] (0/474) | 17.6% [13.1-23.3] (37/210) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | lighting=dim | 48.7% [42.3-55.1] (113/232) | 0.0% [0.0-0.8] (0/464) | 0.6% [0.1-3.6] (1/154) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | glasses=no | 33.8% [28.0-40.0] (79/234) | 0.0% [0.0-0.8] (0/468) | 12.2% [8.2-17.7] (22/181) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | glasses=yes | 28.9% [23.5-35.0] (68/235) | 0.0% [0.0-0.8] (0/470) | 8.7% [5.5-13.7] (16/183) |
+| INT8 per-channel, depthwise FP32 | FP32 | all | 49.3% [44.8-53.8] (231/469) | 0.0% [0.0-0.4] (0/938) | 8.0% [5.6-11.2] (29/364) |
+| INT8 per-channel, depthwise FP32 | FP32 | lighting=bright | 35.4% [29.6-41.7] (84/237) | 0.0% [0.0-0.8] (0/474) | 13.8% [9.8-19.1] (29/210) |
+| INT8 per-channel, depthwise FP32 | FP32 | lighting=dim | 63.4% [57.0-69.3] (147/232) | 0.0% [0.0-0.8] (0/464) | 0.0% [0.0-2.4] (0/154) |
+| INT8 per-channel, depthwise FP32 | FP32 | glasses=no | 48.7% [42.4-55.1] (114/234) | 0.0% [0.0-0.8] (0/468) | 12.2% [8.2-17.7] (22/181) |
+| INT8 per-channel, depthwise FP32 | FP32 | glasses=yes | 49.8% [43.4-56.1] (117/235) | 0.0% [0.0-0.8] (0/470) | 3.8% [1.9-7.7] (7/183) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | all | 22.8% [19.2-26.8] (107/469) | 0.0% [0.0-0.4] (0/938) | 15.7% [12.3-19.7] (57/364) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | lighting=bright | 3.8% [2.0-7.1] (9/237) | 0.0% [0.0-0.8] (0/474) | 23.8% [18.6-30.0] (50/210) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | lighting=dim | 42.2% [36.1-48.7] (98/232) | 0.0% [0.0-0.8] (0/464) | 4.5% [2.2-9.1] (7/154) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | glasses=no | 21.4% [16.6-27.1] (50/234) | 0.0% [0.0-0.8] (0/468) | 18.8% [13.8-25.1] (34/181) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | glasses=yes | 24.3% [19.2-30.1] (57/235) | 0.0% [0.0-0.8] (0/470) | 12.6% [8.5-18.2] (23/183) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | all | 15.6% [12.6-19.1] (73/469) | 0.0% [0.0-0.4] (0/938) | 20.1% [16.3-24.5] (73/364) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | lighting=bright | 0.4% [0.1-2.4] (1/237) | 0.0% [0.0-0.8] (0/474) | 31.0% [25.1-37.5] (65/210) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | lighting=dim | 31.0% [25.4-37.3] (72/232) | 0.0% [0.0-0.8] (0/464) | 5.2% [2.7-9.9] (8/154) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | glasses=no | 16.2% [12.1-21.5] (38/234) | 0.0% [0.0-0.8] (0/468) | 21.0% [15.7-27.5] (38/181) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | glasses=yes | 14.9% [10.9-20.0] (35/235) | 0.0% [0.0-0.8] (0/470) | 19.1% [14.1-25.4] (35/183) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | all | 31.1% [27.1-35.5] (146/469) | 0.0% [0.0-0.4] (0/938) | 10.4% [7.7-14.0] (38/364) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | lighting=bright | 14.3% [10.5-19.4] (34/237) | 0.0% [0.0-0.8] (0/474) | 17.6% [13.1-23.3] (37/210) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | lighting=dim | 48.3% [41.9-54.7] (112/232) | 0.0% [0.0-0.8] (0/464) | 0.6% [0.1-3.6] (1/154) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | glasses=no | 33.8% [28.0-40.0] (79/234) | 0.0% [0.0-0.8] (0/468) | 12.2% [8.2-17.7] (22/181) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | glasses=yes | 28.5% [23.1-34.6] (67/235) | 0.0% [0.0-0.8] (0/470) | 8.7% [5.5-13.7] (16/183) |
 
 ### kaggle
 
@@ -214,10 +297,17 @@ Team videos: each person is enrolled from the held-out first 4 s of their bright
 | FP32 | FP32 | all | 38.7% [30.0-48.2] (41/106) | 0.6% [0.3-1.4] (5/848) | 6.2% [3.5-10.7] (11/178) |
 | FP32 | INT8 per-tensor | all | 26.4% [19.0-35.5] (28/106) | 0.6% [0.3-1.4] (5/848) | 9.6% [6.0-14.8] (17/178) |
 | FP32 | INT8 per-channel | all | 27.4% [19.8-36.5] (29/106) | 0.6% [0.3-1.4] (5/848) | 10.1% [6.5-15.4] (18/178) |
+| FP32 | INT8 per-channel, depthwise FP32 | all | 37.7% [29.1-47.2] (40/106) | 0.6% [0.3-1.4] (5/848) | 6.2% [3.5-10.7] (11/178) |
 | INT8 per-tensor | FP32 | all | 38.7% [30.0-48.2] (41/106) | 0.2% [0.1-0.9] (2/848) | 6.2% [3.5-10.7] (11/178) |
 | INT8 per-tensor | INT8 per-tensor | all | 26.4% [19.0-35.5] (28/106) | 0.2% [0.1-0.9] (2/848) | 9.6% [6.0-14.8] (17/178) |
 | INT8 per-tensor | INT8 per-channel | all | 27.4% [19.8-36.5] (29/106) | 0.1% [0.0-0.7] (1/848) | 10.1% [6.5-15.4] (18/178) |
+| INT8 per-tensor | INT8 per-channel, depthwise FP32 | all | 37.7% [29.1-47.2] (40/106) | 0.1% [0.0-0.7] (1/848) | 6.2% [3.5-10.7] (11/178) |
 | INT8 per-channel | FP32 | all | 38.7% [30.0-48.2] (41/106) | 0.5% [0.2-1.2] (4/848) | 6.2% [3.5-10.7] (11/178) |
 | INT8 per-channel | INT8 per-tensor | all | 26.4% [19.0-35.5] (28/106) | 0.5% [0.2-1.2] (4/848) | 9.6% [6.0-14.8] (17/178) |
 | INT8 per-channel | INT8 per-channel | all | 27.4% [19.8-36.5] (29/106) | 0.5% [0.2-1.2] (4/848) | 10.1% [6.5-15.4] (18/178) |
+| INT8 per-channel | INT8 per-channel, depthwise FP32 | all | 37.7% [29.1-47.2] (40/106) | 0.5% [0.2-1.2] (4/848) | 6.2% [3.5-10.7] (11/178) |
+| INT8 per-channel, depthwise FP32 | FP32 | all | 38.7% [30.0-48.2] (41/106) | 0.7% [0.3-1.5] (6/848) | 6.2% [3.5-10.7] (11/178) |
+| INT8 per-channel, depthwise FP32 | INT8 per-tensor | all | 25.5% [18.1-34.5] (27/106) | 0.7% [0.3-1.5] (6/848) | 9.6% [6.0-14.8] (17/178) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel | all | 26.4% [19.0-35.5] (28/106) | 0.7% [0.3-1.5] (6/848) | 10.1% [6.5-15.4] (18/178) |
+| INT8 per-channel, depthwise FP32 | INT8 per-channel, depthwise FP32 | all | 36.8% [28.2-46.3] (39/106) | 0.7% [0.3-1.5] (6/848) | 6.2% [3.5-10.7] (11/178) |
 

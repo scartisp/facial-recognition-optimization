@@ -1,0 +1,43 @@
+cell,phase,event,t_pi,t_pc,extra
+baseline,idle,start,1794875203.720,1794875203.005,"{""cpu_temp_c"": 59.887}"
+baseline,idle,end,1794875263.721,1794875263.005,"{""cpu_temp_c"": 54.53}"
+rec-fp32_live-fp32,load,start,1794875265.198,1794875264.481,{}
+rec-fp32_live-fp32,load,end,1794875273.822,1794875273.108,"{""rss_mb"": 1998.83203125}"
+rec-fp32_live-fp32,warmup,start,1794875273.822,1794875273.108,{}
+rec-fp32_live-fp32,warmup,end,1794875284.939,1794875284.223,{}
+rec-fp32_live-fp32,sustained,start,1794875284.942,1794875284.223,"{""cpu_temp_c"": 65.244}"
+rec-fp32_live-fp32,sustained,end,1794875345.092,1794875344.376,"{""frames"": 270, ""cpu_temp_c"": 72.062}"
+rec-fp32_live-fp32,idle,start,1794875345.637,1794875344.920,"{""cpu_temp_c"": 70.114}"
+rec-fp32_live-fp32,idle,end,1794875521.682,1794875521.536,"{""cpu_temp_c"": 49.66}"
+rec-fp32_live-int8nodw,load,start,1794875523.223,1794875522.505,{}
+rec-fp32_live-int8nodw,load,end,1794875531.890,1794875531.174,"{""rss_mb"": 1999.7421875}"
+rec-fp32_live-int8nodw,warmup,start,1794875531.890,1794875531.175,{}
+rec-fp32_live-int8nodw,warmup,end,1794875543.115,1794875542.401,{}
+rec-fp32_live-int8nodw,sustained,start,1794875543.118,1794875542.401,"{""cpu_temp_c"": 61.348}"
+rec-fp32_live-int8nodw,sustained,end,1794875603.198,1794875602.479,"{""frames"": 268, ""cpu_temp_c"": 69.627}"
+rec-fp32_live-int8nodw,idle,start,1794875603.745,1794875603.028,"{""cpu_temp_c"": 67.192}"
+rec-fp32_live-int8nodw,idle,end,1794875793.784,1794875793.068,"{""cpu_temp_c"": 49.66}"
+rec-int8nodw_live-fp32,load,start,1794875795.326,1794875794.610,{}
+rec-int8nodw_live-fp32,load,end,1794875804.184,1794875803.470,"{""rss_mb"": 331.421875}"
+rec-int8nodw_live-fp32,warmup,start,1794875804.184,1794875803.471,{}
+rec-int8nodw_live-fp32,warmup,end,1794875815.390,1794875814.675,{}
+rec-int8nodw_live-fp32,sustained,start,1794875815.393,1794875814.676,"{""cpu_temp_c"": 60.374}"
+rec-int8nodw_live-fp32,sustained,end,1794875875.532,1794875874.815,"{""frames"": 268, ""cpu_temp_c"": 69.14}"
+rec-int8nodw_live-fp32,idle,start,1794875875.864,1794875875.147,"{""cpu_temp_c"": 66.705}"
+rec-int8nodw_live-fp32,idle,end,1794876059.904,1794876059.187,"{""cpu_temp_c"": 49.66}"
+rec-int8nodw_live-int8nodw,load,start,1794876061.442,1794876060.722,{}
+rec-int8nodw_live-int8nodw,load,end,1794876070.422,1794876069.706,"{""rss_mb"": 332.3359375}"
+rec-int8nodw_live-int8nodw,warmup,start,1794876070.422,1794876069.706,{}
+rec-int8nodw_live-int8nodw,warmup,end,1794876081.645,1794876080.929,{}
+rec-int8nodw_live-int8nodw,sustained,start,1794876081.648,1794876080.930,"{""cpu_temp_c"": 60.861}"
+rec-int8nodw_live-int8nodw,sustained,end,1794876141.721,1794876141.005,"{""frames"": 271, ""cpu_temp_c"": 67.192}"
+rec-int8nodw_live-int8nodw,idle,start,1794876142.059,1794876141.342,"{""cpu_temp_c"": 67.192}"
+rec-int8nodw_live-int8nodw,idle,end,1794876304.098,1794876303.380,"{""cpu_temp_c"": 48.686}"
+rec-int8pc_live-int8pc,load,start,1794876305.653,1794876304.936,{}
+rec-int8pc_live-int8pc,load,end,1794876314.675,1794876313.962,"{""rss_mb"": 332.45703125}"
+rec-int8pc_live-int8pc,warmup,start,1794876314.675,1794876313.962,{}
+rec-int8pc_live-int8pc,warmup,end,1794876327.352,1794876326.639,{}
+rec-int8pc_live-int8pc,sustained,start,1794876327.355,1794876326.639,"{""cpu_temp_c"": 61.348}"
+rec-int8pc_live-int8pc,sustained,end,1794876387.509,1794876386.795,"{""frames"": 237, ""cpu_temp_c"": 66.705}"
+rec-int8pc_live-int8pc,idle,start,1794876387.851,1794876387.133,"{""cpu_temp_c"": 66.705}"
+rec-int8pc_live-int8pc,idle,end,1794876537.885,1794876537.168,"{""cpu_temp_c"": 49.66}"

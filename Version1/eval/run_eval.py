@@ -33,8 +33,9 @@ results_raw = version1_folder / "results" / "raw"
 results_processed = version1_folder / "results" / "processed"
 ablation_folder = pl.repo_folder / "configs" / "ablation"
 
-VARIANTS = ["fp32", "int8pt", "int8pc"]
-VARIANT_LABEL = {"fp32": "FP32", "int8pt": "INT8 per-tensor", "int8pc": "INT8 per-channel"}
+VARIANTS = ["fp32", "int8pt", "int8pc", "int8nodw"]
+VARIANT_LABEL = {"fp32": "FP32", "int8pt": "INT8 per-tensor", "int8pc": "INT8 per-channel",
+                 "int8nodw": "INT8 per-channel, depthwise FP32"}
 TARGET_FAR = 0.001
 BATCH = 64
 
@@ -232,7 +233,7 @@ def main():
         if name != "lfw":
             emb[name] = {v: runners[v].embed(datasets_rec[name]) for v in VARIANTS}
     for name in datasets_rec:
-        for v in ("int8pt", "int8pc"):
+        for v in VARIANTS[1:]:
             cos = np.einsum("ij,ij->i", emb[name]["fp32"], emb[name][v])
             fidelity_summary.append({"dataset": name, "recognizer": v, "faces": len(cos),
                                      "mean_cos_to_fp32": round(float(cos.mean()), 5),

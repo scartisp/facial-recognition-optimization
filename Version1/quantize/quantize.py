@@ -1,20 +1,25 @@
 """Post-training static INT8 quantization of the recognizer and the liveness model.
 
 Run after eval/prepare_data.py (from the Version1 folder, venv active):
-    python quantize/quantize.py            # seed 0
-    python quantize/quantize.py --seed 1   # another calibration sample
+    python quantize/quantize.py                               # seed 0, all variants
+    python quantize/quantize.py --variants per_channel_nodw   # build just one variant
+    python quantize/quantize.py --seed 1                      # another calibration sample
 
-For each model it produces two INT8 variants that differ in exactly one setting:
-    per_tensor   one scale per weight tensor
-    per_channel  one scale per output channel
+For each model it produces INT8 variants that each differ from the previous in one setting:
+    per_tensor        one scale per weight tensor
+    per_channel       one scale per output channel
+    per_channel_nodw  per_channel, but depthwise convolutions (group > 1) stay FP32
+                      (ONNX Runtime's INT8 depthwise kernels are the suspected cause of the slowdown)
 Everything else is ONNX Runtime's default static PTQ: QDQ format, signed INT8 weights and
 activations (S8S8), MinMax calibration. The detector is not quantized.
 
 Calibration uses only the held-out first seconds of the team videos (split == "calib"),
-never test frames. It also:
+never test frames. If results/raw/quantization_manifest_s<seed>.json exists, its exact sample
+list is reused (the calib pool has grown since, so redrawing would change the models);
+--fresh-sample draws again. Variants not being built keep their existing files. It also:
     - writes models/int8/*.onnx (git-ignored)
     - adds their SHA-256 hashes to configs/models.lock.json
-    - writes the 9 ablation configs to configs/ablation/
+    - writes one ablation config per (recognizer, liveness) pair to configs/ablation/
     - records the calibration manifest in results/raw/quantization_manifest_s<seed>.json
 """
 import argparse
@@ -46,8 +51,12 @@ cache_path = version1_folder / "private" / "cache" / "own.npz"
 
 CALIBRATION_SIZE = 128
 MIN_OPSET = 13
-VARIANTS = {"per_tensor": False, "per_channel": True}
-SHORT = {"fp32": "fp32", "per_tensor": "int8pt", "per_channel": "int8pc"}
+VARIANTS = {
+    "per_tensor": {"per_channel": False, "exclude_depthwise": False},
+    "per_channel": {"per_channel": True, "exclude_depthwise": False},
+    "per_channel_nodw": {"per_channel": True, "exclude_depthwise": True},
+}
+SHORT = {"fp32": "fp32", "per_tensor": "int8pt", "per_channel": "int8pc", "per_channel_nodw": "int8nodw"}
 
 
 class ArrayReader(CalibrationDataReader):
@@ -81,7 +90,15 @@ def input_name_of(path):
     return onnxruntime.InferenceSession(str(path), providers=["CPUExecutionProvider"]).get_inputs()[0].name
 
 
-def quantize_model(fp32_path, blobs, out_path, per_channel):
+def depthwise_conv_names(model_path):
+    """Names of Conv nodes with group > 1 (depthwise in these MobileNet-style models)."""
+    model = onnx.load(str(model_path))
+    return [n.name for n in model.graph.node if n.op_type == "Conv"
+            and next((a.i for a in n.attribute if a.name == "group"), 1) > 1]
+
+
+def quantize_model(fp32_path, blobs, out_path, per_channel, exclude_depthwise):
+    """Returns the names of the nodes left in FP32 on purpose."""
     with tempfile.TemporaryDirectory() as temp:
         # Per-channel QDQ needs DequantizeLinear's axis attribute, added in opset 13.
         # w600k_mbf ships as opset 11; the conversion leaves FP32 outputs bit-identical.
@@ -93,6 +110,7 @@ def quantize_model(fp32_path, blobs, out_path, per_channel):
 
         prepared = Path(temp) / "prepared.onnx"
         quant_pre_process(str(upgraded), str(prepared))
+        excluded = depthwise_conv_names(prepared) if exclude_depthwise else []
         quantize_static(
             str(prepared),
             str(out_path),
@@ -103,13 +121,21 @@ def quantize_model(fp32_path, blobs, out_path, per_channel):
             activation_type=QuantType.QInt8,
             weight_type=QuantType.QInt8,
             calibrate_method=CalibrationMethod.MinMax,
+            nodes_to_exclude=excluded,
         )
+    return excluded
 
 
 def main():
     parser = argparse.ArgumentParser(description="Static INT8 PTQ for both models")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--variants", nargs="+", choices=list(VARIANTS), default=list(VARIANTS),
+                        help="variants to (re)build; the others keep their existing files")
+    parser.add_argument("--fresh-sample", action="store_true",
+                        help="draw a new calibration sample instead of reusing the manifest's")
     args = parser.parse_args()
+    manifest_path = results_raw / f"quantization_manifest_s{args.seed}.json"
+    old_manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
 
     base_config = json.loads(pl.default_config.read_text())
     pl.check_pins(base_config)
@@ -118,8 +144,20 @@ def main():
     cache = np.load(cache_path)
     meta = [json.loads(m) for m in cache["meta"]]
     calib_index = [i for i, m in enumerate(meta) if m["split"] == "calib"]
-    rng = np.random.default_rng(args.seed)
-    chosen = sorted(rng.choice(calib_index, size=min(CALIBRATION_SIZE, len(calib_index)), replace=False).tolist())
+    if old_manifest and not args.fresh_sample:
+        by_key = {meta[i]["source"] + f"@{meta[i]['time_s']}s": i for i in calib_index}
+        missing = [k for k in old_manifest["samples"] if k not in by_key]
+        if missing:
+            raise SystemExit(f"{len(missing)} manifest samples are not in the cache (e.g. {missing[0]}); "
+                             "rerun prepare_data.py --only own or pass --fresh-sample")
+        chosen = sorted(by_key[k] for k in old_manifest["samples"])
+        pool_size = old_manifest["calibration_pool_size"]
+        print(f"Reusing the {len(chosen)} calibration samples from {manifest_path.name}")
+    else:
+        rng = np.random.default_rng(args.seed)
+        chosen = sorted(rng.choice(calib_index, size=min(CALIBRATION_SIZE, len(calib_index)),
+                                   replace=False).tolist())
+        pool_size = len(calib_index)
 
     blobs = {
         "recognizer": np.ascontiguousarray(pipeline.recognizer_blob(list(cache["rec"][chosen]))),
@@ -130,15 +168,23 @@ def main():
     int8_folder.mkdir(parents=True, exist_ok=True)
     produced = {"recognizer": {"fp32": base_config["models"]["recognizer"]},
                 "liveness": {"fp32": base_config["models"]["liveness"]}}
+    excluded_nodes = (old_manifest or {}).get("excluded_nodes", {})
 
     for role in ("recognizer", "liveness"):
         fp32_path = pl.resolve_path(base_config["models"][role]["path"])
-        for variant, per_channel in VARIANTS.items():
+        for variant, settings in VARIANTS.items():
             out_path = int8_folder / f"{fp32_path.stem}_int8_{variant}_s{args.seed}.onnx"
-            print(f"Quantizing {role} ({variant}) -> {out_path.name}")
-            quantize_model(fp32_path, blobs[role], out_path, per_channel)
             lock_key = f"int8/{out_path.name}"
-            lock["files"][lock_key] = sha256_of(out_path)
+            if variant in args.variants:
+                print(f"Quantizing {role} ({variant}) -> {out_path.name}")
+                excluded = quantize_model(fp32_path, blobs[role], out_path, **settings)
+                excluded_nodes[f"{role}/{variant}"] = excluded
+                lock["files"][lock_key] = sha256_of(out_path)
+            elif not out_path.exists():
+                print(f"Skipping {role} ({variant}): not built yet and not requested")
+                continue
+            elif sha256_of(out_path) != lock["files"].get(lock_key):
+                raise SystemExit(f"{out_path.name} does not match its pinned hash; rebuild it explicitly")
             produced[role][variant] = {
                 "path": out_path.relative_to(repo_folder).as_posix(),
                 "lock_key": lock_key,
@@ -146,7 +192,7 @@ def main():
 
     pl.lock_path.write_text(json.dumps(lock, indent=2) + "\n")
 
-    # One config per cell of the 3 x 3 grid; only the two model entries differ
+    # One config per (recognizer, liveness) pair; only the two model entries differ
     ablation_folder.mkdir(parents=True, exist_ok=True)
     for rec_variant, rec_model in produced["recognizer"].items():
         for live_variant, live_model in produced["liveness"].items():
@@ -161,7 +207,7 @@ def main():
     manifest = {
         "seed": args.seed,
         "calibration_size": len(chosen),
-        "calibration_pool_size": len(calib_index),
+        "calibration_pool_size": pool_size,
         "calibration_source": "team videos, first 4 s of each video (split == calib)",
         "samples": [meta[i]["source"] + f"@{meta[i]['time_s']}s" for i in chosen],
         "quant_format": "QDQ",
@@ -171,10 +217,12 @@ def main():
         "reduce_range": False,
         "min_opset": MIN_OPSET,
         "onnxruntime_version": onnxruntime.__version__,
+        "variants": {v: VARIANTS[v] for v in produced["recognizer"] if v != "fp32"},
+        "excluded_nodes": excluded_nodes,
         "models": produced,
     }
     results_raw.mkdir(parents=True, exist_ok=True)
-    (results_raw / f"quantization_manifest_s{args.seed}.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
     print(f"Done. Configs in {ablation_folder}")
 
 

@@ -9,10 +9,12 @@ What goes where:
 - InsightFace models (buffalo_sc): downloaded on first run to %USERPROFILE%\.insightface\models\buffalo_sc
 - INT8 models: models\int8\ (generated, git-ignored; hashes pinned in ..\configs\models.lock.json)
 
-Quantization ablation (3 x 3: recognizer and liveness each FP32 / INT8 per-tensor / INT8 per-channel).
+Quantization ablation (4 x 4: recognizer and liveness each FP32 / INT8 per-tensor / INT8 per-channel /
+INT8 per-channel with depthwise convolutions left in FP32).
 Run in this order from the Version1 folder with the venv active:
   1. python eval\prepare_data.py      detect faces once, cache crops in private\cache (needs the data below)
-  2. python quantize\quantize.py      INT8 models + configs\ablation\*.json (calibration seed 0)
+  2. python quantize\quantize.py      INT8 models + configs\ablation\*.json (calibration seed 0;
+                                     reuses the manifest's samples; --variants X builds only X)
   3. python eval\run_eval.py          accuracy -> results\processed\summary.md
   4. python bench\bench.py --label pc latency/memory/CPU time -> results\processed\bench_pc.csv (use --label pi on the Pi)
      python bench\bench.py --label pc --isolated   model-only timing
@@ -24,12 +26,13 @@ On the Pi (same order, skipping 1-2: copy private\cache and models\int8 from the
 
 Power (run on the PC; meter wired PSU -> FNB58 in, FNB58 out -> Pi, micro-USB -> PC last;
 the Pi needs key-based SSH and the same bench/bench.py and app/pipeline.py as the PC):
-  python bench\power_run.py                     9 configs, 60 s sustained each, idle phases between
+  python bench\power_run.py                     every config, 60 s sustained each, idle phases between
   python bench\power_run.py --seconds 20 --cells rec-fp32_live-fp32   quick check
-  -> results\raw\power\pi\<run_id>\, results\processed\power_pi.csv, results\figures\power_trace_pi.png
+  -> results\raw\power\pi\<run_id>\ (power_summary.csv, power_trace.png); nothing outside the run folder
   python eval\power_analysis.py results\raw\power\pi\<run_id>   re-analyse an existing run
   python bench\power_run.py --reverse            second pass in reverse order (order/heat check)
   python eval\power_analysis.py --combine <run1> <run2>   mean and min-max -> results\processed\power_pi.csv
+  python eval\power_analysis.py --combine <run1> <run2> --name nodw   -> results\processed\power_pi_nodw.csv
   python eval/compare_runs.py --a pc --b pi     do Pi outputs match the committed PC results?
 
 Data (all local, git-ignored, never shared):
