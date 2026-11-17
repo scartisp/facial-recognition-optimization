@@ -6,3 +6,4 @@ numpy
 psutil
 matplotlib
 sympy
+pywinusb; sys_platform == "win32"

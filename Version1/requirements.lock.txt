@@ -33,3 +33,4 @@ tifffile==2026.3.3
 tqdm==4.70.1
 typing_extensions==4.16.0
 urllib3==2.8.0
+pywinusb==0.4.2; sys_platform == "win32"

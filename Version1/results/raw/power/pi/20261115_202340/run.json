@@ -1,0 +1,25 @@
+{
+  "run_id": "20261115_202340",
+  "label": "pi",
+  "host": "simion@simiPi",
+  "note": "desktop off (multi-user.target), wifi power_save on",
+  "settings": {
+    "label": "pi",
+    "seconds": 60,
+    "warmup": 50,
+    "idle": 60,
+    "gap": 30,
+    "cool_to": 50,
+    "max_cool": 300,
+    "repeats": 1,
+    "cells": ""
+  },
+  "code_sha256": {
+    "bench/bench.py": "917cd77a9130c2affb3760878ae138391b19f92d2172e8ed8b998f7460b6819f",
+    "app/pipeline.py": "a8887a36c83975d960f7a6b0c7bddf2061ccb0d0267f69d06335a280da97c126"
+  },
+  "pi_exit": 0,
+  "logger_exit": 0,
+  "logger_ok": true,
+  "meter": "FNIRSI FNB58, inline on the Pi's USB-C supply; 100 samples/s"
+}

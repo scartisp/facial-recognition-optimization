@@ -19,7 +19,7 @@ version1_folder = Path(__file__).resolve().parents[1]
 raw_root = version1_folder / "results" / "raw"
 processed_root = version1_folder / "results" / "processed"
 
-VARIANTS = ["fp32", "int8pt", "int8pc"]
+VARIANTS = ["fp32", "int8pt", "int8pc", "int8nodw"]
 LIVENESS_THRESHOLD = 0.0  # logit(0.5), the facenox default used by run_eval
 
 

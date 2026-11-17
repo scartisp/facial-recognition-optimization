@@ -5,13 +5,20 @@ Run from the Version1 folder, venv active:
     python bench/bench.py --label pi --runs 500 --warmup 50
 
 Each cell runs the full pipeline (detect -> liveness -> recognize) on a fixed set of frames
-taken from a team video (any private/*_live_bright.* file), cycling through them. Warm-up runs
+taken from one team video (private/mabel_live_bright.*, pinned), cycling through them. Warm-up runs
 are excluded. Each cell gets a fresh process so memory (RSS) is not shared between cells.
 
 Writes:
     results/raw/bench/<label>/<cell>.csv     one row per timed run
     results/raw/bench/<label>/<cell>.json    summary + host/software info
     results/processed/bench_<label>.csv      p50/p95/std per stage, RSS, model sizes
+
+Power mode (driven from the PC by bench/power_run.py, which also logs the USB power meter):
+    python bench/bench.py --label pi --power --seconds 60
+An idle baseline, then each config in its own process: load, warm-up, then a sustained run
+for --seconds, followed by an idle cool-down. Every phase boundary is printed as a
+`PHASE {json}` line with a Unix timestamp, and each config ends with a `RESULT {json}` line.
+Nothing is written on this machine; the PC records the stream.
 """
 import argparse
 import csv
@@ -39,22 +46,36 @@ results_processed = version1_folder / "results" / "processed"
 
 STAGES = ["detect_ms", "liveness_prep_ms", "liveness_infer_ms", "recog_prep_ms", "recog_infer_ms", "total_ms"]
 FRAME_COUNT = 20
+BENCH_VIDEO = "mabel_live_bright"  # every earlier PC and Pi benchmark used this video
 
 
 def load_frames():
     """FRAME_COUNT evenly spaced frames (with a detectable face) from one bright live team video."""
-    videos = sorted(p for p in (version1_folder / "private").glob("*_live_bright.*"))
+    # Pinned, so adding team videos never silently changes the benchmark input
+    videos = sorted(p for p in (version1_folder / "private").glob(f"{BENCH_VIDEO}.*"))
     if not videos:
-        raise FileNotFoundError("Need a private/*_live_bright.* video to benchmark on")
+        raise FileNotFoundError(f"Need private/{BENCH_VIDEO}.<ext> to benchmark on")
+    # Decode only the frames we keep. Decoding all of them (331 x 6 MB at 1080p) and then
+    # dropping most left ~2 GB of freed memory that glibc could not return to the OS in some
+    # configs, which is what made FP32 look like it needed 2,000 MB on the Pi.
+    capture = cv2.VideoCapture(str(videos[0]))
+    total = 0
+    while capture.grab():
+        total += 1
+    capture.release()
+    step = max(1, total // FRAME_COUNT)
+    wanted = set(range(0, total, step)[:FRAME_COUNT])  # same frames as frames[::step][:FRAME_COUNT]
     capture = cv2.VideoCapture(str(videos[0]))
     frames = []
-    while True:
-        ok, frame = capture.read()
-        if not ok:
+    for index in range(total):
+        if not capture.grab():
             break
-        frames.append(frame)
-    step = max(1, len(frames) // FRAME_COUNT)
-    return frames[::step][:FRAME_COUNT]
+        if index in wanted:
+            ok, frame = capture.retrieve()
+            if ok:
+                frames.append(frame)
+    capture.release()
+    return frames
 
 
 def read_sysfs_number(path, scale):
@@ -108,44 +129,55 @@ def summarize(values):
             "min": float(values.min()), "max": float(values.max())}
 
 
-def run_cell(config_path, label, runs, warmup):
+def load_cell(config_path):
+    """Pipeline for one config plus the benchmark frames it finds a face in."""
     config = json.loads(Path(config_path).read_text())
     pl.check_pins(config)
     pipeline = pl.Pipeline(config)
-    process = psutil.Process(os.getpid())
-
     frames = load_frames()
     faces = [pipeline.detect(f) for f in frames]
     frames = [f for f, face in zip(frames, faces) if face is not None]
     if not frames:
         raise RuntimeError("No face found in the benchmark frames")
+    return config, pipeline, frames
+
+
+def time_frame(pipeline, frame):
+    """One full pipeline pass (detect -> liveness -> recognize), timed per stage."""
+    c0 = time.process_time()
+    t0 = time.perf_counter()
+    bbox, keypoints = pipeline.detect(frame)
+    t1 = time.perf_counter()
+    live_blob = pipeline.liveness_blob(pipeline.liveness_crop(frame, bbox))
+    t2 = time.perf_counter()
+    pipeline.liveness_scores_blob(live_blob)
+    t3 = time.perf_counter()
+    rec_blob = pipeline.recognizer_blob(pipeline.recognizer_crop(frame, keypoints))
+    t4 = time.perf_counter()
+    pipeline.embed_blob(rec_blob)
+    t5 = time.perf_counter()
+    c5 = time.process_time()
+    return {
+        "detect_ms": (t1 - t0) * 1000, "liveness_prep_ms": (t2 - t1) * 1000,
+        "liveness_infer_ms": (t3 - t2) * 1000, "recog_prep_ms": (t4 - t3) * 1000,
+        "recog_infer_ms": (t5 - t4) * 1000, "total_ms": (t5 - t0) * 1000,
+        # CPU time of all this process's threads: an energy proxy, NOT a power measurement
+        "cpu_ms": (c5 - c0) * 1000,
+    }
+
+
+def run_cell(config_path, label, runs, warmup):
+    config, pipeline, frames = load_cell(config_path)
+    process = psutil.Process(os.getpid())
 
     temp_start, throttled_start = cpu_temperature(), pi_throttled()
     rows = []
     for run in range(warmup + runs):
-        frame = frames[run % len(frames)]
-        c0 = time.process_time()
-        t0 = time.perf_counter()
-        bbox, keypoints = pipeline.detect(frame)
-        t1 = time.perf_counter()
-        live_blob = pipeline.liveness_blob(pipeline.liveness_crop(frame, bbox))
-        t2 = time.perf_counter()
-        pipeline.liveness_scores_blob(live_blob)
-        t3 = time.perf_counter()
-        rec_blob = pipeline.recognizer_blob(pipeline.recognizer_crop(frame, keypoints))
-        t4 = time.perf_counter()
-        pipeline.embed_blob(rec_blob)
-        t5 = time.perf_counter()
-        c5 = time.process_time()
+        times = time_frame(pipeline, frames[run % len(frames)])
         if run < warmup:
             continue
         rows.append({
-            "run": run - warmup,
-            "detect_ms": (t1 - t0) * 1000, "liveness_prep_ms": (t2 - t1) * 1000,
-            "liveness_infer_ms": (t3 - t2) * 1000, "recog_prep_ms": (t4 - t3) * 1000,
-            "recog_infer_ms": (t5 - t4) * 1000, "total_ms": (t5 - t0) * 1000,
-            # CPU time of all this process's threads: an energy proxy, NOT a power measurement
-            "cpu_ms": (c5 - c0) * 1000,
+            "run": run - warmup, **times,
             "rss_mb": process.memory_info().rss / 2**20,
             "cpu_temp_c": cpu_temperature(),
             "cpu_freq_mhz": cpu_frequency_mhz(),
@@ -180,12 +212,94 @@ def run_cell(config_path, label, runs, warmup):
           f"p95 {summary['stages']['total_ms']['p95']:.1f} ms, RSS {summary['rss_mb']['max']:.0f} MB")
 
 
+def mark(cell, phase, event, **extra):
+    """Print one phase boundary for bench/power_run.py, timestamped with this machine's clock."""
+    print("PHASE " + json.dumps({"cell": cell, "phase": phase, "event": event, "t": time.time(), **extra}),
+          flush=True)
+
+
+def run_power_cell(config_path, seconds, warmup):
+    """Sustained run of one config for the power meter: load, warm-up, then `seconds` of
+    back-to-back full-pipeline passes. Prints PHASE markers and a final RESULT line."""
+    cell = json.loads(Path(config_path).read_text())["precision"]
+    process = psutil.Process(os.getpid())
+
+    mark(cell, "load", "start")
+    config, pipeline, frames = load_cell(config_path)
+    mark(cell, "load", "end", rss_mb=process.memory_info().rss / 2**20)
+
+    mark(cell, "warmup", "start")
+    for run in range(warmup):
+        time_frame(pipeline, frames[run % len(frames)])
+    mark(cell, "warmup", "end")
+
+    temp_start, throttled_start = cpu_temperature(), pi_throttled()
+    totals, cpu_ms, rss, freqs = [], [], [], []
+    mark(cell, "sustained", "start", cpu_temp_c=temp_start)
+    t_start = time.perf_counter()
+    while time.perf_counter() - t_start < seconds:
+        times = time_frame(pipeline, frames[len(totals) % len(frames)])
+        totals.append(times["total_ms"])
+        cpu_ms.append(times["cpu_ms"])
+        if len(totals) % 10 == 1:  # sampled, so the bookkeeping stays out of the timed path
+            rss.append(process.memory_info().rss / 2**20)
+            freqs.append(cpu_frequency_mhz())
+    elapsed = time.perf_counter() - t_start
+    temp_end = cpu_temperature()
+    mark(cell, "sustained", "end", frames=len(totals), cpu_temp_c=temp_end)
+    throttled_end = pi_throttled()
+
+    result = {
+        "cell": cell, "seconds": elapsed, "frames": len(totals), "fps": len(totals) / elapsed,
+        "warmup_excluded": warmup, "total_ms": summarize(totals),
+        "cpu_ms_per_frame": statistics.fmean(cpu_ms),
+        "rss_mb": {"median": statistics.median(rss), "max": max(rss)},
+        "cpu_freq_mhz": {"min": min(freqs), "max": max(freqs)} if freqs[0] is not None else None,
+        "cpu_temp_c": {"start": temp_start, "end": temp_end},
+        "throttled": {"start": throttled_start, "end": throttled_end},
+        "host": host_info(),
+    }
+    print("RESULT " + json.dumps(result), flush=True)
+
+
+def idle(cell, seconds, cool_to=None, max_seconds=None):
+    """Idle phase: at least `seconds`, then (if cool_to is set) until the CPU is at or below
+    cool_to C, capped at max_seconds. The PC uses idle phases as the idle power baseline."""
+    mark(cell, "idle", "start", cpu_temp_c=cpu_temperature())
+    start = time.time()
+    time.sleep(seconds)
+    while (cool_to is not None and (cpu_temperature() or 0) > cool_to
+           and time.time() - start < max_seconds):
+        time.sleep(2)
+    mark(cell, "idle", "end", cpu_temp_c=cpu_temperature())
+
+
+def run_power(label, args):
+    configs = sorted(ablation_folder.glob("*.json"))
+    if args.cells:
+        configs = [c for c in configs if c.stem in args.cells.split(",")]
+        if not configs:
+            raise SystemExit(f"No ablation config matches --cells {args.cells}")
+    if args.reverse:
+        configs = configs[::-1]
+    print(f"POWER label={label} cells={len(configs)} seconds={args.seconds} repeats={args.repeats} "
+          f"reverse={args.reverse}", flush=True)
+    idle("baseline", args.idle)
+    for repeat in range(args.repeats):
+        # Alternate the order on repeats so thermal drift does not always hit the same cells
+        for config_path in (configs if repeat % 2 == 0 else configs[::-1]):
+            subprocess.run([sys.executable, __file__, "--label", label, "--power-cell", str(config_path),
+                            "--seconds", str(args.seconds), "--warmup", str(args.warmup)], check=True)
+            idle(config_path.stem, args.gap, args.cool_to, args.max_cool)
+    print("POWER done", flush=True)
+
+
 def run_isolated(label, runs, warmup):
     """Model-only timing (session.run on a fixed preprocessed input) for each of the 6 model files,
     with 1 thread and with ONNX Runtime's default thread count. Separates the quantization effect
     from preprocessing, detection and thread scheduling noise."""
     configs = {v: json.loads((ablation_folder / f"rec-{v}_live-{v}.json").read_text())
-               for v in ("fp32", "int8pt", "int8pc")}
+               for v in ("fp32", "int8pt", "int8pc", "int8nodw")}
     frame = load_frames()[0]
     prep = pl.Pipeline(configs["fp32"])
     bbox, keypoints = prep.detect(frame)
@@ -256,8 +370,25 @@ def main():
     parser.add_argument("--config", help="benchmark a single config (used internally)")
     parser.add_argument("--summarize-only", action="store_true",
                         help="rebuild bench_<label>.csv from existing per-cell results without rerunning")
+    power = parser.add_argument_group("power mode (normally started by bench/power_run.py on the PC)")
+    power.add_argument("--power", action="store_true", help="sustained runs with PHASE markers")
+    power.add_argument("--power-cell", help="one config's sustained run (used internally)")
+    power.add_argument("--seconds", type=float, default=60, help="sustained run length per config")
+    power.add_argument("--idle", type=float, default=60, help="idle baseline before the first config, s")
+    power.add_argument("--gap", type=float, default=30, help="minimum idle between configs, s")
+    power.add_argument("--cool-to", type=float, default=50, help="after the gap, idle until CPU <= this C")
+    power.add_argument("--max-cool", type=float, default=300, help="cap on each idle phase, s")
+    power.add_argument("--repeats", type=int, default=1, help="passes over the configs (order alternates)")
+    power.add_argument("--reverse", action="store_true", help="start with the last config (order check)")
+    power.add_argument("--cells", help="comma-separated subset, e.g. rec-fp32_live-fp32,rec-int8pt_live-int8pt")
     args = parser.parse_args()
 
+    if args.power_cell:
+        run_power_cell(args.power_cell, args.seconds, args.warmup)
+        return
+    if args.power:
+        run_power(args.label, args)
+        return
     if args.config:
         run_cell(args.config, args.label, args.runs, args.warmup)
         return
