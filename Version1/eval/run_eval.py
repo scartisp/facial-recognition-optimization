@@ -149,10 +149,23 @@ def main():
     parser = argparse.ArgumentParser(description="Accuracy evaluation of the 3 x 3 ablation")
     parser.add_argument("--label", default="pc",
                         help="machine label; anything but 'pc' writes to a results subfolder of that name")
+    parser.add_argument("--det-size", type=int,
+                        help="evaluate the private/cache_det<N>/ crops (prepare_data.py --det-size N); results go "
+                             "to a det<N> subfolder and the operating threshold stays the 640 FP32 one")
     args = parser.parse_args()
+    global cache_folder
+    baseline_threshold = None
+    if args.det_size:
+        # A deployed system keeps its threshold when the detector changes: use the 640 FP32 one
+        baseline_rows = list(csv.DictReader(open(results_processed / "verification_lfw.csv")))
+        baseline_threshold = float(baseline_rows[0]["fp32_threshold"])
+        cache_folder = cache_folder.parent / f"cache_det{args.det_size}"
     if args.label != "pc":
         results_raw = results_raw / args.label
         results_processed = results_processed / args.label
+    if args.det_size:
+        results_raw = results_raw / f"det{args.det_size}"
+        results_processed = results_processed / f"det{args.det_size}"
 
     configs = variant_configs()
     runners = {v: ModelRunner(configs[v]) for v in VARIANTS}
@@ -181,6 +194,8 @@ def main():
         for i, p in enumerate(usable)))
 
     fp32_threshold = threshold_at_far(sims["fp32"][~same], TARGET_FAR)
+    if baseline_threshold is not None:
+        own_fp32_threshold, fp32_threshold = fp32_threshold, baseline_threshold
     verification_rows, roc_rows = [], []
     for v in VARIANTS:
         gen, imp = sims[v][same], sims[v][~same]
@@ -204,8 +219,11 @@ def main():
 
     summary += ["## Verification (LFW deep-funneled, 6000 pairs)", "",
                 f"Pairs with a face detected in both images: {len(usable)}/{len(pairs)} (same pairs for every variant).",
-                f"Operating threshold: FP32 threshold at FAR = 0.1% on LFW = **{fp32_threshold:.4f}** "
-                "(kept fixed for INT8, as a deployed system would).", "",
+                (f"Operating threshold: FP32 threshold at FAR = 0.1% on LFW = **{fp32_threshold:.4f}** "
+                 "(kept fixed for INT8, as a deployed system would)." if baseline_threshold is None else
+                 f"Detector input {args.det_size}x{args.det_size}. Operating threshold: the 640 FP32 threshold "
+                 f"**{fp32_threshold:.4f}**, kept fixed as a deployed system would (FP32 at this detector size "
+                 f"would reach FAR = 0.1% at {own_fp32_threshold:.4f})."), "",
                 "| Recognizer | EER | AUC | TAR @ FAR=0.1% (own threshold) | FAR @ FP32 threshold | FRR @ FP32 threshold |",
                 "|---|---|---|---|---|---|"]
     for r in verification_rows:

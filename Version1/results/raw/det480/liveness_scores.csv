@@ -1,0 +1,1811 @@
+dataset,index,person,kind,detail,lighting,glasses,source,time_s,face_width_px,score_fp32,score_int8pt,score_int8pc,score_int8nodw
+own (test split),17,p01,live,,bright,na,p01_live_bright,4.02,306,8.362036,8.798553,8.798553,7.687157
+own (test split),18,p01,live,,bright,na,p01_live_bright,4.55,333,4.248178,7.316691,7.131459,3.704654
+own (test split),19,p01,live,,bright,na,p01_live_bright,5.02,325,10.202225,10.928729,10.280415,8.983786
+own (test split),20,p01,live,,bright,na,p01_live_bright,5.55,315,9.682610,10.373032,9.169019,8.705936
+own (test split),21,p01,live,,bright,na,p01_live_bright,6.02,325,11.320891,11.808584,11.021345,10.280415
+own (test split),22,p01,live,,bright,na,p01_live_bright,6.55,324,5.985989,7.409308,6.853610,6.020063
+own (test split),23,p01,live,,bright,na,p01_live_bright,7.01,332,7.350209,8.150239,6.575761,6.112679
+own (test split),24,p01,live,,bright,na,p01_live_bright,7.55,317,6.599220,8.150239,7.501925,5.834830
+own (test split),25,p01,live,,bright,na,p01_live_bright,8.01,306,7.420231,8.520704,8.520704,7.501925
+own (test split),26,p01,live,,bright,na,p01_live_bright,8.55,310,9.482154,10.373032,9.354251,8.798553
+own (test split),27,p01,live,,bright,na,p01_live_bright,9.01,316,8.453093,9.817333,9.539484,8.242855
+own (test split),28,p01,live,,bright,na,p01_live_bright,9.54,323,1.697475,4.723434,3.797270,2.222792
+own (test split),29,p01,live,,bright,na,p01_live_bright,10.01,330,4.641591,7.594541,6.390528,4.445585
+own (test split),30,p01,live,,bright,na,p01_live_bright,10.54,328,6.078549,9.169019,9.169019,6.297912
+own (test split),31,p01,live,,bright,na,p01_live_bright,11.01,323,5.565741,8.335471,8.335471,6.390528
+own (test split),32,p01,live,,bright,na,p01_live_bright,11.54,322,6.488926,8.613320,8.798553,7.687157
+own (test split),33,p01,live,,bright,na,p01_live_bright,12.01,329,4.792080,7.594541,7.687157,6.205296
+own (test split),34,p01,live,,bright,na,p01_live_bright,12.54,324,7.654305,10.187799,9.724717,7.687157
+own (test split),35,p01,live,,bright,na,p01_live_bright,13.0,322,7.043891,9.446868,7.501925,7.594541
+own (test split),36,p01,live,,bright,na,p01_live_bright,13.53,324,8.317834,9.724717,10.465648,7.872390
+own (test split),37,p01,live,,bright,na,p01_live_bright,14.0,329,8.416371,9.909949,9.909949,8.705936
+own (test split),38,p01,live,,bright,na,p01_live_bright,15.0,345,6.612956,8.613320,9.354251,7.316691
+own (test split),39,p01,live,,bright,na,p01_live_bright,15.53,325,4.116039,5.649597,6.853610,4.908667
+own (test split),40,p01,live,,bright,na,p01_live_bright,16.07,332,5.757603,7.687157,6.760993,6.390528
+own (test split),41,p01,live,,bright,na,p01_live_bright,16.53,333,7.951716,10.558264,9.817333,7.872390
+own (test split),42,p01,live,,bright,na,p01_live_bright,17.06,330,7.096422,8.798553,7.316691,7.594541
+own (test split),43,p01,live,,bright,na,p01_live_bright,17.53,333,9.903130,11.391811,10.836113,9.632100
+own (test split),44,p01,live,,bright,na,p01_live_bright,18.06,302,2.888686,4.630817,6.112679,3.148956
+own (test split),45,p01,live,,bright,na,p01_live_bright,18.53,294,3.911037,7.224075,6.760993,5.464365
+own (test split),46,p01,live,,bright,na,p01_live_bright,19.06,326,3.775951,5.279132,6.946226,4.538201
+own (test split),47,p01,live,,bright,na,p01_live_bright,19.53,333,6.027582,6.760993,7.038843,6.760993
+own (test split),48,p01,live,,bright,na,p01_live_bright,20.06,331,5.107763,5.093899,6.020063,4.538201
+own (test split),49,p01,live,,bright,na,p01_live_bright,20.52,317,4.467937,6.946226,6.946226,5.371748
+own (test split),50,p01,live,,bright,na,p01_live_bright,21.05,315,2.159334,4.908667,4.630817,2.500641
+own (test split),51,p01,live,,bright,na,p01_live_bright,21.52,309,5.452446,6.205296,5.834830,6.020063
+own (test split),52,p01,live,,bright,na,p01_live_bright,22.05,325,4.993987,7.224075,7.224075,5.186516
+own (test split),53,p01,live,,bright,na,p01_live_bright,22.52,323,8.585669,10.095182,10.280415,9.354251
+own (test split),70,p01,live,,dim,na,p01_live_dim,4.0,291,-0.071267,1.944943,0.463082,1.852327
+own (test split),71,p01,live,,dim,na,p01_live_dim,4.53,293,0.100433,1.574478,0.648314,1.852327
+own (test split),72,p01,live,,dim,na,p01_live_dim,5.0,288,0.045872,1.944943,1.204013,2.871107
+own (test split),73,p01,live,,dim,na,p01_live_dim,5.53,300,0.961412,2.222792,0.926163,3.241572
+own (test split),74,p01,live,,dim,na,p01_live_dim,6.07,318,0.280306,2.500641,1.944943,1.852327
+own (test split),75,p01,live,,dim,na,p01_live_dim,6.53,304,2.296899,3.889887,4.723434,5.371748
+own (test split),76,p01,live,,dim,na,p01_live_dim,7.06,281,2.190074,3.704654,3.982503,5.001283
+own (test split),77,p01,live,,dim,na,p01_live_dim,7.53,277,0.393038,2.500641,2.593258,2.778491
+own (test split),78,p01,live,,dim,na,p01_live_dim,8.06,279,0.125292,0.926163,1.944943,3.241572
+own (test split),79,p01,live,,dim,na,p01_live_dim,8.53,302,3.112329,5.186516,5.649597,5.649597
+own (test split),80,p01,live,,dim,na,p01_live_dim,9.06,319,1.098403,0.463082,0.740931,1.018780
+own (test split),81,p01,live,,dim,na,p01_live_dim,9.53,323,1.321254,2.593258,1.944943,1.667094
+own (test split),82,p01,live,,dim,na,p01_live_dim,10.06,326,1.993087,2.871107,3.056340,3.241572
+own (test split),83,p01,live,,dim,na,p01_live_dim,10.52,322,2.900268,2.871107,3.982503,3.519421
+own (test split),84,p01,live,,dim,na,p01_live_dim,11.06,305,3.823843,4.075119,5.464365,5.371748
+own (test split),85,p01,live,,dim,na,p01_live_dim,11.52,296,3.401676,4.075119,3.056340,6.205296
+own (test split),86,p01,live,,dim,na,p01_live_dim,12.05,298,4.279404,4.075119,5.093899,6.297912
+own (test split),87,p01,live,,dim,na,p01_live_dim,12.52,312,1.503471,4.723434,2.963723,3.426805
+own (test split),88,p01,live,,dim,na,p01_live_dim,13.05,313,2.066544,2.315409,3.241572,3.519421
+own (test split),89,p01,live,,dim,na,p01_live_dim,13.52,288,0.420313,0.648314,0.463082,1.204013
+own (test split),90,p01,live,,dim,na,p01_live_dim,14.05,276,0.713147,-0.648314,-0.092616,0.370465
+own (test split),91,p01,live,,dim,na,p01_live_dim,14.52,310,2.788815,4.816050,5.093899,3.426805
+own (test split),92,p01,live,,dim,na,p01_live_dim,15.05,316,1.178225,1.944943,2.871107,2.593258
+own (test split),93,p01,live,,dim,na,p01_live_dim,15.51,307,0.742692,2.778491,3.334188,2.871107
+own (test split),94,p01,live,,dim,na,p01_live_dim,16.05,312,0.885417,2.963723,1.574478,3.426805
+own (test split),95,p01,live,,dim,na,p01_live_dim,16.51,303,2.780501,3.704654,4.075119,4.816050
+own (test split),96,p01,live,,dim,na,p01_live_dim,17.05,293,1.610385,2.963723,1.481862,2.315409
+own (test split),97,p01,live,,dim,na,p01_live_dim,17.51,290,-1.575078,-1.018780,-0.277849,-0.277849
+own (test split),98,p01,live,,dim,na,p01_live_dim,18.04,297,1.724072,1.389245,1.389245,1.759711
+own (test split),99,p01,live,,dim,na,p01_live_dim,18.51,292,0.754201,2.408025,1.018780,1.111396
+own (test split),100,p01,live,,dim,na,p01_live_dim,19.04,309,1.639086,3.889887,3.241572,4.260352
+own (test split),101,p01,live,,dim,na,p01_live_dim,19.51,314,2.492999,3.797270,3.334188,4.630817
+own (test split),118,p01,screen,,bright,na,p01_screen_bright,4.04,450,-1.230284,-1.759711,-0.185233,-1.759711
+own (test split),119,p01,screen,,bright,na,p01_screen_bright,4.5,445,-5.191978,-4.908667,-5.001283,-5.001283
+own (test split),120,p01,screen,,bright,na,p01_screen_bright,5.04,443,-1.613223,-0.092616,-0.092616,-1.111396
+own (test split),121,p01,screen,,bright,na,p01_screen_bright,5.5,416,-5.604884,-5.464365,-4.167736,-5.742214
+own (test split),122,p01,screen,,bright,na,p01_screen_bright,6.04,409,-3.551955,-4.075119,-2.778491,-3.241572
+own (test split),123,p01,screen,,bright,na,p01_screen_bright,6.57,403,-3.533010,-3.982503,-2.685874,-3.426805
+own (test split),124,p01,screen,,bright,na,p01_screen_bright,7.03,397,-5.392427,-4.445585,-5.927446,-5.371748
+own (test split),125,p01,screen,,bright,na,p01_screen_bright,7.56,387,-5.517401,-5.001283,-4.908667,-5.464365
+own (test split),126,p01,screen,,bright,na,p01_screen_bright,8.03,380,-5.838210,-5.556981,-6.668377,-6.760993
+own (test split),127,p01,screen,,bright,na,p01_screen_bright,8.56,371,-8.126217,-8.057622,-8.798553,-8.057622
+own (test split),128,p01,screen,,bright,na,p01_screen_bright,9.03,366,-4.407408,-3.704654,-4.723434,-5.001283
+own (test split),129,p01,screen,,bright,na,p01_screen_bright,9.56,357,-4.931117,-4.630817,-5.001283,-5.093899
+own (test split),130,p01,screen,,bright,na,p01_screen_bright,10.03,352,-7.152995,-6.575761,-6.112679,-7.594541
+own (test split),131,p01,screen,,bright,na,p01_screen_bright,10.56,353,-6.423314,-6.853610,-5.834830,-6.575761
+own (test split),132,p01,screen,,bright,na,p01_screen_bright,11.02,358,-4.537399,-3.241572,-4.075119,-4.908667
+own (test split),133,p01,screen,,bright,na,p01_screen_bright,11.55,370,-7.805305,-5.186516,-5.464365,-6.668377
+own (test split),134,p01,screen,,bright,na,p01_screen_bright,12.02,378,-3.692304,-3.519421,-3.889887,-3.704654
+own (test split),135,p01,screen,,bright,na,p01_screen_bright,12.55,404,-4.178741,-4.260352,-2.130176,-4.538201
+own (test split),136,p01,screen,,bright,na,p01_screen_bright,13.02,397,-0.728347,-0.185233,0.648314,-0.926163
+own (test split),137,p01,screen,,bright,na,p01_screen_bright,13.55,401,-2.470368,-2.871107,-3.334188,-2.963723
+own (test split),138,p01,screen,,bright,na,p01_screen_bright,14.02,403,-4.650691,-5.371748,-4.445585,-5.001283
+own (test split),139,p01,screen,,bright,na,p01_screen_bright,14.55,378,-3.674847,-3.056340,-3.056340,-3.982503
+own (test split),140,p01,screen,,bright,na,p01_screen_bright,15.02,407,-2.552642,-2.037560,-2.037560,-2.222792
+own (test split),141,p01,screen,,bright,na,p01_screen_bright,15.55,415,-3.926134,-4.816050,-4.908667,-3.519421
+own (test split),142,p01,screen,,bright,na,p01_screen_bright,16.02,430,-4.801603,-6.946226,-6.668377,-4.445585
+own (test split),143,p01,screen,,bright,na,p01_screen_bright,16.55,387,-4.653289,-5.001283,-3.797270,-5.279132
+own (test split),144,p01,screen,,bright,na,p01_screen_bright,17.01,389,-4.359246,-4.352968,-3.519421,-4.352968
+own (test split),145,p01,screen,,bright,na,p01_screen_bright,17.54,379,-8.508906,-8.891170,-8.242855,-8.705936
+own (test split),146,p01,screen,,bright,na,p01_screen_bright,18.01,301,1.967257,1.852327,3.982503,2.778491
+own (test split),147,p01,screen,,bright,na,p01_screen_bright,18.54,318,2.790718,4.908667,4.445585,2.778491
+own (test split),148,p01,screen,,bright,na,p01_screen_bright,19.0,329,3.689312,4.630817,5.834830,3.704654
+own (test split),149,p01,screen,,bright,na,p01_screen_bright,19.54,329,4.220082,5.186516,5.093899,4.260352
+own (test split),150,p01,screen,,bright,na,p01_screen_bright,20.0,325,6.534163,6.760993,6.946226,6.483144
+own (test split),151,p01,screen,,bright,na,p01_screen_bright,20.54,323,7.085934,6.390528,7.224075,8.520704
+own (test split),167,p01,screen,,dim,na,p01_screen_dim,4.05,440,-3.489892,-3.889887,-3.797270,-3.519421
+own (test split),168,p01,screen,,dim,na,p01_screen_dim,4.52,455,-5.285712,-4.723434,-4.167736,-3.612038
+own (test split),169,p01,screen,,dim,na,p01_screen_dim,5.05,437,-1.460789,-1.389245,-1.111396,-1.204013
+own (test split),170,p01,screen,,dim,na,p01_screen_dim,5.52,426,-1.993638,-0.463082,-0.740931,-1.667094
+own (test split),171,p01,screen,,dim,na,p01_screen_dim,6.05,440,-2.382067,-0.833547,-0.926163,-2.222792
+own (test split),172,p01,screen,,dim,na,p01_screen_dim,6.51,427,-1.807140,-1.204013,-0.370465,-0.740931
+own (test split),173,p01,screen,,dim,na,p01_screen_dim,7.04,425,-2.943114,-1.296629,-1.204013,-2.315409
+own (test split),174,p01,screen,,dim,na,p01_screen_dim,7.51,420,-5.019822,-2.871107,-2.778491,-3.612038
+own (test split),175,p01,screen,,dim,na,p01_screen_dim,8.04,396,-1.350284,0.231541,-1.481862,0.648314
+own (test split),176,p01,screen,,dim,na,p01_screen_dim,8.51,399,-0.645468,-0.926163,-2.500641,0.000000
+own (test split),177,p01,screen,,dim,na,p01_screen_dim,9.04,416,-1.103448,-1.204013,-0.370465,-0.185233
+own (test split),178,p01,screen,,dim,na,p01_screen_dim,9.51,383,-3.078900,0.185233,-1.296629,-0.648314
+own (test split),179,p01,screen,,dim,na,p01_screen_dim,10.04,377,-2.577463,-1.296629,-0.555698,-1.389245
+own (test split),180,p01,screen,,dim,na,p01_screen_dim,10.51,403,-8.950545,-5.742214,-7.594541,-6.760993
+own (test split),181,p01,screen,,dim,na,p01_screen_dim,11.04,405,-7.703001,-7.501925,-5.927446,-5.927446
+own (test split),182,p01,screen,,dim,na,p01_screen_dim,11.51,404,-4.911075,-3.889887,-3.889887,-5.371748
+own (test split),183,p01,screen,,dim,na,p01_screen_dim,12.04,381,-5.572846,-4.445585,-5.279132,-5.556981
+own (test split),184,p01,screen,,dim,na,p01_screen_dim,12.51,362,-4.282812,-2.963723,-3.797270,-4.260352
+own (test split),185,p01,screen,,dim,na,p01_screen_dim,13.04,374,-4.115483,-2.963723,-2.593258,-3.241572
+own (test split),186,p01,screen,,dim,na,p01_screen_dim,13.5,382,-1.927066,-1.296629,-1.204013,-1.111396
+own (test split),187,p01,screen,,dim,na,p01_screen_dim,14.03,369,-7.723408,-6.575761,-5.186516,-6.575761
+own (test split),188,p01,screen,,dim,na,p01_screen_dim,14.5,358,-2.972785,-5.001283,-2.593258,-3.797270
+own (test split),189,p01,screen,,dim,na,p01_screen_dim,15.03,364,-3.197343,-2.593258,-1.852327,-4.075119
+own (test split),190,p01,screen,,dim,na,p01_screen_dim,15.56,352,3.464920,3.241572,3.658346,3.797270
+own (test split),191,p01,screen,,dim,na,p01_screen_dim,16.03,378,-3.703966,-3.426805,-3.334188,-3.519421
+own (test split),192,p01,screen,,dim,na,p01_screen_dim,16.57,376,-4.732460,-5.649597,-4.167736,-5.649597
+own (test split),193,p01,screen,,dim,na,p01_screen_dim,17.03,359,0.536381,1.389245,1.944943,1.574478
+own (test split),194,p01,screen,,dim,na,p01_screen_dim,17.56,350,-0.570776,0.648314,1.204013,1.111396
+own (test split),195,p01,screen,,dim,na,p01_screen_dim,18.03,342,-2.566241,-0.740931,0.740931,-0.833547
+own (test split),196,p01,screen,,dim,na,p01_screen_dim,19.03,301,3.068181,3.889887,3.241572,3.334188
+own (test split),197,p01,screen,,dim,na,p01_screen_dim,19.56,296,3.877037,3.704654,3.056340,4.445585
+own (test split),218,p03,live,,bright,na,p03_live_bright,4.02,442,0.663745,5.834830,4.723434,-0.277849
+own (test split),219,p03,live,,bright,na,p03_live_bright,4.51,436,1.553658,6.390528,5.001283,1.944943
+own (test split),220,p03,live,,bright,na,p03_live_bright,5.01,432,-2.914275,5.834830,3.148956,-2.408025
+own (test split),221,p03,live,,bright,na,p03_live_bright,5.52,434,-1.854826,4.630817,3.426805,-3.056340
+own (test split),222,p03,live,,bright,na,p03_live_bright,6.02,438,-0.644449,5.186516,4.352968,-0.926163
+own (test split),223,p03,live,,bright,na,p03_live_bright,6.51,451,-4.098566,1.481862,2.037560,-3.426805
+own (test split),224,p03,live,,bright,na,p03_live_bright,7.02,458,2.671310,8.150239,8.150239,2.963723
+own (test split),225,p03,live,,bright,na,p03_live_bright,7.52,432,-0.275715,5.927446,4.538201,-0.185233
+own (test split),226,p03,live,,bright,na,p03_live_bright,8.02,391,-0.748567,2.315409,1.944943,-0.926163
+own (test split),227,p03,live,,bright,na,p03_live_bright,8.51,424,3.927721,7.594541,6.946226,3.982503
+own (test split),228,p03,live,,bright,na,p03_live_bright,9.02,457,5.444633,9.632100,9.169019,3.056340
+own (test split),229,p03,live,,bright,na,p03_live_bright,9.52,460,4.995200,7.872390,7.131459,4.445585
+own (test split),230,p03,live,,bright,na,p03_live_bright,10.02,455,5.908763,7.316691,9.076403,5.649597
+own (test split),231,p03,live,,bright,na,p03_live_bright,10.53,461,6.584091,8.428088,8.057622,6.112679
+own (test split),232,p03,live,,bright,na,p03_live_bright,11.02,457,5.954131,7.687157,8.798553,6.668377
+own (test split),233,p03,live,,bright,na,p03_live_bright,11.52,460,5.766505,7.779773,9.539484,6.297912
+own (test split),234,p03,live,,bright,na,p03_live_bright,12.03,429,3.328884,8.057622,4.630817,1.944943
+own (test split),235,p03,live,,bright,na,p03_live_bright,12.53,443,1.569752,6.575761,6.946226,1.667094
+own (test split),236,p03,live,,bright,na,p03_live_bright,13.02,444,1.705325,3.704654,2.963723,-0.092616
+own (test split),237,p03,live,,bright,na,p03_live_bright,13.54,445,1.723106,5.001283,4.352968,1.759711
+own (test split),238,p03,live,,bright,na,p03_live_bright,14.03,446,2.595012,7.224075,4.816050,1.852327
+own (test split),239,p03,live,,bright,na,p03_live_bright,14.53,432,-1.037344,2.685874,4.816050,-1.018780
+own (test split),240,p03,live,,bright,na,p03_live_bright,15.04,415,-1.907741,3.704654,4.908667,-0.926163
+own (test split),241,p03,live,,bright,na,p03_live_bright,15.54,348,-0.171853,2.778491,3.982503,1.018780
+own (test split),242,p03,live,,bright,na,p03_live_bright,16.03,330,0.146818,3.704654,4.167736,2.408025
+own (test split),243,p03,live,,bright,na,p03_live_bright,16.53,338,-2.597877,-2.037560,2.130176,-2.963723
+own (test split),244,p03,live,,bright,na,p03_live_bright,17.04,351,-1.991623,0.555698,3.334188,-0.092616
+own (test split),245,p03,live,,bright,na,p03_live_bright,17.54,350,-2.062883,2.778491,3.148956,-1.204013
+own (test split),246,p03,live,,bright,na,p03_live_bright,18.03,351,0.204810,3.612038,2.778491,1.204013
+own (test split),247,p03,live,,bright,na,p03_live_bright,18.54,372,-2.812858,0.092616,2.500641,-0.555698
+own (test split),248,p03,live,,bright,na,p03_live_bright,19.04,388,-3.178518,1.574478,2.176484,-2.963723
+own (test split),249,p03,live,,bright,na,p03_live_bright,19.54,406,-1.649946,3.889887,4.167736,-1.204013
+own (test split),250,p03,live,,bright,na,p03_live_bright,20.05,427,0.315330,2.130176,3.889887,-1.018780
+own (test split),251,p03,live,,bright,na,p03_live_bright,20.54,483,2.383000,8.057622,7.131459,2.037560
+own (test split),252,p03,live,,bright,na,p03_live_bright,21.04,468,-0.965274,6.760993,5.186516,0.926163
+own (test split),253,p03,live,,bright,na,p03_live_bright,21.55,462,0.103677,8.983786,6.205296,1.389245
+own (test split),254,p03,live,,bright,na,p03_live_bright,22.05,461,1.302954,6.205296,3.982503,1.296629
+own (test split),255,p03,live,,bright,na,p03_live_bright,22.54,460,3.177197,8.798553,6.297912,3.797270
+own (test split),276,p03,live,,dim,na,p03_live_dim,4.02,410,-1.234735,-0.185233,0.000000,0.277849
+own (test split),277,p03,live,,dim,na,p03_live_dim,4.51,417,-2.435303,0.740931,0.185233,-1.018780
+own (test split),278,p03,live,,dim,na,p03_live_dim,5.01,404,-1.261225,-0.555698,-1.204013,-0.277849
+own (test split),279,p03,live,,dim,na,p03_live_dim,5.52,379,-2.587908,-0.370465,-1.111396,-1.389245
+own (test split),280,p03,live,,dim,na,p03_live_dim,6.02,325,-4.002179,-0.185233,-1.204013,-2.685874
+own (test split),281,p03,live,,dim,na,p03_live_dim,6.51,305,-3.212079,0.000000,-0.648314,-2.130176
+own (test split),282,p03,live,,dim,na,p03_live_dim,7.01,326,-3.805719,-1.667094,-1.944943,-2.315409
+own (test split),283,p03,live,,dim,na,p03_live_dim,7.52,300,-3.059011,-0.370465,-1.111396,-2.037560
+own (test split),284,p03,live,,dim,na,p03_live_dim,8.02,296,-2.231439,-0.277849,-1.018780,-1.852327
+own (test split),285,p03,live,,dim,na,p03_live_dim,8.51,305,-1.055625,0.833547,0.277849,0.370465
+own (test split),286,p03,live,,dim,na,p03_live_dim,9.02,314,-3.548833,2.500641,0.926163,-0.833547
+own (test split),287,p03,live,,dim,na,p03_live_dim,9.52,336,-6.490971,-4.445585,-1.852327,-4.167736
+own (test split),288,p03,live,,dim,na,p03_live_dim,10.02,359,-4.793766,-3.519421,-0.277849,-2.963723
+own (test split),289,p03,live,,dim,na,p03_live_dim,10.51,408,-4.052483,-1.111396,-0.092616,-1.018780
+own (test split),290,p03,live,,dim,na,p03_live_dim,11.02,389,-5.744102,-2.037560,-0.926163,-2.963723
+own (test split),291,p03,live,,dim,na,p03_live_dim,11.52,413,-5.172818,-0.926163,0.092616,-3.334188
+own (test split),292,p03,live,,dim,na,p03_live_dim,12.02,390,-5.706314,-1.389245,-1.759711,-4.445585
+own (test split),293,p03,live,,dim,na,p03_live_dim,12.53,408,-5.528646,1.481862,-1.481862,-4.167736
+own (test split),294,p03,live,,dim,na,p03_live_dim,13.02,438,-5.905765,-0.926163,-0.463082,-3.519421
+own (test split),295,p03,live,,dim,na,p03_live_dim,13.52,434,-5.078058,1.389245,0.370465,-2.315409
+own (test split),296,p03,live,,dim,na,p03_live_dim,14.53,432,-8.040067,-2.037560,-2.408025,-5.001283
+own (test split),297,p03,live,,dim,na,p03_live_dim,15.02,435,-6.125988,-1.481862,-1.481862,-4.075119
+own (test split),298,p03,live,,dim,na,p03_live_dim,15.52,428,-4.561631,0.000000,-1.852327,-3.148956
+own (test split),299,p03,live,,dim,na,p03_live_dim,16.03,457,-5.025343,-0.092616,-2.037560,-3.982503
+own (test split),300,p03,live,,dim,na,p03_live_dim,16.53,459,-4.576406,-1.389245,-1.852327,-4.352968
+own (test split),301,p03,live,,dim,na,p03_live_dim,17.02,420,-3.309985,-1.481862,-0.740931,-3.056340
+own (test split),302,p03,live,,dim,na,p03_live_dim,17.52,435,-4.546486,-1.296629,-1.574478,-3.148956
+own (test split),303,p03,live,,dim,na,p03_live_dim,18.03,403,-5.007648,-1.204013,-1.018780,-2.222792
+own (test split),304,p03,live,,dim,na,p03_live_dim,18.53,368,-4.633983,-0.926163,-1.111396,-3.241572
+own (test split),305,p03,live,,dim,na,p03_live_dim,19.02,349,-4.213879,-2.593258,-1.944943,-3.241572
+own (test split),306,p03,live,,dim,na,p03_live_dim,19.54,356,-1.514305,0.463082,0.926163,-1.018780
+own (test split),307,p03,live,,dim,na,p03_live_dim,20.03,350,-3.734052,-2.315409,-1.389245,-2.222792
+own (test split),308,p03,live,,dim,na,p03_live_dim,20.53,349,-5.132979,-1.852327,-1.574478,-3.889887
+own (test split),309,p03,live,,dim,na,p03_live_dim,21.02,337,-2.806732,0.926163,1.389245,-0.092616
+own (test split),310,p03,live,,dim,na,p03_live_dim,21.54,327,-1.992040,1.204013,2.408025,-0.740931
+own (test split),311,p03,live,,dim,na,p03_live_dim,22.03,315,-2.707158,0.000000,-1.759711,-1.852327
+own (test split),312,p03,live,,dim,na,p03_live_dim,22.53,323,-4.231357,-0.740931,-1.944943,-3.612038
+own (test split),313,p03,live,,dim,na,p03_live_dim,23.04,321,-3.423303,-0.370465,-1.759711,-2.963723
+own (test split),314,p03,live,,dim,na,p03_live_dim,23.54,331,-5.483440,-1.389245,-3.612038,-4.908667
+own (test split),335,p03,screen,,bright,na,p03_screen_bright,4.0,283,-8.368519,-9.076403,-7.409308,-8.613320
+own (test split),336,p03,screen,,bright,na,p03_screen_bright,4.51,291,-8.855707,-7.965006,-7.965006,-8.983786
+own (test split),337,p03,screen,,bright,na,p03_screen_bright,5.01,339,-9.216931,-8.705936,-8.242855,-9.724717
+own (test split),338,p03,screen,,bright,na,p03_screen_bright,5.52,386,-8.607315,-6.251604,-7.779773,-8.520704
+own (test split),339,p03,screen,,bright,na,p03_screen_bright,6.02,412,-12.349656,-11.577044,-10.558264,-11.808584
+own (test split),340,p03,screen,,bright,na,p03_screen_bright,6.51,399,-8.395473,-7.409308,-5.279132,-7.038843
+own (test split),341,p03,screen,,bright,na,p03_screen_bright,7.02,397,-6.917290,-7.965006,-5.649597,-5.001283
+own (test split),342,p03,screen,,bright,na,p03_screen_bright,7.52,402,-4.587534,-2.871107,-2.130176,-5.001283
+own (test split),343,p03,screen,,bright,na,p03_screen_bright,8.02,402,-9.457938,-7.872390,-7.501925,-8.798553
+own (test split),344,p03,screen,,bright,na,p03_screen_bright,8.53,397,-7.402016,-5.927446,-5.742214,-7.316691
+own (test split),345,p03,screen,,bright,na,p03_screen_bright,9.02,384,-7.695762,-7.038843,-5.742214,-7.687157
+own (test split),346,p03,screen,,bright,na,p03_screen_bright,9.52,394,-7.836843,-8.242855,-6.575761,-7.594541
+own (test split),347,p03,screen,,bright,na,p03_screen_bright,10.03,409,-9.102556,-7.085151,-6.390528,-8.242855
+own (test split),348,p03,screen,,bright,na,p03_screen_bright,10.53,405,-6.829779,-5.556981,-4.908667,-5.464365
+own (test split),349,p03,screen,,bright,na,p03_screen_bright,11.02,403,-6.950634,-6.668377,-4.908667,-6.297912
+own (test split),350,p03,screen,,bright,na,p03_screen_bright,11.54,318,-7.890629,-6.853610,-5.649597,-8.057622
+own (test split),351,p03,screen,,bright,na,p03_screen_bright,12.0,292,-6.047961,-4.723434,-3.519421,-5.001283
+own (test split),352,p03,screen,,bright,na,p03_screen_bright,12.53,279,-5.930991,-3.982503,-4.908667,-5.279132
+own (test split),353,p03,screen,,bright,na,p03_screen_bright,13.04,273,-5.332163,-4.538201,-4.260352,-4.630817
+own (test split),354,p03,screen,,bright,na,p03_screen_bright,13.5,268,-6.489598,-4.630817,-5.093899,-4.908667
+own (test split),355,p03,screen,,bright,na,p03_screen_bright,14.0,257,-7.611863,-6.668377,-7.131459,-9.354251
+own (test split),356,p03,screen,,bright,na,p03_screen_bright,14.51,256,-7.115837,-5.834830,-6.112679,-7.594541
+own (test split),357,p03,screen,,bright,na,p03_screen_bright,15.01,264,-9.449184,-8.428088,-7.131459,-10.002565
+own (test split),358,p03,screen,,bright,na,p03_screen_bright,15.5,269,-6.134356,-4.445585,-4.167736,-6.760993
+own (test split),359,p03,screen,,bright,na,p03_screen_bright,16.02,280,-7.563920,-5.834830,-5.556981,-7.594541
+own (test split),360,p03,screen,,bright,na,p03_screen_bright,16.51,288,-6.564293,-5.186516,-5.371748,-6.112679
+own (test split),361,p03,screen,,bright,na,p03_screen_bright,17.01,325,-6.294920,-3.519421,-3.889887,-4.816050
+own (test split),362,p03,screen,,bright,na,p03_screen_bright,17.52,365,-5.123445,-3.519421,-3.148956,-5.556981
+own (test split),363,p03,screen,,bright,na,p03_screen_bright,18.02,393,-6.691108,-4.630817,-3.056340,-6.112679
+own (test split),364,p03,screen,,bright,na,p03_screen_bright,18.51,422,-5.733514,-4.908667,-3.148956,-5.742214
+own (test split),365,p03,screen,,bright,na,p03_screen_bright,19.02,466,-4.916007,-2.408025,-1.759711,-4.445585
+own (test split),366,p03,screen,,bright,na,p03_screen_bright,19.52,425,-5.876732,-4.167736,-3.519421,-5.742214
+own (test split),367,p03,screen,,bright,na,p03_screen_bright,20.02,398,-6.717970,-6.390528,-4.630817,-6.020063
+own (test split),368,p03,screen,,bright,na,p03_screen_bright,20.53,356,-1.561961,-0.648314,1.759711,-0.463082
+own (test split),369,p03,screen,,bright,na,p03_screen_bright,21.02,367,-8.127742,-5.834830,-5.001283,-7.594541
+own (test split),370,p03,screen,,bright,na,p03_screen_bright,21.52,349,-3.295933,-5.371748,-2.130176,-3.056340
+own (test split),371,p03,screen,,bright,na,p03_screen_bright,22.03,330,-5.923100,-5.556981,-4.445585,-6.760993
+own (test split),372,p03,screen,,bright,na,p03_screen_bright,22.53,277,-9.356720,-7.270383,-6.483144,-8.613320
+own (test split),389,p03,screen,,dim,na,p03_screen_dim,4.0,248,-5.799241,-5.371748,-4.816050,-5.464365
+own (test split),390,p03,screen,,dim,na,p03_screen_dim,4.59,240,-8.302252,-6.020063,-7.779773,-7.501925
+own (test split),391,p03,screen,,dim,na,p03_screen_dim,5.1,212,-9.587500,-8.057622,-7.779773,-8.705936
+own (test split),392,p03,screen,,dim,na,p03_screen_dim,5.5,200,-6.738782,-5.186516,-5.001283,-5.464365
+own (test split),393,p03,screen,,dim,na,p03_screen_dim,6.0,197,-6.148191,-5.927446,-5.834830,-5.186516
+own (test split),394,p03,screen,,dim,na,p03_screen_dim,6.61,206,-7.455492,-6.390528,-6.483144,-7.038843
+own (test split),395,p03,screen,,dim,na,p03_screen_dim,7.01,207,-7.413050,-6.760993,-6.020063,-8.057622
+own (test split),396,p03,screen,,dim,na,p03_screen_dim,7.5,204,-6.352219,-4.630817,-4.816050,-6.297912
+own (test split),397,p03,screen,,dim,na,p03_screen_dim,8.0,208,-7.654893,-6.390528,-6.760993,-7.224075
+own (test split),398,p03,screen,,dim,na,p03_screen_dim,8.61,216,-7.484146,-8.798553,-7.779773,-7.131459
+own (test split),399,p03,screen,,dim,na,p03_screen_dim,9.01,200,-6.376411,-5.927446,-5.186516,-5.927446
+own (test split),400,p03,screen,,dim,na,p03_screen_dim,9.5,161,-9.489225,-10.002565,-10.373032,-9.724717
+own (test split),401,p03,screen,,dim,na,p03_screen_dim,10.0,166,-11.229961,-11.484427,-9.909949,-9.539484
+own (test split),402,p03,screen,,dim,na,p03_screen_dim,10.51,165,-5.543426,-3.148956,-4.167736,-6.205296
+own (test split),403,p03,screen,,dim,na,p03_screen_dim,11.01,162,-3.645510,-2.871107,-2.593258,-3.426805
+own (test split),404,p03,screen,,dim,na,p03_screen_dim,11.5,164,-4.638166,-1.759711,-2.778491,-3.334188
+own (test split),405,p03,screen,,dim,na,p03_screen_dim,12.0,169,-5.454100,-4.816050,-3.704654,-4.538201
+own (test split),406,p03,screen,,dim,na,p03_screen_dim,12.51,198,-6.066484,-3.889887,-3.148956,-5.186516
+own (test split),407,p03,screen,,dim,na,p03_screen_dim,13.01,223,-6.881348,-5.834830,-4.816050,-6.297912
+own (test split),408,p03,screen,,dim,na,p03_screen_dim,13.51,230,-7.058412,-4.816050,-6.112679,-7.687157
+own (test split),409,p03,screen,,dim,na,p03_screen_dim,14.02,225,-5.609434,-5.186516,-5.927446,-5.001283
+own (test split),410,p03,screen,,dim,na,p03_screen_dim,14.51,233,-5.376037,-3.241572,-3.334188,-3.982503
+own (test split),411,p03,screen,,dim,na,p03_screen_dim,15.01,238,-5.953204,-4.167736,-4.630817,-5.371748
+own (test split),412,p03,screen,,dim,na,p03_screen_dim,15.5,250,-4.613171,-2.408025,-2.130176,-3.334188
+own (test split),413,p03,screen,,dim,na,p03_screen_dim,16.02,268,-5.082096,-3.426805,-4.167736,-5.464365
+own (test split),414,p03,screen,,dim,na,p03_screen_dim,16.51,266,-7.481518,-6.112679,-5.556981,-7.131459
+own (test split),415,p03,screen,,dim,na,p03_screen_dim,17.01,262,-5.151526,-3.612038,-5.001283,-5.649597
+own (test split),416,p03,screen,,dim,na,p03_screen_dim,17.52,240,-6.578322,-5.834830,-5.556981,-6.297912
+own (test split),417,p03,screen,,dim,na,p03_screen_dim,18.02,233,-3.469632,-4.723434,-3.704654,-3.889887
+own (test split),418,p03,screen,,dim,na,p03_screen_dim,18.51,236,-3.773600,-4.167736,-2.871107,-4.538201
+own (test split),419,p03,screen,,dim,na,p03_screen_dim,19.01,221,-5.284114,-2.130176,-2.130176,-3.797270
+own (test split),420,p03,screen,,dim,na,p03_screen_dim,19.52,222,-4.172275,-4.075119,-4.908667,-3.519421
+own (test split),421,p03,screen,,dim,na,p03_screen_dim,20.02,201,-4.225744,-4.075119,-3.426805,-3.797270
+own (test split),422,p03,screen,,dim,na,p03_screen_dim,20.51,201,-6.677747,-7.594541,-6.297912,-6.760993
+own (test split),423,p03,screen,,dim,na,p03_screen_dim,21.02,204,-7.068209,-4.723434,-4.538201,-5.834830
+own (test split),424,p03,screen,,dim,na,p03_screen_dim,21.52,189,-6.655495,-3.704654,-3.889887,-5.279132
+own (test split),445,p02,live,,bright,na,p02_live_bright,4.0,243,4.559395,4.075119,7.038843,4.167736
+own (test split),446,p02,live,,bright,na,p02_live_bright,4.53,258,4.215350,3.797270,5.464365,4.075119
+own (test split),447,p02,live,,bright,na,p02_live_bright,5.06,278,2.721327,5.742214,5.001283,4.723434
+own (test split),448,p02,live,,bright,na,p02_live_bright,5.52,285,2.402531,3.334188,3.241572,2.315409
+own (test split),449,p02,live,,bright,na,p02_live_bright,6.0,293,3.742519,3.704654,3.797270,2.685874
+own (test split),450,p02,live,,bright,na,p02_live_bright,6.53,284,0.335624,1.944943,1.481862,0.648314
+own (test split),451,p02,live,,bright,na,p02_live_bright,7.06,259,1.559689,0.370465,2.315409,1.667094
+own (test split),452,p02,live,,bright,na,p02_live_bright,7.52,250,4.496797,2.963723,5.186516,4.816050
+own (test split),453,p02,live,,bright,na,p02_live_bright,8.0,239,5.277444,4.260352,5.464365,4.352968
+own (test split),454,p02,live,,bright,na,p02_live_bright,8.53,231,11.865429,11.808584,11.808584,11.484427
+own (test split),455,p02,live,,bright,na,p02_live_bright,9.06,232,9.724041,11.808584,9.632100,10.465648
+own (test split),456,p02,live,,bright,na,p02_live_bright,9.52,232,7.909415,9.169019,11.206578,7.872390
+own (test split),457,p02,live,,bright,na,p02_live_bright,10.0,230,5.415462,6.390528,7.224075,4.908667
+own (test split),458,p02,live,,bright,na,p02_live_bright,10.53,227,7.226923,6.483144,10.373032,8.242855
+own (test split),459,p02,live,,bright,na,p02_live_bright,11.06,224,7.345779,8.057622,10.187799,8.057622
+own (test split),460,p02,live,,bright,na,p02_live_bright,11.52,229,2.909037,4.723434,5.279132,3.797270
+own (test split),461,p02,live,,bright,na,p02_live_bright,12.0,229,4.164346,3.982503,4.723434,4.816050
+own (test split),462,p02,live,,bright,na,p02_live_bright,12.53,231,3.597883,3.334188,6.112679,3.797270
+own (test split),463,p02,live,,bright,na,p02_live_bright,13.06,227,0.719299,1.667094,0.926163,0.555698
+own (test split),464,p02,live,,bright,na,p02_live_bright,13.52,228,4.923842,4.816050,8.242855,4.908667
+own (test split),465,p02,live,,bright,na,p02_live_bright,14.0,223,6.195040,7.131459,7.224075,6.297912
+own (test split),466,p02,live,,bright,na,p02_live_bright,14.53,223,6.280712,5.556981,8.798553,6.112679
+own (test split),467,p02,live,,bright,na,p02_live_bright,15.06,225,7.917519,8.242855,10.095182,7.872390
+own (test split),468,p02,live,,bright,na,p02_live_bright,15.52,227,5.156524,4.352968,5.834830,3.148956
+own (test split),469,p02,live,,bright,na,p02_live_bright,16.0,229,5.753387,7.594541,7.038843,4.538201
+own (test split),470,p02,live,,bright,na,p02_live_bright,16.53,229,3.218957,4.908667,7.038843,4.075119
+own (test split),471,p02,live,,bright,na,p02_live_bright,17.06,232,3.920049,2.500641,5.834830,3.519421
+own (test split),472,p02,live,,bright,na,p02_live_bright,17.52,231,3.389498,2.963723,4.399277,2.871107
+own (test split),473,p02,live,,bright,na,p02_live_bright,18.0,233,4.942866,6.020063,5.742214,4.445585
+own (test split),474,p02,live,,bright,na,p02_live_bright,18.53,223,4.551740,4.075119,6.205296,3.889887
+own (test split),475,p02,live,,bright,na,p02_live_bright,19.06,219,5.345580,7.409308,8.150239,4.816050
+own (test split),476,p02,live,,bright,na,p02_live_bright,19.52,214,2.565791,4.352968,6.668377,3.519421
+own (test split),477,p02,live,,bright,na,p02_live_bright,20.06,210,2.119027,2.315409,5.556981,2.037560
+own (test split),478,p02,live,,bright,na,p02_live_bright,20.53,209,3.804825,4.352968,6.946226,4.075119
+own (test split),479,p02,live,,bright,na,p02_live_bright,21.06,208,6.518801,8.057622,9.076403,7.501925
+own (test split),480,p02,live,,bright,na,p02_live_bright,21.52,208,5.867675,7.687157,8.983786,5.186516
+own (test split),501,p02,live,,dim,na,p02_live_dim,4.0,272,2.138453,3.148956,3.426805,2.130176
+own (test split),502,p02,live,,dim,na,p02_live_dim,4.53,282,1.615864,1.111396,2.778491,3.241572
+own (test split),503,p02,live,,dim,na,p02_live_dim,5.01,276,1.326963,2.871107,3.519421,1.481862
+own (test split),504,p02,live,,dim,na,p02_live_dim,5.54,268,3.076377,3.334188,4.630817,3.334188
+own (test split),505,p02,live,,dim,na,p02_live_dim,6.0,265,3.483903,3.241572,5.371748,4.075119
+own (test split),506,p02,live,,dim,na,p02_live_dim,6.53,243,2.912865,4.538201,5.001283,3.889887
+own (test split),507,p02,live,,dim,na,p02_live_dim,7.01,228,3.012845,6.205296,5.556981,5.927446
+own (test split),508,p02,live,,dim,na,p02_live_dim,7.54,220,3.019942,4.075119,2.963723,2.685874
+own (test split),509,p02,live,,dim,na,p02_live_dim,8.0,206,5.998283,5.093899,4.445585,6.020063
+own (test split),510,p02,live,,dim,na,p02_live_dim,8.53,202,4.119541,4.630817,5.001283,4.445585
+own (test split),511,p02,live,,dim,na,p02_live_dim,9.01,209,0.890812,1.667094,2.685874,0.463082
+own (test split),512,p02,live,,dim,na,p02_live_dim,9.54,200,2.714939,1.667094,1.759711,2.593258
+own (test split),513,p02,live,,dim,na,p02_live_dim,10.06,197,-0.078894,1.204013,2.500641,-0.092616
+own (test split),514,p02,live,,dim,na,p02_live_dim,10.53,201,-0.754434,-1.481862,-0.370465,0.370465
+own (test split),515,p02,live,,dim,na,p02_live_dim,11.01,208,2.517069,1.852327,2.685874,3.241572
+own (test split),516,p02,live,,dim,na,p02_live_dim,11.54,210,1.257090,1.204013,2.778491,1.574478
+own (test split),517,p02,live,,dim,na,p02_live_dim,12.0,206,6.520624,5.371748,4.352968,5.371748
+own (test split),518,p02,live,,dim,na,p02_live_dim,12.53,202,5.953572,6.297912,5.279132,6.205296
+own (test split),519,p02,live,,dim,na,p02_live_dim,13.01,197,5.168720,5.464365,4.167736,4.167736
+own (test split),520,p02,live,,dim,na,p02_live_dim,13.54,202,5.344386,5.186516,4.630817,4.260352
+own (test split),521,p02,live,,dim,na,p02_live_dim,14.0,200,5.253727,6.483144,6.946226,5.834830
+own (test split),522,p02,live,,dim,na,p02_live_dim,14.53,204,7.309427,5.927446,4.352968,6.020063
+own (test split),523,p02,live,,dim,na,p02_live_dim,15.01,202,5.791617,3.148956,4.630817,5.556981
+own (test split),524,p02,live,,dim,na,p02_live_dim,15.54,201,6.012608,5.927446,5.093899,5.834830
+own (test split),525,p02,live,,dim,na,p02_live_dim,16.0,200,6.814166,8.150239,7.594541,6.668377
+own (test split),526,p02,live,,dim,na,p02_live_dim,16.53,205,4.630850,4.723434,5.927446,5.093899
+own (test split),527,p02,live,,dim,na,p02_live_dim,17.01,206,5.075582,6.760993,6.668377,5.093899
+own (test split),528,p02,live,,dim,na,p02_live_dim,17.54,207,5.308928,6.853610,6.297912,6.668377
+own (test split),529,p02,live,,dim,na,p02_live_dim,18.06,207,6.492965,6.020063,4.816050,5.556981
+own (test split),530,p02,live,,dim,na,p02_live_dim,18.53,206,5.460695,5.001283,5.279132,3.982503
+own (test split),531,p02,live,,dim,na,p02_live_dim,19.01,204,3.712836,4.723434,5.186516,4.075119
+own (test split),532,p02,live,,dim,na,p02_live_dim,19.54,208,5.174786,6.112679,6.112679,4.908667
+own (test split),533,p02,live,,dim,na,p02_live_dim,20.0,206,5.046839,4.538201,4.723434,3.889887
+own (test split),534,p02,live,,dim,na,p02_live_dim,20.53,206,5.838524,8.335471,7.224075,6.483144
+own (test split),535,p02,live,,dim,na,p02_live_dim,21.01,203,5.516169,4.723434,5.093899,4.260352
+own (test split),556,p02,screen,,bright,na,p02_screen_bright,4.0,115,-6.057371,-5.001283,-4.075119,-5.556981
+own (test split),557,p02,screen,,bright,na,p02_screen_bright,4.53,115,-8.606319,-4.908667,-3.982503,-6.575761
+own (test split),558,p02,screen,,bright,na,p02_screen_bright,5.02,111,-7.453111,-6.020063,-6.390528,-6.946226
+own (test split),559,p02,screen,,bright,na,p02_screen_bright,5.52,108,-6.984320,-6.390528,-7.594541,-8.428088
+own (test split),560,p02,screen,,bright,na,p02_screen_bright,6.0,105,-7.820970,-6.760993,-6.020063,-8.057622
+own (test split),561,p02,screen,,bright,na,p02_screen_bright,6.53,104,-8.462227,-6.853610,-5.834830,-8.057622
+own (test split),562,p02,screen,,bright,na,p02_screen_bright,7.02,94,-5.241248,-4.908667,-4.908667,-6.020063
+own (test split),563,p02,screen,,bright,na,p02_screen_bright,7.52,93,-6.983552,-4.723434,-3.334188,-6.020063
+own (test split),564,p02,screen,,bright,na,p02_screen_bright,8.0,103,-8.767134,-8.705936,-8.057622,-8.983786
+own (test split),565,p02,screen,,bright,na,p02_screen_bright,8.53,106,-10.060701,-11.484427,-10.558264,-10.002565
+own (test split),566,p02,screen,,bright,na,p02_screen_bright,9.02,108,-5.951082,-5.371748,-5.001283,-6.297912
+own (test split),567,p02,screen,,bright,na,p02_screen_bright,9.52,107,-7.578411,-7.224075,-6.760993,-8.057622
+own (test split),568,p02,screen,,bright,na,p02_screen_bright,10.0,109,-4.716321,-5.464365,-5.279132,-4.816050
+own (test split),569,p02,screen,,bright,na,p02_screen_bright,10.53,114,-7.406282,-4.260352,-5.001283,-7.131459
+own (test split),570,p02,screen,,bright,na,p02_screen_bright,11.02,115,-5.734296,-6.390528,-6.205296,-6.853610
+own (test split),571,p02,screen,,bright,na,p02_screen_bright,11.52,125,-7.514778,-6.575761,-6.297912,-6.760993
+own (test split),572,p02,screen,,bright,na,p02_screen_bright,12.0,128,-7.317669,-5.695906,-5.927446,-7.224075
+own (test split),573,p02,screen,,bright,na,p02_screen_bright,12.53,123,-9.510197,-10.280415,-8.520704,-9.354251
+own (test split),574,p02,screen,,bright,na,p02_screen_bright,13.02,119,-9.638977,-11.762277,-11.391811,-10.187799
+own (test split),575,p02,screen,,bright,na,p02_screen_bright,13.52,110,-8.442974,-7.779773,-8.705936,-8.428088
+own (test split),576,p02,screen,,bright,na,p02_screen_bright,14.0,99,-6.889757,-7.872390,-6.760993,-5.464365
+own (test split),577,p02,screen,,bright,na,p02_screen_bright,14.53,97,-5.711122,-5.186516,-4.167736,-3.889887
+own (test split),578,p02,screen,,bright,na,p02_screen_bright,15.02,95,-5.937074,-6.205296,-5.464365,-5.371748
+own (test split),579,p02,screen,,bright,na,p02_screen_bright,15.52,100,-8.477671,-10.373032,-7.316691,-7.409308
+own (test split),580,p02,screen,,bright,na,p02_screen_bright,16.0,102,-6.161009,-7.316691,-6.205296,-5.093899
+own (test split),581,p02,screen,,bright,na,p02_screen_bright,16.53,100,-6.658911,-6.483144,-5.649597,-5.927446
+own (test split),582,p02,screen,,bright,na,p02_screen_bright,17.02,99,-8.647671,-7.687157,-5.556981,-8.150239
+own (test split),583,p02,screen,,bright,na,p02_screen_bright,17.52,97,-6.495165,-5.927446,-5.649597,-5.279132
+own (test split),584,p02,screen,,bright,na,p02_screen_bright,18.0,98,-7.164097,-4.723434,-5.093899,-6.390528
+own (test split),585,p02,screen,,bright,na,p02_screen_bright,18.53,95,-7.761175,-7.224075,-6.853610,-9.261635
+own (test split),586,p02,screen,,bright,na,p02_screen_bright,19.02,96,-4.619418,-4.723434,-4.260352,-4.352968
+own (test split),587,p02,screen,,bright,na,p02_screen_bright,19.52,105,-4.995082,-5.093899,-6.205296,-5.834830
+own (test split),588,p02,screen,,bright,na,p02_screen_bright,20.0,100,-6.698628,-7.872390,-8.057622,-6.853610
+own (test split),589,p02,screen,,bright,na,p02_screen_bright,20.53,101,-6.741123,-7.038843,-6.344220,-6.483144
+own (test split),590,p02,screen,,bright,na,p02_screen_bright,21.02,106,-8.209888,-9.354251,-9.169019,-7.779773
+own (test split),611,p02,screen,,dim,na,p02_screen_dim,4.0,119,-11.287137,-11.484427,-8.242855,-11.484427
+own (test split),612,p02,screen,,dim,na,p02_screen_dim,4.53,117,-11.589037,-10.280415,-9.169019,-11.808584
+own (test split),613,p02,screen,,dim,na,p02_screen_dim,5.06,111,-9.733714,-8.613320,-8.520704,-8.798553
+own (test split),614,p02,screen,,dim,na,p02_screen_dim,5.54,101,-9.997711,-7.965006,-6.483144,-9.261635
+own (test split),615,p02,screen,,dim,na,p02_screen_dim,6.0,98,-10.481876,-6.205296,-4.816050,-8.891170
+own (test split),616,p02,screen,,dim,na,p02_screen_dim,6.53,95,-8.917280,-7.038843,-4.538201,-7.779773
+own (test split),617,p02,screen,,dim,na,p02_screen_dim,7.06,91,-13.683626,-10.002565,-7.965006,-11.808584
+own (test split),618,p02,screen,,dim,na,p02_screen_dim,7.54,88,-8.629200,-5.371748,-5.001283,-7.594541
+own (test split),619,p02,screen,,dim,na,p02_screen_dim,8.0,88,-8.306246,-4.723434,-3.519421,-7.872390
+own (test split),620,p02,screen,,dim,na,p02_screen_dim,8.53,96,-10.055760,-8.520704,-6.946226,-9.076403
+own (test split),621,p02,screen,,dim,na,p02_screen_dim,9.06,97,-9.299257,-6.853610,-6.020063,-8.891170
+own (test split),622,p02,screen,,dim,na,p02_screen_dim,9.54,98,-8.956224,-6.575761,-5.371748,-7.594541
+own (test split),623,p02,screen,,dim,na,p02_screen_dim,10.0,99,-10.047634,-8.613320,-9.354251,-9.076403
+own (test split),624,p02,screen,,dim,na,p02_screen_dim,10.53,95,-13.272602,-11.808584,-11.808584,-11.808584
+own (test split),625,p02,screen,,dim,na,p02_screen_dim,11.06,98,-11.910266,-10.650880,-8.705936,-11.113962
+own (test split),626,p02,screen,,dim,na,p02_screen_dim,11.54,100,-11.594904,-7.501925,-6.853610,-10.280415
+own (test split),627,p02,screen,,dim,na,p02_screen_dim,12.0,100,-11.141676,-8.705936,-7.779773,-10.095182
+own (test split),628,p02,screen,,dim,na,p02_screen_dim,12.53,99,-11.850443,-9.817333,-9.539484,-10.743497
+own (test split),629,p02,screen,,dim,na,p02_screen_dim,13.06,100,-11.331575,-8.613320,-7.131459,-9.724717
+own (test split),630,p02,screen,,dim,na,p02_screen_dim,13.54,99,-10.635447,-8.520704,-7.779773,-10.743497
+own (test split),631,p02,screen,,dim,na,p02_screen_dim,14.0,97,-12.132280,-10.465648,-9.724717,-11.391811
+own (test split),632,p02,screen,,dim,na,p02_screen_dim,14.53,100,-13.435225,-10.280415,-9.724717,-11.391811
+own (test split),633,p02,screen,,dim,na,p02_screen_dim,15.06,108,-11.670354,-10.373032,-7.594541,-11.484427
+own (test split),634,p02,screen,,dim,na,p02_screen_dim,15.54,112,-12.979729,-9.261635,-8.335471,-11.577044
+own (test split),635,p02,screen,,dim,na,p02_screen_dim,16.0,114,-11.815756,-9.354251,-6.760993,-11.669660
+own (test split),636,p02,screen,,dim,na,p02_screen_dim,16.53,116,-10.375797,-8.150239,-7.224075,-10.002565
+own (test split),637,p02,screen,,dim,na,p02_screen_dim,17.06,108,-11.192570,-9.817333,-8.613320,-11.577044
+own (test split),638,p02,screen,,dim,na,p02_screen_dim,17.54,102,-10.004190,-7.965006,-6.112679,-8.798553
+own (test split),639,p02,screen,,dim,na,p02_screen_dim,18.0,98,-9.290390,-7.872390,-7.131459,-9.632100
+own (test split),640,p02,screen,,dim,na,p02_screen_dim,18.53,95,-12.270868,-8.613320,-9.632100,-10.836113
+own (test split),641,p02,screen,,dim,na,p02_screen_dim,19.06,88,-8.637815,-4.445585,-4.260352,-6.853610
+own (test split),642,p02,screen,,dim,na,p02_screen_dim,19.54,86,-13.449901,-11.762277,-9.169019,-10.650880
+own (test split),643,p02,screen,,dim,na,p02_screen_dim,20.0,84,-10.605769,-7.316691,-4.723434,-8.428088
+own (test split),644,p02,screen,,dim,na,p02_screen_dim,20.53,85,-9.380550,-6.297912,-6.020063,-9.539484
+msu,0,msu001,screen,ipad,na,na,attack_client001_android_SD_ipad_video_scene01.jpg,,248,-4.408433,-3.148956,-4.167736,-5.556981
+msu,1,msu001,screen,iphone,na,na,attack_client001_android_SD_iphone_video_scene01.jpg,,217,-2.403244,-1.944943,-1.944943,-4.538201
+msu,2,msu001,print,printed_photo,na,na,attack_client001_android_SD_printed_photo_scene01.jpg,,226,-0.331007,0.000000,2.408025,-0.185233
+msu,3,msu002,screen,ipad,na,na,attack_client002_android_SD_ipad_video_scene01.jpg,,148,-4.016694,-2.778491,-3.889887,-3.426805
+msu,4,msu002,screen,iphone,na,na,attack_client002_android_SD_iphone_video_scene01.jpg,,171,0.091199,-1.296629,1.481862,0.740931
+msu,5,msu002,print,printed_photo,na,na,attack_client002_android_SD_printed_photo_scene01.jpg,,199,-0.202384,1.389245,0.555698,-1.481862
+msu,6,msu003,screen,ipad,na,na,attack_client003_android_SD_ipad_video_scene01.jpg,,157,-0.292442,0.000000,-0.833547,-0.740931
+msu,7,msu003,screen,iphone,na,na,attack_client003_android_SD_iphone_video_scene01.jpg,,173,-2.954576,-1.481862,-1.944943,-3.982503
+msu,8,msu003,print,printed_photo,na,na,attack_client003_android_SD_printed_photo_scene01.jpg,,151,-10.350273,-9.169019,-8.891170,-9.539484
+msu,9,msu005,screen,ipad,na,na,attack_client005_android_SD_ipad_video_scene01.jpg,,157,2.894245,1.574478,3.704654,2.037560
+msu,10,msu005,screen,iphone,na,na,attack_client005_android_SD_iphone_video_scene01.jpg,,171,0.277528,-0.648314,1.944943,-0.185233
+msu,11,msu005,print,printed_photo,na,na,attack_client005_android_SD_printed_photo_scene01.jpg,,160,3.364052,4.630817,4.723434,2.500641
+msu,12,msu006,screen,ipad,na,na,attack_client006_android_SD_ipad_video_scene01.jpg,,172,-0.612904,-0.926163,-1.204013,-1.204013
+msu,13,msu006,screen,iphone,na,na,attack_client006_android_SD_iphone_video_scene01.jpg,,188,-1.102494,-1.204013,-0.740931,-1.435553
+msu,14,msu006,print,printed_photo,na,na,attack_client006_android_SD_printed_photo_scene01.jpg,,156,-3.067439,-3.056340,-2.871107,-2.778491
+msu,15,msu007,screen,ipad,na,na,attack_client007_android_SD_ipad_video_scene01.jpg,,193,-5.518606,-4.908667,-5.742214,-6.297912
+msu,16,msu007,screen,iphone,na,na,attack_client007_android_SD_iphone_video_scene01.jpg,,185,1.399866,0.833547,1.296629,1.018780
+msu,17,msu007,print,printed_photo,na,na,attack_client007_android_SD_printed_photo_scene01.jpg,,156,-2.178334,-0.370465,-0.185233,-2.685874
+msu,18,msu008,screen,ipad,na,na,attack_client008_android_SD_ipad_video_scene01.jpg,,140,1.147082,-0.740931,1.111396,0.000000
+msu,19,msu008,screen,iphone,na,na,attack_client008_android_SD_iphone_video_scene01.jpg,,207,3.822111,2.778491,4.260352,3.612038
+msu,20,msu008,print,printed_photo,na,na,attack_client008_android_SD_printed_photo_scene01.jpg,,142,-7.402046,-5.556981,-2.037560,-7.316691
+msu,21,msu009,screen,ipad,na,na,attack_client009_android_SD_ipad_video_scene01.jpg,,225,-4.299986,-1.852327,-2.778491,-3.334188
+msu,22,msu009,screen,iphone,na,na,attack_client009_android_SD_iphone_video_scene01.jpg,,190,1.183927,0.000000,1.574478,1.018780
+msu,23,msu009,print,printed_photo,na,na,attack_client009_android_SD_printed_photo_scene01.jpg,,206,-9.743791,-8.983786,-10.928729,-10.743497
+msu,24,msu011,screen,ipad,na,na,attack_client011_android_SD_ipad_video_scene01.jpg,,212,-1.667271,-0.648314,1.481862,0.648314
+msu,25,msu011,screen,iphone,na,na,attack_client011_android_SD_iphone_video_scene01.jpg,,177,-1.379829,-2.130176,-1.759711,-1.111396
+msu,26,msu011,print,printed_photo,na,na,attack_client011_android_SD_printed_photo_scene01.jpg,,150,0.159110,0.277849,2.500641,-1.018780
+msu,27,msu012,screen,ipad,na,na,attack_client012_android_SD_ipad_video_scene01.jpg,,199,0.768383,1.389245,2.315409,1.111396
+msu,28,msu012,screen,iphone,na,na,attack_client012_android_SD_iphone_video_scene01.jpg,,187,2.794186,2.685874,3.334188,2.222792
+msu,29,msu012,print,printed_photo,na,na,attack_client012_android_SD_printed_photo_scene01.jpg,,136,0.455155,2.778491,1.065088,-1.018780
+msu,30,msu013,screen,ipad,na,na,attack_client013_android_SD_ipad_video_scene01.jpg,,198,3.578727,5.556981,4.908667,3.982503
+msu,31,msu013,screen,iphone,na,na,attack_client013_android_SD_iphone_video_scene01.jpg,,172,1.144722,2.222792,2.315409,-1.018780
+msu,32,msu013,print,printed_photo,na,na,attack_client013_android_SD_printed_photo_scene01.jpg,,117,4.792315,5.834830,7.038843,2.593258
+msu,33,msu014,screen,ipad,na,na,attack_client014_android_SD_ipad_video_scene01.jpg,,158,-0.705550,2.685874,1.481862,-1.574478
+msu,34,msu014,screen,iphone,na,na,attack_client014_android_SD_iphone_video_scene01.jpg,,190,2.300056,-0.277849,2.408025,2.593258
+msu,35,msu014,print,printed_photo,na,na,attack_client014_android_SD_printed_photo_scene01.jpg,,133,-2.370340,1.481862,-1.389245,-4.075119
+msu,36,msu021,screen,ipad,na,na,attack_client021_android_SD_ipad_video_scene01.jpg,,194,1.406238,3.519421,0.833547,-0.185233
+msu,37,msu021,screen,iphone,na,na,attack_client021_android_SD_iphone_video_scene01.jpg,,183,-3.382242,-2.408025,-1.018780,-3.426805
+msu,38,msu021,print,printed_photo,na,na,attack_client021_android_SD_printed_photo_scene01.jpg,,206,1.848802,2.315409,1.481862,0.833547
+msu,39,msu022,screen,ipad,na,na,attack_client022_android_SD_ipad_video_scene01.jpg,,189,-9.065397,-7.872390,-8.983786,-9.169019
+msu,40,msu022,screen,iphone,na,na,attack_client022_android_SD_iphone_video_scene01.jpg,,155,-1.260400,2.315409,2.593258,-0.555698
+msu,41,msu022,print,printed_photo,na,na,attack_client022_android_SD_printed_photo_scene01.jpg,,174,-1.279936,-0.370465,0.370465,0.092616
+msu,42,msu023,screen,ipad,na,na,attack_client023_android_SD_ipad_video_scene01.jpg,,201,-2.981509,-1.296629,-1.111396,-2.871107
+msu,43,msu023,screen,iphone,na,na,attack_client023_android_SD_iphone_video_scene01.jpg,,173,7.064979,7.872390,9.817333,7.316691
+msu,44,msu023,print,printed_photo,na,na,attack_client023_android_SD_printed_photo_scene01.jpg,,183,-3.272224,-2.593258,-1.944943,-4.630817
+msu,45,msu024,screen,ipad,na,na,attack_client024_android_SD_ipad_video_scene01.jpg,,211,2.257710,2.500641,3.612038,3.426805
+msu,46,msu024,screen,iphone,na,na,attack_client024_android_SD_iphone_video_scene01.jpg,,208,-0.949228,-2.963723,0.092616,-2.593258
+msu,47,msu024,print,printed_photo,na,na,attack_client024_android_SD_printed_photo_scene01.jpg,,204,0.782297,0.555698,2.222792,0.277849
+msu,48,msu026,screen,ipad,na,na,attack_client026_android_SD_ipad_video_scene01.jpg,,172,1.532526,4.075119,1.667094,1.574478
+msu,49,msu026,screen,iphone,na,na,attack_client026_android_SD_iphone_video_scene01.jpg,,206,-3.201783,-4.816050,-2.408025,-2.408025
+msu,50,msu026,print,printed_photo,na,na,attack_client026_android_SD_printed_photo_scene01.jpg,,159,9.329657,11.808584,10.187799,8.242855
+msu,51,msu028,screen,ipad,na,na,attack_client028_android_SD_ipad_video_scene01.jpg,,157,1.185759,0.092616,1.574478,-0.185233
+msu,52,msu028,screen,iphone,na,na,attack_client028_android_SD_iphone_video_scene01.jpg,,201,2.055978,1.296629,4.260352,1.296629
+msu,53,msu028,print,printed_photo,na,na,attack_client028_android_SD_printed_photo_scene01.jpg,,143,1.374539,0.370465,1.481862,0.370465
+msu,54,msu029,screen,ipad,na,na,attack_client029_android_SD_ipad_video_scene01.jpg,,150,1.739356,1.296629,2.315409,0.555698
+msu,55,msu029,screen,iphone,na,na,attack_client029_android_SD_iphone_video_scene01.jpg,,216,0.294698,0.463082,0.926163,-0.463082
+msu,56,msu029,print,printed_photo,na,na,attack_client029_android_SD_printed_photo_scene01.jpg,,156,-7.694350,-5.834830,-7.316691,-9.446868
+msu,57,msu030,screen,ipad,na,na,attack_client030_android_SD_ipad_video_scene01.jpg,,153,-0.910081,-1.574478,-1.852327,-3.148956
+msu,58,msu030,screen,iphone,na,na,attack_client030_android_SD_iphone_video_scene01.jpg,,203,-1.162320,-0.463082,0.463082,-0.555698
+msu,59,msu030,print,printed_photo,na,na,attack_client030_android_SD_printed_photo_scene01.jpg,,133,-2.618416,-1.111396,0.740931,-3.148956
+msu,60,msu032,screen,ipad,na,na,attack_client032_android_SD_ipad_video_scene01.jpg,,185,-0.575847,0.648314,1.389245,-0.926163
+msu,61,msu032,screen,iphone,na,na,attack_client032_android_SD_iphone_video_scene01.jpg,,193,0.762380,2.871107,3.241572,0.370465
+msu,62,msu032,print,printed_photo,na,na,attack_client032_android_SD_printed_photo_scene01.jpg,,185,1.765135,2.593258,5.001283,1.389245
+msu,63,msu033,screen,ipad,na,na,attack_client033_android_SD_ipad_video_scene01.jpg,,193,-2.716690,-0.648314,-2.778491,-3.148956
+msu,64,msu033,screen,iphone,na,na,attack_client033_android_SD_iphone_video_scene01.jpg,,162,10.055395,10.373032,10.836113,9.817333
+msu,65,msu033,print,printed_photo,na,na,attack_client033_android_SD_printed_photo_scene01.jpg,,178,2.787005,2.963723,3.612038,1.574478
+msu,66,msu034,screen,ipad,na,na,attack_client034_android_SD_ipad_video_scene01.jpg,,193,-3.871991,-4.075119,-4.075119,-4.167736
+msu,67,msu034,screen,iphone,na,na,attack_client034_android_SD_iphone_video_scene01.jpg,,206,-0.535421,-1.481862,0.833547,-0.740931
+msu,68,msu034,print,printed_photo,na,na,attack_client034_android_SD_printed_photo_scene01.jpg,,194,-5.321267,-3.612038,-3.426805,-4.816050
+msu,69,msu035,screen,ipad,na,na,attack_client035_android_SD_ipad_video_scene01.jpg,,179,3.734066,3.612038,5.186516,5.927446
+msu,70,msu035,screen,iphone,na,na,attack_client035_android_SD_iphone_video_scene01.jpg,,201,0.349387,-0.740931,0.370465,-1.667094
+msu,71,msu035,print,printed_photo,na,na,attack_client035_android_SD_printed_photo_scene01.jpg,,178,-0.577293,-0.185233,1.481862,-1.574478
+msu,72,msu036,screen,ipad,na,na,attack_client036_android_SD_ipad_video_scene01.jpg,,185,-0.481547,1.204013,-0.092616,-0.833547
+msu,73,msu036,screen,iphone,na,na,attack_client036_android_SD_iphone_video_scene01.jpg,,170,3.671075,3.426805,3.889887,2.130176
+msu,74,msu036,print,printed_photo,na,na,attack_client036_android_SD_printed_photo_scene01.jpg,,179,3.680820,5.279132,7.038843,3.797270
+msu,75,msu037,screen,ipad,na,na,attack_client037_android_SD_ipad_video_scene01.jpg,,182,3.385825,4.538201,3.982503,3.241572
+msu,76,msu037,screen,iphone,na,na,attack_client037_android_SD_iphone_video_scene01.jpg,,174,5.838259,6.297912,6.205296,4.352968
+msu,77,msu037,print,printed_photo,na,na,attack_client037_android_SD_printed_photo_scene01.jpg,,189,5.157402,4.538201,5.279132,2.685874
+msu,78,msu039,screen,ipad,na,na,attack_client039_android_SD_ipad_video_scene01.jpg,,170,-5.610552,-5.279132,-4.723434,-5.464365
+msu,79,msu039,screen,iphone,na,na,attack_client039_android_SD_iphone_video_scene01.jpg,,193,0.871347,2.408025,2.408025,1.111396
+msu,80,msu039,print,printed_photo,na,na,attack_client039_android_SD_printed_photo_scene01.jpg,,166,2.910190,3.334188,2.778491,1.204013
+msu,81,msu042,screen,ipad,na,na,attack_client042_android_SD_ipad_video_scene01.jpg,,208,2.345554,1.944943,3.241572,2.685874
+msu,82,msu042,screen,iphone,na,na,attack_client042_android_SD_iphone_video_scene01.jpg,,191,3.783760,3.889887,5.834830,4.816050
+msu,83,msu042,print,printed_photo,na,na,attack_client042_android_SD_printed_photo_scene01.jpg,,202,0.980540,2.037560,4.538201,0.000000
+msu,84,msu048,screen,ipad,na,na,attack_client048_android_SD_ipad_video_scene01.jpg,,185,0.542983,1.759711,2.408025,0.833547
+msu,85,msu048,screen,iphone,na,na,attack_client048_android_SD_iphone_video_scene01.jpg,,209,1.526448,2.963723,2.685874,0.092616
+msu,86,msu048,print,printed_photo,na,na,attack_client048_android_SD_printed_photo_scene01.jpg,,207,-0.622737,2.130176,1.481862,-0.277849
+msu,87,msu049,screen,ipad,na,na,attack_client049_android_SD_ipad_video_scene01.jpg,,172,-0.228118,1.204013,0.000000,-0.277849
+msu,88,msu049,screen,iphone,na,na,attack_client049_android_SD_iphone_video_scene01.jpg,,217,-5.646871,-5.371748,-4.908667,-6.575761
+msu,89,msu049,print,printed_photo,na,na,attack_client049_android_SD_printed_photo_scene01.jpg,,196,-0.956564,-0.185233,-1.574478,-2.685874
+msu,90,msu050,screen,ipad,na,na,attack_client050_android_SD_ipad_video_scene01.jpg,,201,3.569547,5.093899,3.148956,3.519421
+msu,91,msu050,screen,iphone,na,na,attack_client050_android_SD_iphone_video_scene01.jpg,,190,0.031074,1.204013,0.648314,-0.370465
+msu,92,msu050,print,printed_photo,na,na,attack_client050_android_SD_printed_photo_scene01.jpg,,212,-1.940900,-0.740931,0.926163,-0.648314
+msu,93,msu051,screen,ipad,na,na,attack_client051_android_SD_ipad_video_scene01.jpg,,207,-2.226734,-1.574478,-2.037560,-1.481862
+msu,94,msu051,screen,iphone,na,na,attack_client051_android_SD_iphone_video_scene01.jpg,,199,2.640242,2.871107,3.982503,2.037560
+msu,95,msu051,print,printed_photo,na,na,attack_client051_android_SD_printed_photo_scene01.jpg,,214,3.778189,5.834830,6.205296,2.408025
+msu,96,msu053,screen,ipad,na,na,attack_client053_android_SD_ipad_video_scene01.jpg,,204,-8.318020,-5.742214,-6.020063,-7.872390
+msu,97,msu053,screen,iphone,na,na,attack_client053_android_SD_iphone_video_scene01.jpg,,182,-0.554788,1.296629,2.500641,-0.740931
+msu,98,msu053,print,printed_photo,na,na,attack_client053_android_SD_printed_photo_scene01.jpg,,157,-2.211102,1.204013,0.926163,-1.018780
+msu,99,msu054,screen,ipad,na,na,attack_client054_android_SD_ipad_video_scene01.jpg,,228,-2.822389,3.056340,1.481862,-1.389245
+msu,100,msu054,screen,iphone,na,na,attack_client054_android_SD_iphone_video_scene01.jpg,,187,7.206077,7.038843,7.779773,6.390528
+msu,101,msu054,print,printed_photo,na,na,attack_client054_android_SD_printed_photo_scene01.jpg,,195,-3.828950,-2.778491,-1.389245,-3.704654
+msu,102,msu055,screen,ipad,na,na,attack_client055_android_SD_ipad_video_scene01.jpg,,226,-1.970610,-1.759711,-0.740931,-0.926163
+msu,103,msu055,screen,iphone,na,na,attack_client055_android_SD_iphone_video_scene01.jpg,,206,2.014850,1.111396,2.778491,2.222792
+msu,104,msu055,print,printed_photo,na,na,attack_client055_android_SD_printed_photo_scene01.jpg,,200,-7.655519,-3.612038,-4.908667,-8.428088
+msu,105,msu001,live,real,na,na,real_client001_android_SD_scene01.jpg,,230,9.584316,9.724717,9.817333,8.891170
+msu,106,msu002,live,real,na,na,real_client002_android_SD_scene01.jpg,,148,6.509043,8.520704,8.150239,6.760993
+msu,107,msu003,live,real,na,na,real_client003_android_SD_scene01.jpg,,161,14.818796,11.808584,11.808584,11.808584
+msu,108,msu005,live,real,na,na,real_client005_android_SD_scene01.jpg,,181,9.044188,7.640849,8.428088,7.501925
+msu,109,msu006,live,real,na,na,real_client006_android_SD_scene01.jpg,,162,10.287922,11.808584,11.808584,10.650880
+msu,110,msu007,live,real,na,na,real_client007_android_SD_scene01.jpg,,187,10.020108,10.928729,11.808584,9.539484
+msu,111,msu008,live,real,na,na,real_client008_android_SD_scene01.jpg,,196,14.478305,11.808584,11.808584,11.808584
+msu,112,msu009,live,real,na,na,real_client009_android_SD_scene01.jpg,,164,17.379456,11.808584,11.808584,11.808584
+msu,113,msu011,live,real,na,na,real_client011_android_SD_scene01.jpg,,197,11.383844,9.076403,11.808584,10.373032
+msu,114,msu012,live,real,na,na,real_client012_android_SD_scene01.jpg,,195,7.128828,8.335471,8.613320,5.186516
+msu,115,msu013,live,real,na,na,real_client013_android_SD_scene01.jpg,,213,5.309896,5.093899,4.445585,3.334188
+msu,116,msu014,live,real,na,na,real_client014_android_SD_scene01.jpg,,215,12.282846,11.808584,11.808584,11.808584
+msu,117,msu021,live,real,na,na,real_client021_android_SD_scene01.jpg,,212,9.126403,7.131459,8.428088,7.409308
+msu,118,msu022,live,real,na,na,real_client022_android_SD_scene01.jpg,,167,6.664649,5.927446,6.946226,7.316691
+msu,119,msu023,live,real,na,na,real_client023_android_SD_scene01.jpg,,216,13.406387,11.808584,11.808584,11.299194
+msu,120,msu024,live,real,na,na,real_client024_android_SD_scene01.jpg,,216,6.929809,7.687157,7.594541,5.279132
+msu,121,msu026,live,real,na,na,real_client026_android_SD_scene01.jpg,,180,13.596138,11.808584,11.808584,11.808584
+msu,122,msu028,live,real,na,na,real_client028_android_SD_scene01.jpg,,158,13.388450,11.808584,11.808584,11.808584
+msu,123,msu029,live,real,na,na,real_client029_android_SD_scene01.jpg,,163,9.032456,7.779773,8.891170,6.205296
+msu,124,msu030,live,real,na,na,real_client030_android_SD_scene01.jpg,,140,10.941101,11.762277,10.373032,9.632100
+msu,125,msu032,live,real,na,na,real_client032_android_SD_scene01.jpg,,153,8.990341,9.354251,11.669660,7.965006
+msu,126,msu033,live,real,na,na,real_client033_android_SD_scene01.jpg,,147,13.368326,11.808584,11.808584,11.808584
+msu,127,msu034,live,real,na,na,real_client034_android_SD_scene01.jpg,,182,15.105278,11.808584,11.808584,11.808584
+msu,128,msu035,live,real,na,na,real_client035_android_SD_scene01.jpg,,144,13.839218,11.808584,11.808584,11.808584
+msu,129,msu036,live,real,na,na,real_client036_android_SD_scene01.jpg,,181,12.174221,10.465648,11.808584,9.261635
+msu,130,msu037,live,real,na,na,real_client037_android_SD_scene01.jpg,,150,13.096207,11.808584,11.808584,11.808584
+msu,131,msu039,live,real,na,na,real_client039_android_SD_scene01.jpg,,147,9.842339,11.808584,11.808584,10.373032
+msu,132,msu042,live,real,na,na,real_client042_android_SD_scene01.jpg,,172,16.278252,11.808584,11.808584,11.808584
+msu,133,msu048,live,real,na,na,real_client048_android_SD_scene01.jpg,,166,12.578289,11.808584,11.808584,11.808584
+msu,134,msu049,live,real,na,na,real_client049_android_SD_scene01.jpg,,161,18.989372,11.808584,11.808584,11.808584
+msu,135,msu050,live,real,na,na,real_client050_android_SD_scene01.jpg,,152,10.367332,11.808584,11.762277,11.391811
+msu,136,msu051,live,real,na,na,real_client051_android_SD_scene01.jpg,,152,10.683666,10.373032,10.465648,9.261635
+msu,137,msu053,live,real,na,na,real_client053_android_SD_scene01.jpg,,160,8.598559,9.539484,10.373032,8.983786
+msu,138,msu054,live,real,na,na,real_client054_android_SD_scene01.jpg,,180,13.847967,11.808584,11.808584,11.808584
+msu,139,msu055,live,real,na,na,real_client055_android_SD_scene01.jpg,,150,10.264540,10.697188,10.928729,8.891170
+kaggle,0,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,0.0,380,-5.414933,-4.352968,-2.963723,-6.297912
+kaggle,1,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,1.02,481,-6.235545,-3.889887,-2.500641,-6.020063
+kaggle,2,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,2.0,540,-6.387701,-3.426805,-3.704654,-8.057622
+kaggle,3,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,3.02,752,-6.131609,-2.778491,-6.946226,-7.409308
+kaggle,4,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,4.01,989,0.638388,3.148956,3.334188,0.370465
+kaggle,5,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,5.03,1291,1.051855,3.982503,2.593258,0.277849
+kaggle,6,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,6.01,1508,-3.855589,-2.685874,-3.797270,-4.260352
+kaggle,7,kg9f53589e,print,cutout_printout,na,na,cut-out printouts/kg9f53589e,7.03,1584,-2.403971,-0.092616,-2.778491,-3.148956
+kaggle,8,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,0.0,762,-2.475984,-3.426805,-2.222792,-4.538201
+kaggle,9,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,1.02,839,-5.256890,-1.852327,-3.982503,-5.834830
+kaggle,10,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,2.0,944,-2.217543,0.833547,-2.315409,-3.704654
+kaggle,11,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,3.02,1071,-1.257399,-1.481862,-0.185233,-2.500641
+kaggle,12,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,4.01,1244,-4.249574,-2.408025,-4.075119,-4.908667
+kaggle,13,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,5.03,1411,-4.435912,-4.260352,-5.140207,-5.371748
+kaggle,14,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,6.01,1719,-5.842218,-5.371748,-5.927446,-7.038843
+kaggle,15,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,7.03,1903,-6.866473,-5.649597,-6.390528,-6.853610
+kaggle,16,kg5bb369f3,print,cutout_printout,na,na,cut-out printouts/kg5bb369f3,8.01,1885,-7.287778,-6.297912,-6.760993,-7.224075
+kaggle,17,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,0.0,376,-5.437405,2.222792,-1.389245,-4.075119
+kaggle,18,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,1.05,466,-10.441064,-3.982503,-4.816050,-7.872390
+kaggle,19,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,2.0,588,-6.718688,-3.797270,-4.538201,-6.668377
+kaggle,20,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,3.02,699,-6.838466,-3.612038,-6.483144,-7.594541
+kaggle,21,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,4.01,901,-7.177246,-1.018780,-5.093899,-7.779773
+kaggle,22,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,5.03,1076,-4.599664,-0.370465,-0.555698,-4.538201
+kaggle,23,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,6.01,1332,-1.817213,0.833547,-1.574478,-3.334188
+kaggle,24,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,7.03,1490,-5.198295,-4.630817,-3.334188,-3.889887
+kaggle,25,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,8.01,1489,-2.589496,0.370465,-2.315409,-2.778491
+kaggle,26,kg5569a12b,print,cutout_printout,na,na,cut-out printouts/kg5569a12b,9.03,1503,-3.931175,-2.593258,-4.538201,-4.352968
+kaggle,27,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,0.0,511,-6.973064,-5.186516,-5.186516,-7.594541
+kaggle,28,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,1.02,628,-8.121623,-6.390528,-5.649597,-8.335471
+kaggle,29,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,2.0,826,-10.907494,-8.983786,-6.946226,-11.021345
+kaggle,30,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,3.02,1140,-5.349071,-5.186516,-5.556981,-6.575761
+kaggle,31,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,4.01,1380,-9.232462,-7.594541,-9.354251,-9.817333
+kaggle,32,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,5.03,1497,-7.467081,-6.853610,-5.927446,-6.205296
+kaggle,33,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,6.01,1328,-7.894761,-6.853610,-7.131459,-8.057622
+kaggle,34,kg6aade0ea,print,cutout_printout,na,na,cut-out printouts/kg6aade0ea,7.03,1480,-10.179241,-9.909949,-10.187799,-9.261635
+kaggle,35,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,0.0,763,1.200526,3.982503,2.963723,0.277849
+kaggle,36,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,1.02,834,-1.332773,-0.463082,0.926163,-2.222792
+kaggle,37,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,2.0,985,1.434669,2.500641,3.704654,0.648314
+kaggle,38,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,3.02,1180,0.829185,-0.370465,-0.370465,-0.555698
+kaggle,39,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,4.01,1308,-2.360803,0.092616,-1.944943,-3.426805
+kaggle,40,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,5.03,1639,-7.075060,-8.613320,-9.261635,-8.335471
+kaggle,41,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,6.01,1812,-9.521217,-10.187799,-8.428088,-9.076403
+kaggle,42,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,7.03,2009,-3.644041,-4.167736,-3.612038,-3.982503
+kaggle,43,kg6aafbe45,print,cutout_printout,na,na,cut-out printouts/kg6aafbe45,8.01,1845,-9.750515,-10.928729,-9.909949,-9.724717
+kaggle,44,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,0.0,437,-9.391808,-6.112679,-7.409308,-9.354251
+kaggle,45,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,1.02,509,-5.902317,-2.593258,-6.020063,-6.112679
+kaggle,46,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,2.0,553,-6.816552,-6.112679,-4.445585,-7.038843
+kaggle,47,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,3.02,671,-11.330831,-10.465648,-11.577044,-11.808584
+kaggle,48,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,4.01,822,-8.468884,-3.889887,-5.649597,-8.428088
+kaggle,49,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,5.03,930,-4.069298,-3.426805,-3.426805,-4.445585
+kaggle,50,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,6.01,1117,-7.215617,-6.946226,-7.316691,-7.131459
+kaggle,51,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,7.03,1350,-7.291406,-7.594541,-7.316691,-7.316691
+kaggle,52,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,8.01,1353,-7.743970,-7.687157,-7.316691,-8.150239
+kaggle,53,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,9.03,1514,-8.983021,-8.798553,-10.187799,-9.446868
+kaggle,54,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,10.02,1506,-8.358160,-8.150239,-8.057622,-8.705936
+kaggle,55,kg884d9fd3,print,cutout_printout,na,na,cut-out printouts/kg884d9fd3,11.0,1542,-9.230806,-8.011314,-9.446868,-9.909949
+kaggle,56,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,0.0,544,-3.839947,-1.713403,-1.204013,-3.612038
+kaggle,57,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,1.02,624,-0.301713,1.944943,0.648314,-1.481862
+kaggle,58,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,2.0,822,-3.531943,-2.222792,0.463082,-3.334188
+kaggle,59,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,3.02,1077,-2.301569,0.740931,0.185233,-2.500641
+kaggle,60,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,4.01,1465,-3.203224,-0.463082,2.037560,-1.481862
+kaggle,61,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,5.03,1752,-2.926017,-0.185233,0.833547,-2.454333
+kaggle,62,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,6.01,1769,-4.096074,-1.759711,-2.500641,-5.927446
+kaggle,63,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,7.03,1566,-1.646226,1.204013,0.740931,-1.204013
+kaggle,64,kg4e8af551,print,cutout_printout,na,na,cut-out printouts/kg4e8af551,8.01,1626,-0.237701,0.926163,2.037560,0.185233
+kaggle,65,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,0.0,407,-4.495366,-3.241572,-2.593258,-4.445585
+kaggle,66,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,1.02,504,-4.559678,-3.889887,-3.797270,-4.816050
+kaggle,67,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,2.0,593,-6.917054,-5.556981,-7.687157,-7.872390
+kaggle,68,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,3.02,750,-4.854842,-2.963723,-3.334188,-5.186516
+kaggle,69,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,4.01,948,-2.122041,-2.871107,-2.222792,-2.222792
+kaggle,70,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,5.03,1295,-4.753153,-4.167736,-3.889887,-4.816050
+kaggle,71,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,6.01,1427,-6.317707,-6.205296,-5.834830,-6.946226
+kaggle,72,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,7.03,1446,-5.572155,-4.075119,-5.927446,-6.297912
+kaggle,73,kg58c89e41,print,cutout_printout,na,na,cut-out printouts/kg58c89e41,8.01,1464,-6.369873,-5.649597,-6.390528,-6.760993
+kaggle,74,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,0.0,746,-3.027894,0.092616,-1.574478,-2.593258
+kaggle,75,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,1.02,789,-1.998343,-0.185233,0.555698,-1.574478
+kaggle,76,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,2.0,904,-3.794963,-2.037560,-1.111396,-4.260352
+kaggle,77,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,3.02,1071,-2.155663,-1.111396,-1.389245,-2.871107
+kaggle,78,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,4.01,1347,-6.122581,-5.927446,-5.834830,-6.205296
+kaggle,79,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,5.03,1590,-2.638635,-1.759711,-2.222792,-2.685874
+kaggle,80,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,6.01,1746,-5.935665,-6.668377,-5.556981,-5.186516
+kaggle,81,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,7.03,1921,-7.570394,-7.501925,-7.965006,-7.779773
+kaggle,82,kg9973bcb4,print,cutout_printout,na,na,cut-out printouts/kg9973bcb4,8.01,1750,-5.026832,-5.279132,-5.556981,-5.279132
+kaggle,83,kg9f53589e,live,selfie,na,na,live_selfie/kg9f53589e,0.0,1246,-1.542708,-0.926163,-0.740931,-1.944943
+kaggle,84,kg5bb369f3,live,selfie,na,na,live_selfie/kg5bb369f3,0.0,1447,0.406387,3.797270,4.538201,0.833547
+kaggle,85,kg5569a12b,live,selfie,na,na,live_selfie/kg5569a12b,0.0,1827,0.655536,0.555698,0.833547,-0.277849
+kaggle,86,kg6aade0ea,live,selfie,na,na,live_selfie/kg6aade0ea,0.0,1285,3.577537,6.483144,5.186516,3.519421
+kaggle,87,kg6aafbe45,live,selfie,na,na,live_selfie/kg6aafbe45,0.0,1521,13.502129,11.808584,11.808584,11.808584
+kaggle,88,kg884d9fd3,live,selfie,na,na,live_selfie/kg884d9fd3,0.0,1275,5.355155,9.446868,9.632100,5.371748
+kaggle,89,kg4e8af551,live,selfie,na,na,live_selfie/kg4e8af551,0.0,1181,10.202717,8.335471,10.002565,8.057622
+kaggle,90,kg58c89e41,live,selfie,na,na,live_selfie/kg58c89e41,0.0,1061,4.777346,4.908667,5.464365,5.464365
+kaggle,91,kg9973bcb4,live,selfie,na,na,live_selfie/kg9973bcb4,0.0,1933,1.984477,4.908667,3.889887,1.481862
+kaggle,92,kg9f53589e,live,video,na,na,live_video/kg9f53589e,0.0,511,-0.712769,-2.037560,-0.926163,-1.389245
+kaggle,93,kg9f53589e,live,video,na,na,live_video/kg9f53589e,1.03,483,-1.272746,-1.296629,-0.926163,-1.389245
+kaggle,94,kg9f53589e,live,video,na,na,live_video/kg9f53589e,2.03,488,-3.576171,-1.944943,-2.130176,-3.426805
+kaggle,95,kg9f53589e,live,video,na,na,live_video/kg9f53589e,3.03,489,0.139806,-1.018780,0.463082,0.370465
+kaggle,96,kg9f53589e,live,video,na,na,live_video/kg9f53589e,4.03,506,3.497622,5.093899,5.093899,3.704654
+kaggle,97,kg9f53589e,live,video,na,na,live_video/kg9f53589e,5.03,511,-0.129858,0.648314,1.389245,0.370465
+kaggle,98,kg9f53589e,live,video,na,na,live_video/kg9f53589e,6.03,476,-0.815032,-0.926163,-0.185233,-1.018780
+kaggle,99,kg9f53589e,live,video,na,na,live_video/kg9f53589e,7.03,474,0.058341,0.370465,0.740931,-0.092616
+kaggle,100,kg9f53589e,live,video,na,na,live_video/kg9f53589e,8.03,506,-0.430958,0.972472,-0.277849,0.555698
+kaggle,101,kg9f53589e,live,video,na,na,live_video/kg9f53589e,9.03,517,-3.255327,-1.852327,-1.667094,-3.056340
+kaggle,102,kg9f53589e,live,video,na,na,live_video/kg9f53589e,10.03,513,-0.969379,-1.204013,0.000000,-1.481862
+kaggle,103,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,0.0,743,4.644467,3.797270,4.167736,4.075119
+kaggle,104,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,1.03,731,2.200054,0.000000,0.277849,1.204013
+kaggle,105,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,2.03,733,-1.462667,-0.648314,-2.222792,-1.759711
+kaggle,106,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,3.03,760,1.224268,1.018780,1.111396,0.000000
+kaggle,107,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,4.03,760,2.147460,0.555698,2.037560,0.370465
+kaggle,108,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,5.03,749,-0.770551,0.277849,0.092616,-0.926163
+kaggle,109,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,6.03,791,-0.894091,-2.315409,-1.574478,-2.037560
+kaggle,110,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,7.03,675,-3.449642,-5.464365,-4.445585,-4.630817
+kaggle,111,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,8.03,706,-0.124850,-1.111396,0.926163,0.000000
+kaggle,112,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,9.03,817,2.397797,4.908667,5.371748,3.056340
+kaggle,113,kg5bb369f3,live,video,na,na,live_video/kg5bb369f3,10.03,813,4.330276,6.853610,4.816050,4.352968
+kaggle,114,kg5569a12b,live,video,na,na,live_video/kg5569a12b,0.0,430,-0.858838,-1.296629,-1.759711,-1.481862
+kaggle,115,kg5569a12b,live,video,na,na,live_video/kg5569a12b,1.03,433,-1.347806,-0.833547,-0.740931,-1.389245
+kaggle,116,kg5569a12b,live,video,na,na,live_video/kg5569a12b,2.01,404,-2.754680,-2.130176,-2.408025,-2.500641
+kaggle,117,kg5569a12b,live,video,na,na,live_video/kg5569a12b,3.02,426,-2.853623,-3.148956,-2.500641,-3.797270
+kaggle,118,kg5569a12b,live,video,na,na,live_video/kg5569a12b,4.03,431,1.441494,2.315409,3.519421,1.296629
+kaggle,119,kg5569a12b,live,video,na,na,live_video/kg5569a12b,5.01,413,-0.028131,1.481862,1.852327,-1.018780
+kaggle,120,kg5569a12b,live,video,na,na,live_video/kg5569a12b,6.02,435,-0.451690,1.574478,0.648314,-1.111396
+kaggle,121,kg5569a12b,live,video,na,na,live_video/kg5569a12b,7.03,413,-2.046940,-2.408025,-1.944943,-3.056340
+kaggle,122,kg5569a12b,live,video,na,na,live_video/kg5569a12b,8.01,390,-4.506300,-2.778491,-1.944943,-3.889887
+kaggle,123,kg5569a12b,live,video,na,na,live_video/kg5569a12b,9.02,393,-4.417116,-3.982503,-3.426805,-5.556981
+kaggle,124,kg5569a12b,live,video,na,na,live_video/kg5569a12b,10.03,434,-0.777959,-0.092616,-0.926163,-1.481862
+kaggle,125,kg5569a12b,live,video,na,na,live_video/kg5569a12b,11.01,462,1.758140,1.574478,0.833547,1.389245
+kaggle,126,kg5569a12b,live,video,na,na,live_video/kg5569a12b,12.02,464,0.344325,0.000000,0.463082,-0.648314
+kaggle,127,kg5569a12b,live,video,na,na,live_video/kg5569a12b,13.03,424,-2.447165,-2.315409,-3.334188,-2.871107
+kaggle,128,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,0.0,508,1.166605,3.241572,6.483144,0.926163
+kaggle,129,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,1.0,503,0.576466,2.500641,4.816050,0.370465
+kaggle,130,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,2.0,484,-0.002991,1.389245,2.778491,0.092616
+kaggle,131,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,3.01,504,1.717382,2.130176,3.704654,1.296629
+kaggle,132,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,4.01,518,0.994660,4.260352,6.020063,2.130176
+kaggle,133,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,5.01,502,0.061905,3.519421,1.759711,-1.204013
+kaggle,134,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,6.01,495,-0.824898,1.667094,2.500641,-0.648314
+kaggle,135,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,7.02,505,3.376542,3.889887,8.520704,2.963723
+kaggle,136,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,8.02,501,5.874973,4.352968,5.927446,5.556981
+kaggle,137,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,9.02,506,1.976981,3.426805,5.556981,1.204013
+kaggle,138,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,10.02,503,1.918628,6.668377,5.371748,2.408025
+kaggle,139,kg6aade0ea,live,video,na,na,live_video/kg6aade0ea,11.03,504,1.209834,7.409308,7.038843,1.852327
+kaggle,140,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,0.0,642,10.134528,8.798553,9.539484,8.798553
+kaggle,141,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,1.0,656,6.711746,6.297912,6.205296,5.649597
+kaggle,142,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,2.0,657,8.495993,7.872390,8.057622,7.501925
+kaggle,143,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,3.01,687,9.226954,7.224075,8.705936,8.150239
+kaggle,144,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,4.01,620,6.643155,7.224075,6.853610,6.668377
+kaggle,145,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,5.01,687,11.677422,11.391811,11.808584,10.650880
+kaggle,146,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,6.01,655,6.140435,4.538201,5.001283,5.464365
+kaggle,147,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,8.02,677,7.185675,5.371748,5.649597,5.464365
+kaggle,148,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,9.02,776,9.273454,10.002565,10.280415,8.057622
+kaggle,149,kg6aafbe45,live,video,na,na,live_video/kg6aafbe45,10.02,726,9.987374,11.021345,10.465648,8.798553
+kaggle,150,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,0.0,590,2.803920,5.093899,1.852327,1.204013
+kaggle,151,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,1.03,598,-2.925879,0.926163,0.555698,-1.481862
+kaggle,152,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,2.03,596,-2.467069,0.555698,-0.926163,-1.759711
+kaggle,153,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,3.03,533,-1.246309,2.593258,2.315409,-1.296629
+kaggle,154,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,4.03,579,3.173133,5.927446,7.316691,2.593258
+kaggle,155,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,5.03,519,0.498977,1.944943,2.871107,1.204013
+kaggle,156,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,6.03,557,2.988831,3.148956,6.946226,4.167736
+kaggle,157,kg884d9fd3,live,video,na,na,live_video/kg884d9fd3,7.03,734,0.526927,4.538201,2.222792,-0.185233
+kaggle,158,kg4e8af551,live,video,na,na,live_video/kg4e8af551,0.0,371,6.839751,6.946226,10.280415,7.409308
+kaggle,159,kg4e8af551,live,video,na,na,live_video/kg4e8af551,1.01,344,10.736345,10.373032,11.113962,10.836113
+kaggle,160,kg4e8af551,live,video,na,na,live_video/kg4e8af551,2.03,334,10.901890,11.808584,11.808584,11.206578
+kaggle,161,kg4e8af551,live,video,na,na,live_video/kg4e8af551,3.01,374,12.227865,9.539484,11.113962,11.808584
+kaggle,162,kg4e8af551,live,video,na,na,live_video/kg4e8af551,4.01,358,4.957521,5.464365,5.371748,4.816050
+kaggle,163,kg4e8af551,live,video,na,na,live_video/kg4e8af551,5.03,350,7.371431,9.724717,8.057622,7.501925
+kaggle,164,kg4e8af551,live,video,na,na,live_video/kg4e8af551,6.01,357,7.437551,8.335471,9.261635,8.057622
+kaggle,165,kg4e8af551,live,video,na,na,live_video/kg4e8af551,7.03,347,8.824478,9.632100,11.021345,9.169019
+kaggle,166,kg4e8af551,live,video,na,na,live_video/kg4e8af551,8.0,353,9.412319,8.983786,9.724717,7.965006
+kaggle,167,kg4e8af551,live,video,na,na,live_video/kg4e8af551,9.02,350,10.135072,10.187799,11.808584,9.354251
+kaggle,168,kg4e8af551,live,video,na,na,live_video/kg4e8af551,10.03,362,8.786551,9.261635,10.373032,8.520704
+kaggle,169,kg58c89e41,live,video,na,na,live_video/kg58c89e41,0.0,214,2.362873,1.759711,4.630817,1.759711
+kaggle,170,kg58c89e41,live,video,na,na,live_video/kg58c89e41,1.0,242,-3.696202,-3.056340,-2.963723,-4.630817
+kaggle,171,kg58c89e41,live,video,na,na,live_video/kg58c89e41,2.01,210,1.759895,1.018780,3.334188,0.648314
+kaggle,172,kg58c89e41,live,video,na,na,live_video/kg58c89e41,3.01,226,0.285898,-0.185233,3.056340,0.926163
+kaggle,173,kg58c89e41,live,video,na,na,live_video/kg58c89e41,4.02,217,4.283952,6.020063,5.001283,3.426805
+kaggle,174,kg58c89e41,live,video,na,na,live_video/kg58c89e41,5.02,217,3.915213,3.148956,4.445585,2.778491
+kaggle,175,kg58c89e41,live,video,na,na,live_video/kg58c89e41,6.02,211,-3.061820,-1.944943,-0.648314,-2.593258
+kaggle,176,kg58c89e41,live,video,na,na,live_video/kg58c89e41,7.03,213,1.103608,1.574478,1.852327,0.463082
+kaggle,177,kg58c89e41,live,video,na,na,live_video/kg58c89e41,8.03,202,1.411226,3.056340,3.241572,1.018780
+kaggle,178,kg58c89e41,live,video,na,na,live_video/kg58c89e41,9.04,210,3.661161,3.241572,4.816050,2.778491
+kaggle,179,kg58c89e41,live,video,na,na,live_video/kg58c89e41,10.04,207,3.942899,4.723434,5.001283,3.797270
+kaggle,180,kg58c89e41,live,video,na,na,live_video/kg58c89e41,11.0,207,5.553516,4.352968,5.556981,5.464365
+kaggle,181,kg58c89e41,live,video,na,na,live_video/kg58c89e41,12.01,209,4.458332,5.186516,4.075119,3.889887
+kaggle,182,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,0.0,621,1.465754,3.056340,4.538201,3.426805
+kaggle,183,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,1.03,629,4.422723,8.242855,7.501925,5.649597
+kaggle,184,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,2.02,605,4.770985,3.704654,8.242855,2.593258
+kaggle,185,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,3.02,615,4.015467,4.908667,4.630817,2.593258
+kaggle,186,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,4.02,629,3.375302,7.687157,7.038843,4.075119
+kaggle,187,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,5.01,616,-1.688381,0.463082,1.481862,-1.204013
+kaggle,188,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,6.01,540,-3.288931,-1.574478,-4.260352,-3.148956
+kaggle,189,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,7.0,582,2.671870,2.315409,4.352968,1.204013
+kaggle,190,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,8.03,570,0.869741,2.685874,4.908667,1.481862
+kaggle,191,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,9.03,540,2.451089,9.169019,10.002565,6.297912
+kaggle,192,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,10.02,595,1.408136,9.446868,7.316691,0.926163
+kaggle,193,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,11.02,664,-1.199998,2.685874,1.667094,-1.759711
+kaggle,194,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,12.01,723,0.632762,2.130176,2.408025,0.833547
+kaggle,195,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,13.01,672,-2.145563,0.833547,0.463082,-1.574478
+kaggle,196,kg9973bcb4,live,video,na,na,live_video/kg9973bcb4,14.01,634,-3.202633,-1.204013,-1.204013,-2.315409
+kaggle,197,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,0.0,378,-9.391698,-7.501925,-9.446868,-9.817333
+kaggle,198,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,1.02,416,-11.745370,-10.743497,-10.373032,-10.095182
+kaggle,199,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,2.0,497,-9.582231,-8.798553,-10.465648,-10.558264
+kaggle,200,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,3.02,593,-10.632209,-9.169019,-9.169019,-9.076403
+kaggle,201,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,4.01,766,-11.001623,-7.779773,-10.650880,-10.373032
+kaggle,202,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,5.03,998,-14.187449,-11.808584,-11.113962,-11.808584
+kaggle,203,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,6.01,1354,-9.916672,-6.760993,-6.205296,-8.983786
+kaggle,204,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,7.03,1575,-8.195717,-6.760993,-4.723434,-8.428088
+kaggle,205,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,8.01,1687,-7.655644,-7.131459,-2.500641,-6.668377
+kaggle,206,kg9f53589e,print,a4_printout,na,na,printouts/kg9f53589e,9.03,1639,-9.916039,-5.556981,-6.946226,-10.743497
+kaggle,207,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,1.03,345,-6.772716,-2.408025,-1.204013,-5.927446
+kaggle,208,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,2.02,298,-12.861826,-11.808584,-11.808584,-11.808584
+kaggle,209,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,3.02,348,-10.849138,-6.946226,-8.705936,-9.817333
+kaggle,210,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,4.02,418,-9.487383,-6.760993,-8.150239,-9.539484
+kaggle,211,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,5.02,490,-10.025867,-7.687157,-9.354251,-10.373032
+kaggle,212,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,6.02,571,-12.322215,-9.076403,-10.928729,-11.206578
+kaggle,213,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,7.02,737,-8.994778,-6.390528,-7.316691,-8.242855
+kaggle,214,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,8.02,880,-7.346805,-3.056340,-5.371748,-6.020063
+kaggle,215,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,9.02,918,-6.590574,-3.612038,-4.630817,-5.556981
+kaggle,216,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,10.02,937,-3.255383,-4.630817,-2.315409,-3.334188
+kaggle,217,kg5bb369f3,print,a4_printout,na,na,printouts/kg5bb369f3,11.01,959,-6.989137,-7.131459,-6.575761,-6.205296
+kaggle,218,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,0.0,425,-5.091157,-3.982503,-4.908667,-5.927446
+kaggle,219,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,1.02,451,-3.873359,-4.445585,-3.519421,-4.445585
+kaggle,220,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,2.0,523,-6.894992,-5.093899,-6.020063,-7.270383
+kaggle,221,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,3.02,618,-7.803006,-5.371748,-6.112679,-7.687157
+kaggle,222,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,4.01,779,-4.279084,-2.315409,-3.056340,-4.075119
+kaggle,223,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,5.03,1055,-9.544794,-7.131459,-7.316691,-8.891170
+kaggle,224,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,6.01,1199,-9.440533,-9.261635,-8.057622,-9.909949
+kaggle,225,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,7.03,1522,-9.051803,-7.316691,-9.354251,-8.335471
+kaggle,226,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,8.01,1680,-8.559681,-7.687157,-7.224075,-8.613320
+kaggle,227,kg5569a12b,print,a4_printout,na,na,printouts/kg5569a12b,9.03,1601,-12.708842,-11.021345,-10.187799,-11.206578
+kaggle,228,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,0.0,466,-10.581551,-8.242855,-8.983786,-10.743497
+kaggle,229,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,1.02,542,-8.871951,-6.853610,-6.946226,-8.983786
+kaggle,230,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,2.0,594,-8.391842,-6.946226,-5.927446,-7.826081
+kaggle,231,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,3.02,685,-8.644836,-7.038843,-7.131459,-9.261635
+kaggle,232,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,4.01,812,-9.110878,-7.501925,-5.371748,-9.261635
+kaggle,233,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,5.03,1020,-9.055771,-6.297912,-6.668377,-8.520704
+kaggle,234,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,6.01,1200,-8.342997,-7.131459,-7.779773,-7.409308
+kaggle,235,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,7.03,1387,-10.230343,-8.798553,-9.261635,-10.650880
+kaggle,236,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,8.01,1419,-10.568995,-9.169019,-7.131459,-9.632100
+kaggle,237,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,9.03,1446,-9.925306,-6.575761,-6.205296,-8.520704
+kaggle,238,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,10.02,1422,-9.172790,-8.891170,-7.038843,-8.705936
+kaggle,239,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,11.0,1439,-9.153765,-7.316691,-6.668377,-8.428088
+kaggle,240,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,12.02,1425,-10.121420,-9.817333,-8.150239,-9.446868
+kaggle,241,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,13.01,1409,-9.687051,-6.483144,-6.853610,-8.798553
+kaggle,242,kg6aade0ea,print,a4_printout,na,na,printouts/kg6aade0ea,14.02,1382,-9.059626,-6.853610,-8.983786,-9.539484
+kaggle,243,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,0.0,757,3.540440,1.944943,3.426805,2.130176
+kaggle,244,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,1.02,897,-1.066894,0.926163,-1.574478,-3.426805
+kaggle,245,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,2.0,1094,1.948104,0.833547,1.204013,-0.092616
+kaggle,246,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,3.02,1478,4.582708,6.575761,8.057622,3.519421
+kaggle,247,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,4.01,1920,4.710958,6.205296,5.556981,2.963723
+kaggle,248,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,5.03,2002,-1.031692,1.111396,0.833547,-2.685874
+kaggle,249,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,6.01,1986,-2.631484,-2.315409,-0.833547,-3.612038
+kaggle,250,kg6aafbe45,print,a4_printout,na,na,printouts/kg6aafbe45,7.03,1893,-0.794709,-0.463082,1.759711,-0.833547
+kaggle,251,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,0.0,423,-7.485491,-3.797270,-4.445585,-7.038843
+kaggle,252,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,1.02,460,-5.502169,-3.889887,-3.889887,-4.538201
+kaggle,253,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,2.0,529,-7.089749,-6.020063,-4.630817,-7.038843
+kaggle,254,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,3.02,645,-7.492605,-5.927446,-5.001283,-5.279132
+kaggle,255,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,4.01,806,-8.842861,-10.002565,-7.316691,-7.872390
+kaggle,256,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,5.03,955,-12.364719,-7.872390,-8.335471,-10.187799
+kaggle,257,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,6.01,1214,-4.720803,-1.018780,-2.315409,-4.908667
+kaggle,258,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,7.03,1482,-7.146596,-6.946226,-6.020063,-8.242855
+kaggle,259,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,8.01,1610,-5.268149,-3.612038,-4.075119,-6.483144
+kaggle,260,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,9.03,1646,-3.089093,-1.852327,-2.037560,-5.279132
+kaggle,261,kg884d9fd3,print,a4_printout,na,na,printouts/kg884d9fd3,10.02,1546,-4.613698,-2.917415,-2.871107,-4.352968
+kaggle,262,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,0.0,374,-12.122496,-10.002565,-9.909949,-11.391811
+kaggle,263,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,1.02,409,-12.185719,-11.808584,-9.493176,-11.808584
+kaggle,264,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,2.0,462,-12.267159,-11.808584,-10.928729,-11.808584
+kaggle,265,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,3.02,506,-13.653900,-11.669660,-10.928729,-11.808584
+kaggle,266,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,4.01,552,-14.246857,-11.669660,-11.391811,-11.808584
+kaggle,267,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,5.03,631,-10.863591,-8.891170,-10.187799,-10.743497
+kaggle,268,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,6.01,694,-9.693292,-7.872390,-7.316691,-8.150239
+kaggle,269,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,7.03,829,-7.384420,-7.409308,-4.723434,-6.390528
+kaggle,270,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,8.01,1038,-11.502383,-9.122711,-7.872390,-10.836113
+kaggle,271,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,9.03,1215,-9.566681,-7.131459,-5.093899,-6.853610
+kaggle,272,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,10.02,1347,-10.402861,-8.057622,-6.483144,-9.169019
+kaggle,273,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,11.0,1493,-9.062114,-9.169019,-5.742214,-8.613320
+kaggle,274,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,12.02,1608,-7.079746,-5.093899,-4.352968,-6.112679
+kaggle,275,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,13.01,1676,-5.954598,-2.408025,-3.241572,-5.279132
+kaggle,276,kg4e8af551,print,a4_printout,na,na,printouts/kg4e8af551,14.02,1598,-5.071006,-2.871107,-2.963723,-4.723434
+kaggle,277,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,0.0,455,-5.877634,-5.556981,-4.723434,-6.020063
+kaggle,278,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,1.02,508,-5.093128,-4.908667,-5.093899,-4.260352
+kaggle,279,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,2.0,619,-2.875851,-2.963723,-2.408025,-3.056340
+kaggle,280,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,3.02,735,-4.474124,-4.630817,-2.778491,-4.816050
+kaggle,281,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,4.01,878,-3.033741,-3.426805,-2.963723,-3.797270
+kaggle,282,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,5.03,1026,-2.174153,-1.759711,-3.704654,-3.982503
+kaggle,283,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,6.01,1306,-3.437259,-4.723434,-3.056340,-4.630817
+kaggle,284,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,7.03,1549,-3.804565,-4.352968,-3.426805,-4.630817
+kaggle,285,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,8.01,1571,-2.563814,-3.704654,-1.852327,-4.352968
+kaggle,286,kg58c89e41,print,a4_printout,na,na,printouts/kg58c89e41,9.03,1559,-3.655995,-4.352968,-2.222792,-5.093899
+kaggle,287,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,0.0,468,-6.111615,-4.352968,-5.186516,-6.390528
+kaggle,288,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,1.02,518,-6.692102,-2.871107,-5.001283,-6.112679
+kaggle,289,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,2.0,600,-5.828516,-3.056340,-3.241572,-4.352968
+kaggle,290,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,3.02,665,-4.787523,-4.908667,-3.797270,-5.186516
+kaggle,291,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,4.01,763,-7.510070,-5.742214,-6.668377,-7.687157
+kaggle,292,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,5.03,912,-8.994596,-6.297912,-4.908667,-7.687157
+kaggle,293,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,6.01,1058,-6.359427,-3.241572,-2.685874,-7.316691
+kaggle,294,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,7.03,1295,-9.266630,-10.743497,-6.529452,-10.187799
+kaggle,295,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,8.01,1563,-9.126282,-7.687157,-5.649597,-9.169019
+kaggle,296,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,9.03,1613,-8.768180,-6.390528,-5.556981,-7.965006
+kaggle,297,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,10.02,1649,-9.112145,-6.205296,-5.186516,-8.705936
+kaggle,298,kg9973bcb4,print,a4_printout,na,na,printouts/kg9973bcb4,11.0,1631,-8.325244,-6.390528,-5.556981,-8.150239
+kaggle,299,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,0.0,456,-5.424126,-5.927446,-6.297912,-6.205296
+kaggle,300,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,1.01,465,-5.638756,-7.687157,-5.742214,-6.390528
+kaggle,301,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,2.01,449,-8.440929,-9.261635,-7.965006,-8.567013
+kaggle,302,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,3.01,455,-7.493024,-7.224075,-6.390528,-7.779773
+kaggle,303,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,4.01,504,-8.323978,-8.335471,-5.742214,-8.520704
+kaggle,304,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,5.01,500,-8.378437,-9.354251,-6.020063,-8.428088
+kaggle,305,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,6.01,601,-5.647399,-4.260352,-2.408025,-6.390528
+kaggle,306,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,7.0,892,-12.392090,-11.021345,-10.836113,-11.808584
+kaggle,307,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,8.0,815,-5.869380,-7.131459,-5.186516,-6.853610
+kaggle,308,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,9.0,916,-1.769504,-3.519421,0.833547,-3.056340
+kaggle,309,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,10.0,1041,-5.923396,-3.473113,-3.704654,-6.205296
+kaggle,310,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,11.0,1046,-2.212075,-0.277849,-0.926163,-2.130176
+kaggle,311,kg5df8f427,screen,replay,na,na,replay/kg5df8f427,12.03,974,-9.025627,-10.187799,-10.002565,-9.354251
+kaggle,312,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,0.0,334,-2.644537,0.648314,1.481862,-3.241572
+kaggle,313,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,1.03,335,-5.339832,-1.667094,-1.667094,-5.556981
+kaggle,314,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,2.02,327,-6.400876,-2.222792,-1.852327,-7.409308
+kaggle,315,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,3.02,344,-3.012822,0.000000,2.130176,-4.075119
+kaggle,316,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,4.02,445,-4.116795,-2.778491,-0.648314,-3.982503
+kaggle,317,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,5.02,536,1.185428,0.370465,0.185233,-0.648314
+kaggle,318,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,6.02,554,-4.330913,-3.334188,-1.574478,-5.556981
+kaggle,319,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,7.02,533,-5.548240,-5.927446,-2.130176,-5.001283
+kaggle,320,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,8.02,530,-5.526541,-2.037560,-1.944943,-5.279132
+kaggle,321,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,9.02,563,-5.209437,-6.390528,-3.334188,-5.556981
+kaggle,322,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,10.02,566,-1.778511,0.000000,-0.926163,-5.649597
+kaggle,323,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,11.02,574,-1.574808,-1.111396,-0.926163,-3.426805
+kaggle,324,kgcd0cb302,screen,replay,na,na,replay/kgcd0cb302,12.02,564,-4.034305,-3.797270,-0.092616,-4.445585
+kaggle,325,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,0.0,242,1.002892,0.926163,1.944943,0.092616
+kaggle,326,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,1.01,244,1.924488,3.889887,3.612038,2.778491
+kaggle,327,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,2.01,263,-7.460641,-5.834830,-5.556981,-7.409308
+kaggle,328,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,3.02,197,-10.250257,-9.076403,-8.798553,-11.021345
+kaggle,329,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,4.02,278,-5.491329,-4.075119,-4.260352,-5.186516
+kaggle,330,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,5.03,381,-0.955260,0.000000,0.370465,-1.111396
+kaggle,331,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,6.04,366,-5.667090,-3.704654,-3.426805,-5.649597
+kaggle,332,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,7.0,359,-6.786268,-4.352968,-4.445585,-6.205296
+kaggle,333,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,8.01,359,-4.608479,-2.315409,-1.759711,-4.723434
+kaggle,334,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,9.01,359,-3.349201,-2.037560,-1.296629,-4.723434
+kaggle,335,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,10.02,367,-1.804149,-0.092616,0.740931,-2.963723
+kaggle,336,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,11.02,360,-2.787444,0.000000,2.778491,-0.833547
+kaggle,337,kgcf8704d2,screen,replay,na,na,replay/kgcf8704d2,12.03,379,-4.468499,-0.463082,-0.370465,-5.371748
+kaggle,338,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,0.0,283,-3.426288,-0.926163,0.370465,-3.241572
+kaggle,339,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,1.03,304,0.913518,0.092616,3.519421,0.555698
+kaggle,340,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,2.03,509,-4.002858,-1.944943,-1.296629,-4.630817
+kaggle,341,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,3.03,606,-5.313184,-5.742214,-2.963723,-5.464365
+kaggle,342,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,4.03,578,-8.525381,-7.224075,-6.297912,-8.520704
+kaggle,343,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,5.03,554,-7.828734,-6.853610,-5.649597,-7.965006
+kaggle,344,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,6.03,572,-7.361824,-7.594541,-7.316691,-8.242855
+kaggle,345,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,7.03,549,-8.486044,-6.575761,-6.390528,-8.242855
+kaggle,346,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,8.03,561,-8.446964,-8.798553,-8.057622,-8.428088
+kaggle,347,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,9.03,564,-2.011878,-1.574478,-2.037560,-4.167736
+kaggle,348,kg1ac7ee6f,screen,replay,na,na,replay/kg1ac7ee6f,10.03,567,-1.206445,-1.481862,-2.037560,-2.500641
+kaggle,349,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,0.0,515,5.905200,5.279132,6.760993,5.279132
+kaggle,350,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,1.0,523,5.848189,4.260352,6.390528,5.464365
+kaggle,351,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,2.0,531,-0.695663,-0.926163,-1.667094,-1.481862
+kaggle,352,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,3.0,525,4.387483,5.649597,7.501925,4.908667
+kaggle,353,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,4.0,462,6.502608,5.047591,7.779773,6.668377
+kaggle,354,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,5.0,502,3.683674,6.297912,5.834830,3.519421
+kaggle,355,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,6.0,494,-2.054743,-0.463082,0.740931,-1.481862
+kaggle,356,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,7.0,451,-0.938874,-0.648314,1.018780,-1.481862
+kaggle,357,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,8.0,482,2.787705,1.296629,3.797270,1.204013
+kaggle,358,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,9.0,551,-1.997629,-0.463082,0.926163,-2.315409
+kaggle,359,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,10.0,595,2.754861,3.148956,4.167736,2.500641
+kaggle,360,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,11.0,576,-0.788773,-1.018780,0.463082,-0.370465
+kaggle,361,kg1e3cb184,screen,replay,na,na,replay/kg1e3cb184,12.0,550,0.476425,1.018780,2.593258,0.000000
+kaggle,362,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,0.0,63,-0.002175,-1.852327,0.000000,0.648314
+kaggle,363,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,1.0,65,-0.796729,-1.204013,-2.037560,-0.833547
+kaggle,364,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,2.0,63,-0.107240,-3.148956,-0.463082,-0.740931
+kaggle,365,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,3.0,64,-4.155888,-3.797270,-5.279132,-6.575761
+kaggle,366,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,4.0,74,-2.047888,-2.871107,-3.334188,-3.797270
+kaggle,367,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,5.0,102,-0.185373,-1.111396,-1.759711,-2.222792
+kaggle,368,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,6.0,135,3.159714,2.222792,1.389245,1.296629
+kaggle,369,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,7.0,132,5.583163,4.167736,5.742214,4.075119
+kaggle,370,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,8.0,143,6.861949,6.390528,5.834830,4.908667
+kaggle,371,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,9.0,134,0.494839,2.130176,2.408025,0.694623
+kaggle,372,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,10.0,128,-0.466079,4.260352,2.593258,-2.778491
+kaggle,373,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,11.0,121,-2.634338,-0.092616,0.000000,-4.260352
+kaggle,374,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,12.0,132,6.116019,3.519421,3.797270,2.500641
+kaggle,375,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,13.03,143,0.853529,2.593258,4.352968,2.685874
+kaggle,376,kgba7116fd,screen,replay,na,na,replay/kgba7116fd,14.03,158,-1.084850,-0.926163,-0.833547,-2.315409
+kaggle,377,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,0.0,114,4.603523,5.649597,5.649597,4.630817
+kaggle,378,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,1.01,121,2.596866,2.222792,2.315409,1.481862
+kaggle,379,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,2.01,134,3.457170,3.334188,4.260352,4.260352
+kaggle,380,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,3.02,186,-1.056655,-0.555698,0.926163,-0.277849
+kaggle,381,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,4.02,176,2.426342,0.185233,1.296629,1.944943
+kaggle,382,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,5.02,185,2.650486,3.334188,3.426805,1.852327
+kaggle,383,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,6.03,182,2.128390,2.130176,2.685874,2.408025
+kaggle,384,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,8.01,185,4.462008,5.742214,5.001283,4.352968
+kaggle,385,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,9.01,202,7.507452,6.483144,7.224075,6.020063
+kaggle,386,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,10.01,204,6.105022,4.723434,5.186516,5.834830
+kaggle,387,kg1dad66b7,screen,replay,na,na,replay/kg1dad66b7,11.02,195,7.146558,7.409308,7.779773,7.594541
+kaggle,388,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,0.0,440,-6.209591,-6.575761,-5.556981,-6.390528
+kaggle,389,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,1.03,458,-3.409926,-3.704654,-1.574478,-2.593258
+kaggle,390,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,2.03,531,-5.582041,-4.260352,-2.500641,-5.371748
+kaggle,391,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,3.03,563,-5.603133,-5.279132,-5.093899,-5.649597
+kaggle,392,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,4.03,553,-7.938564,-6.853610,-6.946226,-7.965006
+kaggle,393,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,5.03,647,-4.617650,-2.778491,-2.963723,-3.334188
+kaggle,394,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,6.03,566,-3.611433,-0.926163,0.277849,-2.685874
+kaggle,395,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,7.03,678,-7.323421,-6.205296,-4.630817,-6.205296
+kaggle,396,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,8.03,765,-3.727375,1.944943,1.111396,-2.222792
+kaggle,397,kg91dcf5df,screen,replay,na,na,replay/kg91dcf5df,9.02,735,-3.436825,0.185233,-0.555698,-3.612038
+kaggle,398,kg55f74916,screen,replay,na,na,replay/kg55f74916,0.0,335,-5.241099,-3.889887,-3.612038,-5.279132
+kaggle,399,kg55f74916,screen,replay,na,na,replay/kg55f74916,1.03,313,-2.918215,-2.037560,-2.176484,-3.889887
+kaggle,400,kg55f74916,screen,replay,na,na,replay/kg55f74916,2.03,457,-5.403571,-3.797270,-3.704654,-5.927446
+kaggle,401,kg55f74916,screen,replay,na,na,replay/kg55f74916,3.03,496,-5.816865,-4.908667,-3.612038,-5.834830
+kaggle,402,kg55f74916,screen,replay,na,na,replay/kg55f74916,4.03,488,-5.868331,-6.020063,-4.630817,-6.760993
+kaggle,403,kg55f74916,screen,replay,na,na,replay/kg55f74916,5.03,511,-3.440064,-2.871107,-2.037560,-3.056340
+kaggle,404,kg55f74916,screen,replay,na,na,replay/kg55f74916,6.03,504,-5.346067,-5.279132,-3.982503,-5.742214
+kaggle,405,kg55f74916,screen,replay,na,na,replay/kg55f74916,7.03,491,-3.125837,-5.556981,-3.889887,-5.001283
+kaggle,406,kg55f74916,screen,replay,na,na,replay/kg55f74916,8.03,497,-5.076086,-5.464365,-5.093899,-5.556981
+kaggle,407,kg55f74916,screen,replay,na,na,replay/kg55f74916,9.03,497,-3.359988,-3.148956,-4.445585,-4.908667
+kaggle,408,kg55f74916,screen,replay,na,na,replay/kg55f74916,10.03,503,-2.453591,-2.778491,-2.593258,-2.500641
+kaggle,409,kg55f74916,screen,replay,na,na,replay/kg55f74916,11.03,498,-1.703831,-1.389245,-1.296629,-2.685874
+kaggle,410,kg55f74916,screen,replay,na,na,replay/kg55f74916,12.03,487,-2.205901,-1.759711,-0.833547,-2.963723
+session2,0,p03,live,,bright,yes,p03_live_bright_glasses,0.0,308,11.361739,11.808584,11.299194,10.373032
+session2,1,p03,live,,bright,yes,p03_live_bright_glasses,0.51,305,6.069449,9.632100,9.169019,4.908667
+session2,2,p03,live,,bright,yes,p03_live_bright_glasses,1.01,303,6.320976,11.808584,9.632100,6.575761
+session2,3,p03,live,,bright,yes,p03_live_bright_glasses,1.5,306,5.992167,11.808584,9.261635,6.020063
+session2,4,p03,live,,bright,yes,p03_live_bright_glasses,2.02,304,6.638898,11.808584,10.002565,5.927446
+session2,5,p03,live,,bright,yes,p03_live_bright_glasses,2.51,307,7.479073,11.808584,9.076403,6.668377
+session2,6,p03,live,,bright,yes,p03_live_bright_glasses,3.01,355,8.006673,11.669660,10.373032,7.872390
+session2,7,p03,live,,bright,yes,p03_live_bright_glasses,3.52,399,6.318393,9.446868,7.687157,4.816050
+session2,8,p03,live,,bright,yes,p03_live_bright_glasses,4.02,427,6.504614,9.539484,8.057622,5.279132
+session2,9,p03,live,,bright,yes,p03_live_bright_glasses,4.51,414,7.813615,9.446868,9.909949,6.112679
+session2,10,p03,live,,bright,yes,p03_live_bright_glasses,5.02,343,7.313906,11.669660,10.743497,7.224075
+session2,11,p03,live,,bright,yes,p03_live_bright_glasses,5.52,296,4.893537,10.373032,9.909949,6.297912
+session2,12,p03,live,,bright,yes,p03_live_bright_glasses,6.02,281,4.465783,11.808584,7.594541,5.001283
+session2,13,p03,live,,bright,yes,p03_live_bright_glasses,6.53,281,4.784988,9.354251,8.705936,4.352968
+session2,14,p03,live,,bright,yes,p03_live_bright_glasses,7.02,295,6.699800,9.446868,11.113962,8.983786
+session2,15,p03,live,,bright,yes,p03_live_bright_glasses,7.52,297,5.894045,11.808584,11.391811,7.409308
+session2,16,p03,live,,bright,yes,p03_live_bright_glasses,8.03,293,6.667089,11.808584,10.836113,6.853610
+session2,17,p03,live,,bright,yes,p03_live_bright_glasses,8.53,299,4.121759,11.391811,8.798553,3.334188
+session2,18,p03,live,,bright,yes,p03_live_bright_glasses,9.02,298,5.064717,11.484427,9.539484,3.797270
+session2,19,p03,live,,bright,yes,p03_live_bright_glasses,9.5,298,4.316149,11.808584,9.446868,4.723434
+session2,20,p03,live,,bright,yes,p03_live_bright_glasses,10.03,285,5.267038,10.928729,10.558264,5.927446
+session2,21,p03,live,,bright,yes,p03_live_bright_glasses,10.53,286,3.533728,10.095182,9.724717,7.594541
+session2,22,p03,live,,bright,yes,p03_live_bright_glasses,11.02,286,4.149143,10.002565,9.354251,5.834830
+session2,23,p03,live,,bright,yes,p03_live_bright_glasses,11.5,281,6.484106,11.808584,11.808584,8.335471
+session2,24,p03,live,,bright,yes,p03_live_bright_glasses,12.0,275,3.641155,9.354251,11.762277,7.131459
+session2,25,p03,live,,bright,yes,p03_live_bright_glasses,12.53,277,0.514131,8.705936,8.613320,2.315409
+session2,26,p03,live,,bright,yes,p03_live_bright_glasses,13.01,282,2.292664,11.113962,7.316691,2.685874
+session2,27,p03,live,,bright,yes,p03_live_bright_glasses,13.5,286,4.308699,10.280415,8.335471,4.352968
+session2,28,p03,live,,bright,yes,p03_live_bright_glasses,14.0,293,4.278082,11.808584,9.724717,5.186516
+session2,29,p03,live,,bright,yes,p03_live_bright_glasses,14.51,284,5.250176,11.808584,10.280415,7.131459
+session2,30,p03,live,,bright,yes,p03_live_bright_glasses,15.01,282,4.294976,11.808584,11.808584,4.352968
+session2,31,p03,live,,bright,yes,p03_live_bright_glasses,15.5,279,5.574164,11.808584,11.808584,5.001283
+session2,32,p03,live,,bright,yes,p03_live_bright_glasses,16.02,286,3.205795,11.299194,9.724717,4.723434
+session2,33,p03,live,,bright,yes,p03_live_bright_glasses,16.51,283,4.245088,8.520704,7.224075,4.538201
+session2,34,p03,live,,bright,yes,p03_live_bright_glasses,17.01,293,4.627955,9.169019,8.613320,5.556981
+session2,35,p03,live,,bright,yes,p03_live_bright_glasses,17.52,293,6.322157,9.539484,8.428088,5.371748
+session2,36,p03,live,,bright,yes,p03_live_bright_glasses,18.02,292,5.143680,9.632100,8.428088,2.871107
+session2,37,p03,live,,bright,no,p03_live_bright_noglasses,0.0,302,12.369371,11.808584,11.808584,11.808584
+session2,38,p03,live,,bright,no,p03_live_bright_noglasses,0.51,300,4.013452,11.669660,9.169019,4.908667
+session2,39,p03,live,,bright,no,p03_live_bright_noglasses,1.01,303,4.067900,11.299194,8.520704,4.167736
+session2,40,p03,live,,bright,no,p03_live_bright_noglasses,1.5,303,5.132564,11.808584,8.428088,4.352968
+session2,41,p03,live,,bright,no,p03_live_bright_noglasses,2.02,305,3.038662,10.187799,6.668377,2.500641
+session2,42,p03,live,,bright,no,p03_live_bright_noglasses,2.51,345,5.591326,8.891170,5.556981,4.167736
+session2,43,p03,live,,bright,no,p03_live_bright_noglasses,3.01,383,4.914432,8.798553,6.297912,4.352968
+session2,44,p03,live,,bright,no,p03_live_bright_noglasses,3.52,393,7.451578,10.187799,8.242855,7.409308
+session2,45,p03,live,,bright,no,p03_live_bright_noglasses,4.02,359,4.264646,7.965006,6.297912,4.723434
+session2,46,p03,live,,bright,no,p03_live_bright_noglasses,4.51,295,6.578570,11.808584,8.705936,6.390528
+session2,47,p03,live,,bright,no,p03_live_bright_noglasses,5.02,285,5.103983,11.484427,9.817333,5.186516
+session2,48,p03,live,,bright,no,p03_live_bright_noglasses,5.52,287,5.598957,11.669660,11.299194,6.020063
+session2,49,p03,live,,bright,no,p03_live_bright_noglasses,6.02,291,3.742661,11.113962,10.465648,3.519421
+session2,50,p03,live,,bright,no,p03_live_bright_noglasses,6.53,290,2.393804,11.113962,8.242855,2.685874
+session2,51,p03,live,,bright,no,p03_live_bright_noglasses,7.02,283,2.458613,7.131459,7.131459,1.574478
+session2,52,p03,live,,bright,no,p03_live_bright_noglasses,7.52,292,3.004650,11.113962,8.613320,3.704654
+session2,53,p03,live,,bright,no,p03_live_bright_noglasses,8.03,296,3.510916,10.743497,8.242855,3.982503
+session2,54,p03,live,,bright,no,p03_live_bright_noglasses,8.53,284,3.864440,10.743497,8.983786,4.445585
+session2,55,p03,live,,bright,no,p03_live_bright_noglasses,9.02,282,6.296263,10.465648,10.002565,5.556981
+session2,56,p03,live,,bright,no,p03_live_bright_noglasses,9.5,284,3.062008,9.169019,9.261635,5.279132
+session2,57,p03,live,,bright,no,p03_live_bright_noglasses,10.03,277,2.260640,9.354251,8.798553,1.018780
+session2,58,p03,live,,bright,no,p03_live_bright_noglasses,10.53,281,4.962884,11.808584,11.762277,4.677126
+session2,59,p03,live,,bright,no,p03_live_bright_noglasses,11.01,287,5.655620,11.808584,9.909949,4.723434
+session2,60,p03,live,,bright,no,p03_live_bright_noglasses,11.5,291,4.011831,10.095182,6.668377,3.426805
+session2,61,p03,live,,bright,no,p03_live_bright_noglasses,12.03,292,0.703584,8.150239,4.352968,-0.833547
+session2,62,p03,live,,bright,no,p03_live_bright_noglasses,12.51,288,4.680906,11.577044,9.909949,4.260352
+session2,63,p03,live,,bright,no,p03_live_bright_noglasses,13.01,290,4.988886,11.808584,11.391811,5.371748
+session2,64,p03,live,,bright,no,p03_live_bright_noglasses,13.5,284,6.403252,11.808584,11.299194,6.483144
+session2,65,p03,live,,bright,no,p03_live_bright_noglasses,14.02,286,7.182810,11.808584,11.808584,6.297912
+session2,66,p03,live,,bright,no,p03_live_bright_noglasses,14.51,289,7.422206,11.808584,11.762277,9.400559
+session2,67,p03,live,,bright,no,p03_live_bright_noglasses,15.01,291,7.556865,11.808584,10.650880,6.483144
+session2,68,p03,live,,bright,no,p03_live_bright_noglasses,15.52,291,1.439296,8.891170,5.834830,1.204013
+session2,69,p03,live,,bright,no,p03_live_bright_noglasses,16.02,292,1.600408,9.446868,4.908667,2.408025
+session2,70,p03,live,,bright,no,p03_live_bright_noglasses,16.51,300,1.186032,7.687157,5.464365,1.944943
+session2,71,p03,live,,dim,yes,p03_live_dim_glasses,0.0,313,1.089277,1.852327,2.778491,-0.370465
+session2,72,p03,live,,dim,yes,p03_live_dim_glasses,0.51,312,-0.192271,3.148956,2.037560,0.000000
+session2,73,p03,live,,dim,yes,p03_live_dim_glasses,1.01,312,1.098988,2.130176,3.148956,2.037560
+session2,74,p03,live,,dim,yes,p03_live_dim_glasses,1.5,307,-2.757820,-2.778491,-0.092616,-1.667094
+session2,75,p03,live,,dim,yes,p03_live_dim_glasses,2.0,310,-0.259997,0.277849,0.463082,-0.370465
+session2,76,p03,live,,dim,yes,p03_live_dim_glasses,2.51,353,1.055537,1.667094,2.130176,1.296629
+session2,77,p03,live,,dim,yes,p03_live_dim_glasses,3.01,396,-1.441875,0.833547,-0.277849,-1.018780
+session2,78,p03,live,,dim,yes,p03_live_dim_glasses,3.5,419,-0.782249,-1.018780,0.555698,0.000000
+session2,79,p03,live,,dim,yes,p03_live_dim_glasses,4.02,423,-0.405920,-0.648314,1.111396,0.000000
+session2,80,p03,live,,dim,yes,p03_live_dim_glasses,4.51,393,-2.671541,-0.370465,-0.463082,-1.204013
+session2,81,p03,live,,dim,yes,p03_live_dim_glasses,5.01,318,-2.529119,-1.389245,0.555698,-1.852327
+session2,82,p03,live,,dim,yes,p03_live_dim_glasses,5.52,275,-0.821633,-1.111396,0.740931,0.555698
+session2,83,p03,live,,dim,yes,p03_live_dim_glasses,6.02,274,1.490658,0.370465,2.778491,2.130176
+session2,84,p03,live,,dim,yes,p03_live_dim_glasses,6.51,272,-1.366676,-1.111396,0.277849,-0.185233
+session2,85,p03,live,,dim,yes,p03_live_dim_glasses,7.02,281,0.672520,-1.204013,1.481862,0.833547
+session2,86,p03,live,,dim,yes,p03_live_dim_glasses,7.52,312,0.184137,-0.185233,1.204013,0.740931
+session2,87,p03,live,,dim,yes,p03_live_dim_glasses,8.02,313,-0.703812,-1.111396,0.000000,-0.277849
+session2,88,p03,live,,dim,yes,p03_live_dim_glasses,8.58,315,-1.354779,0.370465,0.463082,-0.463082
+session2,89,p03,live,,dim,yes,p03_live_dim_glasses,9.07,307,5.606194,4.538201,5.093899,5.834830
+session2,90,p03,live,,dim,yes,p03_live_dim_glasses,9.57,307,4.355145,3.704654,6.297912,4.723434
+session2,91,p03,live,,dim,yes,p03_live_dim_glasses,10.08,309,-1.535524,0.555698,3.056340,-0.648314
+session2,92,p03,live,,dim,yes,p03_live_dim_glasses,10.58,335,0.974230,3.889887,4.352968,2.222792
+session2,93,p03,live,,dim,yes,p03_live_dim_glasses,11.07,326,0.643631,3.704654,1.481862,1.759711
+session2,94,p03,live,,dim,yes,p03_live_dim_glasses,11.57,328,-0.451152,0.648314,1.759711,-1.574478
+session2,95,p03,live,,dim,yes,p03_live_dim_glasses,12.08,304,-1.359936,0.463082,2.778491,-1.574478
+session2,96,p03,live,,dim,yes,p03_live_dim_glasses,12.58,308,-0.236333,2.871107,2.408025,-0.833547
+session2,97,p03,live,,dim,yes,p03_live_dim_glasses,13.07,305,-0.144776,1.944943,3.704654,-1.389245
+session2,98,p03,live,,dim,yes,p03_live_dim_glasses,13.58,283,-3.252104,-0.370465,-0.092616,-3.334188
+session2,99,p03,live,,dim,yes,p03_live_dim_glasses,14.08,299,-0.184419,0.740931,1.389245,-0.833547
+session2,100,p03,live,,dim,yes,p03_live_dim_glasses,14.58,301,-0.743355,1.852327,2.778491,0.000000
+session2,101,p03,live,,dim,yes,p03_live_dim_glasses,15.07,305,-0.450644,-1.389245,0.833547,-1.018780
+session2,102,p03,live,,dim,yes,p03_live_dim_glasses,15.54,308,3.743365,2.408025,3.056340,2.500641
+session2,103,p03,live,,dim,yes,p03_live_dim_glasses,16.03,307,-1.971892,-1.018780,0.555698,-1.759711
+session2,104,p03,live,,dim,yes,p03_live_dim_glasses,16.53,300,-5.458273,-0.463082,0.370465,-4.352968
+session2,105,p03,live,,dim,yes,p03_live_dim_glasses,17.02,309,0.775751,1.667094,2.963723,1.296629
+session2,106,p03,live,,dim,yes,p03_live_dim_glasses,17.54,311,-0.895949,-1.296629,2.593258,-0.370465
+session2,107,p03,live,,dim,yes,p03_live_dim_glasses,18.03,304,-0.956334,0.740931,0.555698,-1.481862
+session2,108,p03,live,,dim,yes,p03_live_dim_glasses,18.53,302,-3.881691,-1.296629,3.426805,-1.759711
+session2,109,p03,live,,dim,no,p03_live_dim_noglasses,0.0,313,-1.381317,2.037560,2.315409,-1.111396
+session2,110,p03,live,,dim,no,p03_live_dim_noglasses,0.59,311,0.903505,2.222792,2.871107,1.389245
+session2,111,p03,live,,dim,no,p03_live_dim_noglasses,1.1,307,1.888722,3.797270,3.612038,1.759711
+session2,112,p03,live,,dim,no,p03_live_dim_noglasses,1.5,306,1.607630,4.260352,6.205296,3.426805
+session2,113,p03,live,,dim,no,p03_live_dim_noglasses,2.1,316,0.396569,1.296629,1.574478,0.185233
+session2,114,p03,live,,dim,no,p03_live_dim_noglasses,2.61,351,0.150707,0.555698,2.778491,0.185233
+session2,115,p03,live,,dim,no,p03_live_dim_noglasses,3.01,383,-0.487554,1.389245,2.130176,-0.463082
+session2,116,p03,live,,dim,no,p03_live_dim_noglasses,3.5,416,1.918355,0.648314,4.167736,2.037560
+session2,117,p03,live,,dim,no,p03_live_dim_noglasses,4.05,415,0.789967,-1.759711,2.130176,0.555698
+session2,118,p03,live,,dim,no,p03_live_dim_noglasses,4.56,344,1.207235,2.130176,3.426805,2.222792
+session2,119,p03,live,,dim,no,p03_live_dim_noglasses,5.01,299,1.921188,1.944943,2.963723,2.037560
+session2,120,p03,live,,dim,no,p03_live_dim_noglasses,5.5,279,2.708066,2.408025,2.963723,2.593258
+session2,121,p03,live,,dim,no,p03_live_dim_noglasses,6.11,287,1.690150,2.130176,2.500641,1.018780
+session2,122,p03,live,,dim,no,p03_live_dim_noglasses,6.51,286,0.265968,1.944943,2.500641,1.852327
+session2,123,p03,live,,dim,no,p03_live_dim_noglasses,7.01,293,3.672540,4.075119,6.668377,5.371748
+session2,124,p03,live,,dim,no,p03_live_dim_noglasses,7.5,290,3.501750,4.538201,5.834830,4.075119
+session2,125,p03,live,,dim,no,p03_live_dim_noglasses,8.02,296,-0.185136,1.111396,0.370465,-1.667094
+session2,126,p03,live,,dim,no,p03_live_dim_noglasses,8.51,304,1.269271,2.871107,2.500641,-1.389245
+session2,127,p03,live,,dim,no,p03_live_dim_noglasses,9.01,298,0.107213,1.852327,0.000000,-1.759711
+session2,128,p03,live,,dim,no,p03_live_dim_noglasses,9.5,290,2.525981,3.241572,3.334188,2.871107
+session2,129,p03,live,,dim,no,p03_live_dim_noglasses,10.02,287,2.582316,2.315409,4.352968,2.593258
+session2,130,p03,live,,dim,no,p03_live_dim_noglasses,10.51,287,1.086532,1.111396,3.241572,1.204013
+session2,131,p03,live,,dim,no,p03_live_dim_noglasses,11.01,285,1.267760,0.277849,2.778491,2.222792
+session2,132,p03,live,,dim,no,p03_live_dim_noglasses,11.52,288,1.397850,2.500641,2.315409,1.481862
+session2,133,p03,live,,dim,no,p03_live_dim_noglasses,12.02,284,2.911758,4.075119,3.056340,2.778491
+session2,134,p03,live,,dim,no,p03_live_dim_noglasses,12.51,295,2.830761,3.056340,3.426805,3.334188
+session2,135,p03,live,,dim,no,p03_live_dim_noglasses,13.02,295,2.814800,1.667094,1.574478,0.926163
+session2,136,p03,live,,dim,no,p03_live_dim_noglasses,13.57,295,1.551653,2.130176,3.241572,0.555698
+session2,137,p03,live,,dim,no,p03_live_dim_noglasses,14.06,293,-2.701669,-0.370465,0.185233,-4.630817
+session2,138,p03,live,,dim,no,p03_live_dim_noglasses,14.58,298,1.669916,2.500641,4.352968,0.833547
+session2,139,p03,live,,dim,no,p03_live_dim_noglasses,15.07,287,-0.662312,3.241572,2.222792,-1.111396
+session2,140,p03,live,,dim,no,p03_live_dim_noglasses,15.57,296,-0.233976,1.389245,3.056340,0.740931
+session2,141,p03,live,,dim,no,p03_live_dim_noglasses,16.06,295,-0.259945,2.500641,2.593258,0.277849
+session2,142,p03,live,,dim,no,p03_live_dim_noglasses,16.58,301,-0.039669,0.926163,3.612038,-0.833547
+session2,143,p03,print,,bright,yes,p03_print_bright_glasses,0.0,311,1.350096,3.241572,2.685874,2.685874
+session2,144,p03,print,,bright,yes,p03_print_bright_glasses,0.53,319,2.227372,3.148956,2.963723,2.315409
+session2,145,p03,print,,bright,yes,p03_print_bright_glasses,1.02,337,1.407094,4.260352,2.685874,2.500641
+session2,146,p03,print,,bright,yes,p03_print_bright_glasses,1.52,409,-0.261099,1.296629,2.130176,0.277849
+session2,147,p03,print,,bright,yes,p03_print_bright_glasses,2.02,482,-0.365108,1.111396,2.130176,1.574478
+session2,148,p03,print,,bright,yes,p03_print_bright_glasses,2.51,494,-0.936892,0.555698,2.685874,1.759711
+session2,149,p03,print,,bright,yes,p03_print_bright_glasses,3.01,493,-2.355855,-0.555698,0.740931,-2.315409
+session2,150,p03,print,,bright,yes,p03_print_bright_glasses,3.5,493,-2.351215,0.740931,0.185233,1.111396
+session2,151,p03,print,,bright,yes,p03_print_bright_glasses,4.03,519,-0.866294,1.111396,1.204013,-0.185233
+session2,152,p03,print,,bright,yes,p03_print_bright_glasses,4.53,510,-0.872806,0.000000,2.408025,0.277849
+session2,153,p03,print,,bright,yes,p03_print_bright_glasses,5.02,570,-5.292194,-1.944943,-2.222792,-4.816050
+session2,154,p03,print,,bright,yes,p03_print_bright_glasses,5.52,597,-5.307420,-4.630817,-1.111396,-3.982503
+session2,155,p03,print,,bright,yes,p03_print_bright_glasses,6.02,576,-4.509747,-0.648314,-0.370465,-3.148956
+session2,156,p03,print,,bright,yes,p03_print_bright_glasses,6.51,554,-4.626339,-1.296629,-1.389245,-4.630817
+session2,157,p03,print,,bright,yes,p03_print_bright_glasses,7.01,535,-2.743303,-0.555698,0.463082,-0.833547
+session2,158,p03,print,,bright,yes,p03_print_bright_glasses,7.5,496,-2.023910,-1.296629,0.277849,-0.092616
+session2,159,p03,print,,bright,yes,p03_print_bright_glasses,8.03,482,2.902359,2.963723,6.575761,3.426805
+session2,160,p03,print,,bright,yes,p03_print_bright_glasses,8.53,548,-5.089111,-1.111396,-0.926163,-4.538201
+session2,161,p03,print,,bright,yes,p03_print_bright_glasses,9.02,488,-5.518843,-4.260352,-1.852327,-4.445585
+session2,162,p03,print,,bright,yes,p03_print_bright_glasses,9.52,475,-3.589206,-1.481862,0.277849,-2.315409
+session2,163,p03,print,,bright,yes,p03_print_bright_glasses,10.02,475,-3.361678,-1.389245,0.277849,-0.092616
+session2,164,p03,print,,bright,yes,p03_print_bright_glasses,10.51,445,0.970262,2.222792,2.871107,1.574478
+session2,165,p03,print,,bright,yes,p03_print_bright_glasses,11.01,425,-0.847495,0.370465,3.287880,1.759711
+session2,166,p03,print,,bright,yes,p03_print_bright_glasses,11.5,471,0.586160,2.454333,3.056340,0.463082
+session2,167,p03,print,,bright,yes,p03_print_bright_glasses,12.0,487,-0.092110,3.334188,4.075119,3.148956
+session2,168,p03,print,,bright,yes,p03_print_bright_glasses,12.53,506,-2.628994,1.389245,2.408025,0.277849
+session2,169,p03,print,,bright,yes,p03_print_bright_glasses,13.02,505,-3.420240,-0.555698,-1.944943,-2.222792
+session2,170,p03,print,,bright,yes,p03_print_bright_glasses,13.52,491,-5.307786,1.296629,1.574478,-2.222792
+session2,171,p03,print,,bright,yes,p03_print_bright_glasses,14.02,457,-2.015865,0.370465,2.685874,-0.370465
+session2,172,p03,print,,bright,yes,p03_print_bright_glasses,14.51,483,-0.689849,1.204013,2.685874,1.111396
+session2,173,p03,print,,bright,no,p03_print_bright_noglasses,0.0,297,3.896697,6.668377,7.224075,4.908667
+session2,174,p03,print,,bright,no,p03_print_bright_noglasses,0.53,295,2.710445,2.315409,3.148956,3.056340
+session2,175,p03,print,,bright,no,p03_print_bright_noglasses,1.02,299,1.287885,1.389245,3.982503,1.852327
+session2,176,p03,print,,bright,no,p03_print_bright_noglasses,1.52,292,3.329119,3.148956,5.464365,5.371748
+session2,177,p03,print,,bright,no,p03_print_bright_noglasses,2.02,290,3.682091,2.685874,5.649597,4.167736
+session2,178,p03,print,,bright,no,p03_print_bright_noglasses,2.51,311,2.997881,3.334188,6.575761,5.371748
+session2,179,p03,print,,bright,no,p03_print_bright_noglasses,3.01,382,3.943063,1.944943,6.575761,5.556981
+session2,180,p03,print,,bright,no,p03_print_bright_noglasses,3.5,426,4.796194,7.965006,10.373032,8.520704
+session2,181,p03,print,,bright,no,p03_print_bright_noglasses,4.03,457,5.222270,6.112679,8.057622,6.946226
+session2,182,p03,print,,bright,no,p03_print_bright_noglasses,4.53,480,4.545308,6.668377,7.965006,5.834830
+session2,183,p03,print,,bright,no,p03_print_bright_noglasses,5.02,483,3.170700,4.538201,5.649597,3.982503
+session2,184,p03,print,,bright,no,p03_print_bright_noglasses,5.52,505,5.811178,7.594541,9.632100,7.409308
+session2,185,p03,print,,bright,no,p03_print_bright_noglasses,6.02,493,4.330649,5.742214,7.131459,6.020063
+session2,186,p03,print,,bright,no,p03_print_bright_noglasses,6.51,417,5.563588,5.556981,8.242855,7.687157
+session2,187,p03,print,,bright,no,p03_print_bright_noglasses,7.01,355,4.209901,4.352968,6.020063,5.001283
+session2,188,p03,print,,bright,no,p03_print_bright_noglasses,7.5,433,3.821597,6.483144,6.853610,5.742214
+session2,189,p03,print,,bright,no,p03_print_bright_noglasses,8.03,587,1.308454,3.056340,4.075119,1.018780
+session2,190,p03,print,,bright,no,p03_print_bright_noglasses,8.53,670,1.692695,4.075119,5.834830,2.408025
+session2,191,p03,print,,bright,no,p03_print_bright_noglasses,9.02,657,2.466919,4.260352,4.816050,1.296629
+session2,192,p03,print,,bright,no,p03_print_bright_noglasses,9.52,665,0.276486,3.612038,3.056340,0.370465
+session2,193,p03,print,,bright,no,p03_print_bright_noglasses,10.02,664,2.146394,5.464365,6.390528,3.612038
+session2,194,p03,print,,bright,no,p03_print_bright_noglasses,10.51,644,-0.960245,0.555698,3.704654,0.648314
+session2,195,p03,print,,bright,no,p03_print_bright_noglasses,11.01,627,-3.579924,-0.370465,-2.130176,-3.612038
+session2,196,p03,print,,bright,no,p03_print_bright_noglasses,11.5,618,-3.274679,0.277849,-0.648314,-4.538201
+session2,197,p03,print,,bright,no,p03_print_bright_noglasses,12.03,589,-4.670032,-0.370465,-3.056340,-5.001283
+session2,198,p03,print,,bright,no,p03_print_bright_noglasses,12.53,570,-1.838599,0.926163,2.130176,-1.944943
+session2,199,p03,print,,bright,no,p03_print_bright_noglasses,13.02,568,-1.221442,1.852327,0.555698,-1.389245
+session2,200,p03,print,,bright,no,p03_print_bright_noglasses,13.52,567,-0.884466,1.389245,0.277849,-0.092616
+session2,201,p03,print,,dim,yes,p03_print_dim_glasses,0.0,437,-5.668338,-3.334188,-5.093899,-7.038843
+session2,202,p03,print,,dim,yes,p03_print_dim_glasses,0.51,475,-0.995787,-1.018780,-1.018780,-1.481862
+session2,203,p03,print,,dim,yes,p03_print_dim_glasses,1.01,519,-7.286922,-2.593258,-6.853610,-7.038843
+session2,204,p03,print,,dim,yes,p03_print_dim_glasses,1.5,633,-2.070102,-2.963723,-2.408025,-1.667094
+session2,205,p03,print,,dim,yes,p03_print_dim_glasses,2.02,719,0.369975,-1.389245,-0.277849,0.648314
+session2,206,p03,print,,dim,yes,p03_print_dim_glasses,2.51,644,-7.511534,-8.011314,-6.205296,-7.409308
+session2,207,p03,print,,dim,yes,p03_print_dim_glasses,3.01,547,-4.716694,-3.519421,-4.445585,-4.445585
+session2,208,p03,print,,dim,yes,p03_print_dim_glasses,3.5,642,-2.233629,-0.463082,0.926163,-0.833547
+session2,209,p03,print,,dim,yes,p03_print_dim_glasses,4.02,609,-3.275539,-0.740931,-1.111396,-3.056340
+session2,210,p03,print,,dim,yes,p03_print_dim_glasses,4.51,574,-11.964792,-8.150239,-8.613320,-11.762277
+session2,211,p03,print,,dim,yes,p03_print_dim_glasses,5.01,634,-7.796309,-5.556981,-5.371748,-6.020063
+session2,212,p03,print,,dim,yes,p03_print_dim_glasses,5.52,561,-8.255372,-3.982503,-4.075119,-6.760993
+session2,213,p03,print,,dim,yes,p03_print_dim_glasses,6.02,523,-8.765600,-4.630817,-4.445585,-8.520704
+session2,214,p03,print,,dim,yes,p03_print_dim_glasses,6.51,504,-11.288195,-6.668377,-6.946226,-11.299194
+session2,215,p03,print,,dim,yes,p03_print_dim_glasses,7.02,589,-4.970925,-3.334188,-4.908667,-5.742214
+session2,216,p03,print,,dim,yes,p03_print_dim_glasses,7.52,550,-4.784245,-2.963723,-2.593258,-3.704654
+session2,217,p03,print,,dim,yes,p03_print_dim_glasses,8.02,493,-4.189686,-0.277849,-0.648314,-3.148956
+session2,218,p03,print,,dim,yes,p03_print_dim_glasses,8.53,447,-2.020781,0.740931,-0.370465,0.092616
+session2,219,p03,print,,dim,yes,p03_print_dim_glasses,9.02,403,-2.041144,0.092616,0.740931,0.370465
+session2,220,p03,print,,dim,yes,p03_print_dim_glasses,9.52,404,-0.241400,2.222792,0.648314,-0.463082
+session2,221,p03,print,,dim,yes,p03_print_dim_glasses,10.03,392,-2.970490,-1.574478,-0.648314,-2.130176
+session2,222,p03,print,,dim,yes,p03_print_dim_glasses,10.53,372,-1.326468,1.944943,2.037560,1.111396
+session2,223,p03,print,,dim,yes,p03_print_dim_glasses,11.02,362,-1.266283,1.296629,0.555698,0.833547
+session2,224,p03,print,,dim,yes,p03_print_dim_glasses,11.52,382,-3.458746,0.370465,-0.648314,-0.926163
+session2,225,p03,print,,dim,yes,p03_print_dim_glasses,12.03,433,-3.044466,1.759711,-0.740931,-1.574478
+session2,226,p03,print,,dim,no,p03_print_dim_noglasses,0.0,419,-6.952031,-3.612038,-7.965006,-7.687157
+session2,227,p03,print,,dim,no,p03_print_dim_noglasses,0.51,441,-4.514540,-0.926163,-4.075119,-4.075119
+session2,228,p03,print,,dim,no,p03_print_dim_noglasses,1.01,470,-5.269802,-0.463082,-5.093899,-5.464365
+session2,229,p03,print,,dim,no,p03_print_dim_noglasses,1.5,556,-4.743943,-1.852327,-4.908667,-4.352968
+session2,230,p03,print,,dim,no,p03_print_dim_noglasses,2.02,715,-5.197513,-2.778491,-5.001283,-4.538201
+session2,231,p03,print,,dim,no,p03_print_dim_noglasses,2.51,733,-6.675079,-4.908667,-3.704654,-4.816050
+session2,232,p03,print,,dim,no,p03_print_dim_noglasses,3.01,705,-7.766444,-6.297912,-4.723434,-6.390528
+session2,233,p03,print,,dim,no,p03_print_dim_noglasses,3.52,682,-4.304120,-2.037560,-2.871107,-3.797270
+session2,234,p03,print,,dim,no,p03_print_dim_noglasses,4.02,619,-4.808915,-4.167736,-5.186516,-4.445585
+session2,235,p03,print,,dim,no,p03_print_dim_noglasses,4.51,578,-7.537300,-4.352968,-5.927446,-6.483144
+session2,236,p03,print,,dim,no,p03_print_dim_noglasses,5.02,550,-8.601194,-6.575761,-7.224075,-9.354251
+session2,237,p03,print,,dim,no,p03_print_dim_noglasses,5.52,536,-7.016216,-4.816050,-5.464365,-6.853610
+session2,238,p03,print,,dim,no,p03_print_dim_noglasses,6.02,486,-6.337521,-1.759711,-4.260352,-5.371748
+session2,239,p03,print,,dim,no,p03_print_dim_noglasses,6.51,486,-4.887844,-1.944943,-2.315409,-4.167736
+session2,240,p03,print,,dim,no,p03_print_dim_noglasses,7.02,452,-5.785054,-5.186516,-2.130176,-5.001283
+session2,241,p03,print,,dim,no,p03_print_dim_noglasses,7.52,502,-7.628537,-6.390528,-4.630817,-5.649597
+session2,242,p03,print,,dim,no,p03_print_dim_noglasses,8.02,506,-5.602650,-5.927446,-3.426805,-3.797270
+session2,243,p03,print,,dim,no,p03_print_dim_noglasses,8.53,479,-4.433854,-3.612038,-1.389245,-3.982503
+session2,244,p03,print,,dim,no,p03_print_dim_noglasses,9.02,540,-6.660805,-6.575761,-2.222792,-3.426805
+session2,245,p03,print,,dim,no,p03_print_dim_noglasses,9.52,447,-4.145925,-1.111396,-1.018780,-1.296629
+session2,246,p03,print,,dim,no,p03_print_dim_noglasses,10.03,403,-4.137168,-0.833547,2.315409,-1.759711
+session2,247,p03,print,,dim,no,p03_print_dim_noglasses,10.53,359,-5.323078,-0.092616,1.944943,-2.315409
+session2,248,p03,print,,dim,no,p03_print_dim_noglasses,11.02,399,-10.955503,-6.853610,-6.946226,-9.909949
+session2,249,p03,print,,dim,no,p03_print_dim_noglasses,11.54,449,-6.029933,-5.371748,-3.612038,-5.186516
+session2,250,p03,print,,dim,no,p03_print_dim_noglasses,12.03,487,-3.292034,-2.593258,-2.315409,-2.315409
+session2,251,p03,print,,dim,no,p03_print_dim_noglasses,12.53,490,-6.545443,-4.352968,-1.759711,-5.093899
+session2,252,p03,print,,dim,no,p03_print_dim_noglasses,13.04,501,-4.848471,-3.519421,-2.871107,-4.538201
+session2,253,p03,print,,dim,no,p03_print_dim_noglasses,13.54,493,-7.484826,-5.186516,-4.816050,-5.834830
+session2,254,p03,print,,dim,no,p03_print_dim_noglasses,14.03,457,-8.465656,-6.760993,-5.649597,-6.205296
+session2,255,p03,print,,dim,no,p03_print_dim_noglasses,14.53,438,-6.865219,-4.723434,-4.630817,-4.816050
+session2,256,p01,live,,bright,yes,p01_live_bright_glasses,0.0,315,-0.356489,7.687157,7.594541,4.445585
+session2,257,p01,live,,bright,yes,p01_live_bright_glasses,0.53,316,2.317632,9.724717,10.836113,6.297912
+session2,258,p01,live,,bright,yes,p01_live_bright_glasses,1.02,314,3.471959,11.299194,11.762277,6.946226
+session2,259,p01,live,,bright,yes,p01_live_bright_glasses,1.52,345,5.414031,8.613320,10.836113,6.297912
+session2,260,p01,live,,bright,yes,p01_live_bright_glasses,2.02,464,6.506118,11.808584,11.808584,7.224075
+session2,261,p01,live,,bright,yes,p01_live_bright_glasses,2.51,610,12.728967,11.808584,11.808584,11.808584
+session2,262,p01,live,,bright,yes,p01_live_bright_glasses,3.01,662,14.260615,11.808584,11.808584,11.808584
+session2,263,p01,live,,bright,yes,p01_live_bright_glasses,3.5,674,11.254352,11.808584,11.808584,11.577044
+session2,264,p01,live,,bright,yes,p01_live_bright_glasses,4.02,673,10.616039,11.808584,11.808584,11.021345
+session2,265,p01,live,,bright,yes,p01_live_bright_glasses,4.51,521,3.664078,8.798553,7.501925,4.075119
+session2,266,p01,live,,bright,yes,p01_live_bright_glasses,5.01,372,-0.547358,5.001283,4.167736,1.018780
+session2,267,p01,live,,bright,yes,p01_live_bright_glasses,5.52,311,-1.006268,1.389245,5.464365,2.037560
+session2,268,p01,live,,bright,yes,p01_live_bright_glasses,6.02,309,1.249772,6.483144,5.834830,2.315409
+session2,269,p01,live,,bright,yes,p01_live_bright_glasses,6.51,312,1.320976,5.464365,8.057622,4.352968
+session2,270,p01,live,,bright,yes,p01_live_bright_glasses,7.02,310,0.789029,3.797270,6.112679,3.704654
+session2,271,p01,live,,bright,yes,p01_live_bright_glasses,7.52,318,1.179984,4.445585,7.224075,3.519421
+session2,272,p01,live,,bright,yes,p01_live_bright_glasses,8.02,308,4.292109,7.038843,8.613320,6.020063
+session2,273,p01,live,,bright,yes,p01_live_bright_glasses,8.53,309,3.422136,5.001283,6.020063,5.093899
+session2,274,p01,live,,bright,yes,p01_live_bright_glasses,9.02,309,0.572573,5.279132,8.613320,3.612038
+session2,275,p01,live,,bright,yes,p01_live_bright_glasses,9.52,282,-2.309619,1.667094,4.075119,-0.833547
+session2,276,p01,live,,bright,yes,p01_live_bright_glasses,10.03,267,0.686804,4.538201,7.316691,2.408025
+session2,277,p01,live,,bright,yes,p01_live_bright_glasses,10.53,297,-8.086605,-0.463082,-0.833547,-4.630817
+session2,278,p01,live,,bright,yes,p01_live_bright_glasses,11.02,291,-5.083356,2.315409,0.185233,-3.334188
+session2,279,p01,live,,bright,yes,p01_live_bright_glasses,11.5,277,-2.072760,4.167736,4.167736,0.648314
+session2,280,p01,live,,bright,yes,p01_live_bright_glasses,12.03,314,0.787733,4.816050,8.798553,2.685874
+session2,281,p01,live,,bright,yes,p01_live_bright_glasses,12.53,304,-0.002390,3.612038,3.704654,2.408025
+session2,282,p01,live,,bright,yes,p01_live_bright_glasses,13.01,300,-5.314199,-2.963723,3.426805,-2.963723
+session2,283,p01,live,,bright,yes,p01_live_bright_glasses,13.5,277,-0.039733,4.538201,6.390528,0.370465
+session2,284,p01,live,,bright,yes,p01_live_bright_glasses,14.03,289,-2.384750,2.222792,2.408025,-0.926163
+session2,285,p01,live,,bright,yes,p01_live_bright_glasses,14.51,316,-3.687057,3.426805,2.871107,-0.833547
+session2,286,p01,live,,bright,yes,p01_live_bright_glasses,15.01,296,0.268378,3.704654,3.889887,2.871107
+session2,287,p01,live,,bright,yes,p01_live_bright_glasses,15.5,286,-3.840543,3.519421,3.148956,-0.740931
+session2,288,p01,live,,bright,yes,p01_live_bright_glasses,16.02,304,-6.063282,-1.481862,-0.833547,-4.630817
+session2,289,p01,live,,bright,yes,p01_live_bright_glasses,16.51,306,0.412397,3.148956,5.464365,2.500641
+session2,290,p01,live,,bright,yes,p01_live_bright_glasses,17.01,317,3.829745,7.779773,9.261635,5.649597
+session2,291,p01,live,,bright,yes,p01_live_bright_glasses,17.52,309,3.225092,5.742214,9.169019,5.834830
+session2,292,p01,live,,bright,no,p01_live_bright_noglasses,0.0,327,4.877088,8.520704,6.853610,5.742214
+session2,293,p01,live,,bright,no,p01_live_bright_noglasses,0.51,330,3.343658,7.779773,7.409308,4.352968
+session2,294,p01,live,,bright,no,p01_live_bright_noglasses,1.01,328,4.364539,7.131459,9.354251,5.649597
+session2,295,p01,live,,bright,no,p01_live_bright_noglasses,1.5,339,1.785770,6.853610,6.112679,2.685874
+session2,296,p01,live,,bright,no,p01_live_bright_noglasses,2.02,452,5.490103,10.743497,8.983786,6.668377
+session2,297,p01,live,,bright,no,p01_live_bright_noglasses,2.51,628,8.190773,10.836113,11.808584,9.817333
+session2,298,p01,live,,bright,no,p01_live_bright_noglasses,3.01,713,10.715715,11.808584,11.808584,10.002565
+session2,299,p01,live,,bright,no,p01_live_bright_noglasses,3.52,713,10.414068,11.808584,11.808584,11.391811
+session2,300,p01,live,,bright,no,p01_live_bright_noglasses,4.02,632,7.683608,10.558264,11.484427,8.613320
+session2,301,p01,live,,bright,no,p01_live_bright_noglasses,4.51,425,-1.881212,3.612038,4.352968,1.111396
+session2,302,p01,live,,bright,no,p01_live_bright_noglasses,5.02,318,0.224425,8.150239,5.186516,-1.111396
+session2,303,p01,live,,bright,no,p01_live_bright_noglasses,5.52,307,-2.018901,7.409308,5.279132,2.500641
+session2,304,p01,live,,bright,no,p01_live_bright_noglasses,6.02,321,-1.577182,2.500641,0.370465,-1.296629
+session2,305,p01,live,,bright,no,p01_live_bright_noglasses,6.51,316,-1.194563,1.111396,3.148956,1.944943
+session2,306,p01,live,,bright,no,p01_live_bright_noglasses,7.01,308,-1.839217,3.148956,5.464365,0.092616
+session2,307,p01,live,,bright,no,p01_live_bright_noglasses,7.5,300,-0.904010,6.946226,6.483144,1.481862
+session2,308,p01,live,,bright,no,p01_live_bright_noglasses,8.0,303,-0.730914,6.946226,9.076403,2.963723
+session2,309,p01,live,,bright,no,p01_live_bright_noglasses,8.53,306,-2.938901,5.464365,7.409308,-0.740931
+session2,310,p01,live,,bright,no,p01_live_bright_noglasses,9.02,245,-0.703904,4.538201,8.798553,2.963723
+session2,311,p01,live,,bright,no,p01_live_bright_noglasses,9.52,247,-1.959513,2.871107,6.112679,-1.111396
+session2,312,p01,live,,bright,no,p01_live_bright_noglasses,10.02,317,-2.548695,-1.389245,4.908667,-1.111396
+session2,313,p01,live,,bright,no,p01_live_bright_noglasses,10.51,260,-4.761100,0.370465,2.408025,-2.963723
+session2,314,p01,live,,bright,no,p01_live_bright_noglasses,11.01,291,-1.939400,-0.555698,4.075119,1.389245
+session2,315,p01,live,,bright,no,p01_live_bright_noglasses,11.5,313,-0.086938,5.742214,7.131459,2.778491
+session2,316,p01,live,,bright,no,p01_live_bright_noglasses,12.03,314,-1.273302,0.277849,2.315409,0.092616
+session2,317,p01,live,,bright,no,p01_live_bright_noglasses,12.53,288,-6.281544,-1.759711,3.241572,-5.464365
+session2,318,p01,live,,bright,no,p01_live_bright_noglasses,13.02,266,-4.157230,-1.852327,3.889887,-1.574478
+session2,319,p01,live,,bright,no,p01_live_bright_noglasses,13.52,244,-4.499516,3.334188,4.445585,-1.018780
+session2,320,p01,live,,bright,no,p01_live_bright_noglasses,14.02,273,-4.274359,5.279132,7.038843,0.000000
+session2,321,p01,live,,bright,no,p01_live_bright_noglasses,14.51,305,-5.284136,5.186516,5.742214,-1.667094
+session2,322,p01,live,,bright,no,p01_live_bright_noglasses,15.01,252,-6.829659,-2.685874,-1.018780,-4.538201
+session2,323,p01,live,,bright,no,p01_live_bright_noglasses,15.5,266,-5.382812,-4.075119,0.370465,-2.593258
+session2,324,p01,live,,bright,no,p01_live_bright_noglasses,16.03,320,-0.375149,4.908667,4.445585,0.926163
+session2,325,p01,live,,bright,no,p01_live_bright_noglasses,16.53,317,-0.739604,6.297912,6.668377,1.759711
+session2,326,p01,live,,bright,no,p01_live_bright_noglasses,17.02,304,0.675110,9.076403,7.872390,2.871107
+session2,327,p01,live,,bright,no,p01_live_bright_noglasses,17.52,302,2.140234,9.909949,8.057622,3.056340
+session2,328,p01,live,,dim,yes,p01_live_dim_glasses,0.0,295,2.757984,3.426805,6.575761,4.908667
+session2,329,p01,live,,dim,yes,p01_live_dim_glasses,0.51,299,2.960932,2.593258,5.927446,5.186516
+session2,330,p01,live,,dim,yes,p01_live_dim_glasses,1.01,300,2.815677,5.834830,5.464365,5.556981
+session2,331,p01,live,,dim,yes,p01_live_dim_glasses,1.5,300,3.265904,4.352968,6.483144,5.927446
+session2,332,p01,live,,dim,yes,p01_live_dim_glasses,2.02,354,2.951137,2.871107,5.001283,3.426805
+session2,333,p01,live,,dim,yes,p01_live_dim_glasses,2.51,492,2.973286,3.426805,6.297912,4.260352
+session2,334,p01,live,,dim,yes,p01_live_dim_glasses,3.01,581,0.291800,2.315409,3.889887,2.315409
+session2,335,p01,live,,dim,yes,p01_live_dim_glasses,3.52,588,3.613819,5.186516,5.649597,3.982503
+session2,336,p01,live,,dim,yes,p01_live_dim_glasses,4.02,573,-1.576676,0.833547,1.944943,1.296629
+session2,337,p01,live,,dim,yes,p01_live_dim_glasses,4.51,425,-3.916529,-3.334188,1.574478,-2.593258
+session2,338,p01,live,,dim,yes,p01_live_dim_glasses,5.02,312,-3.011198,-1.296629,2.778491,-0.277849
+session2,339,p01,live,,dim,yes,p01_live_dim_glasses,5.52,294,0.576147,1.018780,2.130176,2.037560
+session2,340,p01,live,,dim,yes,p01_live_dim_glasses,6.02,286,-2.420449,-6.020063,-1.204013,-1.944943
+session2,341,p01,live,,dim,yes,p01_live_dim_glasses,6.51,292,-1.022355,2.500641,0.185233,0.000000
+session2,342,p01,live,,dim,yes,p01_live_dim_glasses,7.02,291,-0.573572,1.296629,1.018780,0.648314
+session2,343,p01,live,,dim,yes,p01_live_dim_glasses,7.52,282,-1.387941,0.926163,1.759711,-0.277849
+session2,344,p01,live,,dim,yes,p01_live_dim_glasses,8.02,280,-0.070625,2.408025,3.241572,0.277849
+session2,345,p01,live,,dim,yes,p01_live_dim_glasses,8.53,283,-1.260430,-0.370465,3.426805,1.296629
+session2,346,p01,live,,dim,yes,p01_live_dim_glasses,9.02,286,-2.840984,-1.018780,1.481862,0.555698
+session2,347,p01,live,,dim,yes,p01_live_dim_glasses,9.52,246,-2.705329,0.277849,-0.185233,0.277849
+session2,348,p01,live,,dim,yes,p01_live_dim_glasses,10.03,260,-2.601195,-1.852327,-0.740931,0.370465
+session2,349,p01,live,,dim,yes,p01_live_dim_glasses,10.53,279,-1.090018,-1.389245,1.018780,0.092616
+session2,350,p01,live,,dim,yes,p01_live_dim_glasses,11.02,246,-3.070997,0.092616,-2.871107,-1.481862
+session2,351,p01,live,,dim,yes,p01_live_dim_glasses,11.54,267,-5.671617,-4.630817,-2.778491,-4.723434
+session2,352,p01,live,,dim,yes,p01_live_dim_glasses,12.03,282,-0.556688,-0.740931,1.667094,0.648314
+session2,353,p01,live,,dim,yes,p01_live_dim_glasses,12.53,288,0.439987,-1.111396,-0.370465,0.740931
+session2,354,p01,live,,dim,yes,p01_live_dim_glasses,13.04,281,-1.128186,-1.018780,-0.277849,0.555698
+session2,355,p01,live,,dim,yes,p01_live_dim_glasses,13.54,270,-2.619356,0.740931,-0.277849,-1.481862
+session2,356,p01,live,,dim,yes,p01_live_dim_glasses,14.03,244,-2.127098,0.185233,-0.092616,-2.963723
+session2,357,p01,live,,dim,yes,p01_live_dim_glasses,14.53,258,-1.957394,-1.296629,3.519421,0.463082
+session2,358,p01,live,,dim,yes,p01_live_dim_glasses,15.04,282,-5.218393,-3.519421,-2.500641,-4.538201
+session2,359,p01,live,,dim,yes,p01_live_dim_glasses,15.54,288,-7.035571,-4.352968,-1.111396,-4.723434
+session2,360,p01,live,,dim,yes,p01_live_dim_glasses,16.03,261,-1.623378,-1.389245,0.370465,2.037560
+session2,361,p01,live,,dim,yes,p01_live_dim_glasses,16.54,265,-5.539583,-3.982503,-4.723434,-2.871107
+session2,362,p01,live,,dim,yes,p01_live_dim_glasses,17.04,287,-0.543908,0.879855,-0.555698,1.296629
+session2,363,p01,live,,dim,yes,p01_live_dim_glasses,17.54,286,0.702884,1.481862,0.370465,2.037560
+session2,364,p01,live,,dim,yes,p01_live_dim_glasses,18.05,286,-3.543911,-1.944943,0.926163,-0.833547
+session2,365,p01,live,,dim,no,p01_live_dim_noglasses,0.0,291,0.589028,3.056340,5.279132,1.759711
+session2,366,p01,live,,dim,no,p01_live_dim_noglasses,0.54,291,-4.748290,-2.130176,1.204013,-1.389245
+session2,367,p01,live,,dim,no,p01_live_dim_noglasses,1.06,291,-1.552365,2.408025,2.222792,0.185233
+session2,368,p01,live,,dim,no,p01_live_dim_noglasses,1.5,313,-2.091472,0.092616,0.555698,1.018780
+session2,369,p01,live,,dim,no,p01_live_dim_noglasses,2.05,413,1.766115,2.963723,4.075119,1.759711
+session2,370,p01,live,,dim,no,p01_live_dim_noglasses,2.54,568,-1.106267,3.704654,3.148956,1.018780
+session2,371,p01,live,,dim,no,p01_live_dim_noglasses,3.01,618,-0.037805,5.464365,3.982503,0.370465
+session2,372,p01,live,,dim,no,p01_live_dim_noglasses,3.5,648,1.221248,2.871107,3.241572,3.334188
+session2,373,p01,live,,dim,no,p01_live_dim_noglasses,4.05,623,-2.259507,2.778491,3.426805,-0.277849
+session2,374,p01,live,,dim,no,p01_live_dim_noglasses,4.51,607,3.038879,7.779773,4.538201,2.871107
+session2,375,p01,live,,dim,no,p01_live_dim_noglasses,5.01,507,-3.601253,-0.092616,-0.185233,-3.056340
+session2,376,p01,live,,dim,no,p01_live_dim_noglasses,5.5,335,-1.524153,0.185233,1.204013,-0.370465
+session2,377,p01,live,,dim,no,p01_live_dim_noglasses,6.02,269,-5.831626,-4.630817,-3.704654,-4.723434
+session2,378,p01,live,,dim,no,p01_live_dim_noglasses,6.51,260,-2.006198,2.037560,2.037560,-2.037560
+session2,379,p01,live,,dim,no,p01_live_dim_noglasses,7.01,266,0.406674,2.408025,-0.555698,-0.277849
+session2,380,p01,live,,dim,no,p01_live_dim_noglasses,7.5,276,0.436661,-0.185233,-0.740931,0.185233
+session2,381,p01,live,,dim,no,p01_live_dim_noglasses,8.02,276,-1.202398,1.018780,-1.111396,-0.463082
+session2,382,p01,live,,dim,no,p01_live_dim_noglasses,8.51,264,-3.559348,0.463082,1.389245,-1.481862
+session2,383,p01,live,,dim,no,p01_live_dim_noglasses,9.01,263,-0.910832,-0.370465,1.018780,-0.185233
+session2,384,p01,live,,dim,no,p01_live_dim_noglasses,9.52,265,-0.974318,-0.926163,3.519421,1.759711
+session2,385,p01,live,,dim,no,p01_live_dim_noglasses,10.02,247,-2.004905,0.000000,-0.463082,-0.185233
+session2,386,p01,live,,dim,no,p01_live_dim_noglasses,10.51,265,-3.221885,-3.056340,-1.204013,-1.481862
+session2,387,p01,live,,dim,no,p01_live_dim_noglasses,11.02,226,-1.975728,-1.667094,-3.519421,-1.111396
+session2,388,p01,live,,dim,no,p01_live_dim_noglasses,11.52,257,-5.165630,-4.723434,-4.816050,-4.630817
+session2,389,p01,live,,dim,no,p01_live_dim_noglasses,12.02,254,0.543589,1.667094,3.056340,2.130176
+session2,390,p01,live,,dim,no,p01_live_dim_noglasses,12.53,262,-2.858159,0.277849,-1.018780,-2.130176
+session2,391,p01,live,,dim,no,p01_live_dim_noglasses,13.02,221,-2.219529,-0.833547,-0.092616,-1.111396
+session2,392,p01,live,,dim,no,p01_live_dim_noglasses,13.52,225,-1.553320,1.667094,0.740931,0.000000
+session2,393,p01,live,,dim,no,p01_live_dim_noglasses,14.03,256,-6.013213,-4.816050,0.277849,-3.889887
+session2,394,p01,live,,dim,no,p01_live_dim_noglasses,14.53,257,-5.645647,-5.093899,-2.037560,-5.834830
+session2,395,p01,live,,dim,no,p01_live_dim_noglasses,15.02,236,-2.282653,-2.685874,-1.481862,-0.463082
+session2,396,p01,live,,dim,no,p01_live_dim_noglasses,15.52,286,-0.966210,0.370465,0.092616,-1.204013
+session2,397,p01,live,,dim,no,p01_live_dim_noglasses,16.03,261,0.600823,1.389245,0.555698,2.315409
+session2,398,p01,live,,dim,no,p01_live_dim_noglasses,16.53,258,-1.984036,1.018780,1.111396,0.926163
+session2,399,p01,live,,dim,no,p01_live_dim_noglasses,17.02,265,-0.574112,1.389245,1.574478,0.463082
+session2,400,p01,print,,bright,yes,p01_print_bright_glasses,0.0,367,-5.664732,-2.130176,-1.852327,-4.167736
+session2,401,p01,print,,bright,yes,p01_print_bright_glasses,0.53,372,-6.272173,-5.001283,-3.334188,-4.075119
+session2,402,p01,print,,bright,yes,p01_print_bright_glasses,1.02,418,-5.879569,-5.093899,-2.408025,-4.908667
+session2,403,p01,print,,bright,yes,p01_print_bright_glasses,1.52,484,-8.251719,-3.704654,-5.001283,-6.390528
+session2,404,p01,print,,bright,yes,p01_print_bright_glasses,2.02,513,-5.745125,-0.555698,-1.759711,-4.630817
+session2,405,p01,print,,bright,yes,p01_print_bright_glasses,2.51,504,-8.957302,-6.205296,-2.500641,-5.927446
+session2,406,p01,print,,bright,yes,p01_print_bright_glasses,3.01,538,-6.408704,-2.500641,0.092616,-2.963723
+session2,407,p01,print,,bright,yes,p01_print_bright_glasses,3.5,556,-6.608159,-4.167736,-2.408025,-2.871107
+session2,408,p01,print,,bright,yes,p01_print_bright_glasses,4.03,547,-4.907225,-2.593258,0.463082,-0.926163
+session2,409,p01,print,,bright,yes,p01_print_bright_glasses,4.53,546,-4.968918,-1.574478,-0.370465,-3.704654
+session2,410,p01,print,,bright,yes,p01_print_bright_glasses,5.02,554,-5.802567,-2.037560,-0.185233,-3.982503
+session2,411,p01,print,,bright,yes,p01_print_bright_glasses,5.52,570,-4.778158,-1.944943,1.667094,0.463082
+session2,412,p01,print,,bright,yes,p01_print_bright_glasses,6.02,585,-3.672194,-2.315409,-0.648314,-1.481862
+session2,413,p01,print,,bright,yes,p01_print_bright_glasses,6.51,607,-4.563426,-2.037560,-1.111396,-2.778491
+session2,414,p01,print,,bright,yes,p01_print_bright_glasses,7.01,605,-6.835492,-5.279132,-2.037560,-2.685874
+session2,415,p01,print,,bright,yes,p01_print_bright_glasses,7.5,611,-7.706433,-5.927446,-2.685874,-4.538201
+session2,416,p01,print,,bright,yes,p01_print_bright_glasses,8.03,601,-6.668655,-4.538201,-2.037560,-3.056340
+session2,417,p01,print,,bright,yes,p01_print_bright_glasses,8.53,625,-4.413807,-5.649597,-1.944943,-3.426805
+session2,418,p01,print,,bright,yes,p01_print_bright_glasses,9.02,593,-7.413423,-5.927446,-4.445585,-4.445585
+session2,419,p01,print,,bright,yes,p01_print_bright_glasses,9.52,510,-7.972605,-2.871107,-2.593258,-5.001283
+session2,420,p01,print,,bright,yes,p01_print_bright_glasses,10.02,490,-5.933089,-0.370465,0.740931,-2.408025
+session2,421,p01,print,,bright,yes,p01_print_bright_glasses,10.51,517,-10.167421,-6.020063,-3.148956,-7.224075
+session2,422,p01,print,,bright,yes,p01_print_bright_glasses,11.01,485,-6.796236,-8.520704,-2.500641,-5.001283
+session2,423,p01,print,,bright,yes,p01_print_bright_glasses,11.5,448,-8.777775,-5.093899,-2.778491,-5.371748
+session2,424,p01,print,,bright,yes,p01_print_bright_glasses,12.03,410,-13.528513,-8.242855,-5.093899,-8.150239
+session2,425,p01,print,,bright,yes,p01_print_bright_glasses,12.53,443,-6.014683,-1.944943,-1.944943,-3.056340
+session2,426,p01,print,,bright,yes,p01_print_bright_glasses,13.02,474,-5.252526,-3.056340,0.000000,-3.982503
+session2,427,p01,print,,bright,yes,p01_print_bright_glasses,13.52,481,-6.054219,-1.481862,-2.500641,-3.612038
+session2,428,p01,print,,bright,yes,p01_print_bright_glasses,14.02,479,-3.219729,-3.148956,-1.111396,-1.389245
+session2,429,p01,print,,bright,yes,p01_print_bright_glasses,14.51,471,-7.605089,-3.519421,-1.667094,-4.908667
+session2,430,p01,print,,bright,yes,p01_print_bright_glasses,15.01,419,-9.994509,-5.649597,-2.871107,-5.742214
+session2,431,p01,print,,bright,yes,p01_print_bright_glasses,15.5,418,-4.637762,-1.759711,-0.092616,-1.296629
+session2,432,p01,print,,bright,yes,p01_print_bright_glasses,16.03,528,-5.921233,-3.889887,-2.037560,-3.519421
+session2,433,p01,print,,bright,yes,p01_print_bright_glasses,16.53,591,-5.356930,0.370465,1.111396,-1.018780
+session2,434,p01,print,,bright,yes,p01_print_bright_glasses,17.02,636,-5.960549,-5.093899,-3.889887,-4.352968
+session2,435,p01,print,,bright,yes,p01_print_bright_glasses,17.52,591,-5.634184,-3.982503,-0.092616,-2.315409
+session2,436,p01,print,,bright,yes,p01_print_bright_glasses,18.02,586,-6.462510,-2.871107,-3.334188,-3.797270
+session2,437,p01,print,,bright,yes,p01_print_bright_glasses,18.51,587,-4.979329,-1.944943,2.130176,-1.111396
+session2,438,p01,print,,bright,yes,p01_print_bright_glasses,19.04,502,-7.014924,-3.519421,-0.740931,-5.186516
+session2,439,p01,print,,bright,yes,p01_print_bright_glasses,19.54,385,-8.395395,-6.668377,-1.574478,-5.001283
+session2,440,p01,print,,bright,yes,p01_print_bright_glasses,20.03,304,-8.813410,-7.779773,-5.927446,-7.131459
+session2,441,p01,print,,bright,no,p01_print_bright_noglasses,0.0,429,-8.585765,-1.389245,-2.408025,-6.668377
+session2,442,p01,print,,bright,no,p01_print_bright_noglasses,0.53,458,-10.216851,-3.334188,-1.296629,-6.112679
+session2,443,p01,print,,bright,no,p01_print_bright_noglasses,1.02,496,-8.403745,-5.093899,1.574478,-4.538201
+session2,444,p01,print,,bright,no,p01_print_bright_noglasses,1.52,506,-8.490696,-4.167736,-1.852327,-4.538201
+session2,445,p01,print,,bright,no,p01_print_bright_noglasses,2.02,529,-8.180227,-4.908667,-2.778491,-4.908667
+session2,446,p01,print,,bright,no,p01_print_bright_noglasses,2.51,513,-12.151035,-5.556981,-4.260352,-7.872390
+session2,447,p01,print,,bright,no,p01_print_bright_noglasses,3.01,550,-9.538788,-3.704654,-3.148956,-7.501925
+session2,448,p01,print,,bright,no,p01_print_bright_noglasses,3.5,563,-10.142742,-5.742214,-3.889887,-7.779773
+session2,449,p01,print,,bright,no,p01_print_bright_noglasses,4.0,551,-8.355433,-5.742214,-3.612038,-6.297912
+session2,450,p01,print,,bright,no,p01_print_bright_noglasses,4.53,555,-7.565426,-4.723434,-1.852327,-5.093899
+session2,451,p01,print,,bright,no,p01_print_bright_noglasses,5.02,559,-8.057243,-6.760993,-3.426805,-6.575761
+session2,452,p01,print,,bright,no,p01_print_bright_noglasses,5.52,566,-11.772741,-8.242855,-8.057622,-11.206578
+session2,453,p01,print,,bright,no,p01_print_bright_noglasses,6.02,566,-11.135415,-9.076403,-7.316691,-9.169019
+session2,454,p01,print,,bright,no,p01_print_bright_noglasses,6.51,553,-13.019445,-8.057622,-7.131459,-10.095182
+session2,455,p01,print,,bright,no,p01_print_bright_noglasses,7.01,542,-11.552748,-11.299194,-7.687157,-8.242855
+session2,456,p01,print,,bright,no,p01_print_bright_noglasses,7.54,527,-11.056820,-9.632100,-4.816050,-7.501925
+session2,457,p01,print,,bright,no,p01_print_bright_noglasses,8.03,512,-10.909956,-7.779773,-4.075119,-8.891170
+session2,458,p01,print,,bright,no,p01_print_bright_noglasses,8.53,530,-9.354320,-6.760993,-3.241572,-6.483144
+session2,459,p01,print,,bright,no,p01_print_bright_noglasses,9.02,545,-11.279057,-7.594541,-6.390528,-8.613320
+session2,460,p01,print,,bright,no,p01_print_bright_noglasses,9.52,546,-9.527270,-6.668377,-2.037560,-5.927446
+session2,461,p01,print,,bright,no,p01_print_bright_noglasses,10.0,544,-8.116982,-6.297912,-2.778491,-5.927446
+session2,462,p01,print,,bright,no,p01_print_bright_noglasses,10.54,509,-10.646244,-10.373032,-5.556981,-9.076403
+session2,463,p01,print,,bright,no,p01_print_bright_noglasses,11.04,475,-12.302153,-6.946226,-3.797270,-8.520704
+session2,464,p01,print,,bright,no,p01_print_bright_noglasses,11.54,450,-10.241661,-4.630817,-1.481862,-7.038843
+session2,465,p01,print,,bright,no,p01_print_bright_noglasses,12.03,434,-9.590187,-4.260352,-2.685874,-6.668377
+session2,466,p01,print,,bright,no,p01_print_bright_noglasses,12.51,483,-10.712600,-9.169019,-4.167736,-8.428088
+session2,467,p01,print,,bright,no,p01_print_bright_noglasses,13.01,514,-7.259339,-5.001283,0.277849,-4.908667
+session2,468,p01,print,,bright,no,p01_print_bright_noglasses,13.5,557,-6.019136,0.000000,-1.852327,-5.186516
+session2,469,p01,print,,bright,no,p01_print_bright_noglasses,14.0,538,-6.654049,-1.944943,1.389245,-3.334188
+session2,470,p01,print,,bright,no,p01_print_bright_noglasses,14.54,549,-3.521534,0.740931,3.148956,-3.982503
+session2,471,p01,print,,bright,no,p01_print_bright_noglasses,15.02,566,-6.175844,0.185233,0.277849,-4.075119
+session2,472,p01,print,,bright,no,p01_print_bright_noglasses,15.52,559,-7.205766,-0.926163,-1.574478,-5.371748
+session2,473,p01,print,,bright,no,p01_print_bright_noglasses,16.02,545,-10.086061,-6.390528,-4.167736,-8.428088
+session2,474,p01,print,,bright,no,p01_print_bright_noglasses,16.51,528,-9.467463,-5.371748,-2.500641,-6.020063
+session2,475,p01,print,,bright,no,p01_print_bright_noglasses,17.01,516,-9.923494,-7.501925,-5.001283,-8.520704
+session2,476,p01,print,,bright,no,p01_print_bright_noglasses,17.5,501,-9.794334,-6.205296,-4.445585,-6.946226
+session2,477,p01,print,,bright,no,p01_print_bright_noglasses,18.0,539,-7.051509,-6.390528,-3.334188,-5.834830
+session2,478,p01,print,,bright,no,p01_print_bright_noglasses,18.53,628,-9.079477,-6.575761,-3.334188,-6.112679
+session2,479,p01,print,,bright,no,p01_print_bright_noglasses,19.02,567,-12.619855,-5.093899,-4.630817,-8.705936
+session2,480,p01,print,,bright,no,p01_print_bright_noglasses,19.52,464,-10.667631,-6.946226,-4.260352,-7.687157
+session2,481,p01,print,,bright,no,p01_print_bright_noglasses,20.02,390,-9.443619,-5.649597,-4.908667,-8.335471
+session2,482,p01,print,,bright,no,p01_print_bright_noglasses,20.51,351,-6.965711,-5.556981,-0.648314,-4.075119
+session2,483,p01,print,,bright,no,p01_print_bright_noglasses,21.01,334,-5.329460,-5.001283,-3.334188,-4.445585
+session2,484,p01,print,,dim,yes,p01_print_dim_glasses,0.0,422,-10.144884,-3.704654,-3.704654,-6.946226
+session2,485,p01,print,,dim,yes,p01_print_dim_glasses,0.54,461,-10.436081,-7.779773,-6.483144,-8.613320
+session2,486,p01,print,,dim,yes,p01_print_dim_glasses,1.01,481,-10.918125,-7.316691,-6.946226,-8.428088
+session2,487,p01,print,,dim,yes,p01_print_dim_glasses,1.5,531,-14.368370,-6.853610,-10.095182,-11.762277
+session2,488,p01,print,,dim,yes,p01_print_dim_glasses,2.05,580,-12.222528,-4.816050,-7.501925,-10.650880
+session2,489,p01,print,,dim,yes,p01_print_dim_glasses,2.51,609,-9.467253,-3.612038,-3.519421,-6.760993
+session2,490,p01,print,,dim,yes,p01_print_dim_glasses,3.01,638,-5.585157,-0.370465,-0.833547,-4.306660
+session2,491,p01,print,,dim,yes,p01_print_dim_glasses,3.5,656,-8.552787,-4.538201,-3.241572,-7.687157
+session2,492,p01,print,,dim,yes,p01_print_dim_glasses,4.02,635,-4.470869,0.092616,-3.241572,-3.241572
+session2,493,p01,print,,dim,yes,p01_print_dim_glasses,4.51,594,-8.721804,-5.186516,-1.852327,-5.556981
+session2,494,p01,print,,dim,yes,p01_print_dim_glasses,5.01,582,-7.548257,-2.685874,-1.574478,-5.927446
+session2,495,p01,print,,dim,yes,p01_print_dim_glasses,5.5,608,-10.833508,-4.075119,-2.871107,-8.705936
+session2,496,p01,print,,dim,yes,p01_print_dim_glasses,6.02,609,-10.129541,-5.649597,-4.075119,-6.668377
+session2,497,p01,print,,dim,yes,p01_print_dim_glasses,6.51,594,-8.339945,-3.426805,-0.926163,-4.816050
+session2,498,p01,print,,dim,yes,p01_print_dim_glasses,7.01,618,-8.710340,-4.538201,-2.037560,-4.723434
+session2,499,p01,print,,dim,yes,p01_print_dim_glasses,7.52,597,-6.645043,-2.593258,-0.648314,-3.056340
+session2,500,p01,print,,dim,yes,p01_print_dim_glasses,8.02,605,-7.917902,-2.963723,-2.408025,-5.742214
+session2,501,p01,print,,dim,yes,p01_print_dim_glasses,8.51,573,-6.617303,-2.593258,-2.778491,-4.816050
+session2,502,p01,print,,dim,yes,p01_print_dim_glasses,9.02,496,-8.210986,-6.575761,-3.148956,-7.687157
+session2,503,p01,print,,dim,yes,p01_print_dim_glasses,9.52,436,-10.020864,-7.224075,-2.778491,-7.316691
+session2,504,p01,print,,dim,yes,p01_print_dim_glasses,10.02,374,-9.476398,-7.779773,-1.481862,-7.779773
+session2,505,p01,print,,dim,yes,p01_print_dim_glasses,10.53,334,-9.768724,-8.705936,-6.297912,-8.613320
+session2,506,p01,print,,dim,yes,p01_print_dim_glasses,11.02,324,-8.151009,-2.778491,0.648314,-3.889887
+session2,507,p01,print,,dim,yes,p01_print_dim_glasses,11.52,339,-5.345813,-2.130176,-0.740931,-2.037560
+session2,508,p01,print,,dim,yes,p01_print_dim_glasses,12.02,323,-8.819517,-7.224075,-5.464365,-7.038843
+session2,509,p01,print,,dim,yes,p01_print_dim_glasses,12.53,277,-10.692336,-8.150239,-5.556981,-10.187799
+session2,510,p01,print,,dim,yes,p01_print_dim_glasses,13.02,313,-7.609453,-5.834830,-4.630817,-7.872390
+session2,511,p01,print,,dim,yes,p01_print_dim_glasses,13.52,348,-6.697682,-3.612038,-1.111396,-4.075119
+session2,512,p01,print,,dim,yes,p01_print_dim_glasses,14.03,363,-11.237772,-10.187799,-8.150239,-9.539484
+session2,513,p01,print,,dim,yes,p01_print_dim_glasses,14.53,364,-7.923846,-3.056340,-3.056340,-6.853610
+session2,514,p01,print,,dim,yes,p01_print_dim_glasses,15.02,385,-8.743050,-6.853610,-5.279132,-8.057622
+session2,515,p01,print,,dim,yes,p01_print_dim_glasses,15.54,394,-9.809933,-7.594541,-5.279132,-8.798553
+session2,516,p01,print,,dim,yes,p01_print_dim_glasses,16.03,399,-8.697970,-3.889887,-2.315409,-6.205296
+session2,517,p01,print,,dim,yes,p01_print_dim_glasses,16.53,386,-7.782598,-6.575761,-2.685874,-6.205296
+session2,518,p01,print,,dim,no,p01_print_dim_noglasses,0.0,443,-9.324488,1.667094,-4.445585,-6.575761
+session2,519,p01,print,,dim,no,p01_print_dim_noglasses,0.54,428,-10.769588,-4.538201,-7.872390,-9.724717
+session2,520,p01,print,,dim,no,p01_print_dim_noglasses,1.04,400,-10.765138,-6.483144,-6.575761,-8.613320
+session2,521,p01,print,,dim,no,p01_print_dim_noglasses,1.5,421,-7.068939,-1.574478,-2.222792,-3.704654
+session2,522,p01,print,,dim,no,p01_print_dim_noglasses,2.05,464,-11.422697,-6.483144,-9.724717,-8.798553
+session2,523,p01,print,,dim,no,p01_print_dim_noglasses,2.54,465,-10.798349,-5.834830,-7.131459,-9.261635
+session2,524,p01,print,,dim,no,p01_print_dim_noglasses,3.01,444,-11.174864,-4.630817,-5.093899,-9.354251
+session2,525,p01,print,,dim,no,p01_print_dim_noglasses,3.5,435,-11.359941,-5.464365,-5.001283,-8.798553
+session2,526,p01,print,,dim,no,p01_print_dim_noglasses,4.05,526,-13.414225,-4.075119,-6.668377,-11.391811
+session2,527,p01,print,,dim,no,p01_print_dim_noglasses,4.51,593,-13.275885,-8.057622,-6.390528,-10.187799
+session2,528,p01,print,,dim,no,p01_print_dim_noglasses,5.01,550,-16.372753,-9.724717,-10.558264,-11.808584
+session2,529,p01,print,,dim,no,p01_print_dim_noglasses,5.5,498,-11.773671,-8.242855,-9.817333,-10.373032
+session2,530,p01,print,,dim,no,p01_print_dim_noglasses,6.06,456,-13.727331,-10.558264,-8.428088,-11.206578
+session2,531,p01,print,,dim,no,p01_print_dim_noglasses,6.51,491,-13.354132,-11.808584,-11.808584,-11.808584
+session2,532,p01,print,,dim,no,p01_print_dim_noglasses,7.01,477,-12.005427,-10.465648,-8.983786,-11.021345
+session2,533,p01,print,,dim,no,p01_print_dim_noglasses,7.5,483,-10.188848,-7.779773,-5.556981,-8.520704
+session2,534,p01,print,,dim,no,p01_print_dim_noglasses,8.02,443,-10.509204,-5.556981,-6.112679,-8.335471
+session2,535,p01,print,,dim,no,p01_print_dim_noglasses,8.51,381,-7.753941,-3.612038,-4.723434,-7.038843
+session2,536,p01,print,,dim,no,p01_print_dim_noglasses,9.01,342,-8.132648,-3.704654,-4.167736,-5.556981
+session2,537,p01,print,,dim,no,p01_print_dim_noglasses,9.52,431,-11.190561,-3.148956,-5.093899,-9.909949
+session2,538,p01,print,,dim,no,p01_print_dim_noglasses,10.02,528,-12.560532,-6.853610,-7.131459,-11.808584
+session2,539,p01,print,,dim,no,p01_print_dim_noglasses,10.51,502,-10.388304,-2.315409,-2.778491,-6.575761
+session2,540,p01,print,,dim,no,p01_print_dim_noglasses,11.02,533,-13.969913,-8.798553,-11.762277,-11.808584
+session2,541,p01,print,,dim,no,p01_print_dim_noglasses,11.52,564,-16.559597,-10.650880,-11.391811,-11.808584
+session2,542,p01,print,,dim,no,p01_print_dim_noglasses,12.02,579,-14.825466,-11.669660,-11.577044,-11.021345
+session2,543,p02,live,,bright,yes,p02_live_bright_glasses,0.0,314,-0.972903,6.575761,7.316691,1.852327
+session2,544,p02,live,,bright,yes,p02_live_bright_glasses,0.53,308,-0.112856,8.428088,9.446868,2.778491
+session2,545,p02,live,,bright,yes,p02_live_bright_glasses,1.02,311,0.951663,9.169019,9.724717,6.297912
+session2,546,p02,live,,bright,yes,p02_live_bright_glasses,1.52,311,-0.625929,5.927446,7.779773,3.704654
+session2,547,p02,live,,bright,yes,p02_live_bright_glasses,2.02,317,-0.138109,6.390528,6.020063,1.204013
+session2,548,p02,live,,bright,yes,p02_live_bright_glasses,2.51,332,1.193503,7.038843,7.409308,4.167736
+session2,549,p02,live,,bright,yes,p02_live_bright_glasses,3.01,375,3.158358,11.391811,11.021345,5.464365
+session2,550,p02,live,,bright,yes,p02_live_bright_glasses,3.5,450,4.063008,11.808584,11.808584,6.390528
+session2,551,p02,live,,bright,yes,p02_live_bright_glasses,4.0,476,3.647236,11.808584,11.808584,7.779773
+session2,552,p02,live,,bright,yes,p02_live_bright_glasses,4.53,517,4.113986,11.808584,9.539484,5.093899
+session2,553,p02,live,,bright,yes,p02_live_bright_glasses,5.02,461,3.927718,11.808584,11.669660,6.390528
+session2,554,p02,live,,bright,yes,p02_live_bright_glasses,5.52,382,-0.772576,5.464365,8.428088,2.917415
+session2,555,p02,live,,bright,yes,p02_live_bright_glasses,6.02,322,-1.961444,5.927446,8.057622,-0.740931
+session2,556,p02,live,,bright,yes,p02_live_bright_glasses,6.51,289,-1.148969,4.445585,6.946226,0.370465
+session2,557,p02,live,,bright,yes,p02_live_bright_glasses,7.01,265,-1.754076,3.334188,6.946226,0.000000
+session2,558,p02,live,,bright,yes,p02_live_bright_glasses,7.5,272,0.543660,5.742214,7.224075,2.593258
+session2,559,p02,live,,bright,yes,p02_live_bright_glasses,8.0,286,0.750747,6.297912,7.779773,2.963723
+session2,560,p02,live,,bright,yes,p02_live_bright_glasses,8.53,287,-0.356207,2.130176,4.538201,0.833547
+session2,561,p02,live,,bright,yes,p02_live_bright_glasses,9.02,285,-1.048102,3.519421,5.556981,1.667094
+session2,562,p02,live,,bright,yes,p02_live_bright_glasses,9.52,288,0.865655,2.871107,2.778491,1.574478
+session2,563,p02,live,,bright,yes,p02_live_bright_glasses,10.02,282,0.446690,5.093899,4.538201,2.408025
+session2,564,p02,live,,bright,yes,p02_live_bright_glasses,10.51,288,0.791161,6.297912,7.038843,3.148956
+session2,565,p02,live,,bright,yes,p02_live_bright_glasses,11.01,296,0.965648,7.594541,8.057622,4.723434
+session2,566,p02,live,,bright,yes,p02_live_bright_glasses,11.5,295,1.610157,7.965006,9.909949,6.436836
+session2,567,p02,live,,bright,yes,p02_live_bright_glasses,12.0,296,3.079911,9.909949,9.817333,5.927446
+session2,568,p02,live,,bright,yes,p02_live_bright_glasses,12.53,297,-3.710600,3.148956,4.630817,0.000000
+session2,569,p02,live,,bright,yes,p02_live_bright_glasses,13.02,271,-1.144516,3.241572,3.982503,0.092616
+session2,570,p02,live,,bright,yes,p02_live_bright_glasses,13.52,274,-1.395815,1.296629,2.037560,-0.185233
+session2,571,p02,live,,bright,yes,p02_live_bright_glasses,14.02,282,-0.345663,6.297912,6.483144,1.852327
+session2,572,p02,live,,bright,yes,p02_live_bright_glasses,14.51,287,0.320372,6.760993,5.834830,1.944943
+session2,573,p02,live,,bright,yes,p02_live_bright_glasses,15.01,274,2.159585,5.927446,9.446868,6.483144
+session2,574,p02,live,,bright,yes,p02_live_bright_glasses,15.54,272,2.063027,7.872390,8.983786,3.148956
+session2,575,p02,live,,bright,yes,p02_live_bright_glasses,16.03,279,-1.862431,3.797270,4.260352,-0.277849
+session2,576,p02,live,,bright,yes,p02_live_bright_glasses,16.53,282,2.219085,7.038843,8.613320,3.519421
+session2,577,p02,live,,bright,yes,p02_live_bright_glasses,17.02,279,2.952879,5.927446,7.409308,5.093899
+session2,578,p02,live,,bright,yes,p02_live_bright_glasses,17.52,278,-0.466501,2.871107,3.426805,2.222792
+session2,579,p02,live,,bright,yes,p02_live_bright_glasses,18.0,268,-4.022911,0.000000,1.204013,-3.241572
+session2,580,p02,live,,bright,yes,p02_live_bright_glasses,18.54,255,-0.929910,2.963723,5.001283,2.037560
+session2,581,p02,live,,bright,yes,p02_live_bright_glasses,19.04,273,-0.918655,2.222792,4.260352,2.871107
+session2,582,p02,live,,bright,yes,p02_live_bright_glasses,19.54,288,-1.929481,3.148956,6.297912,1.574478
+session2,583,p02,live,,bright,yes,p02_live_bright_glasses,20.03,298,0.733142,7.316691,7.501925,1.296629
+session2,584,p02,live,,bright,yes,p02_live_bright_glasses,20.51,285,2.203198,6.853610,9.076403,3.334188
+session2,585,p02,live,,bright,yes,p02_live_bright_glasses,21.01,269,-1.428690,3.148956,4.167736,0.092616
+session2,586,p02,live,,bright,yes,p02_live_bright_glasses,21.5,281,-3.135907,2.685874,4.075119,-2.130176
+session2,587,p02,live,,bright,yes,p02_live_bright_glasses,22.0,297,-2.697200,2.408025,8.335471,1.481862
+session2,588,p02,live,,bright,yes,p02_live_bright_glasses,22.54,301,-0.680868,8.057622,7.594541,1.667094
+session2,589,p02,live,,bright,yes,p02_live_bright_glasses,23.02,310,1.725892,10.743497,11.808584,4.908667
+session2,590,p02,live,,bright,no,p02_live_bright_noglasses,0.0,288,1.435233,5.001283,5.371748,1.389245
+session2,591,p02,live,,bright,no,p02_live_bright_noglasses,0.53,292,2.070159,7.038843,10.836113,3.612038
+session2,592,p02,live,,bright,no,p02_live_bright_noglasses,1.02,289,0.525376,6.668377,5.649597,2.222792
+session2,593,p02,live,,bright,no,p02_live_bright_noglasses,1.52,291,0.919989,7.872390,7.872390,2.315409
+session2,594,p02,live,,bright,no,p02_live_bright_noglasses,2.02,307,0.782878,7.224075,10.187799,3.982503
+session2,595,p02,live,,bright,no,p02_live_bright_noglasses,2.51,336,1.989934,8.705936,8.891170,4.908667
+session2,596,p02,live,,bright,no,p02_live_bright_noglasses,3.01,384,3.740259,10.928729,9.076403,6.112679
+session2,597,p02,live,,bright,no,p02_live_bright_noglasses,3.5,441,2.187347,11.808584,8.520704,4.445585
+session2,598,p02,live,,bright,no,p02_live_bright_noglasses,4.0,505,4.242136,11.808584,10.836113,6.760993
+session2,599,p02,live,,bright,no,p02_live_bright_noglasses,4.53,546,3.646082,10.280415,10.002565,2.963723
+session2,600,p02,live,,bright,no,p02_live_bright_noglasses,5.02,478,0.347221,9.354251,10.928729,6.205296
+session2,601,p02,live,,bright,no,p02_live_bright_noglasses,5.52,380,-1.997020,6.112679,6.853610,0.416774
+session2,602,p02,live,,bright,no,p02_live_bright_noglasses,6.0,323,-0.770699,7.594541,8.242855,0.926163
+session2,603,p02,live,,bright,no,p02_live_bright_noglasses,6.53,286,-1.044206,4.445585,7.409308,0.370465
+session2,604,p02,live,,bright,no,p02_live_bright_noglasses,7.02,270,-0.101883,5.371748,7.965006,2.408025
+session2,605,p02,live,,bright,no,p02_live_bright_noglasses,7.52,275,2.998639,5.371748,8.798553,4.167736
+session2,606,p02,live,,bright,no,p02_live_bright_noglasses,8.02,274,0.008401,4.445585,7.224075,3.241572
+session2,607,p02,live,,bright,no,p02_live_bright_noglasses,8.51,272,-2.153075,1.759711,3.056340,-0.185233
+session2,608,p02,live,,bright,no,p02_live_bright_noglasses,9.04,272,-1.403553,1.852327,2.871107,0.926163
+session2,609,p02,live,,bright,no,p02_live_bright_noglasses,9.54,279,1.509454,5.047591,8.428088,5.556981
+session2,610,p02,live,,bright,no,p02_live_bright_noglasses,10.03,289,-1.328135,4.723434,10.465648,2.778491
+session2,611,p02,live,,bright,no,p02_live_bright_noglasses,10.53,295,3.792150,11.808584,11.808584,5.279132
+session2,612,p02,live,,bright,no,p02_live_bright_noglasses,11.02,299,2.106158,10.373032,10.373032,4.538201
+session2,613,p02,live,,bright,no,p02_live_bright_noglasses,11.52,294,1.853359,9.817333,9.632100,3.704654
+session2,614,p02,live,,bright,no,p02_live_bright_noglasses,12.0,293,-4.623005,3.334188,4.816050,-2.685874
+session2,615,p02,live,,bright,no,p02_live_bright_noglasses,12.54,278,-3.765562,3.241572,4.538201,-2.222792
+session2,616,p02,live,,bright,no,p02_live_bright_noglasses,13.04,265,-4.461364,2.037560,2.315409,-2.593258
+session2,617,p02,live,,bright,no,p02_live_bright_noglasses,13.54,250,-3.069876,1.574478,3.797270,-0.740931
+session2,618,p02,live,,bright,no,p02_live_bright_noglasses,14.03,249,-3.254961,2.871107,2.500641,-0.926163
+session2,619,p02,live,,bright,no,p02_live_bright_noglasses,14.51,278,-3.510774,2.593258,5.834830,-1.111396
+session2,620,p02,live,,bright,no,p02_live_bright_noglasses,15.01,294,-2.791181,5.001283,5.093899,-1.944943
+session2,621,p02,live,,bright,no,p02_live_bright_noglasses,15.51,282,0.366063,4.075119,8.613320,2.871107
+session2,622,p02,live,,bright,no,p02_live_bright_noglasses,16.0,267,1.567562,6.668377,8.705936,3.148956
+session2,623,p02,live,,bright,no,p02_live_bright_noglasses,16.54,246,1.824571,5.093899,7.594541,3.982503
+session2,624,p02,live,,bright,no,p02_live_bright_noglasses,17.02,268,-0.447689,3.334188,5.556981,-0.185233
+session2,625,p02,live,,bright,no,p02_live_bright_noglasses,17.52,291,-0.835672,6.297912,9.724717,1.759711
+session2,626,p02,live,,bright,no,p02_live_bright_noglasses,18.02,290,-0.826470,7.038843,9.446868,1.574478
+session2,627,p02,live,,bright,no,p02_live_bright_noglasses,18.51,274,0.179098,4.538201,9.354251,3.334188
+session2,628,p02,live,,bright,no,p02_live_bright_noglasses,19.01,265,-3.615960,3.889887,5.001283,-1.296629
+session2,629,p02,live,,bright,no,p02_live_bright_noglasses,19.5,265,-2.190831,1.111396,2.130176,0.185233
+session2,630,p02,live,,bright,no,p02_live_bright_noglasses,20.0,259,2.783503,6.575761,10.095182,6.483144
+session2,631,p02,live,,bright,no,p02_live_bright_noglasses,20.53,267,1.715358,6.760993,10.558264,3.889887
+session2,632,p02,live,,bright,no,p02_live_bright_noglasses,21.02,289,-0.013571,6.946226,8.057622,-0.092616
+session2,633,p02,live,,bright,no,p02_live_bright_noglasses,21.52,287,-2.247994,6.297912,10.465648,0.555698
+session2,634,p02,live,,bright,no,p02_live_bright_noglasses,22.02,295,-0.426865,9.169019,11.808584,0.463082
+session2,635,p02,live,,bright,no,p02_live_bright_noglasses,22.51,300,0.113185,6.575761,6.483144,0.463082
+session2,636,p02,live,,bright,no,p02_live_bright_noglasses,23.01,305,3.589177,11.021345,11.808584,6.668377
+session2,637,p02,live,,dim,yes,p02_live_dim_glasses,0.0,285,-0.795280,-3.056340,0.833547,-0.740931
+session2,638,p02,live,,dim,yes,p02_live_dim_glasses,0.54,288,-0.872562,-0.370465,1.296629,0.185233
+session2,639,p02,live,,dim,yes,p02_live_dim_glasses,1.01,288,-0.647290,0.000000,0.000000,0.000000
+session2,640,p02,live,,dim,yes,p02_live_dim_glasses,1.5,289,-1.840638,-0.463082,-1.018780,-1.296629
+session2,641,p02,live,,dim,yes,p02_live_dim_glasses,2.0,298,-3.567535,-3.519421,-1.111396,-1.481862
+session2,642,p02,live,,dim,yes,p02_live_dim_glasses,2.56,370,-1.827389,-1.574478,-0.926163,-1.944943
+session2,643,p02,live,,dim,yes,p02_live_dim_glasses,3.01,488,-4.319573,-0.277849,-4.075119,-3.056340
+session2,644,p02,live,,dim,yes,p02_live_dim_glasses,3.5,558,-3.503508,-2.222792,-3.241572,-5.371748
+session2,645,p02,live,,dim,yes,p02_live_dim_glasses,4.0,497,-5.351466,-4.538201,-4.352968,-4.075119
+session2,646,p02,live,,dim,yes,p02_live_dim_glasses,4.51,397,-2.811916,-3.426805,-2.315409,-4.121428
+session2,647,p02,live,,dim,yes,p02_live_dim_glasses,5.01,311,1.201704,1.759711,1.018780,1.204013
+session2,648,p02,live,,dim,yes,p02_live_dim_glasses,5.5,265,0.991521,2.222792,1.481862,3.612038
+session2,649,p02,live,,dim,yes,p02_live_dim_glasses,6.02,236,1.346896,2.222792,1.944943,2.871107
+session2,650,p02,live,,dim,yes,p02_live_dim_glasses,6.51,228,0.021571,3.426805,2.315409,1.018780
+session2,651,p02,live,,dim,yes,p02_live_dim_glasses,7.01,230,0.317218,2.130176,2.037560,2.130176
+session2,652,p02,live,,dim,yes,p02_live_dim_glasses,7.52,252,-0.120666,1.852327,0.277849,-0.555698
+session2,653,p02,live,,dim,yes,p02_live_dim_glasses,8.02,275,-0.254653,-0.648314,-1.018780,-0.740931
+session2,654,p02,live,,dim,yes,p02_live_dim_glasses,8.51,282,-3.269283,-3.241572,-3.982503,-3.612038
+session2,655,p02,live,,dim,yes,p02_live_dim_glasses,9.02,266,-0.835469,0.000000,1.111396,0.277849
+session2,656,p02,live,,dim,yes,p02_live_dim_glasses,9.52,247,-0.432941,0.926163,1.296629,1.481862
+session2,657,p02,live,,dim,yes,p02_live_dim_glasses,10.02,248,0.034886,-0.740931,0.648314,1.389245
+session2,658,p02,live,,dim,yes,p02_live_dim_glasses,10.51,279,2.945460,1.018780,2.037560,2.408025
+session2,659,p02,live,,dim,yes,p02_live_dim_glasses,11.02,284,-2.138811,-1.204013,-2.222792,-2.222792
+session2,660,p02,live,,dim,yes,p02_live_dim_glasses,11.52,277,-2.746829,-1.574478,0.185233,-1.574478
+session2,661,p02,live,,dim,yes,p02_live_dim_glasses,12.02,277,-1.772697,0.555698,1.759711,0.370465
+session2,662,p02,live,,dim,yes,p02_live_dim_glasses,12.53,254,-2.200182,0.185233,1.389245,0.185233
+session2,663,p02,live,,dim,yes,p02_live_dim_glasses,13.02,265,-2.119888,-0.926163,2.130176,0.092616
+session2,664,p02,live,,dim,yes,p02_live_dim_glasses,13.52,287,-1.443053,-0.648314,1.759711,-2.593258
+session2,665,p02,live,,dim,yes,p02_live_dim_glasses,14.03,284,-3.125007,-2.963723,-1.944943,-1.574478
+session2,666,p02,live,,dim,yes,p02_live_dim_glasses,14.53,284,-3.020964,-2.871107,-1.759711,-2.222792
+session2,667,p02,live,,dim,yes,p02_live_dim_glasses,15.02,292,0.723394,1.759711,2.593258,3.148956
+session2,668,p02,live,,dim,yes,p02_live_dim_glasses,15.54,270,-0.744289,-0.833547,1.852327,1.018780
+session2,669,p02,live,,dim,yes,p02_live_dim_glasses,16.03,270,-0.803832,-1.481862,1.944943,0.463082
+session2,670,p02,live,,dim,yes,p02_live_dim_glasses,16.53,236,3.294546,5.464365,3.982503,3.704654
+session2,671,p02,live,,dim,yes,p02_live_dim_glasses,17.04,299,-0.343609,2.593258,2.315409,-0.185233
+session2,672,p02,live,,dim,yes,p02_live_dim_glasses,17.54,303,-2.365105,-1.111396,-0.555698,-0.463082
+session2,673,p02,live,,dim,yes,p02_live_dim_glasses,18.03,288,-4.418561,-4.723434,-1.852327,-1.944943
+session2,674,p02,live,,dim,yes,p02_live_dim_glasses,18.53,271,-2.016838,0.370465,0.092616,-1.481862
+session2,675,p02,live,,dim,yes,p02_live_dim_glasses,19.04,279,-2.667601,-2.222792,-1.389245,-1.111396
+session2,676,p02,live,,dim,yes,p02_live_dim_glasses,19.54,284,-0.260673,0.926163,2.315409,0.463082
+session2,677,p02,live,,dim,yes,p02_live_dim_glasses,20.03,282,0.845683,-0.370465,3.426805,2.778491
+session2,678,p02,live,,dim,no,p02_live_dim_noglasses,0.0,285,-2.876563,-2.963723,-1.759711,-2.871107
+session2,679,p02,live,,dim,no,p02_live_dim_noglasses,0.51,286,1.141988,1.852327,-0.740931,0.185233
+session2,680,p02,live,,dim,no,p02_live_dim_noglasses,1.01,287,1.001843,-0.185233,1.481862,0.648314
+session2,681,p02,live,,dim,no,p02_live_dim_noglasses,1.5,287,0.724405,-2.778491,1.018780,2.315409
+session2,682,p02,live,,dim,no,p02_live_dim_noglasses,2.02,295,-0.606642,-0.185233,0.463082,1.574478
+session2,683,p02,live,,dim,no,p02_live_dim_noglasses,2.51,337,-0.798144,-3.148956,-0.370465,-0.185233
+session2,684,p02,live,,dim,no,p02_live_dim_noglasses,3.01,405,1.685053,0.648314,3.889887,3.612038
+session2,685,p02,live,,dim,no,p02_live_dim_noglasses,3.52,492,0.711926,-1.481862,2.130176,0.648314
+session2,686,p02,live,,dim,no,p02_live_dim_noglasses,4.02,531,-1.461593,-1.111396,-1.852327,-1.111396
+session2,687,p02,live,,dim,no,p02_live_dim_noglasses,4.51,456,0.175848,-0.555698,1.481862,2.037560
+session2,688,p02,live,,dim,no,p02_live_dim_noglasses,5.01,379,-1.662090,0.000000,0.092616,-0.185233
+session2,689,p02,live,,dim,no,p02_live_dim_noglasses,5.52,320,1.245731,0.833547,2.037560,2.408025
+session2,690,p02,live,,dim,no,p02_live_dim_noglasses,6.02,276,1.038745,3.797270,0.370465,1.018780
+session2,691,p02,live,,dim,no,p02_live_dim_noglasses,6.51,241,0.944818,2.037560,0.555698,1.481862
+session2,692,p02,live,,dim,no,p02_live_dim_noglasses,7.02,226,0.798561,2.685874,2.130176,1.389245
+session2,693,p02,live,,dim,no,p02_live_dim_noglasses,7.52,223,-1.104254,-0.463082,1.296629,-0.926163
+session2,694,p02,live,,dim,no,p02_live_dim_noglasses,8.02,223,0.468308,-0.555698,4.445585,2.222792
+session2,695,p02,live,,dim,no,p02_live_dim_noglasses,8.53,239,0.947567,0.370465,-0.185233,1.852327
+session2,696,p02,live,,dim,no,p02_live_dim_noglasses,9.02,275,-1.235849,-2.778491,-0.740931,-2.037560
+session2,697,p02,live,,dim,no,p02_live_dim_noglasses,9.52,287,-3.037441,-2.685874,-2.593258,-1.296629
+session2,698,p02,live,,dim,no,p02_live_dim_noglasses,10.03,271,-1.238983,-2.130176,-1.852327,0.092616
+session2,699,p02,live,,dim,no,p02_live_dim_noglasses,10.53,260,-1.095989,-2.315409,0.926163,0.092616
+session2,700,p02,live,,dim,no,p02_live_dim_noglasses,11.02,266,2.225244,2.963723,1.204013,3.704654
+session2,701,p02,live,,dim,no,p02_live_dim_noglasses,11.54,276,-3.703934,-3.148956,-2.130176,-2.130176
+session2,702,p02,live,,dim,no,p02_live_dim_noglasses,12.03,294,-1.361506,-1.204013,-1.944943,0.000000
+session2,703,p02,live,,dim,no,p02_live_dim_noglasses,12.53,300,-2.587411,-2.500641,1.204013,-1.944943
+session2,704,p02,live,,dim,no,p02_live_dim_noglasses,13.02,294,-3.008214,-2.130176,-1.667094,-2.222792
+session2,705,p02,live,,dim,no,p02_live_dim_noglasses,13.54,288,-0.470719,0.740931,0.000000,-0.185233
+session2,706,p02,live,,dim,no,p02_live_dim_noglasses,14.03,279,-2.136074,-2.408025,-1.111396,-0.740931
+session2,707,p02,live,,dim,no,p02_live_dim_noglasses,14.53,247,0.284148,1.667094,0.092616,0.370465
+session2,708,p02,live,,dim,no,p02_live_dim_noglasses,15.04,236,-0.457495,0.926163,-1.389245,-0.926163
+session2,709,p02,live,,dim,no,p02_live_dim_noglasses,15.54,261,0.513567,0.370465,-0.277849,0.092616
+session2,710,p02,live,,dim,no,p02_live_dim_noglasses,16.03,281,-2.040678,-4.075119,-2.315409,-0.926163
+session2,711,p02,live,,dim,no,p02_live_dim_noglasses,16.54,277,-3.007291,-2.315409,0.092616,-0.555698
+session2,712,p02,live,,dim,no,p02_live_dim_noglasses,17.04,256,-1.084199,-3.797270,1.944943,1.667094
+session2,713,p02,live,,dim,no,p02_live_dim_noglasses,17.54,254,-2.313094,-2.871107,1.759711,0.926163
+session2,714,p02,live,,dim,no,p02_live_dim_noglasses,18.05,273,0.352521,-0.648314,1.574478,1.852327
+session2,715,p02,live,,dim,no,p02_live_dim_noglasses,18.54,287,-0.845156,-1.852327,-0.648314,0.648314
+session2,716,p02,live,,dim,no,p02_live_dim_noglasses,19.04,270,-0.582353,-1.389245,0.000000,0.000000
+session2,717,p02,live,,dim,no,p02_live_dim_noglasses,19.54,276,-0.622902,1.667094,1.667094,2.222792
+session2,718,p02,live,,dim,no,p02_live_dim_noglasses,20.0,268,0.489094,0.370465,0.092616,0.648314
+session2,719,p02,live,,dim,no,p02_live_dim_noglasses,20.54,248,1.133073,3.148956,1.111396,1.574478
+session2,720,p02,live,,dim,no,p02_live_dim_noglasses,21.04,290,-1.651636,-1.759711,-1.389245,-1.389245
+session2,721,p02,live,,dim,no,p02_live_dim_noglasses,21.5,294,-1.779542,-0.185233,0.092616,-0.648314
+session2,722,p02,live,,dim,no,p02_live_dim_noglasses,22.05,286,-1.359762,1.667094,2.778491,-1.204013
+session2,723,p02,live,,dim,no,p02_live_dim_noglasses,22.54,291,-1.332670,-1.852327,1.204013,1.667094
+session2,724,p02,live,,dim,no,p02_live_dim_noglasses,23.01,288,-1.300160,-3.334188,-0.555698,-0.463082
+session2,725,p02,live,,dim,no,p02_live_dim_noglasses,23.5,295,0.780342,0.277849,1.944943,1.389245
+session2,726,p02,print,,bright,yes,p02_print_bright_glasses,0.0,462,-8.046942,-3.612038,-4.167736,-5.001283
+session2,727,p02,print,,bright,yes,p02_print_bright_glasses,0.53,498,-9.115494,-3.334188,-3.241572,-5.186516
+session2,728,p02,print,,bright,yes,p02_print_bright_glasses,1.02,511,-6.730684,-2.222792,-4.352968,-5.279132
+session2,729,p02,print,,bright,yes,p02_print_bright_glasses,1.52,539,-9.963820,-4.630817,-2.315409,-6.297912
+session2,730,p02,print,,bright,yes,p02_print_bright_glasses,2.02,531,-8.770781,-2.222792,-3.797270,-6.483144
+session2,731,p02,print,,bright,yes,p02_print_bright_glasses,2.51,474,-10.278789,-3.843578,-4.167736,-7.501925
+session2,732,p02,print,,bright,yes,p02_print_bright_glasses,3.01,440,-8.534382,-4.630817,-3.148956,-6.112679
+session2,733,p02,print,,bright,yes,p02_print_bright_glasses,3.5,466,-9.168959,-6.760993,-4.260352,-6.575761
+session2,734,p02,print,,bright,yes,p02_print_bright_glasses,4.0,478,-6.792837,-1.667094,-1.667094,-3.241572
+session2,735,p02,print,,bright,yes,p02_print_bright_glasses,4.53,544,-8.730040,-4.167736,-3.704654,-7.038843
+session2,736,p02,print,,bright,yes,p02_print_bright_glasses,5.02,604,-10.625117,-7.501925,-7.131459,-7.965006
+session2,737,p02,print,,bright,yes,p02_print_bright_glasses,5.52,600,-9.295208,-4.352968,-7.501925,-7.594541
+session2,738,p02,print,,bright,yes,p02_print_bright_glasses,6.02,560,-9.955667,-3.241572,-5.834830,-8.242855
+session2,739,p02,print,,bright,yes,p02_print_bright_glasses,6.51,570,-8.896584,-5.464365,-6.020063,-7.594541
+session2,740,p02,print,,bright,yes,p02_print_bright_glasses,7.01,580,-10.163998,-6.297912,-6.483144,-8.057622
+session2,741,p02,print,,bright,yes,p02_print_bright_glasses,7.5,592,-10.890442,-6.853610,-7.501925,-8.428088
+session2,742,p02,print,,bright,yes,p02_print_bright_glasses,8.03,587,-10.089580,-7.316691,-6.205296,-7.965006
+session2,743,p02,print,,bright,yes,p02_print_bright_glasses,8.53,580,-9.561571,-5.371748,-6.483144,-8.057622
+session2,744,p02,print,,bright,yes,p02_print_bright_glasses,9.02,551,-9.266338,-6.020063,-5.556981,-7.594541
+session2,745,p02,print,,bright,yes,p02_print_bright_glasses,9.52,508,-10.194214,-6.020063,-2.037560,-7.594541
+session2,746,p02,print,,bright,yes,p02_print_bright_glasses,10.02,424,-10.681604,-6.390528,-5.464365,-8.335471
+session2,747,p02,print,,bright,yes,p02_print_bright_glasses,10.51,384,-8.202196,-4.445585,-4.352968,-6.112679
+session2,748,p02,print,,bright,yes,p02_print_bright_glasses,11.01,386,-6.326315,-2.778491,-3.797270,-5.279132
+session2,749,p02,print,,bright,yes,p02_print_bright_glasses,11.5,399,-8.405120,-5.279132,-2.871107,-6.390528
+session2,750,p02,print,,bright,yes,p02_print_bright_glasses,12.03,405,-10.098316,-7.316691,-4.538201,-7.872390
+session2,751,p02,print,,bright,yes,p02_print_bright_glasses,12.53,387,-7.843949,-3.612038,-1.944943,-6.390528
+session2,752,p02,print,,bright,yes,p02_print_bright_glasses,13.02,413,-6.270061,-3.334188,-0.370465,-3.612038
+session2,753,p02,print,,bright,yes,p02_print_bright_glasses,13.52,390,-10.955022,-6.112679,-5.742214,-8.428088
+session2,754,p02,print,,bright,yes,p02_print_bright_glasses,14.02,346,-10.110857,-6.483144,-4.723434,-7.965006
+session2,755,p02,print,,bright,yes,p02_print_bright_glasses,14.51,317,-9.101206,-2.500641,-4.630817,-7.224075
+session2,756,p02,print,,bright,yes,p02_print_bright_glasses,15.01,388,-8.759189,-9.354251,-7.965006,-7.872390
+session2,757,p02,print,,bright,yes,p02_print_bright_glasses,15.5,384,-5.186704,-1.574478,-3.889887,-4.075119
+session2,758,p02,print,,bright,yes,p02_print_bright_glasses,16.03,532,-9.475021,-3.519421,-4.538201,-5.834830
+session2,759,p02,print,,bright,yes,p02_print_bright_glasses,16.53,526,-5.873200,-2.963723,-3.241572,-2.871107
+session2,760,p02,print,,bright,yes,p02_print_bright_glasses,17.02,378,-7.098730,-5.927446,-3.241572,-5.093899
+session2,761,p02,print,,bright,yes,p02_print_bright_glasses,17.52,346,-5.295905,-2.685874,-1.204013,-1.574478
+session2,762,p02,print,,bright,no,p02_print_bright_noglasses,0.0,439,-5.707392,-3.148956,-1.574478,-2.500641
+session2,763,p02,print,,bright,no,p02_print_bright_noglasses,0.53,441,-7.154174,-3.519421,-3.148956,-3.889887
+session2,764,p02,print,,bright,no,p02_print_bright_noglasses,1.02,456,-5.416847,-1.111396,-0.463082,-1.204013
+session2,765,p02,print,,bright,no,p02_print_bright_noglasses,1.52,451,-4.721759,-3.519421,0.185233,-1.018780
+session2,766,p02,print,,bright,no,p02_print_bright_noglasses,2.02,498,-3.548043,0.000000,1.204013,-0.463082
+session2,767,p02,print,,bright,no,p02_print_bright_noglasses,2.51,536,-5.147978,-1.389245,-1.018780,-0.092616
+session2,768,p02,print,,bright,no,p02_print_bright_noglasses,3.04,557,-6.534468,-4.260352,-2.222792,-3.704654
+session2,769,p02,print,,bright,no,p02_print_bright_noglasses,3.54,549,-9.474713,-6.668377,-5.371748,-5.649597
+session2,770,p02,print,,bright,no,p02_print_bright_noglasses,4.03,566,-9.321079,-4.167736,-3.056340,-5.556981
+session2,771,p02,print,,bright,no,p02_print_bright_noglasses,4.53,578,-9.805363,-4.352968,-4.816050,-6.112679
+session2,772,p02,print,,bright,no,p02_print_bright_noglasses,5.02,561,-6.197529,-5.001283,-3.797270,-3.889887
+session2,773,p02,print,,bright,no,p02_print_bright_noglasses,5.5,509,-7.840604,-3.797270,-3.148956,-6.760993
+session2,774,p02,print,,bright,no,p02_print_bright_noglasses,6.0,454,-10.872057,-4.769742,-6.205296,-7.965006
+session2,775,p02,print,,bright,no,p02_print_bright_noglasses,6.54,472,-5.604887,-0.277849,-1.574478,-3.704654
+session2,776,p02,print,,bright,no,p02_print_bright_noglasses,7.04,497,-6.216769,-2.963723,-1.574478,-3.612038
+session2,777,p02,print,,bright,no,p02_print_bright_noglasses,7.54,494,-2.770227,1.111396,3.334188,1.111396
+session2,778,p02,print,,bright,no,p02_print_bright_noglasses,8.03,502,-7.463261,-3.612038,-0.092616,-5.371748
+session2,779,p02,print,,bright,no,p02_print_bright_noglasses,8.51,498,-4.991460,1.944943,2.130176,-1.018780
+session2,780,p02,print,,bright,no,p02_print_bright_noglasses,9.01,506,-3.522239,0.463082,2.130176,1.296629
+session2,781,p02,print,,bright,no,p02_print_bright_noglasses,9.5,532,-6.885639,-3.797270,-2.778491,-4.167736
+session2,782,p02,print,,bright,no,p02_print_bright_noglasses,10.0,525,-11.406719,-7.594541,-7.316691,-9.724717
+session2,783,p02,print,,bright,no,p02_print_bright_noglasses,10.54,531,-11.268629,-5.649597,-4.445585,-7.779773
+session2,784,p02,print,,bright,no,p02_print_bright_noglasses,11.02,499,-7.769194,-6.112679,-4.908667,-5.464365
+session2,785,p02,print,,bright,no,p02_print_bright_noglasses,11.52,454,-9.199644,-5.649597,-4.630817,-4.908667
+session2,786,p02,print,,bright,no,p02_print_bright_noglasses,12.02,420,-6.062152,-3.612038,-0.740931,-3.241572
+session2,787,p02,print,,bright,no,p02_print_bright_noglasses,12.51,394,-3.301961,-1.944943,-0.648314,-1.759711
+session2,788,p02,print,,bright,no,p02_print_bright_noglasses,13.01,370,-4.354972,-2.500641,1.111396,-2.685874
+session2,789,p02,print,,bright,no,p02_print_bright_noglasses,13.5,407,-4.109003,-2.130176,0.648314,-1.852327
+session2,790,p02,print,,bright,no,p02_print_bright_noglasses,14.03,527,-6.751614,-2.037560,-2.037560,-4.167736
+session2,791,p02,print,,bright,no,p02_print_bright_noglasses,14.53,533,-8.163542,-3.797270,-3.889887,-5.834830
+session2,792,p02,print,,bright,no,p02_print_bright_noglasses,15.02,442,-6.568051,-3.982503,-1.481862,-3.519421
+session2,793,p02,print,,bright,no,p02_print_bright_noglasses,15.52,347,-4.246519,-2.593258,1.759711,-2.778491
+session2,794,p02,print,,dim,yes,p02_print_dim_glasses,0.0,341,-6.077172,-4.260352,-1.018780,-4.908667
+session2,795,p02,print,,dim,yes,p02_print_dim_glasses,0.54,352,-7.135737,-1.574478,-1.759711,-6.020063
+session2,796,p02,print,,dim,yes,p02_print_dim_glasses,1.01,364,-6.125748,-2.593258,-0.648314,-5.742214
+session2,797,p02,print,,dim,yes,p02_print_dim_glasses,1.5,420,-4.914341,-0.463082,-1.944943,-3.241572
+session2,798,p02,print,,dim,yes,p02_print_dim_glasses,2.05,493,-8.484406,-2.778491,-3.519421,-6.575761
+session2,799,p02,print,,dim,yes,p02_print_dim_glasses,2.51,472,-13.944154,-8.613320,-11.808584,-11.808584
+session2,800,p02,print,,dim,yes,p02_print_dim_glasses,3.01,523,-13.658024,-9.909949,-10.743497,-11.808584
+session2,801,p02,print,,dim,yes,p02_print_dim_glasses,3.5,513,-15.893770,-11.808584,-11.808584,-11.808584
+session2,802,p02,print,,dim,yes,p02_print_dim_glasses,4.02,468,-7.174616,-4.538201,-4.630817,-6.205296
+session2,803,p02,print,,dim,yes,p02_print_dim_glasses,4.51,402,-8.373961,-1.111396,-4.260352,-7.131459
+session2,804,p02,print,,dim,yes,p02_print_dim_glasses,5.01,484,-4.825553,1.852327,-1.667094,-3.056340
+session2,805,p02,print,,dim,yes,p02_print_dim_glasses,5.5,495,-10.640623,-3.889887,-6.297912,-8.428088
+session2,806,p02,print,,dim,yes,p02_print_dim_glasses,6.02,534,-12.135059,-3.148956,-6.390528,-7.594541
+session2,807,p02,print,,dim,yes,p02_print_dim_glasses,6.51,480,-13.109295,-5.834830,-8.798553,-9.539484
+session2,808,p02,print,,dim,yes,p02_print_dim_glasses,7.01,420,-9.804907,-3.889887,-5.927446,-5.093899
+session2,809,p02,print,,dim,yes,p02_print_dim_glasses,7.52,375,-11.617208,-7.316691,-6.668377,-8.891170
+session2,810,p02,print,,dim,yes,p02_print_dim_glasses,8.02,360,-11.476668,-5.927446,-4.538201,-6.205296
+session2,811,p02,print,,dim,no,p02_print_dim_noglasses,0.0,377,-6.599122,-0.555698,-0.277849,-6.205296
+session2,812,p02,print,,dim,no,p02_print_dim_noglasses,0.54,377,-8.754702,0.926163,-1.389245,-5.834830
+session2,813,p02,print,,dim,no,p02_print_dim_noglasses,1.04,381,-8.366093,-4.630817,-1.018780,-6.483144
+session2,814,p02,print,,dim,no,p02_print_dim_noglasses,1.5,382,-9.550577,-2.130176,-3.056340,-6.205296
+session2,815,p02,print,,dim,no,p02_print_dim_noglasses,2.05,451,-11.371274,-2.685874,-7.687157,-9.724717
+session2,816,p02,print,,dim,no,p02_print_dim_noglasses,2.54,490,-10.028685,-2.871107,-5.186516,-6.853610
+session2,817,p02,print,,dim,no,p02_print_dim_noglasses,3.01,483,-9.531204,-3.519421,-4.816050,-6.853610
+session2,818,p02,print,,dim,no,p02_print_dim_noglasses,3.5,472,-9.707346,-3.241572,-4.816050,-5.464365
+session2,819,p02,print,,dim,no,p02_print_dim_noglasses,4.05,451,-11.104622,-3.889887,-5.834830,-9.909949
+session2,820,p02,print,,dim,no,p02_print_dim_noglasses,4.56,478,-9.013912,-1.481862,-6.760993,-8.057622
+session2,821,p02,print,,dim,no,p02_print_dim_noglasses,5.01,482,-11.978522,-2.963723,-7.409308,-10.095182
+session2,822,p02,print,,dim,no,p02_print_dim_noglasses,5.5,435,-8.363809,-0.092616,-2.963723,-5.834830
+session2,823,p02,print,,dim,no,p02_print_dim_noglasses,6.06,389,-12.004197,-4.908667,-7.687157,-9.817333
+session2,824,p02,print,,dim,no,p02_print_dim_noglasses,6.51,379,-9.276403,-3.704654,-5.556981,-7.224075
+session2,825,p02,print,,dim,no,p02_print_dim_noglasses,7.01,347,-8.478668,-3.334188,-5.742214,-7.038843
+session2,826,p02,print,,dim,no,p02_print_dim_noglasses,7.5,342,-11.326984,-5.834830,-8.335471,-8.242855
+session2,827,p02,print,,dim,no,p02_print_dim_noglasses,8.02,364,-13.804066,-8.242855,-8.335471,-11.808584
+session2,828,p02,print,,dim,no,p02_print_dim_noglasses,8.51,372,-9.485284,-3.426805,-3.982503,-6.760993
+session2,829,p02,print,,dim,no,p02_print_dim_noglasses,9.01,363,-9.601582,-1.759711,-2.871107,-6.297912
+session2,830,p02,print,,dim,no,p02_print_dim_noglasses,9.52,348,-12.031145,-6.760993,-7.779773,-10.836113
+session2,831,p02,print,,dim,no,p02_print_dim_noglasses,10.02,353,-12.293735,-5.649597,-4.445585,-9.909949
+session2,832,p02,print,,dim,no,p02_print_dim_noglasses,10.51,358,-10.526808,-3.797270,-5.186516,-8.242855
+session2,833,p02,print,,dim,no,p02_print_dim_noglasses,11.02,318,-6.695019,-1.389245,-2.685874,-6.297912

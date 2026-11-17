@@ -33,6 +33,8 @@ the Pi needs key-based SSH and the same bench/bench.py and app/pipeline.py as th
   python bench\power_run.py --reverse            second pass in reverse order (order/heat check)
   python eval\power_analysis.py --combine <run1> <run2>   mean and min-max -> results\processed\power_pi.csv
   python eval\power_analysis.py --combine <run1> <run2> --name nodw   -> results\processed\power_pi_nodw.csv
+  python bench\power_run.py --det-size 320 --detect-every 1,3,5 --cells <configs>   detector sweep, one chunk per size
+  python eval\power_analysis.py --combine <6 runs> --name detector   -> results\processed\power_pi_detector.csv
   python eval/compare_runs.py --a pc --b pi     do Pi outputs match the committed PC results?
 
 Data (all local, git-ignored, never shared):

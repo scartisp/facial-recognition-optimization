@@ -1,0 +1,89 @@
+dataset,liveness,group,bpcer,bpcer_errors,live_faces,apcer,apcer_errors,attack_faces,eer,auc,decision_flips_vs_fp32
+own (test split),fp32,all,0.25463,55,216,0.06731,14,208,0.16747,0.92693,0
+own (test split),fp32,lighting=bright,0.125,14,112,0.05607,6,107,,,
+own (test split),fp32,lighting=dim,0.39423,41,104,0.07921,8,101,,,
+own (test split),fp32,attack=screen,,,,0.06731,14,208,,,
+own (test split),int8pt,all,0.13426,29,216,0.07692,16,208,0.08734,0.96206,32
+own (test split),int8pt,lighting=bright,0.01786,2,112,0.05607,6,107,,,
+own (test split),int8pt,lighting=dim,0.25962,27,104,0.09901,10,101,,,
+own (test split),int8pt,attack=screen,,,,0.07692,16,208,,,
+own (test split),int8pc,all,0.12963,28,216,0.07212,15,208,0.08965,0.96046,30
+own (test split),int8pc,lighting=bright,0.0,0,112,0.05607,6,107,,,
+own (test split),int8pc,lighting=dim,0.26923,28,104,0.08911,9,101,,,
+own (test split),int8pc,attack=screen,,,,0.07212,15,208,,,
+own (test split),int8nodw,all,0.23148,50,216,0.08173,17,208,0.12731,0.94273,12
+own (test split),int8nodw,lighting=bright,0.13393,15,112,0.05607,6,107,,,
+own (test split),int8nodw,lighting=dim,0.33654,35,104,0.10891,11,101,,,
+own (test split),int8nodw,attack=screen,,,,0.08173,17,208,,,
+msu,fp32,all,0.0,0,35,0.45714,48,105,0.02857,0.99129,0
+msu,fp32,attack=print/printed_photo,,,,0.4,14,35,,,
+msu,fp32,attack=screen/ipad,,,,0.37143,13,35,,,
+msu,fp32,attack=screen/iphone,,,,0.6,21,35,,,
+msu,int8pt,all,0.0,0,35,0.55238,58,105,0.05714,0.97905,18
+msu,int8pt,attack=print/printed_photo,,,,0.6,21,35,,,
+msu,int8pt,attack=screen/ipad,,,,0.45714,16,35,,,
+msu,int8pt,attack=screen/iphone,,,,0.6,21,35,,,
+msu,int8pc,all,0.0,0,35,0.64762,68,105,0.05238,0.99007,22
+msu,int8pc,attack=print/printed_photo,,,,0.68571,24,35,,,
+msu,int8pc,attack=screen/ipad,,,,0.51429,18,35,,,
+msu,int8pc,attack=screen/iphone,,,,0.74286,26,35,,,
+msu,int8nodw,all,0.0,0,35,0.41905,44,105,0.02857,0.99293,12
+msu,int8nodw,attack=print/printed_photo,,,,0.37143,13,35,,,
+msu,int8nodw,attack=screen/ipad,,,,0.4,14,35,,,
+msu,int8nodw,attack=screen/iphone,,,,0.48571,17,35,,,
+kaggle,fp32,all,0.33333,38,114,0.13468,40,297,0.18301,0.89335,0
+kaggle,fp32,attack=print/a4_printout,,,,0.03922,4,102,,,
+kaggle,fp32,attack=print/cutout_printout,,,,0.04819,4,83,,,
+kaggle,fp32,attack=screen/replay,,,,0.28571,32,112,,,
+kaggle,int8pt,all,0.26316,30,114,0.19192,57,297,0.20525,0.8821,41
+kaggle,int8pt,attack=print/a4_printout,,,,0.03922,4,102,,,
+kaggle,int8pt,attack=print/cutout_printout,,,,0.19277,16,83,,,
+kaggle,int8pt,attack=screen/replay,,,,0.33036,37,112,,,
+kaggle,int8pc,all,0.23684,27,114,0.20202,60,297,0.21132,0.88109,37
+kaggle,int8pc,attack=print/a4_printout,,,,0.05882,6,102,,,
+kaggle,int8pc,attack=print/cutout_printout,,,,0.13253,11,83,,,
+kaggle,int8pc,attack=screen/replay,,,,0.38393,43,112,,,
+kaggle,int8nodw,all,0.35965,41,114,0.11448,34,297,0.18301,0.89428,15
+kaggle,int8nodw,attack=print/a4_printout,,,,0.03922,4,102,,,
+kaggle,int8nodw,attack=print/cutout_printout,,,,0.03614,3,83,,,
+kaggle,int8nodw,attack=screen/replay,,,,0.24107,27,112,,,
+session2,fp32,all,0.49036,229,467,0.09341,34,364,0.1589,0.89974,0
+session2,fp32,lighting=bright,0.34177,81,237,0.15714,33,210,,,
+session2,fp32,lighting=dim,0.64348,148,230,0.00649,1,154,,,
+session2,fp32,glasses=no,0.49573,116,234,0.1326,24,181,,,
+session2,fp32,glasses=yes,0.48498,113,233,0.05464,10,183,,,
+session2,fp32,"lighting=bright,glasses=no",0.4188,49,117,0.23301,24,103,,,
+session2,fp32,"lighting=bright,glasses=yes",0.26667,32,120,0.08411,9,107,,,
+session2,fp32,"lighting=dim,glasses=no",0.57265,67,117,0.0,0,78,,,
+session2,fp32,"lighting=dim,glasses=yes",0.71681,81,113,0.01316,1,76,,,
+session2,fp32,attack=print,,,,0.09341,34,364,,,
+session2,int8pt,all,0.24411,114,467,0.17582,64,364,0.20122,0.88005,169
+session2,int8pt,lighting=bright,0.04219,10,237,0.23333,49,210,,,
+session2,int8pt,lighting=dim,0.45217,104,230,0.0974,15,154,,,
+session2,int8pt,glasses=no,0.2265,53,234,0.20442,37,181,,,
+session2,int8pt,glasses=yes,0.2618,61,233,0.14754,27,183,,,
+session2,int8pt,"lighting=bright,glasses=no",0.04274,5,117,0.31068,32,103,,,
+session2,int8pt,"lighting=bright,glasses=yes",0.04167,5,120,0.15888,17,107,,,
+session2,int8pt,"lighting=dim,glasses=no",0.41026,48,117,0.0641,5,78,,,
+session2,int8pt,"lighting=dim,glasses=yes",0.49558,56,113,0.13158,10,76,,,
+session2,int8pt,attack=print,,,,0.17582,64,364,,,
+session2,int8pc,all,0.13704,64,467,0.25824,94,364,0.18809,0.8931,235
+session2,int8pc,lighting=bright,0.01266,3,237,0.39048,82,210,,,
+session2,int8pc,lighting=dim,0.26522,61,230,0.07792,12,154,,,
+session2,int8pc,glasses=no,0.15385,36,234,0.27072,49,181,,,
+session2,int8pc,glasses=yes,0.12017,28,233,0.2459,45,183,,,
+session2,int8pc,"lighting=bright,glasses=no",0.00855,1,117,0.45631,47,103,,,
+session2,int8pc,"lighting=bright,glasses=yes",0.01667,2,120,0.3271,35,107,,,
+session2,int8pc,"lighting=dim,glasses=no",0.29915,35,117,0.02564,2,78,,,
+session2,int8pc,"lighting=dim,glasses=yes",0.23009,26,113,0.13158,10,76,,,
+session2,int8pc,attack=print,,,,0.25824,94,364,,,
+session2,int8nodw,all,0.29336,137,467,0.12912,47,364,0.19358,0.88492,119
+session2,int8nodw,lighting=bright,0.13924,33,237,0.20952,44,210,,,
+session2,int8nodw,lighting=dim,0.45217,104,230,0.01948,3,154,,,
+session2,int8nodw,glasses=no,0.31197,73,234,0.1547,28,181,,,
+session2,int8nodw,glasses=yes,0.27468,64,233,0.10383,19,183,,,
+session2,int8nodw,"lighting=bright,glasses=no",0.19658,23,117,0.27184,28,103,,,
+session2,int8nodw,"lighting=bright,glasses=yes",0.08333,10,120,0.14953,16,107,,,
+session2,int8nodw,"lighting=dim,glasses=no",0.42735,50,117,0.0,0,78,,,
+session2,int8nodw,"lighting=dim,glasses=yes",0.47788,54,113,0.03947,3,76,,,
+session2,int8nodw,attack=print,,,,0.12912,47,364,,,

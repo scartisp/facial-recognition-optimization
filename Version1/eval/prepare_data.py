@@ -3,6 +3,7 @@
 Run once (from the Version1 folder, venv active):
     python eval/prepare_data.py                 # all datasets
     python eval/prepare_data.py --only own msu  # a subset
+    python eval/prepare_data.py --det-size 320  # detector at 320x320 -> private/cache_det320/
 
 The detector is the fixed FP32 SCRFD from the pipeline, and the crops are produced by the
 same Pipeline methods the live demo uses. Every precision variant is later evaluated on these
@@ -261,10 +262,18 @@ def main():
                  "kaggle": prepare_kaggle, "lfw": prepare_lfw}
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--only", nargs="+", choices=preparers, default=list(preparers))
+    parser.add_argument("--det-size", type=int,
+                        help="detector input size override; caches go to private/cache_det<N>/ and the "
+                             "detection summary to results/raw/det<N>/, leaving the 640 cache untouched")
     args = parser.parse_args()
 
+    global cache_folder, results_raw
     config = json.loads(pl.default_config.read_text())
     pl.check_pins(config)
+    if args.det_size:
+        config["detector"]["input_size"] = [args.det_size, args.det_size]
+        cache_folder = private_folder / f"cache_det{args.det_size}"
+        results_raw = results_raw / f"det{args.det_size}"
     pipeline = pl.Pipeline(config)
     cache_folder.mkdir(parents=True, exist_ok=True)
 

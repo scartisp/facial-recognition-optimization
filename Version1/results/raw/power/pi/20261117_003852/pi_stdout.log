@@ -1,0 +1,121 @@
+POWER label=pi cells=9 seconds=60.0 repeats=1 reverse=True det_size=320 detect_every=[1, 3, 5]
+PHASE {"cell": "baseline", "phase": "idle", "event": "start", "t": 1794893939.4889057, "cpu_temp_c": 51.121}
+PHASE {"cell": "baseline", "phase": "idle", "event": "end", "t": 1794893999.4894464, "cpu_temp_c": 47.712}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "load", "event": "start", "t": 1794894000.9665432}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "load", "event": "end", "t": 1794894004.8556705, "rss_mb": 313.86328125}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "warmup", "event": "start", "t": 1794894004.8557806}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "warmup", "event": "end", "t": 1794894010.4891665}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "sustained", "event": "start", "t": 1794894010.4917836, "cpu_temp_c": 56.965}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "sustained", "event": "end", "t": 1794894070.560544, "frames": 534, "cpu_temp_c": 62.809}
+RESULT {"cell": "rec-int8pc_live-int8pc@det320_k5", "precision": "rec-int8pc_live-int8pc", "det_size": 320, "detect_every": 5, "seconds": 60.06835877901176, "frames": 534, "fps": 8.889871653802913, "warmup_excluded": 50, "total_ms": {"p50": 104.48649300087709, "p95": 142.99189969678991, "mean": 112.39656856030004, "std": 15.593010598312231, "min": 103.79550300422125, "max": 162.55670000100508}, "cpu_ms_per_frame": 276.05046646441986, "rss_mb": {"median": 334.59375, "max": 334.62109375}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 56.965, "end": 62.809}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "idle", "event": "start", "t": 1794894070.9028444, "cpu_temp_c": 63.296}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k5", "phase": "idle", "event": "end", "t": 1794894192.926553, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "load", "event": "start", "t": 1794894194.4043958}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "load", "event": "end", "t": 1794894198.3025105, "rss_mb": 314.26171875}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "warmup", "event": "start", "t": 1794894198.30262}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "warmup", "event": "end", "t": 1794894204.2206378}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "sustained", "event": "start", "t": 1794894204.2232141, "cpu_temp_c": 58.426}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "sustained", "event": "end", "t": 1794894264.2688932, "frames": 510, "cpu_temp_c": 64.27}
+RESULT {"cell": "rec-int8pc_live-int8pc@det320_k3", "precision": "rec-int8pc_live-int8pc", "det_size": 320, "detect_every": 3, "seconds": 60.04527638699801, "frames": 510, "fps": 8.49359068168822, "warmup_excluded": 50, "total_ms": {"p50": 105.11683649383485, "p95": 143.08622385069611, "mean": 117.64560116306016, "std": 17.905914516348542, "min": 103.45838399371132, "max": 155.11116301058792}, "cpu_ms_per_frame": 290.79297079019557, "rss_mb": {"median": 335.0, "max": 335.0390625}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 58.426, "end": 64.27}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "idle", "event": "start", "t": 1794894264.609608, "cpu_temp_c": 63.296}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k3", "phase": "idle", "event": "end", "t": 1794894364.6303625, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "load", "event": "start", "t": 1794894366.1787636}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "load", "event": "end", "t": 1794894370.0344102, "rss_mb": 314.66015625}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "warmup", "event": "start", "t": 1794894370.0345314}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "warmup", "event": "end", "t": 1794894377.1732705}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "sustained", "event": "start", "t": 1794894377.1758099, "cpu_temp_c": 59.887}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "sustained", "event": "end", "t": 1794894437.1974137, "frames": 422, "cpu_temp_c": 65.731}
+RESULT {"cell": "rec-int8pc_live-int8pc@det320_k1", "precision": "rec-int8pc_live-int8pc", "det_size": 320, "detect_every": 1, "seconds": 60.02117284700216, "frames": 422, "fps": 7.030852280672775, "warmup_excluded": 50, "total_ms": {"p50": 141.6997310006991, "p95": 143.0059100035578, "mean": 142.13819690768014, "std": 2.301053191965566, "min": 140.45583199185785, "max": 159.76798300107475}, "cpu_ms_per_frame": 362.1991661990522, "rss_mb": {"median": 335.4609375, "max": 335.515625}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 59.887, "end": 65.731}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "idle", "event": "start", "t": 1794894437.5390816, "cpu_temp_c": 64.757}
+PHASE {"cell": "rec-int8pc_live-int8pc@det320_k1", "phase": "idle", "event": "end", "t": 1794894565.5631952, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "load", "event": "start", "t": 1794894567.0396738}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "load", "event": "end", "t": 1794894570.9314954, "rss_mb": 313.33984375}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "warmup", "event": "start", "t": 1794894570.9316058}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "warmup", "event": "end", "t": 1794894575.3379672}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "sustained", "event": "start", "t": 1794894575.340644, "cpu_temp_c": 57.939}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "sustained", "event": "end", "t": 1794894635.3760326, "frames": 686, "cpu_temp_c": 67.679}
+RESULT {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "precision": "rec-int8nodw_live-int8nodw", "det_size": 320, "detect_every": 5, "seconds": 60.03498845201102, "frames": 686, "fps": 11.426669975098841, "warmup_excluded": 50, "total_ms": {"p50": 79.4040854962077, "p95": 118.34558174814447, "mean": 87.4254529824044, "std": 16.08794504252128, "min": 78.66299299348611, "max": 136.3688359997468}, "cpu_ms_per_frame": 242.54187932069965, "rss_mb": {"median": 341.58984375, "max": 341.625}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 57.939, "end": 67.679}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "idle", "event": "start", "t": 1794894635.7123, "cpu_temp_c": 66.705}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k5", "phase": "idle", "event": "end", "t": 1794894783.7424197, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "load", "event": "start", "t": 1794894785.284692}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "load", "event": "end", "t": 1794894789.1328025, "rss_mb": 313.33984375}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "warmup", "event": "start", "t": 1794894789.1329122}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "warmup", "event": "end", "t": 1794894793.7710133}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "sustained", "event": "start", "t": 1794894793.7736516, "cpu_temp_c": 58.913}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "sustained", "event": "end", "t": 1794894853.8721402, "frames": 652, "cpu_temp_c": 67.192}
+RESULT {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "precision": "rec-int8nodw_live-int8nodw", "det_size": 320, "detect_every": 3, "seconds": 60.09808471699944, "frames": 652, "fps": 10.848931427186967, "warmup_excluded": 50, "total_ms": {"p50": 79.2625539979781, "p95": 117.75539374066284, "mean": 92.08403754552367, "std": 18.107695923867755, "min": 77.8547389927553, "max": 130.72291600110475}, "cpu_ms_per_frame": 255.5081139539872, "rss_mb": {"median": 341.60546875, "max": 341.65234375}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 58.913, "end": 67.192}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "idle", "event": "start", "t": 1794894854.2090957, "cpu_temp_c": 64.27}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k3", "phase": "idle", "event": "end", "t": 1794894976.2358387, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "load", "event": "start", "t": 1794894977.7759943}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "load", "event": "end", "t": 1794894981.6490123, "rss_mb": 313.140625}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "warmup", "event": "start", "t": 1794894981.6491213}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "warmup", "event": "end", "t": 1794894987.5011652}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "sustained", "event": "start", "t": 1794894987.5037572, "cpu_temp_c": 58.913}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "sustained", "event": "end", "t": 1794895047.5806127, "frames": 514, "cpu_temp_c": 66.218}
+RESULT {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "precision": "rec-int8nodw_live-int8nodw", "det_size": 320, "detect_every": 1, "seconds": 60.076457352988655, "frames": 514, "fps": 8.555764148673287, "warmup_excluded": 50, "total_ms": {"p50": 116.36961699696258, "p95": 117.70336609624792, "mean": 116.78765889482322, "std": 2.4341087635192618, "min": 114.607472991338, "max": 139.15483599703293}, "cpu_ms_per_frame": 327.3791374766534, "rss_mb": {"median": 342.021484375, "max": 342.09765625}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 58.913, "end": 66.218}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "idle", "event": "start", "t": 1794895047.9183617, "cpu_temp_c": 65.731}
+PHASE {"cell": "rec-int8nodw_live-int8nodw@det320_k1", "phase": "idle", "event": "end", "t": 1794895181.945106, "cpu_temp_c": 49.173}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "load", "event": "start", "t": 1794895183.4265938}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "load", "event": "end", "t": 1794895187.2975423, "rss_mb": 322.6171875}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "warmup", "event": "start", "t": 1794895187.2976727}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "warmup", "event": "end", "t": 1794895192.064209}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "sustained", "event": "start", "t": 1794895192.066771, "cpu_temp_c": 59.4}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "sustained", "event": "end", "t": 1794895252.1591563, "frames": 632, "cpu_temp_c": 69.14}
+RESULT {"cell": "rec-fp32_live-fp32@det320_k5", "precision": "rec-fp32_live-fp32", "det_size": 320, "detect_every": 5, "seconds": 60.09199246100616, "frames": 632, "fps": 10.517208268807302, "warmup_excluded": 50, "total_ms": {"p50": 86.53439750924008, "p95": 125.44867510150652, "mean": 94.99303128152089, "std": 16.233187266394033, "min": 85.69686200644355, "max": 160.90712700679433}, "cpu_ms_per_frame": 280.2566141977849, "rss_mb": {"median": 350.587890625, "max": 350.62109375}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 59.4, "end": 69.14}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "idle", "event": "start", "t": 1794895252.4942956, "cpu_temp_c": 66.705}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k5", "phase": "idle", "event": "end", "t": 1794895380.521191, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "load", "event": "start", "t": 1794895382.0350442}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "load", "event": "end", "t": 1794895385.8387148, "rss_mb": 322.609375}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "warmup", "event": "start", "t": 1794895385.8388224}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "warmup", "event": "end", "t": 1794895390.7388883}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "sustained", "event": "start", "t": 1794895390.74148, "cpu_temp_c": 59.887}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "sustained", "event": "end", "t": 1794895450.771559, "frames": 616, "cpu_temp_c": 68.653}
+RESULT {"cell": "rec-fp32_live-fp32@det320_k3", "precision": "rec-fp32_live-fp32", "det_size": 320, "detect_every": 3, "seconds": 60.029672107004444, "frames": 616, "fps": 10.261591949094175, "warmup_excluded": 50, "total_ms": {"p50": 84.48146849696059, "p95": 122.65082324665855, "mean": 97.3605452433388, "std": 17.913931535339024, "min": 83.05367300636135, "max": 128.40684699767735}, "cpu_ms_per_frame": 290.2643782012989, "rss_mb": {"median": 350.599609375, "max": 350.65234375}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 59.887, "end": 68.653}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "idle", "event": "start", "t": 1794895451.100206, "cpu_temp_c": 67.679}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k3", "phase": "idle", "event": "end", "t": 1794895613.1336262, "cpu_temp_c": 49.66}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "load", "event": "start", "t": 1794895614.6699624}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "load", "event": "end", "t": 1794895618.4395425, "rss_mb": 322.60546875}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "warmup", "event": "start", "t": 1794895618.4396539}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "warmup", "event": "end", "t": 1794895624.5908592}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "sustained", "event": "start", "t": 1794895624.5934212, "cpu_temp_c": 59.4}
+/home/simion/facial-recognition-optimization/Version1/.venv/lib/python3.11/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "sustained", "event": "end", "t": 1794895684.5946262, "frames": 488, "cpu_temp_c": 69.14}
+RESULT {"cell": "rec-fp32_live-fp32@det320_k1", "precision": "rec-fp32_live-fp32", "det_size": 320, "detect_every": 1, "seconds": 60.000802392998594, "frames": 488, "fps": 8.133224565959205, "warmup_excluded": 50, "total_ms": {"p50": 122.17405749834143, "p95": 123.56298845043057, "mean": 122.86179901826979, "std": 3.980077944868119, "min": 120.7631709985435, "max": 160.44046499882825}, "cpu_ms_per_frame": 364.7932489118857, "rss_mb": {"median": 350.62109375, "max": 350.6875}, "cpu_freq_mhz": {"min": 1800.0, "max": 1800.0}, "cpu_temp_c": {"start": 59.4, "end": 69.14}, "throttled": {"start": "0x0", "end": "0x0"}, "host": {"platform": "Linux-6.18.50+rpt-rpi-v8-aarch64-with-glibc2.41", "machine": "aarch64", "processor": "", "cpu_count_logical": 4, "cpu_count_physical": 4, "python": "3.11.17", "onnxruntime": "1.30.0", "opencv": "4.12.0", "numpy": "2.2.6", "device_model": "Raspberry Pi 4 Model B Rev 1.5"}}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "idle", "event": "start", "t": 1794895684.9230285, "cpu_temp_c": 66.705}
+PHASE {"cell": "rec-fp32_live-fp32@det320_k1", "phase": "idle", "event": "end", "t": 1794895840.9534843, "cpu_temp_c": 49.66}
+POWER done

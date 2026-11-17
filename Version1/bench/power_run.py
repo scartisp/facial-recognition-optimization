@@ -74,6 +74,8 @@ def main():
     ap.add_argument("--repeats", type=int, default=1)
     ap.add_argument("--cells", default="")
     ap.add_argument("--reverse", action="store_true", help="run the configs in reverse order")
+    ap.add_argument("--det-size", type=int, help="detector input size override, e.g. 480 or 320")
+    ap.add_argument("--detect-every", default="1", help="run the detector every K frames, e.g. 1,3,5")
     args = ap.parse_args()
 
     run_id = time.strftime("%Y%m%d_%H%M%S")
@@ -104,6 +106,9 @@ def main():
         bench_args += ["--cells", args.cells]
     if args.reverse:
         bench_args.append("--reverse")
+    if args.det_size:
+        bench_args += ["--det-size", args.det_size]
+    bench_args += ["--detect-every", args.detect_every]
     remote = (f"cd {args.remote_dir} && PYTHONUNBUFFERED=1 .venv/bin/python bench/bench.py "
               + " ".join(shlex.quote(str(a)) for a in bench_args))
 

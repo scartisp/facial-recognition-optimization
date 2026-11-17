@@ -79,14 +79,19 @@ COMBINE_COLUMNS = ["fps", "latency_p50_ms", "latency_p95_ms", "power_mean_W", "i
 def combine(runs, name=None):
     """Average several analysed runs (e.g. forward and reverse order) per config, with the
     min-max across runs, into results/processed/power_<label>.csv."""
-    per_run = [{r["cell"]: r for r in csv.DictReader(open(Path(run) / "power_summary.csv"))} for run in runs]
+    # Match configs by name, so runs covering different configs (e.g. one per detector size) combine
+    by_cell = {}
+    for run in runs:
+        for r in csv.DictReader(open(Path(run) / "power_summary.csv")):
+            by_cell.setdefault(r["cell"], []).append((Path(run).name, r))
     label = json.loads((Path(runs[0]) / "run.json").read_text()).get("label", Path(runs[0]).parent.name)
     rows = []
-    for cell in per_run[0]:
-        row = {"cell": cell, "runs": len(per_run), "run_ids": " ".join(Path(r).name for r in runs),
-               "throttled_any": any(p[cell]["throttled_end"] not in ("", "0x0") for p in per_run)}
+    for cell, entries in by_cell.items():
+        found = [r for _, r in entries]
+        row = {"cell": cell, "runs": len(found), "run_ids": " ".join(name for name, _ in entries),
+               "throttled_any": any(r["throttled_end"] not in ("", "0x0") for r in found)}
         for col in COMBINE_COLUMNS:
-            values = [float(p[cell][col]) for p in per_run]
+            values = [float(r[col]) for r in found]
             row[col] = round(float(np.mean(values)), 4)
             row[f"{col}_min"], row[f"{col}_max"] = round(min(values), 4), round(max(values), 4)
         rows.append(row)
@@ -96,9 +101,9 @@ def combine(runs, name=None):
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
-    print(f"{'cell':28s} {'fps':>6s} {'mean W':>14s} {'mJ/frame':>18s}   (mean [min-max] over {len(runs)} runs)")
+    print(f"{'cell':40s} {'fps':>6s} {'mean W':>14s} {'mJ/frame':>18s}   (mean [min-max] over the runs with that config)")
     for r in rows:
-        print(f"{r['cell']:28s} {r['fps']:6.2f} {r['power_mean_W']:5.2f} [{r['power_mean_W_min']:.2f}-"
+        print(f"{r['cell']:40s} {r['fps']:6.2f} {r['power_mean_W']:5.2f} [{r['power_mean_W_min']:.2f}-"
               f"{r['power_mean_W_max']:.2f}] {r['energy_mJ_per_frame']:7.1f} [{r['energy_mJ_per_frame_min']:.0f}-"
               f"{r['energy_mJ_per_frame_max']:.0f}]")
     print(f"Wrote {out}")
@@ -176,10 +181,10 @@ def main():
     (run / "clock.json").write_text(json.dumps(clock, indent=2) + "\n")
 
     print(f"Run {run.name}: idle baseline {idle_w:.3f} W (10 s means {idle_lo:.3f}-{idle_hi:.3f}); phase clock {clock}")
-    print(f"{'cell':28s} {'fps':>6s} {'mean W':>7s} {'±std':>6s} {'active W':>8s} {'mJ/frame':>8s} "
+    print(f"{'cell':40s} {'fps':>6s} {'mean W':>7s} {'±std':>6s} {'active W':>8s} {'mJ/frame':>8s} "
           f"{'active mJ':>9s} {'temp end':>8s} {'thr':>4s} {'cov':>5s}")
     for r in rows:
-        print(f"{r['cell']:28s} {r['fps']:6.2f} {r['power_mean_W']:7.3f} {r['power_std_W']:6.3f} "
+        print(f"{r['cell']:40s} {r['fps']:6.2f} {r['power_mean_W']:7.3f} {r['power_std_W']:6.3f} "
               f"{r['active_W']:8.3f} {r['energy_mJ_per_frame']:8.1f} {r['active_energy_mJ_per_frame']:9.1f} "
               f"{r['cpu_temp_end_c'] or 0:8.1f} {r['throttled_end'] or '':>4s} {r['sample_coverage']:5.2f}")
     warnings = [r["cell"] for r in rows if r["sample_coverage"] < 0.95]
