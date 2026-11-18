@@ -22,6 +22,8 @@ Run in this order from the Version1 folder with the venv active:
 
 On the Pi (same order, skipping 1-2: copy private\cache and models\int8 from the PC instead):
   python eval/run_eval.py --label pi            accuracy on ARM -> results/processed/pi/
+  python eval/sequential_eval.py                 detect-every-K on videos in frame order + liveness thresholds
+                                                 -> results/processed/sequential/ (--analyse-only to re-analyse)
   python bench/bench.py --label pi              and --label pi --isolated
 
 Power (run on the PC; meter wired PSU -> FNB58 in, FNB58 out -> Pi, micro-USB -> PC last;
