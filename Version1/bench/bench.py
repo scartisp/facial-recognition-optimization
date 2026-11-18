@@ -129,13 +129,21 @@ def summarize(values):
             "min": float(values.min()), "max": float(values.max())}
 
 
-def load_cell(config_path, det_size=None):
+# INT8-except-depthwise detector (quantize/quantize_detector.py), one static file per input size
+INT8_DETECTOR = {320: {"path": "Version1/models/int8/det_500m_det320_int8_per_channel_nodw_s0.onnx",
+                       "lock_key": "int8/det_500m_det320_int8_per_channel_nodw_s0.onnx"}}
+
+
+def load_cell(config_path, det_size=None, det_model="fp32"):
     """Pipeline for one config plus the benchmark frames it finds a face in.
-    det_size overrides the detector's square input size (default: the config's, 640)."""
+    det_size overrides the detector's square input size (default: the config's, 640);
+    det_model="int8nodw" swaps in the INT8 detector for that size."""
     config = json.loads(Path(config_path).read_text())
-    pl.check_pins(config)
     if det_size:
         config["detector"]["input_size"] = [det_size, det_size]
+    if det_model != "fp32":
+        config["models"]["detector"] = dict(INT8_DETECTOR[config["detector"]["input_size"][0]])
+    pl.check_pins(config)
     pipeline = pl.Pipeline(config)
     frames = load_frames()
     faces = [pipeline.detect(f) for f in frames]
@@ -222,26 +230,28 @@ def mark(cell, phase, event, **extra):
           flush=True)
 
 
-def power_cell_name(config_path, det_size=None, detect_every=1):
+def power_cell_name(config_path, det_size=None, detect_every=1, det_model="fp32"):
     """Cell name for power runs; detector settings are appended only when used."""
     name = json.loads(Path(config_path).read_text())["precision"]
-    if det_size or detect_every != 1:
+    if det_size or detect_every != 1 or det_model != "fp32":
         name += f"@det{det_size or 640}_k{detect_every}"
+    if det_model != "fp32":
+        name += f"_dq-{det_model}"
     return name
 
 
-def run_power_cell(config_path, seconds, warmup, det_size=None, detect_every=1):
+def run_power_cell(config_path, seconds, warmup, det_size=None, detect_every=1, det_model="fp32"):
     """Sustained run of one config for the power meter: load, warm-up, then `seconds` of
     back-to-back full-pipeline passes. Prints PHASE markers and a final RESULT line.
     det_size: detector input size override. detect_every=K: run the detector on every K-th
     frame and reuse that face in between (Mabel's --detect-every). The benchmark frames are
     ~0.55 s apart, so a reused face can be slightly off on the next frame; the work per frame
     (and so time and energy) is the same as on sequential video."""
-    cell = power_cell_name(config_path, det_size, detect_every)
+    cell = power_cell_name(config_path, det_size, detect_every, det_model)
     process = psutil.Process(os.getpid())
 
     mark(cell, "load", "start")
-    config, pipeline, frames = load_cell(config_path, det_size)
+    config, pipeline, frames = load_cell(config_path, det_size, det_model)
     mark(cell, "load", "end", rss_mb=process.memory_info().rss / 2**20)
 
     face = None
@@ -275,7 +285,7 @@ def run_power_cell(config_path, seconds, warmup, det_size=None, detect_every=1):
 
     result = {
         "cell": cell, "precision": config["precision"], "det_size": config["detector"]["input_size"][0],
-        "detect_every": detect_every,
+        "detect_every": detect_every, "det_model": det_model,
         "seconds": elapsed, "frames": len(totals), "fps": len(totals) / elapsed,
         "warmup_excluded": warmup, "total_ms": summarize(totals),
         "cpu_ms_per_frame": statistics.fmean(cpu_ms),
@@ -307,21 +317,23 @@ def run_power(label, args):
         if not configs:
             raise SystemExit(f"No ablation config matches --cells {args.cells}")
     every = [int(k) for k in str(args.detect_every).split(",")]
-    cells = [(c, k) for c in configs for k in every]
+    det_models = str(args.det_model).split(",")
+    cells = [(c, k, m) for c in configs for m in det_models for k in every]
     if args.reverse:
         cells = cells[::-1]
     print(f"POWER label={label} cells={len(cells)} seconds={args.seconds} repeats={args.repeats} "
-          f"reverse={args.reverse} det_size={args.det_size or 'config'} detect_every={every}", flush=True)
+          f"reverse={args.reverse} det_size={args.det_size or 'config'} detect_every={every} det_models={det_models}", flush=True)
     idle("baseline", args.idle)
     for repeat in range(args.repeats):
         # Alternate the order on repeats so thermal drift does not always hit the same cells
-        for config_path, k in (cells if repeat % 2 == 0 else cells[::-1]):
+        for config_path, k, m in (cells if repeat % 2 == 0 else cells[::-1]):
             command = [sys.executable, __file__, "--label", label, "--power-cell", str(config_path),
-                       "--seconds", str(args.seconds), "--warmup", str(args.warmup), "--detect-every", str(k)]
+                       "--seconds", str(args.seconds), "--warmup", str(args.warmup), "--detect-every", str(k),
+                       "--det-model", m]
             if args.det_size:
                 command += ["--det-size", str(args.det_size)]
             subprocess.run(command, check=True)
-            idle(power_cell_name(config_path, args.det_size, k), args.gap, args.cool_to, args.max_cool)
+            idle(power_cell_name(config_path, args.det_size, k, m), args.gap, args.cool_to, args.max_cool)
     print("POWER done", flush=True)
 
 
@@ -415,10 +427,13 @@ def main():
     power.add_argument("--det-size", type=int, help="detector input size override, e.g. 480 or 320")
     power.add_argument("--detect-every", default="1",
                        help="run the detector every K frames; comma list in --power, e.g. 1,3,5")
+    power.add_argument("--det-model", default="fp32",
+                       help="detector precision: fp32 or int8nodw (needs --det-size 320); comma list in --power")
     args = parser.parse_args()
 
     if args.power_cell:
-        run_power_cell(args.power_cell, args.seconds, args.warmup, args.det_size, int(args.detect_every))
+        run_power_cell(args.power_cell, args.seconds, args.warmup, args.det_size, int(args.detect_every),
+                       args.det_model)
         return
     if args.power:
         run_power(args.label, args)

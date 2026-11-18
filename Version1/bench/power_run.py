@@ -76,6 +76,7 @@ def main():
     ap.add_argument("--reverse", action="store_true", help="run the configs in reverse order")
     ap.add_argument("--det-size", type=int, help="detector input size override, e.g. 480 or 320")
     ap.add_argument("--detect-every", default="1", help="run the detector every K frames, e.g. 1,3,5")
+    ap.add_argument("--det-model", default="fp32", help="detector precision, e.g. fp32,int8nodw (needs --det-size 320)")
     args = ap.parse_args()
 
     run_id = time.strftime("%Y%m%d_%H%M%S")
@@ -108,7 +109,7 @@ def main():
         bench_args.append("--reverse")
     if args.det_size:
         bench_args += ["--det-size", args.det_size]
-    bench_args += ["--detect-every", args.detect_every]
+    bench_args += ["--detect-every", args.detect_every, "--det-model", args.det_model]
     remote = (f"cd {args.remote_dir} && PYTHONUNBUFFERED=1 .venv/bin/python bench/bench.py "
               + " ".join(shlex.quote(str(a)) for a in bench_args))
 

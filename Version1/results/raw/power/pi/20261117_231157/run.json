@@ -1,0 +1,29 @@
+{
+  "run_id": "20261117_231157",
+  "label": "pi",
+  "host": "simion@simiPi",
+  "note": "INT8 detector: det320, k=1,5, det fp32 vs int8nodw forward",
+  "settings": {
+    "label": "pi",
+    "seconds": 60,
+    "warmup": 50,
+    "idle": 60,
+    "gap": 30,
+    "cool_to": 50,
+    "max_cool": 300,
+    "repeats": 1,
+    "cells": "rec-fp32_live-fp32,rec-int8nodw_live-int8nodw",
+    "reverse": false,
+    "det_size": 320,
+    "detect_every": "1,5",
+    "det_model": "fp32,int8nodw"
+  },
+  "code_sha256": {
+    "bench/bench.py": "80cfe18d8278ac7e02013a4bb1586a7af4e7070bb4c7539f46020345363a2df8",
+    "app/pipeline.py": "dc83373507a38fc6dea1016d7aa89be2be4103fb7992393ac59a92875677311d"
+  },
+  "pi_exit": 0,
+  "logger_exit": 0,
+  "logger_ok": true,
+  "meter": "FNIRSI FNB58, inline on the Pi's USB-C supply; 100 samples/s"
+}

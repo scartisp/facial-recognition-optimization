@@ -36,6 +36,8 @@ the Pi needs key-based SSH and the same bench/bench.py and app/pipeline.py as th
   python eval\power_analysis.py --combine <run1> <run2>   mean and min-max -> results\processed\power_pi.csv
   python eval\power_analysis.py --combine <run1> <run2> --name nodw   -> results\processed\power_pi_nodw.csv
   python bench\power_run.py --det-size 320 --detect-every 1,3,5 --cells <configs>   detector sweep, one chunk per size
+  python quantize\quantize_detector.py           INT8-except-depthwise detector at 320 -> models\int8\n  python eval\detector_fidelity.py               INT8 vs FP32 detector boxes/landmarks on the test frames
+  python bench\power_run.py --det-size 320 --detect-every 1,5 --det-model fp32,int8nodw --cells <configs>
   python eval\power_analysis.py --combine <6 runs> --name detector   -> results\processed\power_pi_detector.csv
   python eval/compare_runs.py --a pc --b pi     do Pi outputs match the committed PC results?
 

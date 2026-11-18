@@ -52,6 +52,9 @@ version1_folder = pl.version1_folder
 private_folder = version1_folder / "private"
 raw_folder = version1_folder / "results" / "raw" / "sequential"
 processed_folder = version1_folder / "results" / "processed" / "sequential"
+# INT8 detector (quantize/quantize_detector.py), one static file per input size
+INT8_DETECTOR = {320: {"path": "Version1/models/int8/det_500m_det320_int8_per_channel_nodw_s0.onnx",
+                       "lock_key": "int8/det_500m_det320_int8_per_channel_nodw_s0.onnx"}}
 
 VARIANTS = ["fp32", "int8pc", "int8nodw"]
 COSINE_THRESHOLD = 0.2421
@@ -91,6 +94,9 @@ def score(args):
     for d in det_sizes:
         cfg = json.loads(json.dumps(base))
         cfg["detector"]["input_size"] = [d, d]
+        if args.det_model == "int8nodw":
+            cfg["models"]["detector"] = dict(INT8_DETECTOR[d])
+            pl.check_pins(cfg)
         detectors[d] = pl.Pipeline(cfg)
     configs = ev.variant_configs()
     runners = {v: ev.ModelRunner(configs[v]) for v in VARIANTS}
@@ -165,7 +171,7 @@ def score(args):
         for r in rows:
             w.writerow({k: (f"{x:.6f}" if isinstance(x, float) else x) for k, x in r.items()})
     (raw_folder / "settings.json").write_text(json.dumps({
-        "fps": args.fps, "det_sizes": det_sizes, "every": every, "variants": VARIANTS,
+        "fps": args.fps, "det_model": args.det_model, "det_sizes": det_sizes, "every": every, "variants": VARIANTS,
         "calib_seconds": CALIB_SECONDS, "cosine_threshold": COSINE_THRESHOLD,
         "models_lock": json.loads((pl.repo_folder / "configs" / "models.lock.json").read_text()),
         "generated": time.strftime("%Y-%m-%d %H:%M:%S")}, indent=2) + "\n")
@@ -405,6 +411,82 @@ def analyse_lopo():
     print(f"Wrote {processed_folder / 'lopo_summary.md'}")
 
 
+SMOOTH_WINDOWS = [1, 3, 5, 10]
+
+
+def analyse_smoothing():
+    """Liveness score smoothing (Mabel's --smooth-liveness): the decision uses the mean liveness score of
+    the last W processed frames of the same video, causal, cleared when no face is found (as
+    pipeline.verify_camera does) and at the calibration/test boundary. Threshold: the default 0 for
+    every precision. W = 1 is the unsmoothed result. At 10 processed frames/s, W = 10 is 1 s."""
+    rows = list(csv.DictReader(open(raw_folder / "frames.csv")))
+    people = sorted({r["person"] for r in rows})
+    for r in rows:
+        r["has_face"] = r["has_face"] == "1"
+        r["det"], r["k"], r["frame"] = int(r["det"]), int(r["k"]), int(r["frame"])
+    groups = {}
+    for r in rows:
+        groups.setdefault((r["source"], r["split"], r["det"], r["k"]), []).append(r)
+    for seq in groups.values():
+        seq.sort(key=lambda r: r["frame"])
+        for v in VARIANTS:
+            for w in SMOOTH_WINDOWS:
+                window = []
+                for r in seq:
+                    if not r["has_face"]:
+                        window.clear()
+                        r[f"sm_{v}_{w}"] = None
+                        continue
+                    window.append(float(r[f"live_{v}"]))
+                    del window[:-w]
+                    r[f"sm_{v}_{w}"] = sum(window) / len(window)
+
+    out = []
+    for dataset in ["session2", "own"]:
+        present = {(r["det"], r["k"]) for r in rows}
+        for (d, k) in [s for s in [(640, 1), (320, 1), (320, 5)] if s in present]:
+            test = [r for r in rows if r["dataset"] == dataset and r["det"] == d and r["k"] == k and r["split"] == "test"]
+            for v in VARIANTS:
+                for w in SMOOTH_WINDOWS:
+                    live_ok = lambda r: r[f"sm_{v}_{w}"] is not None and r[f"sm_{v}_{w}"] >= 0.0
+                    lv = [r for r in test if r["kind"] == "live"]
+                    at = [r for r in test if r["kind"] != "live"]
+                    c = {"bp": sum(not live_ok(r) for r in lv), "n_live": len(lv),
+                         "ap": sum(live_ok(r) for r in at), "n_att": len(at),
+                         "frr": 0, "n_gen": 0, "imp": 0, "n_imp": 0, "spoof": 0, "n_spoof": 0}
+                    for person in people:
+                        for r in test:
+                            acc = live_ok(r) and float(r[f"sim_{v}_{person}"]) >= COSINE_THRESHOLD
+                            if r["kind"] == "live" and r["person"] == person:
+                                c["n_gen"] += 1
+                                c["frr"] += not acc
+                            elif r["kind"] == "live":
+                                c["n_imp"] += 1
+                                c["imp"] += acc
+                            elif r["person"] == person:
+                                c["n_spoof"] += 1
+                                c["spoof"] += acc
+                    out.append({"dataset": dataset, "det": d, "k": k, "precision": v, "window": w,
+                                "apcer": round(c["ap"] / c["n_att"], 5), "bpcer": round(c["bp"] / c["n_live"], 5),
+                                "frr_rate": round(c["frr"] / c["n_gen"], 5),
+                                "spoof_far": round(c["spoof"] / c["n_spoof"], 5), **c})
+    ev.write_csv(processed_folder / "smoothing.csv", out)
+    fr = ev.fmt_rate
+    s = ["# Liveness score smoothing over frames", "",
+         "Generated by `eval/sequential_eval.py` (`analyse_smoothing`). Decision on the mean liveness score of the "
+         "last W processed frames (10 frames/s, causal, cleared on a missing face); threshold 0 for every precision; "
+         "same precision on both models. W = 1 is unsmoothed. Consecutive frames are correlated, so the Wilson "
+         "intervals are very optimistic.", "",
+         "| Dataset | Detector | K | Precision | W | APCER | BPCER | FRR | Impostor FAR | Spoof FAR |",
+         "|---|---|---|---|---|---|---|---|---|---|"]
+    for r in out:
+        s.append(f"| {r['dataset']} | {r['det']} | {r['k']} | {r['precision']} | {r['window']} | "
+                 f"{fr(r['ap'], r['n_att'])} | {fr(r['bp'], r['n_live'])} | {fr(r['frr'], r['n_gen'])} | "
+                 f"{fr(r['imp'], r['n_imp'])} | {fr(r['spoof'], r['n_spoof'])} |")
+    (processed_folder / "smoothing_summary.md").write_text("\n".join(s) + "\n", encoding="utf-8")
+    print(f"Wrote {processed_folder / 'smoothing_summary.md'}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--fps", type=float, default=10.0, help="processed frames per second of video")
@@ -412,11 +494,18 @@ def main():
     ap.add_argument("--every", default="1,3,5")
     ap.add_argument("--analyse-only", action="store_true")
     ap.add_argument("--max-videos", type=int, help="smoke test on the first N videos only")
+    ap.add_argument("--det-model", choices=["fp32", "int8nodw"], default="fp32",
+                    help="detector precision; int8nodw writes to sequential_det-int8nodw folders (320 only)")
     args = ap.parse_args()
+    global raw_folder, processed_folder
+    if args.det_model != "fp32":
+        raw_folder = raw_folder.with_name(f"sequential_det-{args.det_model}")
+        processed_folder = processed_folder.with_name(f"sequential_det-{args.det_model}")
     if not args.analyse_only:
         score(args)
     analyse()
     analyse_lopo()
+    analyse_smoothing()
 
 
 if __name__ == "__main__":
